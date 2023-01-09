@@ -7,10 +7,14 @@ maingame::maingame(QWidget *parent)
 {
 
     ui->setupUi(this);
+
+
+
 }
 
 maingame::~maingame()
 {
     delete ui;
+    delete choose;
 }
 

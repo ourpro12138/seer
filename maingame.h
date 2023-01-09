@@ -2,7 +2,11 @@
 #define MAINGAME_H
 
 #include <QWidget>
+
 #include "pokedex.h"
+
+#include "choosescene.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class maingame; }
@@ -18,6 +22,10 @@ public:
 
 private:
     Ui::maingame *ui;
+
     pokedex *pd;
+
+    choosescene *choose;
+
 };
 #endif // MAINGAME_H
