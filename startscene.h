@@ -2,6 +2,7 @@
 #define STARTSCENE_H
 
 #include <QWidget>
+#include<QPropertyAnimation>
 namespace Ui {
 class startscene;
 }

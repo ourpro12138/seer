@@ -103,3 +103,13 @@ void StartPushButton::leaveEvent(QEvent *e)
     QPushButton::leaveEvent(e);
 }
 
+void StartPushButton::mousePressEvent(QMouseEvent *e)
+{
+    QMediaPlayer * player = new QMediaPlayer;
+
+    player->setMedia(QUrl::fromEncoded("qrc:/music/resource/music/login.mp3"));
+    player->setVolume(80);
+    player->play();
+
+        return QPushButton::mousePressEvent(e);
+}

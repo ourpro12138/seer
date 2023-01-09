@@ -4,8 +4,8 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QDebug>
-#include <QPropertyAnimation>
-
+#include <QMouseEvent>
+#include <QMediaPlayer>
 class StartPushButton : public QPushButton
 {
     Q_OBJECT
@@ -26,8 +26,7 @@ public:
     void enterEvent(QEvent *e);
     //鼠标松开事件
     void leaveEvent(QEvent *e);
-
-
+void mousePressEvent(QMouseEvent *e);
 
 };
 

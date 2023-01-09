@@ -2,7 +2,7 @@
 #define CHOOSELEVELSCENE_H
 
 #include <QWidget>
-
+#include <QPainter>
 class ChooseLevelScene : public QWidget
 {
     Q_OBJECT

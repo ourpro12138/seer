@@ -8,6 +8,7 @@ maingame::maingame(QWidget *parent)
 
     ui->setupUi(this);
     this->setFixedSize(1366,911);
+    this->setWindowIcon(QIcon(":/background/resource/background/tubiao.png"));
 
     ss = new startscene(this);
     sc = new ChooseLevelScene(this);

@@ -2,18 +2,15 @@
 #include"startpushbutton.h"
 #include<QLabel>
 #include<QMovie>
-#include<QPropertyAnimation>
 #include<QtCore>
-#include<QtMultimedia>
-#include<QMediaPlayer>
 ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 {
     //设置固定大小
     this->setFixedSize(1366,911);
-    //设置标题B
-    this->setWindowTitle("赛尔号");
-    //设置图片
-    this->setWindowIcon(QIcon(":/res/tubiao.png"));
+//    //设置标题B
+//    this->setWindowTitle("赛尔号");
+//    //设置图片
+//    this->setWindowIcon(QIcon(":/res/tubiao.png"));
 
     //返回按钮创建
 //    MyPushButton * backBtn=new MyPushButton(":/res/2.png");
@@ -21,7 +18,7 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 //    backBtn->move(200,100);
 
     QLabel * label=new QLabel();
-    QMovie * movie=new QMovie(":/res/3.gif");
+    QMovie * movie=new QMovie(":/background/resource/background/3.gif");
     label->setMovie(movie);
     movie->start();
     label->setParent(this);
@@ -29,17 +26,17 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 
 
 
-    QPropertyAnimation * animation=new QPropertyAnimation(this,"windowOpacity");
-    animation->setDuration(1000);
-    animation->setStartValue(0);
-    animation->setEndValue(1);
-    animation->start();
+//    QPropertyAnimation * animation=new QPropertyAnimation(this,"windowOpacity");
+//    animation->setDuration(1000);
+//    animation->setStartValue(0);
+//    animation->setEndValue(1);
+//    animation->start();
 
-    QMediaPlayer * player = new QMediaPlayer;
+//    QMediaPlayer * player = new QMediaPlayer;
 
-    player->setMedia(QUrl::fromEncoded("qrc:/res/Boss_sound.mp3"));
-    player->setVolume(80);
-    player->play();
+//    player->setMedia(QUrl::fromEncoded("qrc:/res/Boss_sound.mp3"));
+//    player->setVolume(80);
+//    player->play();
 
 }
 

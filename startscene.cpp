@@ -15,10 +15,11 @@ startscene::startscene(QWidget *parent) :
 
     //设置固定大小
     this->setFixedSize(1366,911);
-//    //设置标题A
-//    this->setWindowTitle("赛尔号");
-//    //设置图片
-//    this->setWindowIcon(QIcon(":/res/tubiao.png"));
+    //设置标题A
+   this->setWindowTitle("赛尔号");
+
+
+
 
     //gif动态图
     QLabel * label=new QLabel();
@@ -35,8 +36,6 @@ startscene::startscene(QWidget *parent) :
     label2->setParent(this);
     label2->move(250,790);
 
-
-
     //设置登录按钮
     StartPushButton  * startBtn=new StartPushButton(":/background/resource/background/5.png",":/background/resource/background/6.png");
     startBtn->setParent(this);
@@ -45,7 +44,9 @@ startscene::startscene(QWidget *parent) :
     connect(startBtn,&QPushButton::clicked,[=](){
         startBtn->zoom1();
         startBtn->zoom2();
-        emit this->login();
+        QTimer::singleShot(250,this,[=](){
+                  emit this->login();
+        });
     });
 
 
