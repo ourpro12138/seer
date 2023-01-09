@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     cards.cpp \
     cardsmenu.cpp \
+    chooselevelscene.cpp \
     choosescene.cpp \
     elf.cpp \
     enemy.cpp \
@@ -26,11 +27,13 @@ SOURCES += \
     map.cpp \
     partner.cpp \
     pokedex.cpp \
+    startpushbutton.cpp \
     startscene.cpp
 
 HEADERS += \
     cards.h \
     cardsmenu.h \
+    chooselevelscene.h \
     choosescene.h \
     elf.h \
     enemy.h \
@@ -38,6 +41,7 @@ HEADERS += \
     map.h \
     partner.h \
     pokedex.h \
+    startpushbutton.h \
     startscene.h
 
 FORMS += \
