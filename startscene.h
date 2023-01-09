@@ -2,7 +2,7 @@
 #define STARTSCENE_H
 
 #include <QWidget>
-
+#include<QPropertyAnimation>
 namespace Ui {
 class startscene;
 }
@@ -15,8 +15,15 @@ public:
     explicit startscene(QWidget *parent = nullptr);
     ~startscene();
 
+
+    //绘图事件
+    void paintEvent(QPaintEvent *);
+
+
 private:
     Ui::startscene *ui;
+signals:
+    void login();//登入信号
 };
 
 #endif // STARTSCENE_H

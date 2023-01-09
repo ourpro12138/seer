@@ -33,9 +33,31 @@
         <file>resource/background/kuang.png</file>
         <file>resource/background/kuangpress.png</file>
         <file>resource/background/diamond.png</file>
+        <file>resource/background/backgd.png</file>
+        <file>resource/background/backmoto.png</file>
+        <file>resource/background/backmoto2.png</file>
+        <file>resource/background/backmoto3.png</file>
+        <file>resource/background/choose_scenebiaozhi.png</file>
+        <file>resource/background/choosescene.png</file>
+        <file>resource/background/xingqiu1_clicked.png</file>
+        <file>resource/background/xingqiu2.png</file>
+        <file>resource/background/xingqiu2_clicked.png</file>
+        <file>resource/background/xingqiu3.png</file>
+        <file>resource/background/xingqiu3_clicked.png</file>
+        <file>resource/background/xingqiu4.png</file>
+        <file>resource/background/xingqiu4_clicked.png</file>
+        <file>resource/background/xingqiu5.png</file>
+        <file>resource/background/xingqiu5_clicked.png</file>
+        <file>resource/background/xingqiu6.png</file>
+        <file>resource/background/xingqiu6_clicked.png</file>
+        <file>resource/background/xingqiu1.png</file>
     </qresource>
     <qresource prefix="/enemy"/>
     <qresource prefix="/map"/>
-    <qresource prefix="/music"/>
+    <qresource prefix="/music">
+        <file>resource/music/Boss_sound.mp3</file>
+        <file>resource/music/login.mp3</file>
+        <file>resource/music/loginback.mp3</file>
+    </qresource>
     <qresource prefix="/partner"/>
 </RCC>

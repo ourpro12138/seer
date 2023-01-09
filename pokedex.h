@@ -2,6 +2,8 @@
 #define POKEDEX_H
 
 #include <QWidget>
+#include "pdbackpushbutton.h"
+#include <QPainter>
 
 namespace Ui {
 class pokedex;
@@ -14,7 +16,11 @@ class pokedex : public QWidget
 public:
     explicit pokedex(QWidget *parent = nullptr);
     ~pokedex();
+    void paintEvent(QPaintEvent *);
 
+private slots:
+//    void on_pushButton_clicked();
+    void back();
 private:
     Ui::pokedex *ui;
 };
