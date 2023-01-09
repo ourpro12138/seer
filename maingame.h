@@ -2,6 +2,7 @@
 #define MAINGAME_H
 
 #include <QWidget>
+#include "cardsmenu.h"
 #include "startscene.h"
 #include "chooselevelscene.h"
 #include <QDebug>
@@ -25,6 +26,7 @@ public:
     void loginGet();
 private:
     Ui::maingame *ui;
+    cardsmenu *cm;
     ChooseLevelScene * sc;
     startscene *ss;
 

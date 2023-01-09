@@ -8,6 +8,9 @@ maingame::maingame(QWidget *parent)
 
     ui->setupUi(this);
     this->setFixedSize(1366,911);
+    cm = new cardsmenu(this);
+    cm->hide();
+
     this->setWindowIcon(QIcon(":/background/resource/background/tubiao.png"));
 
     ss = new startscene(this);
