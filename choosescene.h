@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QPainter>
 #include <QBitmap>
+#include "pdbackpushbutton.h"
 
 namespace Ui {
 class choosescene;
@@ -20,6 +21,8 @@ public:
 
 private:
     Ui::choosescene *ui;
+signals:
+    void back();
 };
 
 #endif // CHOOSESCENE_H

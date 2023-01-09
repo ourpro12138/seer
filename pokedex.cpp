@@ -16,27 +16,24 @@ pokedex::pokedex(QWidget *parent) :
 
 //    void setCursor(const QCursor &);
 
-    QPixmap pix;
+//    QPixmap pix;
 
-    pix.load(":/background/resource/background/backmoto.png");
+//    pix.load(":/background/resource/background/backmoto.png");
     pdbackPushButton *Close = new pdbackPushButton();
     Close->setParent(this);
-    Close->setFixedSize(pix.size()); Close->setMask(pix.mask()); Close->move(1280,30); Close->setStyleSheet("border-image: url(:/background/resource/background/backmoto.png)");
+//    Close->setFixedSize(pix.size());
+//    Close->setMask(pix.mask()); Close->move(1280,30); Close->setStyleSheet("border-image: url(:/background/resource/background/backmoto.png)");
 
 
     Close->setCursor(QCursor(Qt::PointingHandCursor));
-    connect(Close,&pdbackPushButton::backpress,this,&pokedex::back);
+
+    connect(Close,&pdbackPushButton::backpress,[=](){emit this->back();qDebug()<<"?";});
 
 }
 
 pokedex::~pokedex()
 {
     delete ui;
-}
-void pokedex::back()
-{
-
-    this->hide();
 }
 
 void pokedex::paintEvent(QPaintEvent *)
@@ -45,4 +42,5 @@ void pokedex::paintEvent(QPaintEvent *)
     QPixmap pix;
     pix.load(":/background/resource/background/backgd.png");
     painter->drawPixmap(0,0,pix);
+    painter->end();
 }

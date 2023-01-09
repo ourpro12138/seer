@@ -11,7 +11,11 @@ public:
     //重写绘图事件
     void paintEvent(QPaintEvent *);
 signals:
+    void chooseLevel();
 
+    void pdx();
+
+    void returnstart();
 };
 
 #endif // CHOOSELEVELSCENE_H

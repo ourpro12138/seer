@@ -12,6 +12,7 @@
 #include "choosescene.h"
 
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class maingame; }
 QT_END_NAMESPACE
@@ -24,6 +25,13 @@ public:
     maingame(QWidget *parent = nullptr);
     ~maingame();
     void loginGet();
+
+    void chooseLevel();
+
+    void pdx();
+
+    void returnstart();
+
 private:
     Ui::maingame *ui;
     cardsmenu *cm;

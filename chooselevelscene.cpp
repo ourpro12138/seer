@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include "QBitmap"
 #include<QMediaPlayer>
+#include <QMediaPlaylist>
 
 ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 {
@@ -17,6 +18,7 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 //    this->setWindowIcon(QIcon(":/res/tubiao.png"));
 
 
+    this->setStyleSheet("QPushButton{background-color:transparent}");
 
     QLabel * label=new QLabel();
     QMovie * movie=new QMovie(":/background/resource/background/3.gif");
@@ -33,14 +35,15 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 //    animation->setEndValue(1);
 //    animation->start();
 
-    QMediaPlayer * player = new QMediaPlayer;
+    QMediaPlayer * music = new QMediaPlayer(this);
+    QMediaPlaylist *playlist = new QMediaPlaylist(this);
 //    QMediaPlaylist *playlist=new QMediaPlaylist(this);
-    player->setMedia(QUrl::fromEncoded("qrc:/music/resource/music/loginback.mp3"));
+    playlist->addMedia(QUrl::fromEncoded("qrc:/music/resource/music/loginback.mp3"));
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
 //    /*playlist->addMedia(QUrl::fromEncoded("qrc:/music/resource/music/loginback.mp3"));
 //    playlist->addMedia(QUrl::fromEncoded("qrc:/music/resource/music/loginback.mp3")*/);
-    player->setVolume(80);
-    player->play();
-
+music->setPlaylist(playlist);
+  music->play();
 
     QPushButton *gogogo = new QPushButton();
     gogogo->setParent(this);
@@ -88,6 +91,12 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
     pdx->move(350,339);
 
 
+    connect(gogogo,&QPushButton::clicked,this,&ChooseLevelScene::chooseLevel);
+
+    connect(pdx,&QPushButton::clicked,this,&ChooseLevelScene::pdx);
+
+    connect(home,&QPushButton::clicked,this,&ChooseLevelScene::returnstart);
+
 }
 
 
@@ -100,4 +109,5 @@ void ChooseLevelScene::paintEvent(QPaintEvent *)
 
     painter.drawPixmap(0,0,this->width(),this->height(),pix21);
 
+    painter.end();
 }

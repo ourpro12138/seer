@@ -8,6 +8,8 @@ choosescene::choosescene(QWidget *parent) :
     ui->setupUi(this);
     setFixedSize(1366,911);
 
+    this->setStyleSheet("QPushButton{background-color:transparent}");
+
     QPixmap pix;
     pix.load(":/background/resource/background/xingqiu1.png");
     ui->pushbutton->setFixedSize(pix.size());
@@ -45,6 +47,13 @@ choosescene::choosescene(QWidget *parent) :
                                     "QPushButton:pressed{background-image : url(:/background/resource/background/xingqiu6_clicked.png);}");
     ui->pushButton_6->setMask(pix.mask());
 
+    pdbackPushButton *back = new pdbackPushButton();
+    back->setParent(this);
+    connect(back,&pdbackPushButton::backpress,this,&choosescene::back);
+
+
+
+
 
 }
 
@@ -59,6 +68,6 @@ void choosescene::paintEvent(QPaintEvent *)
     QPixmap pix;
     pix.load(":/background/resource/background/choosescene.png");
     painter->drawPixmap(0,0,this->width(),this->height(),pix);
-
+    painter->end();
 
 }
