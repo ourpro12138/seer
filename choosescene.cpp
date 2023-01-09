@@ -9,7 +9,6 @@ choosescene::choosescene(QWidget *parent) :
     setFixedSize(1366,911);
 
     QPixmap pix;
-
     pix.load(":/background/resource/background/xingqiu1.png");
     ui->pushbutton->setFixedSize(pix.size());
     ui->pushbutton->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu1.png);}"

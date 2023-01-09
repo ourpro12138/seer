@@ -45,6 +45,13 @@
         <file>resource/background/xingqiu6.png</file>
         <file>resource/background/xingqiu6_clicked.png</file>
         <file>resource/background/xingqiu1.png</file>
+        <file>resource/background/bigmap.png</file>
+        <file>resource/background/gogogogo.png</file>
+        <file>resource/background/goicon.png</file>
+        <file>resource/background/pdx.png</file>
+        <file>resource/background/return.png</file>
+        <file>resource/background/unkown.png</file>
+        <file>resource/background/goicon_hover.png</file>
     </qresource>
     <qresource prefix="/enemy"/>
     <qresource prefix="/map"/>

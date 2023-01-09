@@ -1,8 +1,10 @@
 #include "chooselevelscene.h"
-#include"startpushbutton.h"
-#include<QLabel>
-#include<QMovie>
-#include<QtCore>
+#include "startpushbutton.h"
+#include <QLabel>
+#include <QMovie>
+#include <QtCore>
+#include <QPushButton>
+#include "QBitmap"
 ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 {
     //设置固定大小
@@ -38,6 +40,19 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 //    player->setVolume(80);
 //    player->play();
 
+    QPushButton *gogogo = new QPushButton();
+    gogogo->setParent(this);
+    QPixmap Gogogo(":/background/resource/background/goicon.png");
+    gogogo->setMask(Gogogo.mask());
+    gogogo->setFixedSize(Gogogo.size());
+    gogogo->setStyleSheet("QPushButton{background-image: url(:/background/resource/background/goicon.png)}"
+                          "QPushButton:hover{background-image: url(:/background/resource/background/goicon_hover.png)}"
+                          "QPushButton:pressed{background-image: url(:/background/resource/background/goicon.png)}"
+                          );
+    gogogo->move(990,302);
+
+
+
 }
 
 
@@ -46,7 +61,7 @@ void ChooseLevelScene::paintEvent(QPaintEvent *)
     //背景图片
     QPainter painter(this);
     QPixmap pix21;
-    pix21.load(":/res/21.png");
+    pix21.load(":/background/resource/background/bigmap.png");
 
     painter.drawPixmap(0,0,this->width(),this->height(),pix21);
 }
