@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.11.1, 2023-01-09T17:45:14. -->
-=======
-<!-- Written by QtCreator 4.11.1, 2023-01-09T17:40:26. -->
->>>>>>> 6798676a056fd2e4ec13b1a1b6050e56fa91e05a
+<!-- Written by QtCreator 4.11.1, 2023-01-09T22:35:07. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -303,11 +299,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
-<<<<<<< HEAD
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">E:/Desktop/build-seer-Desktop_Qt_5_14_2_MinGW_32_bit-Debug</value>
-=======
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/20226/Desktop/build-seer-Desktop_Qt_5_14_2_MinGW_32_bit-Debug</value>
->>>>>>> 6798676a056fd2e4ec13b1a1b6050e56fa91e05a
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default"></value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
