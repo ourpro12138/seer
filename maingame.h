@@ -5,6 +5,10 @@
 #include "startscene.h"
 #include "chooselevelscene.h"
 #include <QDebug>
+
+#include "pokedex.h"
+
+#include "choosescene.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class maingame; }
 QT_END_NAMESPACE
@@ -21,5 +25,10 @@ private:
     Ui::maingame *ui;
     ChooseLevelScene * sc;
     startscene *ss;
+
+    pokedex *pd;
+
+    choosescene *choose;
+
 };
 #endif // MAINGAME_H

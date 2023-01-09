@@ -5,6 +5,7 @@ maingame::maingame(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::maingame)
 {
+
     ui->setupUi(this);
     this->setFixedSize(1366,911);
 
@@ -22,6 +23,7 @@ maingame::maingame(QWidget *parent)
 maingame::~maingame()
 {
     delete ui;
+    delete choose;
 }
 void maingame::loginGet()
 {

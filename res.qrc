@@ -27,6 +27,24 @@
         <file>resource/background/26.png</file>
         <file>resource/background/27.png</file>
         <file>resource/background/tubiao.png</file>
+        <file>resource/background/backgd.png</file>
+        <file>resource/background/backmoto.png</file>
+        <file>resource/background/backmoto2.png</file>
+        <file>resource/background/backmoto3.png</file>
+        <file>resource/background/choose_scenebiaozhi.png</file>
+        <file>resource/background/choosescene.png</file>
+        <file>resource/background/xingqiu1_clicked.png</file>
+        <file>resource/background/xingqiu2.png</file>
+        <file>resource/background/xingqiu2_clicked.png</file>
+        <file>resource/background/xingqiu3.png</file>
+        <file>resource/background/xingqiu3_clicked.png</file>
+        <file>resource/background/xingqiu4.png</file>
+        <file>resource/background/xingqiu4_clicked.png</file>
+        <file>resource/background/xingqiu5.png</file>
+        <file>resource/background/xingqiu5_clicked.png</file>
+        <file>resource/background/xingqiu6.png</file>
+        <file>resource/background/xingqiu6_clicked.png</file>
+        <file>resource/background/xingqiu1.png</file>
     </qresource>
     <qresource prefix="/enemy"/>
     <qresource prefix="/map"/>

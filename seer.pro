@@ -26,6 +26,7 @@ SOURCES += \
     maingame.cpp \
     map.cpp \
     partner.cpp \
+    pdbackpushbutton.cpp \
     pokedex.cpp \
     startpushbutton.cpp \
     startscene.cpp
@@ -40,6 +41,7 @@ HEADERS += \
     maingame.h \
     map.h \
     partner.h \
+    pdbackpushbutton.h \
     pokedex.h \
     startpushbutton.h \
     startscene.h

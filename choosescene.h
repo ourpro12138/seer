@@ -2,6 +2,8 @@
 #define CHOOSESCENE_H
 
 #include <QWidget>
+#include <QPainter>
+#include <QBitmap>
 
 namespace Ui {
 class choosescene;
@@ -14,6 +16,7 @@ class choosescene : public QWidget
 public:
     explicit choosescene(QWidget *parent = nullptr);
     ~choosescene();
+    void paintEvent(QPaintEvent *);
 
 private:
     Ui::choosescene *ui;
