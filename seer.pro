@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     cards.cpp \
+    cardsmenu.cpp \
     choosescene.cpp \
     elf.cpp \
     enemy.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
 
 HEADERS += \
     cards.h \
+    cardsmenu.h \
     choosescene.h \
     elf.h \
     enemy.h \
@@ -39,6 +41,7 @@ HEADERS += \
     startscene.h
 
 FORMS += \
+    cardsmenu.ui \
     choosescene.ui \
     maingame.ui \
     pokedex.ui \
