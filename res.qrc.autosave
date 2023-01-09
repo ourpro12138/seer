@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/background"/>
-    <qresource prefix="/enemy"/>
-    <qresource prefix="/map"/>
-    <qresource prefix="/music"/>
-    <qresource prefix="/partner"/>
-</RCC>

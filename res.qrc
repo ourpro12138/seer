@@ -1,2 +1,35 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/background">
+        <file>resource/background/1.png</file>
+        <file>resource/background/2.gif</file>
+        <file>resource/background/2.png</file>
+        <file>resource/background/3.gif</file>
+        <file>resource/background/3.png</file>
+        <file>resource/background/5.png</file>
+        <file>resource/background/6.png</file>
+        <file>resource/background/7.png</file>
+        <file>resource/background/8.png</file>
+        <file>resource/background/9.png</file>
+        <file>resource/background/10.gif</file>
+        <file>resource/background/10.png</file>
+        <file>resource/background/11.png</file>
+        <file>resource/background/13.png</file>
+        <file>resource/background/15.png</file>
+        <file>resource/background/16.png</file>
+        <file>resource/background/17.png</file>
+        <file>resource/background/18.png</file>
+        <file>resource/background/19.png</file>
+        <file>resource/background/20.png</file>
+        <file>resource/background/21.png</file>
+        <file>resource/background/22.png</file>
+        <file>resource/background/23.png</file>
+        <file>resource/background/25.png</file>
+        <file>resource/background/26.png</file>
+        <file>resource/background/27.png</file>
+        <file>resource/background/tubiao.png</file>
+    </qresource>
+    <qresource prefix="/enemy"/>
+    <qresource prefix="/map"/>
+    <qresource prefix="/music"/>
+    <qresource prefix="/partner"/>
+</RCC>
