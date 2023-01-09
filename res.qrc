@@ -55,9 +55,12 @@
         <file>resource/background/gogogogo.png</file>
         <file>resource/background/goicon.png</file>
         <file>resource/background/pdx.png</file>
-        <file>resource/background/return.png</file>
+        <file>resource/background/home.png</file>
         <file>resource/background/unkown.png</file>
         <file>resource/background/goicon_hover.png</file>
+        <file>resource/background/return_hover.png</file>
+        <file>resource/background/unkown_hover.png</file>
+        <file>resource/background/pdx_hover.png</file>
     </qresource>
     <qresource prefix="/enemy"/>
     <qresource prefix="/map"/>
