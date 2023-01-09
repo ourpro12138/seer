@@ -2,6 +2,7 @@
 #define MAINGAME_H
 
 #include <QWidget>
+#include "choosescene.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class maingame; }
@@ -17,5 +18,6 @@ public:
 
 private:
     Ui::maingame *ui;
+    choosescene *choose;
 };
 #endif // MAINGAME_H

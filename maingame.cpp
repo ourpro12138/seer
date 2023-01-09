@@ -9,10 +9,12 @@ maingame::maingame(QWidget *parent)
 
 
 
+
 }
 
 maingame::~maingame()
 {
     delete ui;
+    delete choose;
 }
 
