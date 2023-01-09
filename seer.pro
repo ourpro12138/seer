@@ -24,6 +24,7 @@ SOURCES += \
     maingame.cpp \
     map.cpp \
     partner.cpp \
+    pokedex.cpp \
     startscene.cpp
 
 HEADERS += \
@@ -34,11 +35,13 @@ HEADERS += \
     maingame.h \
     map.h \
     partner.h \
+    pokedex.h \
     startscene.h
 
 FORMS += \
     choosescene.ui \
     maingame.ui \
+    pokedex.ui \
     startscene.ui
 
 # Default rules for deployment.
