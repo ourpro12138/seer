@@ -6,7 +6,9 @@ maingame::maingame(QWidget *parent)
     , ui(new Ui::maingame)
 {
     ui->setupUi(this);
-
+    this->setFixedSize(1366,911);
+    this->setStyleSheet("background=color:transparent");
+    cm = new cardsmenu(this);
 
 
 }

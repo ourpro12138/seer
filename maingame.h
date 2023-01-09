@@ -2,6 +2,8 @@
 #define MAINGAME_H
 
 #include <QWidget>
+#include "cardsmenu.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class maingame; }
@@ -17,5 +19,6 @@ public:
 
 private:
     Ui::maingame *ui;
+    cardsmenu *cm;
 };
 #endif // MAINGAME_H

@@ -2,6 +2,9 @@
 #define CARDSMENU_H
 
 #include <QWidget>
+#include <QPainter>
+
+
 
 namespace Ui {
 class cardsmenu;
@@ -14,6 +17,8 @@ class cardsmenu : public QWidget
 public:
     explicit cardsmenu(QWidget *parent = nullptr);
     ~cardsmenu();
+
+    void paintEvent(QPaintEvent *);
 
 private:
     Ui::cardsmenu *ui;
