@@ -5,6 +5,8 @@
 #include <QtCore>
 #include <QPushButton>
 #include "QBitmap"
+#include<QMediaPlayer>
+
 ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 {
     //设置固定大小
@@ -14,17 +16,14 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 //    //设置图片
 //    this->setWindowIcon(QIcon(":/res/tubiao.png"));
 
-    //返回按钮创建
-//    MyPushButton * backBtn=new MyPushButton(":/res/2.png");
-//    backBtn->setParent(this);
-//    backBtn->move(200,100);
+
 
     QLabel * label=new QLabel();
     QMovie * movie=new QMovie(":/background/resource/background/3.gif");
     label->setMovie(movie);
     movie->start();
     label->setParent(this);
-    label->move(1090,630);
+    label->move(850,550);
 
 
 
@@ -34,11 +33,14 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
 //    animation->setEndValue(1);
 //    animation->start();
 
-//    QMediaPlayer * player = new QMediaPlayer;
+    QMediaPlayer * player = new QMediaPlayer;
+//    QMediaPlaylist *playlist=new QMediaPlaylist(this);
+    player->setMedia(QUrl::fromEncoded("qrc:/music/resource/music/loginback.mp3"));
+//    /*playlist->addMedia(QUrl::fromEncoded("qrc:/music/resource/music/loginback.mp3"));
+//    playlist->addMedia(QUrl::fromEncoded("qrc:/music/resource/music/loginback.mp3")*/);
+    player->setVolume(80);
+    player->play();
 
-//    player->setMedia(QUrl::fromEncoded("qrc:/res/Boss_sound.mp3"));
-//    player->setVolume(80);
-//    player->play();
 
     QPushButton *gogogo = new QPushButton();
     gogogo->setParent(this);
@@ -51,6 +53,39 @@ ChooseLevelScene::ChooseLevelScene(QWidget *parent) : QWidget(parent)
                           );
     gogogo->move(990,302);
 
+    QPushButton *unkown = new QPushButton();
+    unkown->setParent(this);
+    QPixmap Unkown(":/background/resource/background/unkown.png");
+    unkown->setMask(Unkown.mask());
+    unkown->setFixedSize(Unkown.size());
+    unkown->setStyleSheet("QPushButton{background-image: url(:/background/resource/background/unkown.png)}"
+                          "QPushButton:hover{background-image: url(:/background/resource/background/unkown_hover.png)}"
+                          "QPushButton:pressed{background-image: url(:/background/resource/background/unkown.png)}"
+                          );
+    unkown->move(560,124);
+
+
+    QPushButton *home = new QPushButton();
+    home->setParent(this);
+    QPixmap Home(":/background/resource/background/home.png");
+    home->setMask(Home.mask());
+    home->setFixedSize(Home.size());
+    home->setStyleSheet("QPushButton{background-image: url(:/background/resource/background/home.png)}"
+                          "QPushButton:hover{background-image: url(:/background/resource/background/return_hover.png)}"
+                          "QPushButton:pressed{background-image: url(:/background/resource/background/home.png)}"
+                          );
+    home->move(732,252);
+
+    QPushButton *pdx = new QPushButton();
+    pdx->setParent(this);
+    QPixmap Pdx(":/background/resource/background/pdx.png");
+    pdx->setMask(Pdx.mask());
+    pdx->setFixedSize(Pdx.size());
+    pdx->setStyleSheet("QPushButton{background-image: url(:/background/resource/background/pdx.png)}"
+                          "QPushButton:hover{background-image: url(:/background/resource/background/pdx_hover.png)}"
+                          "QPushButton:pressed{background-image: url(:/background/resource/background/pdx.png)}"
+                          );
+    pdx->move(350,339);
 
 
 }
@@ -64,4 +99,5 @@ void ChooseLevelScene::paintEvent(QPaintEvent *)
     pix21.load(":/background/resource/background/bigmap.png");
 
     painter.drawPixmap(0,0,this->width(),this->height(),pix21);
+
 }
