@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     cards.cpp \
+    choosescene.cpp \
     elf.cpp \
     enemy.cpp \
     main.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
 
 HEADERS += \
     cards.h \
+    choosescene.h \
     elf.h \
     enemy.h \
     maingame.h \
@@ -35,6 +37,7 @@ HEADERS += \
     startscene.h
 
 FORMS += \
+    choosescene.ui \
     maingame.ui \
     startscene.ui
 
