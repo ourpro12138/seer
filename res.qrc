@@ -27,6 +27,10 @@
         <file>resource/background/26.png</file>
         <file>resource/background/27.png</file>
         <file>resource/background/tubiao.png</file>
+        <file>resource/background/backgd.png</file>
+        <file>resource/background/backmoto.png</file>
+        <file>resource/background/backmoto2.png</file>
+        <file>resource/background/backmoto3.png</file>
     </qresource>
     <qresource prefix="/enemy"/>
     <qresource prefix="/map"/>
