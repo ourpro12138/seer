@@ -22,7 +22,8 @@ SOURCES += \
     main.cpp \
     maingame.cpp \
     map.cpp \
-    partner.cpp
+    partner.cpp \
+    startscene.cpp
 
 HEADERS += \
     cards.h \
@@ -30,12 +31,17 @@ HEADERS += \
     enemy.h \
     maingame.h \
     map.h \
-    partner.h
+    partner.h \
+    startscene.h
 
 FORMS += \
-    maingame.ui
+    maingame.ui \
+    startscene.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    res.qrc
