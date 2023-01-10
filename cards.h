@@ -17,14 +17,17 @@ public:
     Cards();
     ~Cards();
 
+
+
 //    void mousePressEvent(QGraphicsSceneMouseEvent *event) ;//鼠标按下
 //    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) ;//鼠标释放
 //    void advance(int phase);
 //    void paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWidget *widget);
-    
 protected:
     int coolTime;
     
+
+
 
 signals:
 
@@ -36,5 +39,11 @@ class bubuzhongzi:public Cards
     bubuzhongzi();
     
 };
+/*class bubuzhongzi:public Cards
+{
+  public:
+    bubuzhongzi();
+
+}*/
 
 #endif // CARDS_H
