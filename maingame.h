@@ -32,6 +32,8 @@ public:
 
     void returnstart();
 
+
+
 private:
     Ui::maingame *ui;
     cardsmenu *cm;
@@ -41,6 +43,7 @@ private:
     pokedex *pd;
 
     choosescene *choose;
+
 
 };
 #endif // MAINGAME_H

@@ -8,7 +8,6 @@
 #include "pdbackpushbutton.h"
 #include "level.h"
 
-
 namespace Ui {
 class choosescene;
 }

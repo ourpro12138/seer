@@ -5,6 +5,7 @@
 #include "enemy.h"
 #include <QPainter>
 
+
 namespace Ui {
 class Level;
 }
@@ -17,8 +18,9 @@ public:
     explicit Level(QWidget *parent = nullptr);
     ~Level();
 
-    bool isLocked;
 
+    bool isLocked;
+    QString levelName;
     int enemy_num;
     enemy *E;
 
@@ -51,10 +53,10 @@ class hm:public Level
 public:
     hm();
 };
-class beta:public Level
+class alpha:public Level
 {
 public:
-    beta();
+    alpha();
 };
 class final:public Level
 {
