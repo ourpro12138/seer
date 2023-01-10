@@ -1,11 +1,6 @@
 #include "cards.h"
 
-Cards::Cards()
-{
-
-}
-
-Cards::~Cards()
+Cards::Cards(QWidget *parent) : QWidget(parent)
 {
 
 }

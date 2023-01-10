@@ -1,24 +1,16 @@
 #ifndef CARDS_H
 #define CARDS_H
-#include <QGraphicsItem>
 
-class Cards : public QGraphicsItem
+#include <QWidget>
+
+class Cards : public QWidget
 {
+    Q_OBJECT
 public:
-    Cards();
-    int No,price;
-    int counter;
-    int coolTime;
-    QString name;
-    bool isPlanted;
+    explicit Cards(QWidget *parent = nullptr);
 
-    int StartMode;
+signals:
 
-    static int diamondTotal;
-
-    bool isLocated;
-
-    ~Cards();
 };
 
 #endif // CARDS_H
