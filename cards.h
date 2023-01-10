@@ -18,7 +18,6 @@ public:
     ~Cards();
 
 
-
 //    void mousePressEvent(QGraphicsSceneMouseEvent *event) ;//鼠标按下
 //    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) ;//鼠标释放
 //    void advance(int phase);
@@ -37,7 +36,6 @@ class bubuzhongzi:public Cards
 {
   public:
     bubuzhongzi();
-    
 };
 /*class bubuzhongzi:public Cards
 {

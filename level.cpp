@@ -9,6 +9,14 @@ Level::Level(QWidget *parent) :
     isLocked =0;
     this->setFixedSize(1366,911);
     this->hide();
+
+    cm = new cardsmenu(this);
+    cb = new cardsblank(this);
+
+    pdbackPushButton *back = new pdbackPushButton();
+    back->setParent(this);
+
+    connect(back,&pdbackPushButton::backpress,this,&Level::back);
 }
 
 Level::~Level()

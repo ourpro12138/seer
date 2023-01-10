@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     cards.cpp \
+    cardsblank.cpp \
     cardsmenu.cpp \
     chooselevelscene.cpp \
     choosescene.cpp \
@@ -34,6 +35,7 @@ SOURCES += \
 
 HEADERS += \
     cards.h \
+    cardsblank.h \
     cardsmenu.h \
     chooselevelscene.h \
     choosescene.h \
@@ -49,6 +51,7 @@ HEADERS += \
     startscene.h
 
 FORMS += \
+    cardsblank.ui \
     cardsmenu.ui \
     choosescene.ui \
     level.ui \

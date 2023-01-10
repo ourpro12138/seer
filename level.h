@@ -4,7 +4,9 @@
 #include <QWidget>
 #include "enemy.h"
 #include <QPainter>
-
+#include "cardsblank.h"
+#include "cardsmenu.h"
+#include "pdbackpushbutton.h"
 
 namespace Ui {
 class Level;
@@ -23,11 +25,16 @@ public:
     QString levelName;
     int enemy_num;
     enemy *E;
+    cardsblank *cb;
+    cardsmenu *cm;
+
 
     void paintEvent(QPaintEvent *);
 
 private:
     Ui::Level *ui;
+signals:
+    void back();
 };
 
 

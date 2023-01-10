@@ -9,55 +9,50 @@ choosescene::choosescene(QWidget *parent) :
     setFixedSize(1366,911);
 
     this->setStyleSheet("QPushButton{background-color:transparent}");
-
+    for(int i =0;i<Level_num;i++)
+        choosebutton[i] = new QPushButton(this);
     QPixmap pix;
-    QPushButton *choosebutton1 = new QPushButton(this);
-    pix.load(":/background/resource/background/xingqiu1.png");
-    choosebutton1->setFixedSize(pix.size());
-    choosebutton1->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu1.png);}"
-                                   "QPushButton:pressed{background-image : url(:/background/resource/background/xingqiu1_clicked.png);}");
-   choosebutton1->setMask(pix.mask());
-   choosebutton1->move(490,150);
-
-   QPushButton *choosebutton2 = new QPushButton(this);
     pix.load(":/background/resource/background/xingqiu2.png");
-    choosebutton2->setFixedSize(pix.size());
-    choosebutton2->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu2.png);}"
-                                    "QPushButton:pressed{background-image : url(:/background/resource/background/xingqiu2_clicked.png);}");
-    choosebutton2->setMask(pix.mask());
-    choosebutton2->move(140,360);
+    choosebutton[0]->setFixedSize(pix.size());
+    choosebutton[0]->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu2.png);}"
+                                   "QPushButton:pressed{background-image : url(:/background/resource/background/xingqiu2_clicked.png);}");
+    choosebutton[0]->setMask(pix.mask());
+    choosebutton[0]->move(490,150);
 
-    QPushButton *choosebutton3 = new QPushButton(this);
+    pix.load(":/background/resource/background/xingqiu1.png");
+    choosebutton[1]->setFixedSize(pix.size());
+    choosebutton[1]->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu1.png);}"
+                                    "QPushButton:pressed{background-image : url(:/background/resource/background/xingqiu1_clicked.png);}");
+    choosebutton[1]->setMask(pix.mask());
+    choosebutton[1]->move(140,360);
+
     pix.load(":/background/resource/background/xingqiu3.png");
-    choosebutton3->setFixedSize(pix.size());
-    choosebutton3->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu3.png);}"
+    choosebutton[2]->setFixedSize(pix.size());
+    choosebutton[2]->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu3.png);}"
                                     "QPushButton:pressed{background-image : url(:/background/resource/background/xingqiu3_clicked.png);}");
-    choosebutton3->setMask(pix.mask());
-    choosebutton3->move(260,750);
+    choosebutton[2]->setMask(pix.mask());
+    choosebutton[2]->move(260,750);
 
-    QPushButton *choosebutton4 = new QPushButton(this);
     pix.load(":/background/resource/background/xingqiu4.png");
-    choosebutton4 ->setFixedSize(pix.size());
-    choosebutton4 ->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu4.png);}"
+    choosebutton[3] ->setFixedSize(pix.size());
+    choosebutton[3] ->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu4.png);}"
                                     "QPushButton:pressed{background-image : url(:/background/resource/background/xingqiu4_clicked.png);}");
-    choosebutton4 ->setMask(pix.mask());
-    choosebutton4->move(800,760);
+    choosebutton[3] ->setMask(pix.mask());
+    choosebutton[3]->move(800,760);
 
-    QPushButton *choosebutton5 = new QPushButton(this);
-    pix.load(":/background/resource/background/xingqiu5.png");
-    choosebutton5->setFixedSize(pix.size());
-    choosebutton5->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu5.png);}"
-                                    "QPushButton:pressed{background-image : url(:/background/resource/background/xingqiu5_clicked.png);}");
-    choosebutton5->setMask(pix.mask());
-    choosebutton5->move(970,390);
-
-    QPushButton *choosebutton6 = new QPushButton(this);
     pix.load(":/background/resource/background/xingqiu6.png");
-    choosebutton6->setFixedSize(pix.size());
-    choosebutton6->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu6.png);}"
+    choosebutton[4]->setFixedSize(pix.size());
+    choosebutton[4]->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu6.png);}"
                                     "QPushButton:pressed{background-image : url(:/background/resource/background/xingqiu6_clicked.png);}");
-    choosebutton6->setMask(pix.mask());
-    choosebutton6->move(600,490);
+    choosebutton[4]->setMask(pix.mask());
+    choosebutton[4]->move(970,390);
+
+    pix.load(":/background/resource/background/xingqiu5.png");
+    choosebutton[5]->setFixedSize(pix.size());
+    choosebutton[5]->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/xingqiu5.png);}"
+                                    "QPushButton:pressed{background-image : url(:/background/resource/background/xingqiu5_clicked.png);}");
+    choosebutton[5]->setMask(pix.mask());
+    choosebutton[5]->move(600,490);
 
     pdbackPushButton *back = new pdbackPushButton();
     back->setParent(this);

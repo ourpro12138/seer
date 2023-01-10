@@ -6,7 +6,6 @@
 #include <QPainter>
 #include <QBitmap>
 #include "pdbackpushbutton.h"
-#include "level.h"
 
 namespace Ui {
 class choosescene;
@@ -20,7 +19,7 @@ public:
     explicit choosescene(QWidget *parent = nullptr);
     ~choosescene();
     void paintEvent(QPaintEvent *);
-
+    QPushButton *choosebutton[Level_num];
 private:
     Ui::choosescene *ui;
 signals:
