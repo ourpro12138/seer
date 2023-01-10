@@ -49,8 +49,10 @@ choosescene::choosescene(QWidget *parent) :
 
     pdbackPushButton *back = new pdbackPushButton();
     back->setParent(this);
-    connect(back,&pdbackPushButton::backpress,this,&choosescene::back);
 
+
+
+    connect(back,&pdbackPushButton::backpress,this,&choosescene::back);
 
 
 

@@ -37,6 +37,7 @@ maingame::maingame(QWidget *parent)
     connect(choose,&choosescene::back,this,&maingame::loginGet);
 
     ss->show();
+
 }
 
 maingame::~maingame()

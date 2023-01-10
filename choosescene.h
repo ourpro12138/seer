@@ -1,10 +1,12 @@
 #ifndef CHOOSESCENE_H
 #define CHOOSESCENE_H
+#define Level_num 6
 
 #include <QWidget>
 #include <QPainter>
 #include <QBitmap>
 #include "pdbackpushbutton.h"
+#include "level.h"
 
 namespace Ui {
 class choosescene;

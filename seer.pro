@@ -22,6 +22,7 @@ SOURCES += \
     choosescene.cpp \
     elf.cpp \
     enemy.cpp \
+    level.cpp \
     main.cpp \
     maingame.cpp \
     map.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     choosescene.h \
     elf.h \
     enemy.h \
+    level.h \
     maingame.h \
     map.h \
     partner.h \
@@ -49,10 +51,11 @@ HEADERS += \
 FORMS += \
     cardsmenu.ui \
     choosescene.ui \
+    level.ui \
     maingame.ui \
     pokedex.ui \
     startscene.ui
-
+CONFIG+=resources_big
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
