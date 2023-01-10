@@ -22,6 +22,7 @@ SOURCES += \
     choosescene.cpp \
     elf.cpp \
     enemy.cpp \
+    level.cpp \
     main.cpp \
     maingame.cpp \
     map.cpp \
@@ -38,6 +39,7 @@ HEADERS += \
     choosescene.h \
     elf.h \
     enemy.h \
+    level.h \
     maingame.h \
     map.h \
     partner.h \
@@ -49,6 +51,7 @@ HEADERS += \
 FORMS += \
     cardsmenu.ui \
     choosescene.ui \
+    level.ui \
     maingame.ui \
     pokedex.ui \
     startscene.ui

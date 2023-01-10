@@ -49,10 +49,26 @@ choosescene::choosescene(QWidget *parent) :
 
     pdbackPushButton *back = new pdbackPushButton();
     back->setParent(this);
+
+    QPushButton *levelchoose[Level_num] = {ui->pushbutton,ui->pushButton_2,ui->pushButton_3,ui->pushButton_4,ui->pushButton_5,ui->pushButton_6};
+
     connect(back,&pdbackPushButton::backpress,this,&choosescene::back);
 
 
+    Level *L[Level_num]= {new kls,new hek,new hs,new beta,new hm,new final};
+    for(int i =1;i<Level_num;i++)
+    {
+        L[i]->isLocked=1;
+    }
 
+    for(int i=0;i<Level_num;i++)
+    {
+        if(L[i]->isLocked)
+        {
+            levelchoose[i]->hide();
+        }
+
+    }
 
 
 }
