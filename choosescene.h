@@ -1,5 +1,6 @@
 #ifndef CHOOSESCENE_H
 #define CHOOSESCENE_H
+#define Level_num 6
 
 #include <QWidget>
 #include <QPainter>
@@ -18,7 +19,7 @@ public:
     explicit choosescene(QWidget *parent = nullptr);
     ~choosescene();
     void paintEvent(QPaintEvent *);
-
+    QPushButton *choosebutton[Level_num];
 private:
     Ui::choosescene *ui;
 signals:

@@ -17,11 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     cards.cpp \
+    cardsblank.cpp \
     cardsmenu.cpp \
     chooselevelscene.cpp \
     choosescene.cpp \
     elf.cpp \
     enemy.cpp \
+    level.cpp \
     main.cpp \
     maingame.cpp \
     map.cpp \
@@ -33,11 +35,13 @@ SOURCES += \
 
 HEADERS += \
     cards.h \
+    cardsblank.h \
     cardsmenu.h \
     chooselevelscene.h \
     choosescene.h \
     elf.h \
     enemy.h \
+    level.h \
     maingame.h \
     map.h \
     partner.h \
@@ -47,12 +51,14 @@ HEADERS += \
     startscene.h
 
 FORMS += \
+    cardsblank.ui \
     cardsmenu.ui \
     choosescene.ui \
+    level.ui \
     maingame.ui \
     pokedex.ui \
     startscene.ui
-
+CONFIG+=resources_big
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

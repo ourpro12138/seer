@@ -6,11 +6,9 @@
 #include "startscene.h"
 #include "chooselevelscene.h"
 #include <QDebug>
-
 #include "pokedex.h"
-
 #include "choosescene.h"
-
+#include "level.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -32,15 +30,20 @@ public:
 
     void returnstart();
 
+
 private:
     Ui::maingame *ui;
-    cardsmenu *cm;
+//    cardsmenu *cm;
     ChooseLevelScene * sc;
     startscene *ss;
 
     pokedex *pd;
-
     choosescene *choose;
+
+    Level *level[Level_num];
+
+
+
 
 };
 #endif // MAINGAME_H

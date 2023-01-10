@@ -8,8 +8,6 @@ maingame::maingame(QWidget *parent)
 
     ui->setupUi(this);
     this->setFixedSize(1366,911);
-    cm = new cardsmenu(this);
-    cm->hide();
 
     this->setWindowIcon(QIcon(":/background/resource/background/tubiao.png"));
 
@@ -19,13 +17,21 @@ maingame::maingame(QWidget *parent)
 
     pd = new pokedex(this);
 
-    cm = new cardsmenu(this);
+//    cm = new cardsmenu(this);
 
     choose = new choosescene(this);
 
+    level[0] = new kls;level[1] = new hek; level[2] = new hs;level[3] = new alpha; level[4] = new hm; level[5] = new final;
+    for(int i =0;i<Level_num;i++)
+    {
+        level[i]->setParent(this);
+        level[i]->hide();
+    }
+
+
     sc->hide();
     pd->hide();
-    cm->hide();
+//    cm->hide();
     choose->hide();
 
     connect(ss,&startscene::login,this,&maingame::loginGet);
@@ -36,6 +42,35 @@ maingame::maingame(QWidget *parent)
     connect(pd,&pokedex::back,this,&maingame::loginGet);
     connect(choose,&choosescene::back,this,&maingame::loginGet);
 
+
+
+    for(int i=0;i<Level_num;i++)
+    {
+        connect(choose->choosebutton[i],&QPushButton::clicked,[=](){
+
+            level[i]->show();
+            sc->hide();
+            pd->hide();
+//            cm->hide();
+            choose->hide();
+        });
+
+        connect(level[i],&Level::back,this,&maingame::chooseLevel);
+    }
+
+
+
+    for(int i =1;i<Level_num;i++)
+    {
+        level[i]->isLocked=1;
+    }
+    for(int i=0;i<Level_num;i++)
+    {
+        if(level[i]->isLocked)
+        {
+            choose->choosebutton[i]->hide();
+        }
+    }
     ss->show();
 }
 
@@ -46,37 +81,45 @@ maingame::~maingame()
 }
 void maingame::loginGet()
 {
-    this->cm->hide();
+//    this->cm->hide();
     this->pd->hide();
     this->sc->show();
     this->ss->hide();
     this->choose->hide();
+    for(int i=0;i<Level_num;i++)
+        this->level[i]->hide();
     qDebug()<<"what";
 }
 
 void maingame::chooseLevel()
 {
-    this->cm->hide();
+//    this->cm->hide();
     this->pd->hide();
     this->sc->hide();
     this->ss->hide();
     this->choose->show();
+    for(int i=0;i<Level_num;i++)
+        this->level[i]->hide();
 }
 
 void maingame::pdx()
 {
-    this->cm->hide();
+//    this->cm->hide();
     this->pd->show();
     this->sc->hide();
     this->ss->hide();
     this->choose->hide();
+    for(int i=0;i<Level_num;i++)
+        this->level[i]->hide();
 }
 
 void maingame::returnstart()
 {
-    this->cm->hide();
+//    this->cm->hide();
     this->pd->hide();
     this->sc->hide();
     this->ss->show();
     this->choose->hide();
+    for(int i=0;i<Level_num;i++)
+        this->level[i]->hide();
 }

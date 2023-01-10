@@ -71,7 +71,14 @@
         <file>resource/background/shuxing_fire.png</file>
     </qresource>
     <qresource prefix="/enemy"/>
-    <qresource prefix="/map"/>
+    <qresource prefix="/map">
+        <file>resource/map/alpha.png</file>
+        <file>resource/map/final.png</file>
+        <file>resource/map/hek.png</file>
+        <file>resource/map/hm.png</file>
+        <file>resource/map/hs.png</file>
+        <file>resource/map/kls.png</file>
+    </qresource>
     <qresource prefix="/music">
         <file>resource/music/Boss_sound.mp3</file>
         <file>resource/music/login.mp3</file>
