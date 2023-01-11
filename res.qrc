@@ -63,6 +63,14 @@
         <file>resource/background/pdx_hover.png</file>
         <file>resource/background/backbag.png</file>
         <file>resource/background/countinue.png</file>
+        <file>resource/background/shuxing_grass.png</file>
+        <file>resource/background/shuxing_normal.png</file>
+        <file>resource/background/shuxing_water.png</file>
+        <file>resource/background/xvanzhong_fire.png</file>
+        <file>resource/background/xvanzhong_water.png</file>
+        <file>resource/background/xvanzhong_grass.png</file>
+        <file>resource/background/xvanzhong_normal.png</file>
+        <file>resource/background/shuxing_fire.png</file>
     </qresource>
     <qresource prefix="/enemy"/>
     <qresource prefix="/map">

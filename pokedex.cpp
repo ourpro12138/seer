@@ -19,6 +19,40 @@ pokedex::pokedex(QWidget *parent) :
 //    QPixmap pix;
 
 //    pix.load(":/background/resource/background/backmoto.png");
+
+    QPixmap pix;
+    pix.load(":/background/resource/background/shuxing_fire.png");
+    ui->pushButtonfire->setFixedSize(pix.size());
+    ui->pushButtonfire->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/shuxing_fire.png);}"
+                                   "QPushButton:pressed{background-image : url(:/background/resource/background/xvanzhong_fire.png);}");
+    ui->pushButtonfire->setMask(pix.mask());
+
+
+//    QPixmap pix;
+    pix.load(":/background/resource/background/shuxing_water.png");
+    ui->pushButtonwater->setFixedSize(pix.size());
+    ui->pushButtonwater->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/shuxing_water.png);}"
+                                   "QPushButton:pressed{background-image : url(:/background/resource/background/xvanzhong_water.png);}");
+    ui->pushButtonwater->setMask(pix.mask());
+
+    pix.load(":/background/resource/background/shuxing_grass.png");
+    ui->pushButtongrass->setFixedSize(pix.size());
+    ui->pushButtongrass->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/shuxing_grass.png);}"
+                                   "QPushButton:pressed{background-image : url(:/background/resource/background/xvanzhong_grass.png);}");
+    ui->pushButtongrass->setMask(pix.mask());
+
+    pix.load(":/background/resource/background/shuxing_normal.png");
+    ui->pushButtonnormal->setFixedSize(pix.size());
+    ui->pushButtonnormal->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/shuxing_normal.png);}"
+                                   "QPushButton:pressed{background-image : url(:/background/resource/background/xvanzhong_normal.png);}");
+    ui->pushButtonnormal->setMask(pix.mask());
+
+//    pix.load(":/background/resource/background/shuxing_grass.png");
+//    ui->pushButtonzip->setFixedSize(pix.size());
+//    ui->pushButtonzip->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/shuxing_grass.png);}"
+//                                   "QPushButton:pressed{background-image : url(:/background/resource/background/xvanzhong_grass.png);}");
+//    ui->pushButtonzip->setMask(pix.mask());
+
     pdbackPushButton *Close = new pdbackPushButton();
     Close->setParent(this);
 //    Close->setFixedSize(pix.size());
@@ -44,3 +78,28 @@ void pokedex::paintEvent(QPaintEvent *)
     painter->drawPixmap(0,0,pix);
     painter->end();
 }
+
+void pokedex::on_pushButtonfire_clicked()
+{
+    ui->pushButtonfire->setDown(true);//写到最后
+}
+
+void pokedex::on_pushButtonwater_clicked()
+{
+    ui->pushButtonwater->setDown(true);//写到最后
+}
+
+void pokedex::on_pushButtongrass_clicked()
+{
+     ui->pushButtongrass->setDown(true);
+}
+
+void pokedex::on_pushButtonnormal_clicked()
+{
+    ui->pushButtonnormal->setDown(true);
+}
+
+//void pokedex::on_pushButtonzip_clicked()
+//{
+//    ui->pushButtonzip->setDown(true);
+//}
