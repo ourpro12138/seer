@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QPainter>
+#include "cards.h"
+#include <QLabel>
 namespace Ui {
 class cardsblank;
 }
@@ -16,8 +18,12 @@ public:
     ~cardsblank();
     void paintEvent(QPaintEvent *);
 
+    QLabel *diamond_view;
 
-    int partner_num;
+    int cards_num;
+
+    Cards *cards[5];
+
 
 
 private:
