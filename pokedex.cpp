@@ -113,6 +113,7 @@ pokedex::pokedex(QWidget *parent) :
     ui->pushButtonfirelos->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/fire/head_firelos.png);}"
                                        "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/fire/head_firelos2.png);}");
     ui->pushButtonfirelos->setMask(pix.mask());
+
     //迪克查看按钮
     pix.load(":/partner/resource/partner/pokedex_head/fire/head_dierk.png");
     ui->pushButtondierk->setFixedSize(pix.size());
@@ -127,7 +128,7 @@ pokedex::pokedex(QWidget *parent) :
                                        "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/fire/head_firedierk2.png);}");
     ui->pushButtonfiredierk->setMask(pix.mask());
 
-
+//水系
     //伊优查看按钮
     pix.load(":/partner/resource/partner/pokedex_head/water/head_wateryy.png");
     ui->pushButtonwateryy->setFixedSize(pix.size());
@@ -135,12 +136,17 @@ pokedex::pokedex(QWidget *parent) :
                                        "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_wateryy2.png);}");
     ui->pushButtonwateryy->setMask(pix.mask());
 
+
+//草系
     //布布种子查看按钮
     pix.load(":/partner/resource/partner/pokedex_head/grass/head_bubu.png");
     ui->pushButtonbubu->setFixedSize(pix.size());
     ui->pushButtonbubu->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/grass/head_bubu.png);}"
                                        "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/grass/head_bubu2.png);}");
     ui->pushButtonbubu->setMask(pix.mask());
+
+
+//普通系
     //咕噜查看按钮
     pix.load(":/partner/resource/partner/pokedex_head/normal/head_guru.png");
     ui->pushButtonguru->setFixedSize(pix.size());
@@ -207,9 +213,19 @@ void pokedex::paintEvent(QPaintEvent *)
     painter->end();
 }
 
-
+//按钮隐藏与展示：先隐藏后展示
 void pokedex::on_pushButtonfire_clicked()
 {
+    //隐藏草系精灵按钮
+    ui->pushButtonbubu->hide();
+
+    //隐藏普通系精灵按钮
+    ui->pushButtonguru->hide();
+
+    //隐藏水系精灵按钮
+    ui->pushButtonwateryy->hide();
+
+    //展示火系精灵按钮
     ui->pushButtonfireh->show();
     ui->pushButtonfirej->show();
     ui->pushButtonfirel->show();
@@ -221,15 +237,12 @@ void pokedex::on_pushButtonfire_clicked()
     ui->pushButtondierk->show();
     ui->pushButtonfiredierk->show();
 
-    ui->pushButtonbubu->hide();
-    ui->pushButtonguru->hide();
-
-    ui->pushButtonwateryy->hide();
     ui->pushButtonfire->setDown(true);//写到最后
 }
 
 void pokedex::on_pushButtonwater_clicked()
 {
+    //隐藏火系精灵按钮
     ui->pushButtonfireh->hide();
     ui->pushButtonfirej->hide();
     ui->pushButtonfirel->hide();
@@ -241,15 +254,21 @@ void pokedex::on_pushButtonwater_clicked()
     ui->pushButtondierk->hide();
     ui->pushButtonfiredierk->hide();
 
+    //隐藏草系精灵按钮
     ui->pushButtonbubu->hide();
+
+    //隐藏普通系精灵按钮
     ui->pushButtonguru->hide();
 
+    //展示水系精灵按钮
     ui->pushButtonwateryy->show();
+
     ui->pushButtonwater->setDown(true);//写到最后
 }
 
 void pokedex::on_pushButtongrass_clicked()
 {
+    //隐藏火系精灵按钮
     ui->pushButtonfireh->hide();
     ui->pushButtonfirej->hide();
     ui->pushButtonfirel->hide();
@@ -258,17 +277,28 @@ void pokedex::on_pushButtongrass_clicked()
     ui->pushButtonfirex->hide();
     ui->pushButtonfirehly->hide();
     ui->pushButtonfirelos->hide();
-    ui->pushButtonwateryy->hide();
     ui->pushButtondierk->hide();
     ui->pushButtonfiredierk->hide();
+
+
+    //隐藏水系精灵按钮
+    ui->pushButtonwateryy->hide();
+
+
+    //隐藏普通系精灵按钮
     ui->pushButtonguru->hide();
 
+
+    //展示草系精灵按钮
     ui->pushButtonbubu->show();
+
+
      ui->pushButtongrass->setDown(true);
 }
 
 void pokedex::on_pushButtonnormal_clicked()
 {
+    //隐藏火系精灵按钮
     ui->pushButtonfireh->hide();
     ui->pushButtonfirej->hide();
     ui->pushButtonfirel->hide();
@@ -277,12 +307,17 @@ void pokedex::on_pushButtonnormal_clicked()
     ui->pushButtonfirex->hide();
     ui->pushButtonfirehly->hide();
     ui->pushButtonfirelos->hide();
-    ui->pushButtonwateryy->hide();
     ui->pushButtondierk->hide();
     ui->pushButtonfiredierk->hide();
 
+    //隐藏水系精灵按钮
+    ui->pushButtonwateryy->hide();
+
+    //隐藏草系精灵按钮
     ui->pushButtonbubu->hide();
 
+
+    //展示普通系精灵按钮
     ui->pushButtonguru->show();
 
     ui->pushButtonnormal->setDown(true);
