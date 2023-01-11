@@ -19,7 +19,7 @@ public:
     void paintEvent(QPaintEvent *);
 
 private slots:
-//    void on_pushButton_clicked();
+
 
     void on_pushButtonfire_clicked();
 
@@ -27,7 +27,6 @@ private slots:
 
     void on_pushButtongrass_clicked();
 
-    void on_pushButton_clicked();
 
     void on_pushButtonnormal_clicked();
 

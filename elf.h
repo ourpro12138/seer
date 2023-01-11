@@ -7,7 +7,7 @@
 #define ODINARY 4
 
 #include <QGraphicsItem>
-
+#include<QPointF>
 
 
 class Elf : public QGraphicsItem
@@ -27,7 +27,7 @@ public:
     //攻击力
     int atk;
     //血量
-    int health;
+    int hp;
     //行，列
     int i,j;
     //攻击动画
