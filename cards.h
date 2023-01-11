@@ -12,8 +12,7 @@ public:
     QString name;//精灵名字
     bool isBuyed,startMode;//是否购买，记录是否开始游戏
     static int diamondTotal;//玩家的钻石总数
-    
-    
+      
     Cards();
     ~Cards();
 
@@ -24,9 +23,6 @@ public:
 //    void paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWidget *widget);
 protected:
     int coolTime;
-    
-
-
 
 signals:
 

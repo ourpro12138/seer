@@ -8,6 +8,8 @@ cardsblank::cardsblank(QWidget *parent) :
     ui->setupUi(this);
     ui->label->move(45,90);
     this->setFixedSize(783,153);
+
+    partner_num=0;
 }
 
 cardsblank::~cardsblank()

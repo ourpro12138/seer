@@ -2,7 +2,6 @@
 
 Cards::Cards()
 {
-
 }
 Cards::~Cards()
 {
