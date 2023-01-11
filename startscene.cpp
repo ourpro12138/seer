@@ -145,6 +145,8 @@ void startscene::paintEvent(QPaintEvent *)
     pix27=pix27.scaled(pix27.width()*1.2,pix27.height()*1.2);
     painter.drawPixmap(380,830,pix27);
 
+    painter.end();
+
 }
 
 startscene::~startscene()

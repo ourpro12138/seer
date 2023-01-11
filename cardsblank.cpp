@@ -24,4 +24,6 @@ void cardsblank::paintEvent(QPaintEvent *)
     painter->drawPixmap(0,0,blank);
     painter->drawPixmap(19,29,diamondnum);
     painter->drawPixmap(35,35,diamond);
+
+    painter->end();
 }
