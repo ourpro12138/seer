@@ -101,30 +101,30 @@ pokedex::pokedex(QWidget *parent) :
     ui->pushButtonwateryy->setMask(pix.mask());
 
 
-    QButtonGroup * box = new QButtonGroup;
-    // 设置是否互斥
+//    QButtonGroup * box = new QButtonGroup;
+//    // 设置是否互斥
 //    box->setExclusive(true);
 //    // 将需要互斥的按钮全部添加到 QButtonGroup 中
 //    box->addButton(ui->pushButtonfire);
 //    box->addButton(ui->pushButtongrass);
 //    box->addButton(ui->pushButtonwater);
 //    box->addButton(ui->pushButtonnormal);
-////	box->addButton(ui.pushButton_5);
-////	box->addButton(ui.pushButton_6);
-////	box->addButton(ui.pushButton_7);
-////	box->addButton(ui.pushButton_8);
-////	box->addButton(ui.pushButton_9);
-////	box->addButton(ui.pushButton_10);
+//	box->addButton(ui.pushButton_5);
+//	box->addButton(ui.pushButton_6);
+//	box->addButton(ui.pushButton_7);
+//	box->addButton(ui.pushButton_8);
+//	box->addButton(ui.pushButton_9);
+//	box->addButton(ui.pushButton_10);
 
-    box->setExclusive(false);
-    // 将需要互斥的按钮全部添加到 QButtonGroup 中
-    box->addButton(ui->pushButtonfireh);
-    box->addButton(ui->pushButtonfirej);
-    box->addButton(ui->pushButtonfirel);
-    box->addButton(ui->pushButtonfirem);
-    box->addButton(ui->pushButtonfirex);
-    box->addButton(ui->pushButtonfireljls);
-    box->addButton(ui->pushButtonwateryy);
+//    box->setExclusive(false);
+//    // 将需要互斥的按钮全部添加到 QButtonGroup 中
+//    box->addButton(ui->pushButtonfireh);
+//    box->addButton(ui->pushButtonfirej);
+//    box->addButton(ui->pushButtonfirel);
+//    box->addButton(ui->pushButtonfirem);
+//    box->addButton(ui->pushButtonfirex);
+//    box->addButton(ui->pushButtonfireljls);
+//    box->addButton(ui->pushButtonwateryy);
 //	box->addButton(ui.pushButton_8);
 //	box->addButton(ui.pushButton_9);
 //	box->addButton(ui.pushButton_10);
