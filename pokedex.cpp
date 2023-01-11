@@ -5,24 +5,23 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QMovie>
-
+#include <QButtonGroup>
 pokedex::pokedex(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::pokedex)
 {
     ui->setupUi(this);
     setFixedSize(1366,911);
-//    QPalette pal =this->palette();
-//    pal.setBrush(QPalette::Background,QBrush(QPixmap(":/background/resource/background/backgd.png")));
-//    setPalette(pal);
 
+    //按钮隐藏
+    ui->pushButtonfireh->hide();
+    ui->pushButtonfirej->hide();
+    ui->pushButtonfirel->hide();
+    ui->pushButtonfireljls->hide();
+    ui->pushButtonfirem->hide();
+    ui->pushButtonfirex->hide();
+    ui->pushButtonwateryy->hide();
 
-//    void setCursor(const QCursor &);
-
-//    QPixmap pix;
-
-//    pix.load(":/background/resource/background/backmoto.png");
-//    this->setStyleSheet("QPushButton{background-color:transparent}");
     QPixmap pix;
     //火属性选择按钮
     pix.load(":/background/resource/background/shuxing_fire.png");
@@ -94,14 +93,46 @@ pokedex::pokedex(QWidget *parent) :
                                        "QPushButton:pressed{background-image : url(:/partner/resource/partner/head_fireljls2.png);}");
     ui->pushButtonfireljls->setMask(pix.mask());
 
-//    pix.load(":/background/resource/background/shuxing_grass.png");
-//    ui->pushButtonzip->setFixedSize(pix.size());
-//    ui->pushButtonzip->setStyleSheet("QPushButton{background-image : url(:/background/resource/background/shuxing_grass.png);}"
-//                                   "QPushButton:pressed{background-image : url(:/background/resource/background/xvanzhong_grass.png);}");
-//    ui->pushButtonzip->setMask(pix.mask());
+    //伊优查看按钮
+    pix.load(":/partner/resource/partner/head_wateryy.png");
+    ui->pushButtonwateryy->setFixedSize(pix.size());
+    ui->pushButtonwateryy->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/head_wateryy.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/head_wateryy2.png);}");
+    ui->pushButtonwateryy->setMask(pix.mask());
+
+
+//    QButtonGroup * box = new QButtonGroup;
+//    // 设置是否互斥
+//    box->setExclusive(true);
+//    // 将需要互斥的按钮全部添加到 QButtonGroup 中
+//    box->addButton(ui->pushButtonfire);
+//    box->addButton(ui->pushButtongrass);
+//    box->addButton(ui->pushButtonwater);
+//    box->addButton(ui->pushButtonnormal);
+//	box->addButton(ui.pushButton_5);
+//	box->addButton(ui.pushButton_6);
+//	box->addButton(ui.pushButton_7);
+//	box->addButton(ui.pushButton_8);
+//	box->addButton(ui.pushButton_9);
+//	box->addButton(ui.pushButton_10);
+
+//    box->setExclusive(false);
+//    // 将需要互斥的按钮全部添加到 QButtonGroup 中
+//    box->addButton(ui->pushButtonfireh);
+//    box->addButton(ui->pushButtonfirej);
+//    box->addButton(ui->pushButtonfirel);
+//    box->addButton(ui->pushButtonfirem);
+//    box->addButton(ui->pushButtonfirex);
+//    box->addButton(ui->pushButtonfireljls);
+//    box->addButton(ui->pushButtonwateryy);
+//	box->addButton(ui.pushButton_8);
+//	box->addButton(ui.pushButton_9);
+//	box->addButton(ui.pushButton_10);
 
     pdbackPushButton *Close = new pdbackPushButton();
+
     Close->setParent(this);
+
 //    Close->setFixedSize(pix.size());
 //    Close->setMask(pix.mask()); Close->move(1280,30); Close->setStyleSheet("border-image: url(:/background/resource/background/backmoto.png)");
 
@@ -109,6 +140,8 @@ pokedex::pokedex(QWidget *parent) :
     Close->setCursor(QCursor(Qt::PointingHandCursor));
 
     connect(Close,&pdbackPushButton::backpress,[=](){emit this->back();qDebug()<<"?";});
+
+    this->setStyleSheet("QPushButton{background-color:transparent}");
 
 }
 
@@ -129,28 +162,50 @@ void pokedex::paintEvent(QPaintEvent *)
 
 void pokedex::on_pushButtonfire_clicked()
 {
+    ui->pushButtonfireh->show();
+    ui->pushButtonfirej->show();
+    ui->pushButtonfirel->show();
+    ui->pushButtonfireljls->show();
+    ui->pushButtonfirem->show();
+    ui->pushButtonfirex->show();
+    ui->pushButtonwateryy->hide();
     ui->pushButtonfire->setDown(true);//写到最后
 }
 
 void pokedex::on_pushButtonwater_clicked()
 {
+    ui->pushButtonfireh->hide();
+    ui->pushButtonfirej->hide();
+    ui->pushButtonfirel->hide();
+    ui->pushButtonfireljls->hide();
+    ui->pushButtonfirem->hide();
+    ui->pushButtonfirex->hide();
+    ui->pushButtonwateryy->show();
     ui->pushButtonwater->setDown(true);//写到最后
 }
 
 void pokedex::on_pushButtongrass_clicked()
 {
+    ui->pushButtonfireh->hide();
+    ui->pushButtonfirej->hide();
+    ui->pushButtonfirel->hide();
+    ui->pushButtonfireljls->hide();
+    ui->pushButtonfirem->hide();
+    ui->pushButtonfirex->hide();
      ui->pushButtongrass->setDown(true);
 }
 
 void pokedex::on_pushButtonnormal_clicked()
 {
+    ui->pushButtonfireh->hide();
+    ui->pushButtonfirej->hide();
+    ui->pushButtonfirel->hide();
+    ui->pushButtonfireljls->hide();
+    ui->pushButtonfirem->hide();
+    ui->pushButtonfirex->hide();
     ui->pushButtonnormal->setDown(true);
 }
 
-//void pokedex::on_pushButtonzip_clicked()
-//{
-//    ui->pushButtonzip->setDown(true);
-//}
 
 void pokedex::on_pushButtonfirem_clicked()
 {
@@ -212,4 +267,14 @@ void pokedex::on_pushButtonfireljls_clicked()
     movie->start();
     ui->label->move(990,580);
     ui->pushButtonfireljls->setDown(true);
+}
+
+void pokedex::on_pushButtonwateryy_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/stand_wateryy.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(650,650);
+    ui->pushButtonwateryy->setDown(true);
 }

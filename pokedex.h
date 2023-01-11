@@ -45,6 +45,9 @@ private slots:
 
     void on_pushButtonfireljls_clicked();
 
+    void on_pushButtonwateryy_clicked();
+
+
 signals:
     void back();
 private:
