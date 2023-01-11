@@ -43,22 +43,45 @@ cardsmenu::cardsmenu(QWidget *parent) :
             p_PB[i]->show();
         }
     }
-    int count=0;
+//    int count=0;
 
 
-    for(int i=0;i<3;i++)
+//    for(int i=0;i<3;i++)
+//    {
+//        for(int j=0;j<5;j++)
+//        {
+//            if(!P_all[count]->isLocked)
+//            {
+//                p_PB[count]->move(33+i*132,161+j*169);
+//                qDebug()<<count<<" "<<i<<" "<<j;
+//            }
+//            count++;
+//            qDebug()<<count;
+//        }
+//    }
+
+    int h=0,l=0;
+    for(int i =0;i<16;i++)
     {
-        for(int j=0;j<5;j++)
+        if(!P_all[i]->isLocked)
         {
-            if(!P_all[count]->isLocked)
+            qDebug()<<h<<" "<<l<<" "<<P_all[i]->name;
+            p_PB[i]->move(33+l*132,161+h*169);
+            if(l<4)
             {
-                p_PB[count]->move(33+i*132,161+j*169);
-                qDebug()<<count<<" "<<i<<" "<<j;
+                l++;
             }
-            count++;
-            qDebug()<<count;
+            else if(l==4)
+            {
+                l=0;
+                h++;
+            }
         }
     }
+//    if(!P_all[15]->isLocked)
+//    {
+//        p_PB[15]->move(33,161+3*169);
+//    }
 
 }
 
