@@ -6,6 +6,7 @@ maingame::maingame(QWidget *parent)
     , ui(new Ui::maingame)
 {
 
+
     ui->setupUi(this);
     this->setFixedSize(1366,911);
 
@@ -44,17 +45,33 @@ maingame::maingame(QWidget *parent)
 
 
 
+
     for(int i=0;i<Level_num;i++)
     {
-        connect(choose->choosebutton[i],&QPushButton::clicked,[=](){
 
+        connect(choose->choosebutton[i],&QPushButton::clicked,[=]()
+        {
+//            switch(i)
+//            {
+//            case 0:
+//                level[i] = new kls;level[i]->setParent(this);level[i]->show();break;
+//            case 1:
+//                level[i] = new hek;level[i]->setParent(this);level[i]->show();break;
+//            case 2:
+//                level[i] = new hs;level[i]->setParent(this);level[i]->show();break;
+//            case 3:
+//                level[i] = new alpha;level[i]->setParent(this);level[i]->show();break;
+//            case 4:
+//                level[i] = new hm;level[i]->setParent(this);level[i]->show();break;
+//            case 5:
+//                level[i] = new final;level[i]->setParent(this);level[i]->show();break;
+//            }
             level[i]->show();
             sc->hide();
             pd->hide();
 //            cm->hide();
             choose->hide();
         });
-
         connect(level[i],&Level::back,this,&maingame::chooseLevel);
     }
 
@@ -99,7 +116,9 @@ void maingame::chooseLevel()
     this->ss->hide();
     this->choose->show();
     for(int i=0;i<Level_num;i++)
+    {
         this->level[i]->hide();
+    }
 }
 
 void maingame::pdx()

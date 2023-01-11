@@ -8,6 +8,8 @@ cardsblank::cardsblank(QWidget *parent) :
     ui->setupUi(this);
     ui->label->move(45,90);
     this->setFixedSize(783,153);
+
+    partner_num=0;
 }
 
 cardsblank::~cardsblank()
@@ -24,4 +26,6 @@ void cardsblank::paintEvent(QPaintEvent *)
     painter->drawPixmap(0,0,blank);
     painter->drawPixmap(19,29,diamondnum);
     painter->drawPixmap(35,35,diamond);
+
+    painter->end();
 }

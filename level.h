@@ -7,7 +7,7 @@
 #include "cardsblank.h"
 #include "cardsmenu.h"
 #include "pdbackpushbutton.h"
-
+#include <QTimer>
 namespace Ui {
 class Level;
 }
@@ -29,6 +29,8 @@ public:
     cardsmenu *cm;
 
 
+
+    void GameStart();
     void paintEvent(QPaintEvent *);
 
 private:

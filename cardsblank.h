@@ -17,6 +17,7 @@ public:
     void paintEvent(QPaintEvent *);
 
 
+    int partner_num;
 
 
 private:
