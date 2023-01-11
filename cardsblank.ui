@@ -24,14 +24,16 @@
    </property>
    <property name="font">
     <font>
+     <family>Arial</family>
      <pointsize>18</pointsize>
-     <weight>75</weight>
+     <weight>9</weight>
      <italic>true</italic>
-     <bold>true</bold>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(255, 255, 255);
+font: 75 italic 18pt &quot;Arial&quot;;</string>
    </property>
    <property name="text">
     <string>50</string>

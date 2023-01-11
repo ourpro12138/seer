@@ -9,6 +9,15 @@ cardsmenu::cardsmenu(QWidget *parent) :
     this->setFixedSize(1366,911);
     this->setStyleSheet("background-color:transparent");
 
+    QPushButton *p_PB[16];
+
+    for(int i=0;i<16;i++)
+    {
+
+
+
+    }
+
 }
 
 cardsmenu::~cardsmenu()
@@ -22,7 +31,8 @@ void cardsmenu::paintEvent(QPaintEvent *)
     QPixmap cardsmenu;
     cardsmenu.load(":/background/resource/background/choicemenu.png");
     painter->drawPixmap(0,0,cardsmenu);
-
     painter->end();
+
+
 
 }

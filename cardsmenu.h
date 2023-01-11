@@ -3,8 +3,8 @@
 
 #include <QWidget>
 #include <QPainter>
-
-
+#include <QPushButton>
+#include "cards.h"
 
 namespace Ui {
 class cardsmenu;
@@ -19,6 +19,8 @@ public:
     ~cardsmenu();
 
     void paintEvent(QPaintEvent *);
+
+    Cards *P_all[16];
 
 private:
     Ui::cardsmenu *ui;

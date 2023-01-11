@@ -27,11 +27,11 @@ private slots:
 
     void on_pushButtongrass_clicked();
 
-    void on_pushButton_clicked();
+//    void on_pushButton_clicked();
 
     void on_pushButtonnormal_clicked();
 
-    void on_pushButtonzip_clicked();
+//    void on_pushButtonzip_clicked();
 
 signals:
     void back();
