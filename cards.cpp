@@ -8,6 +8,42 @@ Cards::~Cards()
 {
 
 }
+
+void Cards::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+{
+    Q_UNUSED(option);
+    Q_UNUSED(widget);
+//    QImage image(":/graphics/Cards/card_" + name.toLower() + ".png");
+//    painter->drawImage(boundingRect(), image);
+//    if(sunTotal < sunNeed)
+//    {
+//        painter->setBrush(QColor(128, 128, 0, 200));
+//        painter->drawRect(boundingRect());
+//    }
+//    if(counter < coolTime && !StartMode && isPlanted)
+//    {
+//        painter->setBrush(QColor(0, 0, 0, 200));
+//        painter->drawRect(QRectF(425+60*No, 10, 50, 70*(1-qreal(counter)/coolTime)));
+//    }
+}
+void Cards::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+
+}
+void Cards::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+
+}
+void Cards::advance(int phase)
+{
+
+}
+
+QRectF Cards::boundingRect() const
+{
+    return QRectF(111+120*this->chooseNum,15,this->head.width(),this->head.height());
+}
+
 //草系精灵
 //1-草 2-水 3-火 4-普通
 bubuzhongzi::bubuzhongzi()

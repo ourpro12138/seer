@@ -18,9 +18,10 @@ public:
     explicit cardsmenu(QWidget *parent = nullptr);
     ~cardsmenu();
 
+    QPushButton *p_PB[16];
+
     void paintEvent(QPaintEvent *);
 
-    Cards *P_all[16];
 
 private:
     Ui::cardsmenu *ui;

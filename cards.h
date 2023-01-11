@@ -13,6 +13,8 @@ public:
     bool isBuyed,startMode;//是否购买，记录是否开始游戏
     static int diamondTotal;//玩家的钻石总数
 
+    int chooseNum;
+
     bool isLocked;
 
     QPixmap head;
@@ -21,11 +23,11 @@ public:
     Cards();
     ~Cards();
 
-
-//    void mousePressEvent(QGraphicsSceneMouseEvent *event) ;//鼠标按下
-//    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) ;//鼠标释放
-//    void advance(int phase);
-//    void paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWidget *widget);
+    QRectF boundingRect() const;
+    void mousePressEvent(QGraphicsSceneMouseEvent *event) ;//鼠标按下
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) ;//鼠标释放
+    void advance(int phase);
+    void paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWidget *widget);
 protected:
     int coolTime;
 
