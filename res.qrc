@@ -86,5 +86,24 @@
         <file>resource/music/login.mp3</file>
         <file>resource/music/loginback.mp3</file>
     </qresource>
-    <qresource prefix="/partner"/>
+    <qresource prefix="/partner">
+        <file>resource/partner/stand_firem.gif</file>
+        <file>resource/partner/head_firem.png</file>
+        <file>resource/partner/head_firem2.png</file>
+        <file>resource/partner/head_fireh.png</file>
+        <file>resource/partner/head_fireh2.png</file>
+        <file>resource/partner/stand_fireh.gif</file>
+        <file>resource/partner/head_firex.png</file>
+        <file>resource/partner/head_firex2.png</file>
+        <file>resource/partner/stand_firex.gif</file>
+        <file>resource/partner/head_firej.png</file>
+        <file>resource/partner/head_firej2.png</file>
+        <file>resource/partner/stand_fierj.gif</file>
+        <file>resource/partner/head_firel.png</file>
+        <file>resource/partner/head_firel2.png</file>
+        <file>resource/partner/stand_firel.gif</file>
+        <file>resource/partner/head_fireljls.png</file>
+        <file>resource/partner/head_fireljls2.png</file>
+        <file>resource/partner/stand_fireljls.gif</file>
+    </qresource>
 </RCC>
