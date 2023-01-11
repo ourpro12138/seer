@@ -105,5 +105,21 @@
         <file>resource/partner/head_fireljls.png</file>
         <file>resource/partner/head_fireljls2.png</file>
         <file>resource/partner/stand_fireljls.gif</file>
+        <file>resource/partner/1/1_head.png</file>
+        <file>resource/partner/1/16_head.png</file>
+        <file>resource/partner/1/27_head.png</file>
+        <file>resource/partner/1/83_head.png</file>
+        <file>resource/partner/2/4_head.png</file>
+        <file>resource/partner/2/30_head.png</file>
+        <file>resource/partner/2/74_head.png</file>
+        <file>resource/partner/2/346.png</file>
+        <file>resource/partner/3/7_head.png</file>
+        <file>resource/partner/3/35_head.png</file>
+        <file>resource/partner/3/41_head.png</file>
+        <file>resource/partner/3/89_head.png</file>
+        <file>resource/partner/4/254_head.png</file>
+        <file>resource/partner/4/328_head.png</file>
+        <file>resource/partner/4/456_head.png</file>
+        <file>resource/partner/4/690_head.png</file>
     </qresource>
 </RCC>

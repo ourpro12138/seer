@@ -11,12 +11,15 @@ cardsmenu::cardsmenu(QWidget *parent) :
 
     QPushButton *p_PB[16];
 
-    for(int i=0;i<16;i++)
-    {
+//    for(int i=0;i<16;i++)
+//    {
+//        if(P_all[i]->isLocked)
+//        {
+//            p_PB[i]->hide();
+//        }
+//        p_PB[i]->setParent(this);
+//    }
 
-
-
-    }
 
 }
 

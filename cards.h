@@ -13,7 +13,11 @@ public:
     bool isBuyed,startMode;//是否购买，记录是否开始游戏
     static int diamondTotal;//玩家的钻石总数
 
-      
+    bool isLocked;
+
+    QPixmap head;
+
+
     Cards();
     ~Cards();
 

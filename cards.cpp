@@ -9,11 +9,14 @@ Cards::~Cards()
 
 }
 //草系精灵
+//1-草 2-水 3-火 4-普通
 bubuzhongzi::bubuzhongzi()
 {
     name="BubuZhongzi";coolTime=227;No=1;
     zuanshiNeed=25;
     isLocked=0;
+
+    head.load(":/partner/resource/partner/1/1_head.png");
 }
 xianrenqou::xianrenqou()
 {
