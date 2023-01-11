@@ -15,6 +15,7 @@ public:
 
     int chooseNum;
 
+    bool isLocked;
 
     QPixmap head;
 
