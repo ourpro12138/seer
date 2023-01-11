@@ -11,7 +11,6 @@ public:
     int counter;//计时器
     QString name;//精灵名字
     bool isBuyed,startMode;//是否购买，记录是否开始游戏
-    bool isLocked;
     static int diamondTotal;//玩家的钻石总数
 
     int chooseNum;
