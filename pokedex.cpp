@@ -126,6 +126,7 @@ void pokedex::paintEvent(QPaintEvent *)
     painter->end();
 }
 
+
 void pokedex::on_pushButtonfire_clicked()
 {
     ui->pushButtonfire->setDown(true);//写到最后
