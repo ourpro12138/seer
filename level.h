@@ -11,6 +11,7 @@
 #include "map.h"
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <QCursor>
 namespace Ui {
 class Level;
 }
@@ -33,10 +34,12 @@ public:
     cardsmenu *cm;
     int x=-200;
 
+   Map *map;
+
    pdbackPushButton *Back;
    void initlevel();
    void returnLevel();
-
+   int levelMode;
 
     void GameStart();
     void paintEvent(QPaintEvent *);

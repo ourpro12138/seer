@@ -1,11 +1,12 @@
 #include "pdbackpushbutton.h"
 
-pdbackPushButton::pdbackPushButton()
+pdbackPushButton::pdbackPushButton(int width)
 {
+    this->window_width = width;
     QPixmap pix;
     pix.load(":/background/resource/background/backmoto.png");
     this->setFixedSize(pix.size());
-    this->setMask(pix.mask()); this->move(1280,30); this->setStyleSheet("border-image: url(:/background/resource/background/backmoto.png)");
+    this->setMask(pix.mask()); this->move(window_width-86,30); this->setStyleSheet("border-image: url(:/background/resource/background/backmoto.png)");
         this->setCursor(QCursor(Qt::PointingHandCursor));
 }
 pdbackPushButton::~pdbackPushButton()
@@ -19,11 +20,11 @@ void pdbackPushButton::enterEvent(QEvent *)
     this->setFixedSize(pix.size());
     this->setMask(pix.mask());
     this->setStyleSheet("border-image: url(:background/resource/background/backmoto3.png)");
-    this->move(1270,20);
+    this->move(window_width-96,20);
 }
 void pdbackPushButton::leaveEvent(QEvent *)
 {
-    this->move(1280,30);
+    this->move(window_width-86,30);
     QPixmap pix;
     pix.load(":background/resource/background/backmoto.png");
     this->setFixedSize(pix.size());
@@ -34,7 +35,7 @@ void pdbackPushButton::mousePressEvent(QMouseEvent *ev)
 {
     if(ev->button()==Qt::LeftButton)
     {
-    this->move(1280,30);
+    this->move(window_width-86,30);
     QPixmap pix;
     pix.load(":/background/resource/background/backmoto.png");
     this->setFixedSize(pix.size());
@@ -54,7 +55,7 @@ void pdbackPushButton::mouseReleaseEvent(QMouseEvent *ev)
     }
     else
     {
-        this->move(1270,20);
+        this->move(window_width-96,20);
         QPixmap pix;
         pix.load(":/background/resource/background/backmoto3.png");
         this->setFixedSize(pix.size());

@@ -9,11 +9,10 @@ class pdbackPushButton : public QPushButton
 {
     Q_OBJECT
 public:
-    pdbackPushButton();
+    pdbackPushButton(int width);
 
     ~pdbackPushButton();
-
-
+    int window_width;
 
     void enterEvent(QEvent *);
 

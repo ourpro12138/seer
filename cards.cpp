@@ -1,10 +1,8 @@
 #include "cards.h"
 
 int Cards::diamondTotal =50;
-
 Cards::Cards()
 {
-    this->startMode = 0;//选卡阶段
 }
 Cards::~Cards()
 {
@@ -50,6 +48,7 @@ QRectF Cards::boundingRect() const
 //1-草 2-水 3-火 4-普通
 bubuzhongzi::bubuzhongzi()
 {
+    attribute = "grass";
     name="BubuZhongzi";coolTime=227;No=1;
     zuanshiNeed=25;
     isLocked=0;
@@ -57,6 +56,7 @@ bubuzhongzi::bubuzhongzi()
 }
 xianrenqou::xianrenqou()
 {
+    attribute = "grass";
     name="XianRenQou";coolTime=227;No=2;
     zuanshiNeed=25;
     isLocked=0;
@@ -64,6 +64,7 @@ xianrenqou::xianrenqou()
 }
 xiaodouya::xiaodouya()
 {
+    attribute = "grass";
     name="XiaoDouYa";coolTime=227;No=3;
     zuanshiNeed=25;
     isLocked=0;
@@ -71,6 +72,7 @@ xiaodouya::xiaodouya()
 }
 yiyi::yiyi()
 {
+    attribute = "grass";
     name="YiYi";coolTime=227;No=4;
     zuanshiNeed=25;
     isLocked=0;
@@ -80,13 +82,15 @@ yiyi::yiyi()
 //水系精灵
 yiyou::yiyou()
 {
+    attribute = "water";
     name="YiYou";coolTime=227;No=5;
     zuanshiNeed=25;
-    isLocked=1;
+    isLocked=0;
     head.load(":/partner/resource/partner/2/4_head.png");
 }
 beier::beier()
 {
+    attribute = "water";
     name="BeiEr";coolTime=227;No=6;
     zuanshiNeed=25;
     isLocked=0;
@@ -94,6 +98,7 @@ beier::beier()
 }
 guodongya::guodongya()
 {
+    attribute = "water";
     name="GuoDongYa";coolTime=227;No=7;
     zuanshiNeed=25;
     isLocked=1;
@@ -101,6 +106,7 @@ guodongya::guodongya()
 }
 baobeili::baobeili()
 {
+    attribute = "water";
     name="BaoBeiLi";coolTime=227;No=8;
     zuanshiNeed=25;
     isLocked=0;
@@ -110,6 +116,7 @@ baobeili::baobeili()
 //火系精灵
 xiaohuohou::xiaohuohou()
 {
+    attribute = "fire";
     name="XiaoHuoHou";coolTime=227;No=9;
     zuanshiNeed=25;
     isLocked=0;
@@ -117,6 +124,7 @@ xiaohuohou::xiaohuohou()
 }
 jier::jier()
 {
+    attribute = "fire";
     name="JiEr";coolTime=227;No=10;
     zuanshiNeed=25;
     isLocked=0;
@@ -124,6 +132,7 @@ jier::jier()
 }
 huliya::huliya()
 {
+    attribute = "fire";
     name="HuLiYa";coolTime=227;No=11;
     zuanshiNeed=25;
     isLocked=0;
@@ -132,6 +141,7 @@ huliya::huliya()
 
 dida::dida()
 {
+    attribute = "fire";
     name="DiDa";coolTime=227;No=12;
     zuanshiNeed=25;
     isLocked=0;
@@ -141,6 +151,7 @@ dida::dida()
 //普通系
 dugulu::dugulu()
 {
+    attribute = "normal";
     name="DuGuLu";coolTime=227;No=13;
     zuanshiNeed=25;
     isLocked=0;
@@ -148,6 +159,7 @@ dugulu::dugulu()
 }
 xinke::xinke()
 {
+    attribute = "normal";
     name="XinKe";coolTime=227;No=14;
     zuanshiNeed=25;
     isLocked=0;
@@ -155,6 +167,7 @@ xinke::xinke()
 }
 agong::agong()
 {
+    attribute = "normal";
     name="AGone";coolTime=227;No=15;
     zuanshiNeed=25;
     isLocked=0;
@@ -162,6 +175,7 @@ agong::agong()
 }
 taida::taida()
 {
+    attribute = "normal";
     name="TaiDa";coolTime=227;No=16;
     zuanshiNeed=25;
     isLocked=0;

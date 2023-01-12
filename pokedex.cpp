@@ -265,7 +265,7 @@ pokedex::pokedex(QWidget *parent) :
 
 //草系
     //布布种子查看按钮
-    pix.load(":/partner/resource/partner/pokedex_head/grass/head_bubu.png");
+    pix.load(":/partner/resource/partner/pokedex_head/grass/head_bubui.png");
     ui->pushButtonbubu->setFixedSize(pix.size());
     ui->pushButtonbubu->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/grass/head_bubu.png);}"
                                        "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/grass/head_bubu2.png);}");
@@ -325,7 +325,7 @@ pokedex::pokedex(QWidget *parent) :
 //	  box->addButton(ui.pushButton_9);
 //	  box->addButton(ui.pushButton_10);
 
-    pdbackPushButton *Close = new pdbackPushButton();
+    pdbackPushButton *Close = new pdbackPushButton(this->width());
 
     Close->setParent(this);
 
@@ -510,7 +510,7 @@ void pokedex::on_pushButtonnormal_clicked()
 void pokedex::on_pushButtonfirem_clicked()
 {
 
-       QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/fire/stand_firem.gif");
+       QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/fire/stand_xiaohuohou.gif");
        ui->label->setAlignment(Qt::AlignRight);
        ui->label->setMovie(movie);
        movie->start();
@@ -614,7 +614,7 @@ void pokedex::on_pushButtonfiredierk_clicked()
 //水系精灵触发展示按钮
 void pokedex::on_pushButtonwateryy_clicked()
 {
-    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_wateryy.gif");
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_yiyou.gif");
     ui->label->setAlignment(Qt::AlignRight);
     ui->label->setMovie(movie);
     movie->start();
@@ -736,7 +736,7 @@ void pokedex::on_pushButtonking_clicked()
 //草系精灵触发展示按钮
 void pokedex::on_pushButtonbubu_clicked()
 {
-    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/grass/stand_bubu.gif");
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/grass/stand_bubuzhongzi.gif");
     ui->label->setAlignment(Qt::AlignRight);
     ui->label->setMovie(movie);
     movie->start();

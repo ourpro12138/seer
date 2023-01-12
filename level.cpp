@@ -8,6 +8,7 @@ Level::Level(QWidget *parent) :
 {
     this->setStyleSheet("QPushButton{background-color:transparent}");
 
+    levelMode=0;//选卡阶段
     ui->setupUi(this);
     isLocked =0;
     this->setFixedSize(1566,911);
@@ -39,7 +40,7 @@ void Level::GameStart()
     QTimer *timer = new QTimer(this);
     timer->start(3);
     cm->hide();
-
+    delete Back;
     connect(timer,&QTimer::timeout,this,[=](){
         qDebug()<<"moving"<<x;
         x++;
@@ -48,6 +49,11 @@ void Level::GameStart()
         if(x==0)
         {
             qDebug()<<"time stop";
+            Back = new pdbackPushButton(1366);
+            Back->setParent(this);
+            Back->show();
+            connect(Back,&pdbackPushButton::backpress,this,&Level::back);
+            levelMode=1;//游戏正式开始
             delete timer;
         }
     });
@@ -87,6 +93,10 @@ void Level::initlevel()
 //    view->setBackgroundBrush(QPixmap(":/map/resource/map/"+levelName+".png"));
 
 //    this->setStyleSheet("background-image:url(:/map/resource/map/"+levelName+".png)");
+    scene = new QGraphicsScene(this);
+    map = new Map();
+
+
     this->move(-200,0);
 
     cm = new cardsmenu(this);
@@ -109,20 +119,19 @@ void Level::initlevel()
     Countinue->setStyleSheet("background-image:url(:/background/resource/background/countinue.png)");
 //    Countinue->hide();
 
+    //点击游戏开始按钮 则游戏正式开始 屏幕滑动结束时，令startMode=1;
     connect(Countinue,&QPushButton::clicked,this,[=](){
         GameStart();
         delete  Countinue;
     });
 
-    Back = new pdbackPushButton();
+    Back = new pdbackPushButton(this->width());
     Back->setParent(this);
     connect(Back,&pdbackPushButton::backpress,this,[=](){
         emit this->back();
     });
-
+    //当卡片目录发出信号时，接受，并且分析信号，让卡片栏新增对应按钮
     connect(cm,&cardsmenu::bbzz,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
             if(cb->cards[i]->name=="none")
@@ -133,13 +142,10 @@ void Level::initlevel()
             cm->count++;
             break;
             }
-            }
         }
     });
     connect(cm,&cardsmenu::xrq,this,[=](){
-        if(cm->count<5)
-        {
-            for(int i=0;i<5;i++)
+    for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
                 {
@@ -148,13 +154,9 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
             break;
-                }
-            }
-        }
+                }      }
     });
     connect(cm,&cardsmenu::xdy,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -163,13 +165,11 @@ void Level::initlevel()
            cb->cardsPaint(i);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::yy,this,[=](){
-        if(cm->count<5)
-        {
-            for(int i=0;i<5;i++)
+ for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
                 {
@@ -179,12 +179,11 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::yiy,this,[=](){
-        if(cm->count<5)
-        {
+
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -195,12 +194,10 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::be,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -211,12 +208,10 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::gdy,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -227,12 +222,10 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::bbl,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -243,12 +236,10 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::xhh,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -259,12 +250,10 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::je,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -276,12 +265,10 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::hly,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -292,12 +279,10 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
            cm-> count++;
                        break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::dd,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -309,11 +294,9 @@ void Level::initlevel()
             cm->count++;
                         break;
         }
-            }}
+            }
     });
     connect(cm,&cardsmenu::dgl,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -324,12 +307,10 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::xk,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -340,12 +321,10 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::ag,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -356,12 +335,10 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
             cm->count++;
                         break;
-                }}
+                }
         }
     });
     connect(cm,&cardsmenu::td,this,[=](){
-        if(cm->count<5)
-        {
             for(int i=0;i<5;i++)
             {
                 if(cb->cards[i]->name=="none")
@@ -372,14 +349,17 @@ void Level::initlevel()
 //            scene->addItem(cb->cards[count]);
            cm-> count++;
                        break;
-                }}
+                }
         }
     });
-
+//如果游戏尚在选卡阶段（levelMode==0） 点击卡片栏上的卡片则取消这张卡的选中
+//如果游戏正式开始（levelMode==1） 点击卡片栏上的卡片则种植
     for(int j=0;j<5;j++)
     {
         connect(cb->headButton[j],&QPushButton::clicked,[=](){
-        for(int i=0;i<16;i++)
+         if(this->levelMode==0)
+            {
+             for(int i=0;i<16;i++)
         {
             if(cb->cards[j]->No==i+1)
             {
@@ -390,9 +370,21 @@ void Level::initlevel()
                 cb->headButton[j]->hide();
                 cb->cards[j] = new none();
                 cm->count--;
+                cb->cards_num--;
+                break;
             }
+         }
         }
+         else if(this->levelMode==1)
+            {
 
+             connect(cb->headButton[j],&QPushButton::clicked,this,[=](){
+                 //设置光标效果
+                 QCursor ptn(QPixmap(":/partner/resource/partner/pokedex_head/"+cb->cards[j]->attribute+"/stand_"+cb->cards[j]->name.toLower()+".gif"));
+                 QApplication::setOverrideCursor(ptn);
+                 map->preparedPtn = cb->cards[j];
+             });
+         }
     });
     }
 

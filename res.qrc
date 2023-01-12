@@ -31,7 +31,6 @@
         <file>resource/background/choicemenu.png</file>
         <file>resource/background/diamondkuang.png</file>
         <file>resource/background/kuang.png</file>
-        <file>resource/background/kuangpress.png</file>
         <file>resource/background/diamond.png</file>
         <file>resource/background/backgd.png</file>
         <file>resource/background/backmoto.png</file>
@@ -127,22 +126,18 @@
         <file>resource/partner/pokedex_head/fire/stand_fireh.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_firel.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_fireljls.gif</file>
-        <file>resource/partner/pokedex_head/fire/stand_firem.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_firex.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_huriya.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_los.gif</file>
         <file>resource/partner/pokedex_head/grass/head_bubu.png</file>
         <file>resource/partner/pokedex_head/grass/head_bubu2.png</file>
-        <file>resource/partner/pokedex_head/grass/stand_bubu.gif</file>
         <file>resource/partner/pokedex_head/normal/head_guru.png</file>
         <file>resource/partner/pokedex_head/normal/head_guru2.png</file>
         <file>resource/partner/pokedex_head/normal/stand_guru.gif</file>
         <file>resource/partner/pokedex_head/water/head_wateryy.png</file>
         <file>resource/partner/pokedex_head/water/head_wateryy2.png</file>
-        <file>resource/partner/pokedex_head/water/stand_wateryy.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_dierk.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_firedierk.gif</file>
-        <file>resource/partner/cardshead/agone.png</file>
         <file>resource/partner/cardshead/baobeili.png</file>
         <file>resource/partner/cardshead/beier.png</file>
         <file>resource/partner/cardshead/bubuzhongzi.png</file>
@@ -151,7 +146,6 @@
         <file>resource/partner/cardshead/guodongya.png</file>
         <file>resource/partner/cardshead/huliya.png</file>
         <file>resource/partner/cardshead/jier.png</file>
-        <file>resource/partner/cardshead/taida.png</file>
         <file>resource/partner/cardshead/xianrenqou.png</file>
         <file>resource/partner/cardshead/xiaodouya.png</file>
         <file>resource/partner/cardshead/xinke.png</file>
@@ -173,7 +167,6 @@
         <file>resource/partner/cardshead/30_clicked.png</file>
         <file>resource/partner/cardshead/74_clicked.png</file>
         <file>resource/partner/cardshead/346_clicked.png</file>
-        <file>resource/partner/cardshead/xiaohuohou.png</file>
         <file>resource/partner/pokedex_head/water/head_bara.png</file>
         <file>resource/partner/pokedex_head/water/head_bara2.png</file>
         <file>resource/partner/pokedex_head/water/head_baragui.png</file>
@@ -207,5 +200,9 @@
         <file>resource/partner/pokedex_head/water/stand_yayaa.gif</file>
         <file>resource/partner/pokedex_head/water/stand_yourian.gif</file>
         <file>resource/partner/pokedex_head/water/stand_barus.gif</file>
+        <file>resource/partner/pokedex_head/fire/stand_xiaohuohou.gif</file>
+        <file>resource/partner/pokedex_head/grass/stand_bubuzhongzi.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_yiyou.gif</file>
+        <file>resource/partner/cardshead/xiaohuohou.png</file>
     </qresource>
 </RCC>

@@ -22,6 +22,7 @@ maingame::maingame(QWidget *parent)
 
     choose = new choosescene(this);
 
+
     level[0] = new kls;level[1] = new hek; level[2] = new hs;level[3] = new alpha; level[4] = new hm; level[5] = new final;
     for(int i =0;i<Level_num;i++)
     {
@@ -43,6 +44,7 @@ maingame::maingame(QWidget *parent)
     connect(pd,&pokedex::back,this,&maingame::loginGet);
     connect(choose,&choosescene::back,this,&maingame::loginGet);
 
+    //链接关卡退出与进入信号与槽的函数
     levelback();
 
 
@@ -98,6 +100,7 @@ void maingame::returnchooselevel()
     {
         level[i]->setParent(this);
     }
+    //每次回到主菜单 重新连接一次信号与槽
     levelback();
 }
 void maingame::pdx()
@@ -137,6 +140,9 @@ void maingame::levelback()
         });
         connect(level[i],&Level::back,this,&maingame::returnchooselevel);
     }
+
+    //关卡更新，解锁关卡与每个关卡对应的按钮
+    //每次回到选关的界面对关卡更新一次
     levelUpdate();
 
 }

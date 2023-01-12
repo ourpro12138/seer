@@ -20,8 +20,10 @@ cardsblank::cardsblank(QWidget *parent) :
     diamond_view->setText(QString::number(Cards::diamondTotal));
     this->setFixedSize(783,153);
 
-    cards_num=0;
 
+
+
+    cards_num=0;
 
 }
 
@@ -51,10 +53,14 @@ void cardsblank::paintEvent(QPaintEvent *)
 }
 void cardsblank::cardsPaint(int count)
 {
+
     QPixmap pix;
+
     pix.load(":/partner/resource/partner/cardshead/"+cards[count]->name.toLower()+".png");
     headButton[count]->setStyleSheet("background-image:url(:/partner/resource/partner/cardshead/"+cards[count]->name.toLower()+".png)");
     headButton[count]->setFixedSize(pix.size());
     headButton[count]->move(123+count*120,14);
     headButton[count]->show();
+
+    cards_num++;
 }

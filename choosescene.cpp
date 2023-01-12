@@ -54,7 +54,7 @@ choosescene::choosescene(QWidget *parent) :
     choosebutton[5]->setMask(pix.mask());
     choosebutton[5]->move(600,490);
 
-    pdbackPushButton *back = new pdbackPushButton();
+    pdbackPushButton *back = new pdbackPushButton(this->width());
     back->setParent(this);
 
 
