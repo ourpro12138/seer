@@ -20,11 +20,11 @@ pokedex::pokedex(QWidget *parent) :
     ui->pushButtonfireljls->hide();
     ui->pushButtonfirem->hide();
     ui->pushButtonfirex->hide();
-    ui->pushButtonwateryy->hide();
     ui->pushButtonfirehly->hide();
     ui->pushButtonfirelos->hide();
     ui->pushButtondierk->hide();
     ui->pushButtonfiredierk->hide();
+    ui->pushButtonwateryy->hide();
     ui->pushButtonbubu->hide();
     ui->pushButtonguru->hide();
 
@@ -186,10 +186,6 @@ pokedex::pokedex(QWidget *parent) :
     pdbackPushButton *Close = new pdbackPushButton();
 
     Close->setParent(this);
-
-//    Close->setFixedSize(pix.size());
-//    Close->setMask(pix.mask()); Close->move(1280,30); Close->setStyleSheet("border-image: url(:/background/resource/background/backmoto.png)");
-
 
     Close->setCursor(QCursor(Qt::PointingHandCursor));
 
