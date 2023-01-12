@@ -142,5 +142,38 @@
         <file>resource/partner/pokedex_head/water/stand_wateryy.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_dierk.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_firedierk.gif</file>
+        <file>resource/partner/pokedex_head/water/head_bara.png</file>
+        <file>resource/partner/pokedex_head/water/head_bara2.png</file>
+        <file>resource/partner/pokedex_head/water/head_baragui.png</file>
+        <file>resource/partner/pokedex_head/water/head_baragui2.png</file>
+        <file>resource/partner/pokedex_head/water/head_barus.png</file>
+        <file>resource/partner/pokedex_head/water/head_barus2.png</file>
+        <file>resource/partner/pokedex_head/water/head_bbl.png</file>
+        <file>resource/partner/pokedex_head/water/head_bbl2.png</file>
+        <file>resource/partner/pokedex_head/water/head_fishdrgon.png</file>
+        <file>resource/partner/pokedex_head/water/head_fishdrgon2.png</file>
+        <file>resource/partner/pokedex_head/water/head_jieni.png</file>
+        <file>resource/partner/pokedex_head/water/head_jieni2.png</file>
+        <file>resource/partner/pokedex_head/water/head_king.png</file>
+        <file>resource/partner/pokedex_head/water/head_king2.png</file>
+        <file>resource/partner/pokedex_head/water/head_syaya.png</file>
+        <file>resource/partner/pokedex_head/water/head_syaya2.png</file>
+        <file>resource/partner/pokedex_head/water/head_yaya.png</file>
+        <file>resource/partner/pokedex_head/water/head_yaya2.png</file>
+        <file>resource/partner/pokedex_head/water/head_yayaa.png</file>
+        <file>resource/partner/pokedex_head/water/head_yayaa2.png</file>
+        <file>resource/partner/pokedex_head/water/head_yourian.png</file>
+        <file>resource/partner/pokedex_head/water/head_yourian2.png</file>
+        <file>resource/partner/pokedex_head/water/stand_bara.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_baragui.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_bbl.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_fishdrgon.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_jieni.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_king.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_syaya.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_yaya.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_yayaa.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_yourian.gif</file>
+        <file>resource/partner/pokedex_head/water/stand_barus.gif</file>
     </qresource>
 </RCC>

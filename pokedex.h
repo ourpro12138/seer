@@ -55,6 +55,28 @@ private slots:
 
     void on_pushButtonguru_clicked();
 
+    void on_pushButtonyourian_clicked();
+
+    void on_pushButtonbarus_clicked();
+
+    void on_pushButtonbara_clicked();
+
+    void on_pushButtonjieni_clicked();
+
+    void on_pushButtonbaragui_clicked();
+
+    void on_pushButtonyaya_clicked();
+
+    void on_pushButtonyayaa_clicked();
+
+    void on_pushButtonsyaya_clicked();
+
+    void on_pushButtonbbl_clicked();
+
+    void on_pushButtonfishdrgon_clicked();
+
+    void on_pushButtonking_clicked();
+
 signals:
     void back();
 private:
