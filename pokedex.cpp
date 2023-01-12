@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QMovie>
 #include <QButtonGroup>
+
 pokedex::pokedex(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::pokedex)
@@ -14,19 +15,50 @@ pokedex::pokedex(QWidget *parent) :
     setFixedSize(1366,911);
 
     //按钮隐藏
+
+    //火系
     ui->pushButtonfireh->hide();
     ui->pushButtonfirej->hide();
     ui->pushButtonfirel->hide();
     ui->pushButtonfireljls->hide();
     ui->pushButtonfirem->hide();
     ui->pushButtonfirex->hide();
-    ui->pushButtonwateryy->hide();
     ui->pushButtonfirehly->hide();
     ui->pushButtonfirelos->hide();
     ui->pushButtondierk->hide();
     ui->pushButtonfiredierk->hide();
+
+    //水系
+    ui->pushButtonwateryy->hide();
+    ui->pushButtonyourian->hide();
+    ui->pushButtonbarus->hide();
+    ui->pushButtonbara->hide();
+    ui->pushButtonjieni->hide();
+    ui->pushButtonbaragui->hide();
+    ui->pushButtonyaya->hide();
+    ui->pushButtonyayaa->hide();
+    ui->pushButtonsyaya->hide();
+    ui->pushButtonbbl->hide();
+    ui->pushButtonfishdrgon->hide();
+    ui->pushButtonking->hide();
+
+
+
+
+
+
+
+    //草系
     ui->pushButtonbubu->hide();
+
+
+
+
+
+
+    //普通系
     ui->pushButtonguru->hide();
+
 
 
     QPixmap pix;
@@ -136,6 +168,100 @@ pokedex::pokedex(QWidget *parent) :
                                        "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_wateryy2.png);}");
     ui->pushButtonwateryy->setMask(pix.mask());
 
+    //尤利安
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_yourian.png");
+    ui->pushButtonyourian->setFixedSize(pix.size());
+    ui->pushButtonyourian->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_yourian.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_yourian2.png);}");
+    ui->pushButtonyourian->setMask(pix.mask());
+
+    //巴鲁斯
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_barus.png");
+    ui->pushButtonbarus->setFixedSize(pix.size());
+    ui->pushButtonbarus->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_barus.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_barus2.png);}");
+    ui->pushButtonbarus->setMask(pix.mask());
+
+
+    //小龟龟
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_bara.png");
+    ui->pushButtonbara->setFixedSize(pix.size());
+    ui->pushButtonbara->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_bara.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_bara2.png);}");
+    ui->pushButtonbara->setMask(pix.mask());
+
+
+    //小龟
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_jieni.png");
+    ui->pushButtonjieni->setFixedSize(pix.size());
+    ui->pushButtonjieni->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_jieni.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_jieni2.png);}");
+    ui->pushButtonjieni->setMask(pix.mask());
+
+
+    //巴拉龟
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_baragui.png");
+    ui->pushButtonbaragui->setFixedSize(pix.size());
+    ui->pushButtonbaragui->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_baragui.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_baragui2.png);}");
+    ui->pushButtonbaragui->setMask(pix.mask());
+
+
+    //鸭鸭
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_yaya.png");
+    ui->pushButtonyaya->setFixedSize(pix.size());
+    ui->pushButtonyaya->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_yaya.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_yaya2.png);}");
+    ui->pushButtonyaya->setMask(pix.mask());
+
+
+    //鸭鸭鸭
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_yayaa.png");
+    ui->pushButtonyayaa->setFixedSize(pix.size());
+    ui->pushButtonyayaa->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_yayaa.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_yayaa2.png);}");
+    ui->pushButtonyayaa->setMask(pix.mask());
+
+
+    //水晶鸭
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_syaya.png");
+    ui->pushButtonsyaya->setFixedSize(pix.size());
+    ui->pushButtonsyaya->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_syaya.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_syaya2.png);}");
+    ui->pushButtonsyaya->setMask(pix.mask());
+
+
+
+    //宝贝鲤
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_bbl.png");
+    ui->pushButtonbbl->setFixedSize(pix.size());
+    ui->pushButtonbbl->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_bbl.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_bbl2.png);}");
+    ui->pushButtonbbl->setMask(pix.mask());
+
+
+
+    //远古鱼龙
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_fishdrgon.png");
+    ui->pushButtonfishdrgon->setFixedSize(pix.size());
+    ui->pushButtonfishdrgon->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_fishdrgon.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_fishdrgon2.png);}");
+    ui->pushButtonfishdrgon->setMask(pix.mask());
+
+
+
+    //鱼龙王
+    pix.load(":/partner/resource/partner/pokedex_head/water/head_king.png");
+    ui->pushButtonking->setFixedSize(pix.size());
+    ui->pushButtonking->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/water/head_king.png);}"
+                                       "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/water/head_king2.png);}");
+    ui->pushButtonking->setMask(pix.mask());
+
+
+
+
+
+
 
 //草系
     //布布种子查看按钮
@@ -144,6 +270,22 @@ pokedex::pokedex(QWidget *parent) :
     ui->pushButtonbubu->setStyleSheet("QPushButton{background-image : url(:/partner/resource/partner/pokedex_head/grass/head_bubu.png);}"
                                        "QPushButton:pressed{background-image : url(:/partner/resource/partner/pokedex_head/grass/head_bubu2.png);}");
     ui->pushButtonbubu->setMask(pix.mask());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //普通系
@@ -156,22 +298,22 @@ pokedex::pokedex(QWidget *parent) :
 
 
 //    QButtonGroup * box = new QButtonGroup;
-//    // 设置是否互斥
+//    设置是否互斥
 //    box->setExclusive(true);
-//    // 将需要互斥的按钮全部添加到 QButtonGroup 中
+//    将需要互斥的按钮全部添加到 QButtonGroup 中
 //    box->addButton(ui->pushButtonfire);
 //    box->addButton(ui->pushButtongrass);
 //    box->addButton(ui->pushButtonwater);
 //    box->addButton(ui->pushButtonnormal);
-//	box->addButton(ui.pushButton_5);
-//	box->addButton(ui.pushButton_6);
-//	box->addButton(ui.pushButton_7);
-//	box->addButton(ui.pushButton_8);
-//	box->addButton(ui.pushButton_9);
-//	box->addButton(ui.pushButton_10);
+//	  box->addButton(ui.pushButton_5);
+//	  box->addButton(ui.pushButton_6);
+//	  box->addButton(ui.pushButton_7);
+//	  box->addButton(ui.pushButton_8);
+//	  box->addButton(ui.pushButton_9);
+//	  box->addButton(ui.pushButton_10);
 
 //    box->setExclusive(false);
-//    // 将需要互斥的按钮全部添加到 QButtonGroup 中
+//    将需要互斥的按钮全部添加到 QButtonGroup 中
 //    box->addButton(ui->pushButtonfireh);
 //    box->addButton(ui->pushButtonfirej);
 //    box->addButton(ui->pushButtonfirel);
@@ -179,17 +321,13 @@ pokedex::pokedex(QWidget *parent) :
 //    box->addButton(ui->pushButtonfirex);
 //    box->addButton(ui->pushButtonfireljls);
 //    box->addButton(ui->pushButtonwateryy);
-//	box->addButton(ui.pushButton_8);
-//	box->addButton(ui.pushButton_9);
-//	box->addButton(ui.pushButton_10);
+//	  box->addButton(ui.pushButton_8);
+//	  box->addButton(ui.pushButton_9);
+//	  box->addButton(ui.pushButton_10);
 
     pdbackPushButton *Close = new pdbackPushButton();
 
     Close->setParent(this);
-
-//    Close->setFixedSize(pix.size());
-//    Close->setMask(pix.mask()); Close->move(1280,30); Close->setStyleSheet("border-image: url(:/background/resource/background/backmoto.png)");
-
 
     Close->setCursor(QCursor(Qt::PointingHandCursor));
 
@@ -224,6 +362,17 @@ void pokedex::on_pushButtonfire_clicked()
 
     //隐藏水系精灵按钮
     ui->pushButtonwateryy->hide();
+    ui->pushButtonyourian->hide();
+    ui->pushButtonbarus->hide();
+    ui->pushButtonbara->hide();
+    ui->pushButtonjieni->hide();
+    ui->pushButtonbaragui->hide();
+    ui->pushButtonyaya->hide();
+    ui->pushButtonyayaa->hide();
+    ui->pushButtonsyaya->hide();
+    ui->pushButtonbbl->hide();
+    ui->pushButtonfishdrgon->hide();
+    ui->pushButtonking->hide();
 
     //展示火系精灵按钮
     ui->pushButtonfireh->show();
@@ -262,6 +411,18 @@ void pokedex::on_pushButtonwater_clicked()
 
     //展示水系精灵按钮
     ui->pushButtonwateryy->show();
+    ui->pushButtonyourian->show();
+    ui->pushButtonbarus->show();
+    ui->pushButtonbara->show();
+    ui->pushButtonjieni->show();
+    ui->pushButtonbaragui->show();
+    ui->pushButtonyaya->show();
+    ui->pushButtonyayaa->show();
+    ui->pushButtonsyaya->show();
+    ui->pushButtonbbl->show();
+    ui->pushButtonfishdrgon->show();
+    ui->pushButtonking->show();
+
 
     ui->pushButtonwater->setDown(true);//写到最后
 }
@@ -283,6 +444,17 @@ void pokedex::on_pushButtongrass_clicked()
 
     //隐藏水系精灵按钮
     ui->pushButtonwateryy->hide();
+    ui->pushButtonyourian->hide();
+    ui->pushButtonbarus->hide();
+    ui->pushButtonbara->hide();
+    ui->pushButtonjieni->hide();
+    ui->pushButtonbaragui->hide();
+    ui->pushButtonyaya->hide();
+    ui->pushButtonyayaa->hide();
+    ui->pushButtonsyaya->hide();
+    ui->pushButtonbbl->hide();
+    ui->pushButtonfishdrgon->hide();
+    ui->pushButtonking->hide();
 
 
     //隐藏普通系精灵按钮
@@ -312,6 +484,17 @@ void pokedex::on_pushButtonnormal_clicked()
 
     //隐藏水系精灵按钮
     ui->pushButtonwateryy->hide();
+    ui->pushButtonyourian->hide();
+    ui->pushButtonbarus->hide();
+    ui->pushButtonbara->hide();
+    ui->pushButtonjieni->hide();
+    ui->pushButtonbaragui->hide();
+    ui->pushButtonyaya->hide();
+    ui->pushButtonyayaa->hide();
+    ui->pushButtonsyaya->hide();
+    ui->pushButtonbbl->hide();
+    ui->pushButtonfishdrgon->hide();
+    ui->pushButtonking->hide();
 
     //隐藏草系精灵按钮
     ui->pushButtonbubu->hide();
@@ -323,7 +506,7 @@ void pokedex::on_pushButtonnormal_clicked()
     ui->pushButtonnormal->setDown(true);
 }
 
-
+//火系精灵展示触发按钮
 void pokedex::on_pushButtonfirem_clicked()
 {
 
@@ -386,15 +569,7 @@ void pokedex::on_pushButtonfireljls_clicked()
     ui->pushButtonfireljls->setDown(true);
 }
 
-void pokedex::on_pushButtonwateryy_clicked()
-{
-    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_wateryy.gif");
-    ui->label->setAlignment(Qt::AlignRight);
-    ui->label->setMovie(movie);
-    movie->start();
-    ui->label->move(650,650);
-    ui->pushButtonwateryy->setDown(true);
-}
+
 
 void pokedex::on_pushButtonfirehly_clicked()
 {
@@ -436,6 +611,129 @@ void pokedex::on_pushButtonfiredierk_clicked()
     ui->pushButtonfiredierk->setDown(true);
 }
 
+//水系精灵触发展示按钮
+void pokedex::on_pushButtonwateryy_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_wateryy.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(650,650);
+    ui->pushButtonwateryy->setDown(true);
+}
+
+void pokedex::on_pushButtonyourian_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_yourian.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(680,490);
+    ui->pushButtonyourian->setDown(true);
+}
+
+void pokedex::on_pushButtonbarus_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_barus.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(800,430);
+    ui->pushButtonbarus->setDown(true);
+}
+
+void pokedex::on_pushButtonbara_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_bara.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(700,660);
+    ui->pushButtonbara->setDown(true);
+}
+
+void pokedex::on_pushButtonjieni_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_jieni.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(720,650);
+    ui->pushButtonjieni->setDown(true);
+}
+
+void pokedex::on_pushButtonbaragui_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_baragui.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(720,650);
+    ui->pushButtonbaragui->setDown(true);
+}
+
+void pokedex::on_pushButtonyaya_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_yaya.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(660,680);
+    ui->pushButtonyaya->setDown(true);
+}
+
+void pokedex::on_pushButtonyayaa_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_yayaa.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(670,650);
+    ui->pushButtonyayaa->setDown(true);
+}
+
+void pokedex::on_pushButtonsyaya_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_syaya.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(700,560);
+    ui->pushButtonsyaya->setDown(true);
+}
+
+void pokedex::on_pushButtonbbl_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_bbl.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(690,650);
+    ui->pushButtonbbl->setDown(true);
+}
+
+void pokedex::on_pushButtonfishdrgon_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_fishdrgon.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(760,350);
+    ui->pushButtonfishdrgon->setDown(true);
+}
+
+void pokedex::on_pushButtonking_clicked()
+{
+    QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_king.gif");
+    ui->label->setAlignment(Qt::AlignRight);
+    ui->label->setMovie(movie);
+    movie->start();
+    ui->label->move(730,260);
+    ui->pushButtonking->setDown(true);
+}
+
+
+//草系精灵触发展示按钮
 void pokedex::on_pushButtonbubu_clicked()
 {
     QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/grass/stand_bubu.gif");
@@ -446,6 +744,8 @@ void pokedex::on_pushButtonbubu_clicked()
     ui->pushButtonbubu->setDown(true);
 }
 
+
+//普通系精灵触发展示按钮
 void pokedex::on_pushButtonguru_clicked()
 {
     QMovie * movie=new QMovie(":/partner/resource/partner/pokedex_head/normal/stand_guru.gif");
@@ -455,3 +755,13 @@ void pokedex::on_pushButtonguru_clicked()
     ui->label->move(680,660);
     ui->pushButtonguru->setDown(true);
 }
+
+
+
+
+
+
+
+
+
+
