@@ -43,11 +43,8 @@ maingame::maingame(QWidget *parent)
     connect(pd,&pokedex::back,this,&maingame::loginGet);
     connect(choose,&choosescene::back,this,&maingame::loginGet);
 
-
-
     levelback();
 
-    levelUpdate();
 
     ss->show();
 }

@@ -169,7 +169,7 @@ taida::taida()
 }
 none::none()
 {
-
+    name = "none";
 }
 
 
