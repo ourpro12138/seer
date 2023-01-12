@@ -29,7 +29,11 @@ public:
     void pdx();
 
     void returnstart();
+    void levelUpdate();
 
+    void returnchooselevel();
+
+    void levelback();
 
 private:
     Ui::maingame *ui;

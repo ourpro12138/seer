@@ -20,9 +20,26 @@ public:
 
     QPushButton *p_PB[16];
 
+    int count=0;
     void paintEvent(QPaintEvent *);
 
-
+signals:
+    void bbzz();
+    void xrq();
+    void xdy();
+    void yy();
+    void yiy();
+    void be();
+    void gdy();
+    void bbl();
+    void xhh();
+    void je();
+    void hly();
+    void dd();
+    void dgl();
+    void xk();
+    void ag();
+    void td();
 private:
     Ui::cardsmenu *ui;
 };

@@ -5,6 +5,7 @@
 #include <QPainter>
 #include "cards.h"
 #include <QLabel>
+#include <QPushButton>
 namespace Ui {
 class cardsblank;
 }
@@ -24,7 +25,9 @@ public:
 
     Cards *cards[5];
 
+    QPushButton *headButton[5];
 
+    void cardsPaint(int count);
 
 private:
     Ui::cardsblank *ui;

@@ -45,49 +45,10 @@ maingame::maingame(QWidget *parent)
 
 
 
+    levelback();
 
-    for(int i=0;i<Level_num;i++)
-    {
+    levelUpdate();
 
-        connect(choose->choosebutton[i],&QPushButton::clicked,[=]()
-        {
-//            switch(i)
-//            {
-//            case 0:
-//                level[i] = new kls;level[i]->setParent(this);level[i]->show();break;
-//            case 1:
-//                level[i] = new hek;level[i]->setParent(this);level[i]->show();break;
-//            case 2:
-//                level[i] = new hs;level[i]->setParent(this);level[i]->show();break;
-//            case 3:
-//                level[i] = new alpha;level[i]->setParent(this);level[i]->show();break;
-//            case 4:
-//                level[i] = new hm;level[i]->setParent(this);level[i]->show();break;
-//            case 5:
-//                level[i] = new final;level[i]->setParent(this);level[i]->show();break;
-//            }
-            level[i]->show();
-            sc->hide();
-            pd->hide();
-//            cm->hide();
-            choose->hide();
-        });
-        connect(level[i],&Level::back,this,&maingame::chooseLevel);
-    }
-
-
-
-    for(int i =1;i<Level_num;i++)
-    {
-        level[i]->isLocked=1;
-    }
-    for(int i=0;i<Level_num;i++)
-    {
-        if(level[i]->isLocked)
-        {
-            choose->choosebutton[i]->hide();
-        }
-    }
     ss->show();
 }
 
@@ -120,7 +81,28 @@ void maingame::chooseLevel()
         this->level[i]->hide();
     }
 }
-
+void maingame::returnchooselevel()
+{
+    this->pd->hide();
+    this->sc->hide();
+    this->ss->hide();
+    this->choose->show();
+    for(int i=0;i<Level_num;i++)
+    {
+        delete level[i];
+    }
+    level[0] = new kls();
+    level[1] = new hek();
+    level[2] = new hs();
+    level[3] = new alpha();
+    level[4] = new hm();
+    level[5] = new final();
+    for(int i =0;i<Level_num;i++)
+    {
+        level[i]->setParent(this);
+    }
+    levelback();
+}
 void maingame::pdx()
 {
 //    this->cm->hide();
@@ -130,6 +112,7 @@ void maingame::pdx()
     this->choose->hide();
     for(int i=0;i<Level_num;i++)
         this->level[i]->hide();
+
 }
 
 void maingame::returnstart()
@@ -141,4 +124,36 @@ void maingame::returnstart()
     this->choose->hide();
     for(int i=0;i<Level_num;i++)
         this->level[i]->hide();
+}
+
+void maingame::levelback()
+{
+    for(int i=0;i<Level_num;i++)
+    {
+
+        connect(choose->choosebutton[i],&QPushButton::clicked,[=]()
+        {
+            level[i]->show();
+            sc->hide();
+            pd->hide();
+            choose->hide();
+        });
+        connect(level[i],&Level::back,this,&maingame::returnchooselevel);
+    }
+    levelUpdate();
+
+}
+void maingame::levelUpdate()
+{
+    for(int i =1;i<Level_num;i++)
+    {
+        level[i]->isLocked=0;
+    }
+    for(int i=0;i<Level_num;i++)
+    {
+        if(level[i]->isLocked)
+        {
+            choose->choosebutton[i]->hide();
+        }
+    }
 }

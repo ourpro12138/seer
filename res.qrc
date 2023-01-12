@@ -142,5 +142,37 @@
         <file>resource/partner/pokedex_head/water/stand_wateryy.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_dierk.gif</file>
         <file>resource/partner/pokedex_head/fire/stand_firedierk.gif</file>
+        <file>resource/partner/cardshead/agone.png</file>
+        <file>resource/partner/cardshead/baobeili.png</file>
+        <file>resource/partner/cardshead/beier.png</file>
+        <file>resource/partner/cardshead/bubuzhongzi.png</file>
+        <file>resource/partner/cardshead/dida.png</file>
+        <file>resource/partner/cardshead/dugulu.png</file>
+        <file>resource/partner/cardshead/guodongya.png</file>
+        <file>resource/partner/cardshead/huliya.png</file>
+        <file>resource/partner/cardshead/jier.png</file>
+        <file>resource/partner/cardshead/taida.png</file>
+        <file>resource/partner/cardshead/xianrenqou.png</file>
+        <file>resource/partner/cardshead/xiaodouya.png</file>
+        <file>resource/partner/cardshead/xinke.png</file>
+        <file>resource/partner/cardshead/yiyi.png</file>
+        <file>resource/partner/cardshead/yiyou.png</file>
+        <file>resource/partner/cardshead/1_clicked.png</file>
+        <file>resource/partner/cardshead/7_clicked.png</file>
+        <file>resource/partner/cardshead/16_clicked.png</file>
+        <file>resource/partner/cardshead/27_clicked.png</file>
+        <file>resource/partner/cardshead/35_clicked.png</file>
+        <file>resource/partner/cardshead/41_clicked.png</file>
+        <file>resource/partner/cardshead/83_clicked.png</file>
+        <file>resource/partner/cardshead/89_clicked.png</file>
+        <file>resource/partner/cardshead/254_clicked.png</file>
+        <file>resource/partner/cardshead/328_clicked.png</file>
+        <file>resource/partner/cardshead/456_clicked.png</file>
+        <file>resource/partner/cardshead/690_clicked.png</file>
+        <file>resource/partner/cardshead/4_clicked.png</file>
+        <file>resource/partner/cardshead/30_clicked.png</file>
+        <file>resource/partner/cardshead/74_clicked.png</file>
+        <file>resource/partner/cardshead/346_clicked.png</file>
+        <file>resource/partner/cardshead/xiaohuohou.png</file>
     </qresource>
 </RCC>

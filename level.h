@@ -8,6 +8,9 @@
 #include "cardsmenu.h"
 #include "pdbackpushbutton.h"
 #include <QTimer>
+#include "map.h"
+#include <QGraphicsScene>
+#include <QGraphicsView>
 namespace Ui {
 class Level;
 }
@@ -19,7 +22,8 @@ class Level : public QWidget
 public:
     explicit Level(QWidget *parent = nullptr);
     ~Level();
-
+    QGraphicsScene *scene;
+    QGraphicsView *view;
 
     bool isLocked;
     QString levelName;
@@ -27,7 +31,11 @@ public:
     enemy *E;
     cardsblank *cb;
     cardsmenu *cm;
+    int x=-200;
 
+   pdbackPushButton *Back;
+   void initlevel();
+   void returnLevel();
 
 
     void GameStart();
@@ -37,6 +45,7 @@ private:
     Ui::Level *ui;
 signals:
     void back();
+//    void choosecards();
 };
 
 

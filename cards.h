@@ -8,12 +8,18 @@ class Cards : public QGraphicsItem
 {
 public:
     int No,zuanshiNeed;//精灵编号，所需钻石
+
+//    bool isbeChoosed=0;
+    int choose_num;
+
     int counter;//计时器
     QString name;//精灵名字
+
+
+
     bool isBuyed,startMode;//是否购买，记录是否开始游戏
     static int diamondTotal;//玩家的钻石总数
 
-    int chooseNum;
 
     bool isLocked;
 
@@ -118,5 +124,9 @@ class taida:public Cards
 public:
     taida();
 };
-
+class none:public Cards
+{
+public:
+    none();
+};
 #endif // CARDS_H
