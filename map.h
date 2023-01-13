@@ -13,12 +13,12 @@ public:
     Cards *preparedPtn;
 
 
-    QRectF boundingRect() const override;;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;;
-    void advance(int phase) override;
-    bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape) const override;
+//    QRectF boundingRect() const override;;
+//    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;;
+//    void advance(int phase) override;
+//    bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode = Qt::IntersectsItemShape) const override;
 
-    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+//    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
 
 
    ~Map();
