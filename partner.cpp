@@ -10,3 +10,8 @@ partner::~partner()
 {
 
 }
+//void partner::skill()
+//{}
+
+//void partner::evolution()
+//{}

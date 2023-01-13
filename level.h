@@ -29,7 +29,7 @@ public:
     bool isLocked;
     QString levelName;
     int enemy_num;
-    enemy *E;
+    Enemy *E;
     cardsblank *cb;
     cardsmenu *cm;
     int x=-200;

@@ -1,4 +1,5 @@
 #include "map.h"
+partner *Map::myptn[4][5];
 
 Map::Map()
 {
@@ -68,3 +69,5 @@ void Map::mousePressEvent(QGraphicsSceneMouseEvent *event)
         }
     }
 }
+//    }
+//}

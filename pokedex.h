@@ -77,6 +77,28 @@ private slots:
 
     void on_pushButtonking_clicked();
 
+    void on_pushButtonbubucao_clicked();
+
+    void on_pushButtonbubuhua_clicked();
+
+    void on_pushButtonxiaodouya_clicked();
+
+    void on_pushButtondingding_clicked();
+
+    void on_pushButtonmohua_clicked();
+
+    void on_pushButtonxrq_clicked();
+
+    void on_pushButtonxrh_clicked();
+
+    void on_pushButtonxrz_clicked();
+
+    void on_pushButtonyiyi_clicked();
+
+    void on_pushButtonyidingsi_clicked();
+
+    void on_pushButtonyika_clicked();
+
 signals:
     void back();
 private:

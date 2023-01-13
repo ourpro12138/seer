@@ -11,9 +11,10 @@ public:
 
     virtual void evolution()=0;
 
-
-
     ~partner();
+    int i;
+    int j;
+
 
 };
 
