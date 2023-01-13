@@ -5,14 +5,7 @@
 #include<QPainter>
 #include<QRectF>
 #include<QMovie>
-
-class Enemy: public Elf
-{
-public:
-
-#include<QDebug>
 #include"partner.h"
-#include<QMouseEvent>
 class Enemy: public Elf
 {
 public:
@@ -43,10 +36,9 @@ public:
     void advance(int phase);
     bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode) const override;
     int type() const;
+    qreal x;
 
 
-
-    int benefit;
 
     int benefit; //击破后得到的收益
 

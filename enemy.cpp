@@ -28,14 +28,14 @@ void Enemy::advance(int phase)
     if(!phase)
         return;
     update();
-    if(x()<=150)
+    if(x<=150)
         delete this;
 }
 
 bool Enemy::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
-    return other->type()==partner::Type && other->x()-x()<80 && other->x()-x()>15
+    return other->type()==partner::Type && other->x()-x<80 && other->x()-x>15
             && other->y()-y()>0 && other->y()-y()<100;
 
 }
