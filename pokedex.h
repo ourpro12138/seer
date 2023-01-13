@@ -77,6 +77,10 @@ private slots:
 
     void on_pushButtonking_clicked();
 
+    void on_pushButtonbubucao_clicked();
+
+    void on_pushButtonbubuhua_clicked();
+
 signals:
     void back();
 private:

@@ -29,7 +29,7 @@ public:
     //血量
     int hp;
     //行，列
-    int i,j;
+    //int i,j;
     //攻击动画
     QMovie *atkmovie;
 

@@ -94,7 +94,7 @@ void Level::initlevel()
 
 //    this->setStyleSheet("background-image:url(:/map/resource/map/"+levelName+".png)");
     scene = new QGraphicsScene(this);
-    map = new Map();
+//    map = new Map();
 
 
     this->move(-200,0);
@@ -387,6 +387,7 @@ void Level::initlevel()
          }
     });
     }
+
 
 //view->show();
 
