@@ -28,6 +28,7 @@ SOURCES += \
     main.cpp \
     maingame.cpp \
     map.cpp \
+    moguguai.cpp \
     partner.cpp \
     pdbackpushbutton.cpp \
     pokedex.cpp \
@@ -48,6 +49,7 @@ HEADERS += \
     level.h \
     maingame.h \
     map.h \
+    moguguai.h \
     partner.h \
     pdbackpushbutton.h \
     pokedex.h \
