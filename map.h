@@ -4,12 +4,12 @@
 #include <QGraphicsSceneMouseEvent>
 #include "partner.h"
 #include "cards.h"
-class Map :public QGraphicsItem
+class Map /*:public QGraphicsItem*/
 {
 public:
     Map();
 
-    partner *myptn[4][5];//四行五列
+    static partner *myptn[4][5];//四行五列
     Cards *preparedPtn;
 
 
@@ -21,7 +21,7 @@ public:
 //    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
 
 
-   ~Map();
+    ~Map();
 };
 
 #endif // MAP_H

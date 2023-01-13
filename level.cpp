@@ -388,6 +388,7 @@ void Level::initlevel()
     });
     }
 
+
 //view->show();
 
 }
