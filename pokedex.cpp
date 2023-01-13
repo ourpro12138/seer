@@ -489,7 +489,7 @@ void pokedex::on_pushButtongrass_clicked()
     ui->pushButtonbubucao->show();
     ui->pushButtonbubuhua->show();
 
-     ui->pushButtongrass->setDown(true);
+    ui->pushButtongrass->setDown(true);
 }
 
 void pokedex::on_pushButtonnormal_clicked()
@@ -820,3 +820,4 @@ void pokedex::on_pushButtonbubuhua_clicked()
 
 
 
+ 

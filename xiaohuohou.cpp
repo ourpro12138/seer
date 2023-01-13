@@ -10,9 +10,8 @@ Xiaohuohou::~Xiaohuohou()
 
 }
 void Xiaohuohou::advance(int phase)
-
-xiaohuohou::xiaohuohou()
-
 {
 
 }
+
+
