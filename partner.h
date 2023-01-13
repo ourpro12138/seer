@@ -7,9 +7,9 @@ class partner :public Elf
 public:
     partner();
 
-    virtual void skill()=0;
+//    virtual void skill()=0;
 
-    virtual void evolution()=0;
+//    virtual void evolution()=0;
 
     ~partner();
     int i;

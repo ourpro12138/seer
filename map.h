@@ -2,9 +2,11 @@
 #define MAP_H
 #include <QGraphicsItem>
 #include <QGraphicsSceneMouseEvent>
+#include <QGraphicsScene>
+#include "yiyou.h"
 #include "partner.h"
 #include "cards.h"
-class Map /*:public QGraphicsItem*/
+class Map :public QGraphicsItem
 {
 public:
     Map();

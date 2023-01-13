@@ -5,16 +5,17 @@
 #include <QPainter>
 #include <QMovie>
 #include <QPointF>
+#include "enemy.h"
 #include <QTime>
 
 
 class Bullet : public QGraphicsItem
 {
 public:
-   Bullet(QPointF point);
+    enum{Type=UserType+3};
+   Bullet(int i,int j);
    ~Bullet();
    QRectF boundingRect()const;
-//   void release(QPainter *painter,const QStyleOptionGraphicsItem *option,QWidget *widget);
    void advance(int phase);
    bool collideWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode)const;
    int type() const;

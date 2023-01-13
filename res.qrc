@@ -71,7 +71,27 @@
         <file>resource/background/xvanzhong_normal.png</file>
         <file>resource/background/shuxing_fire.png</file>
     </qresource>
-    <qresource prefix="/enemy"/>
+    <qresource prefix="/enemy">
+        <file>resource/enemy/1-GRASS 2-WATER 3-FIRE.txt</file>
+        <file>resource/enemy/enemy.gif</file>
+        <file>resource/enemy/enemy_2.gif</file>
+        <file>resource/enemy/enemy_2attack.gif</file>
+        <file>resource/enemy/enemy_3.gif</file>
+        <file>resource/enemy/enemy_3attack.gif</file>
+        <file>resource/enemy/enemy_4.gif</file>
+        <file>resource/enemy/enemy_4attack.gif</file>
+        <file>resource/enemy/enemy_5.gif</file>
+        <file>resource/enemy/enemy_5attack.gif</file>
+        <file>resource/enemy/enemy_6.gif</file>
+        <file>resource/enemy/enemy_6attack.gif</file>
+        <file>resource/enemy/enemy_7.gif</file>
+        <file>resource/enemy/enemy_7attack.gif</file>
+        <file>resource/enemy/enemy_8.gif</file>
+        <file>resource/enemy/enemy_8attack.gif</file>
+        <file>resource/enemy/enemy_9.gif</file>
+        <file>resource/enemy/enemy_9attack.gif</file>
+        <file>resource/enemy/enemy_attack.gif</file>
+    </qresource>
     <qresource prefix="/map">
         <file>resource/map/alpha.png</file>
         <file>resource/map/final.png</file>
@@ -240,5 +260,6 @@
         <file>resource/partner/pokedex_head/grass/stand_yidingsi.gif</file>
         <file>resource/partner/pokedex_head/grass/stand_yika.gif</file>
         <file>resource/partner/pokedex_head/grass/stand_yiyi.gif</file>
+        <file>resource/partner/yiyou_waterbullet.png</file>
     </qresource>
 </RCC>

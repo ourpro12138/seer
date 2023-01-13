@@ -9,9 +9,10 @@
 class Yiyou : public partner
 {
 public:
-    Yiyou(QPointF point);
+    Yiyou(int i,int j);
     ~Yiyou();
     void advance(int phase);
+
 private:
     Bullet *bullet;
     int bulletCounter,bulletCreateTime;

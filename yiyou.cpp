@@ -1,16 +1,12 @@
 #include "yiyou.h"
 #include<QPointF>
-Yiyou::Yiyou(QPointF point)
+Yiyou::Yiyou(int i,int j)
 {
   hp=300;bulletCounter=0;bulletCreateTime=40;
   name="Yiyou";
-  atkmovie=new QMovie("");
+  atkmovie=new QMovie(":/partner/resource/partner/stand_yiyou.gif");
   atkmovie->start();
-  posX=point.x();
-  posY=point.y();
-  i=(point.x()-107)/230;
-  j=(point.y()-121)/152;
-  //setPos(posX-180,posY);
+  setPos(i*230+170,j*152+121);
 }
 Yiyou::~Yiyou()
 {
@@ -23,11 +19,15 @@ void Yiyou::advance(int phase)
 {
     if(!phase)
         return;
-    //updata();
+    update();
     if(bulletCounter<bulletCreateTime)
         ++bulletCounter;
     if(bulletCounter==bulletCreateTime)
     {
-        bullet=new Bullet(QPointF(posX,posY));
+        bullet=new Bullet(i*230+170,j*152+121);
+        scene()->addItem(bullet);
+        bulletCounter=0;
     }
+    if(hp<=0)
+        delete this;
 }
