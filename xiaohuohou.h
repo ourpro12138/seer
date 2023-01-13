@@ -1,6 +1,5 @@
 #ifndef XIAOHUOHOU_H
 #define XIAOHUOHOU_H
-
 #include "elf.h"
 #include "map.h"
 
@@ -17,6 +16,12 @@ private:
 
 signals:
 
+#include"cards.h"
+#include"map.h"
+class xiaohuohou:public cards
+{
+public:
+    xiaohuohou();
 };
 
 #endif // XIAOHUOHOU_H
