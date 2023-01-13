@@ -34,10 +34,10 @@ public:
     QMovie *atkmovie;
 
 
-//    QRectF boundingRect() const;
-//    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-//    void advance(int phase);
-//    bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
+    QRectF boundingRect() const;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    void advance(int phase);
+    bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
     //enemy-移动速度 partner-攻击速度
     qreal speed;
 

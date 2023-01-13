@@ -5,10 +5,10 @@
 #include<QPainter>
 #include<QRectF>
 #include<QMovie>
-class enemy: public Elf
+class Enemy: public Elf
 {
 public:
-    enemy();
+    Enemy();
     int atk;//攻击
     int hp;//血
     int attritube;//属性
@@ -30,7 +30,7 @@ public:
 
 
     int benefit;
-    ~enemy();
+    ~Enemy();
 };
 
 #endif // ENEMY_H

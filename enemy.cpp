@@ -1,12 +1,12 @@
 #include "enemy.h"
 
-enemy::enemy()
+Enemy::Enemy()
 {
     speedFactor=100;
     setStatus=1;  nowStatus=1;
     
 }
-enemy::~enemy()
+Enemy::~Enemy()
 {
 
 }

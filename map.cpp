@@ -11,6 +11,7 @@ Map::Map()
         }
     }
     preparedPtn = NULL;
+    myptn[1][1]=new Yiyou(1,1);
 }
 Map::~Map()
 {

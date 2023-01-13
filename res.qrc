@@ -207,5 +207,6 @@
         <file>resource/partner/stand_bubuzhongzi.gif</file>
         <file>resource/partner/stand_xiaohuohou.gif</file>
         <file>resource/partner/stand_yiyou.gif</file>
+        <file>resource/partner/yiyou_waterbullet.png</file>
     </qresource>
 </RCC>
