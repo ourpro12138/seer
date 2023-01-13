@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    bullet.cpp \
     cards.cpp \
     cardsblank.cpp \
     cardsmenu.cpp \
@@ -31,9 +32,12 @@ SOURCES += \
     pdbackpushbutton.cpp \
     pokedex.cpp \
     startpushbutton.cpp \
-    startscene.cpp
+    startscene.cpp \
+    xiaohuohou.cpp \
+    yiyou.cpp
 
 HEADERS += \
+    bullet.h \
     cards.h \
     cardsblank.h \
     cardsmenu.h \
@@ -48,7 +52,9 @@ HEADERS += \
     pdbackpushbutton.h \
     pokedex.h \
     startpushbutton.h \
-    startscene.h
+    startscene.h \
+    xiaohuohou.h \
+    yiyou.h
 
 FORMS += \
     cardsblank.ui \

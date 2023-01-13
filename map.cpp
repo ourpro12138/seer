@@ -1,4 +1,5 @@
 #include "map.h"
+partner *Map::myptn[4][5];
 
 Map::Map()
 {
@@ -15,12 +16,12 @@ Map::~Map()
 {
 
 }
-void Map::mousePressEvent(QGraphicsSceneMouseEvent *event)
-{
+//void Map::mousePressEvent(QGraphicsSceneMouseEvent *event)
+//{
 
-    if(!preparedPtn&&event->button()==Qt::LeftButton)
-    {
+//    if(!preparedPtn&&event->button()==Qt::LeftButton)
+//    {
 
 
-    }
-}
+//    }
+//}
