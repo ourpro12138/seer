@@ -18,6 +18,8 @@ public:
     int i;
     int j;
 
+    int width;
+    int height;
 
 };
 

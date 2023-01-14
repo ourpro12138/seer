@@ -82,14 +82,14 @@ void maingame::chooseLevel()
 }
 void maingame::returnchooselevel()
 {
-    this->pd->hide();
-    this->sc->hide();
-    this->ss->hide();
-    this->choose->show();
     for(int i=0;i<Level_num;i++)
     {
         delete level[i];
     }
+    this->pd->hide();
+    this->sc->hide();
+    this->ss->hide();
+    this->choose->show();
     level[0] = new kls();
     level[1] = new hek();
     level[2] = new hs();

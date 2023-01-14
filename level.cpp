@@ -8,6 +8,7 @@ Level::Level(QWidget *parent) :
 {
     this->setStyleSheet("QPushButton{background-color:transparent}");
 
+    gametime = new QTimer(this);
     levelMode=0;//选卡阶段
     ui->setupUi(this);
     isLocked =0;
@@ -22,6 +23,9 @@ Level::~Level()
     delete this->cb;
     delete this->cm;
     delete this->Back;
+//    delete this->scene;
+//    delete this->view;
+//    delete this->map;
 }
 
 void Level::paintEvent(QPaintEvent *)
@@ -54,6 +58,7 @@ void Level::GameStart()
             Back->show();
             connect(Back,&pdbackPushButton::backpress,this,&Level::back);
             levelMode=1;//游戏正式开始
+            emit gamestart();
             delete timer;
         }
     });
@@ -393,6 +398,13 @@ void Level::initlevel()
     }
 
 
-view->show();
+
+    connect(this,&Level::gamestart,[=](){
+        view->show();
+        gametime->start(10);
+        connect(gametime,&QTimer::timeout,scene,&QGraphicsScene::advance);
+
+    });
+
 
 }

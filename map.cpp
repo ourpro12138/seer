@@ -14,7 +14,14 @@ Map::Map()
 }
 Map::~Map()
 {
-
+    for(int i=0;i<4;i++)
+    {
+        for(int j=0;j<5;j++)
+        {
+           delete myptn[i][j];
+        }
+    }
+    preparedPtn = NULL;
 }
 void Map::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
@@ -37,24 +44,24 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
     if(preparedPtn&&event->button()==Qt::LeftButton)
     {
         qDebug()<<preparedPtn->No;
-       int i,j;
+       int i=-1,j=-1;
        for(int h=0;h<4;h++)
        {
            if(235+112*h+48*h<event->pos().y()&&event->pos().y()<235+112*h+48*h+112)
            {
                i=h;break;
            }
-           else i=-1;
        }
        for(int l=0;l<5;l++)
        {
+           qDebug()<<"l是"<<l;
            if(52+215*l+20*l<event->pos().x()&&event->pos().x()<52+215*l+20*l+215)
            {
                j=l;break;
            }
-           else j=-1;
        }
-       if(i!=-1&&j!=-1)
+       qDebug()<<i<<" "<<j;
+       if(i!=-1&&j!=-1&&!myptn[i][j])
        {
            switch(preparedPtn->No)
         {
@@ -70,7 +77,8 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
             qDebug()<<"伊优建立 i= "<<i<<"j = "<<j;
                  myptn[i][j] = new Yiyou(i,j); break;
         case 6:
-
+               qDebug()<<"小火猴建立 i = "<<i<<"j = "<<j;
+               myptn[i][j] = new Xiaohuohou(i,j);break;
         case 7:
 
         case 8:
@@ -93,7 +101,15 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
 
         }
                    scene()->addItem(myptn[i][j]);
+                   QApplication::restoreOverrideCursor();
+                   preparedPtn =NULL;
        }
+    }
+    else if(preparedPtn&&event->button()==Qt::RightButton)
+    {
+        preparedPtn =NULL;
+        QApplication::restoreOverrideCursor();
+
     }
 }
 void Map::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)

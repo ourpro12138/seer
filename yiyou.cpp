@@ -3,6 +3,8 @@
 Yiyou::Yiyou(int i,int j)
 {
 
+    this->i = i; this->j=j;
+  width = 95;height=133;
   hp=300;bulletCounter=0;bulletCreateTime=40;
   name="Yiyou";
   atkmovie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_yiyou.gif");
@@ -12,7 +14,7 @@ Yiyou::Yiyou(int i,int j)
 }
 Yiyou::~Yiyou()
 {
-    Map::myptn[i][j]=nullptr;
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
         delete atkmovie;
 

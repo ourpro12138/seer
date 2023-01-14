@@ -12,10 +12,12 @@ public:
    ~Xiaohuohou();
 
    QRectF boundingRect() const;
-   //void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+//   void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
    bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
    void advance(int phase);
 
+   void skill();
+   void evolution();
 
 private:
    int prepareTime,counter;

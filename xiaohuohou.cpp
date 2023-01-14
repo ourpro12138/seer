@@ -20,7 +20,7 @@ Xiaohuohou::~Xiaohuohou()
 
 QRectF Xiaohuohou::boundingRect() const
 {
-     return QRectF(180, 0, 100, 70);
+//     return QRectF(180, 0, 100, 70);
 }
 
 
@@ -38,6 +38,12 @@ bool Xiaohuohou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionM
     Q_UNUSED(mode);
     return other->type()==partner::Type && other->x()-x()<80 && other->x()-x()>15
             && other->y()-y()>0 && other->y()-y()<100;
+}
+void Xiaohuohou::skill()
+{
 
 }
+void Xiaohuohou::evolution()
+{
 
+}

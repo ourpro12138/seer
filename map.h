@@ -3,7 +3,12 @@
 #include <QGraphicsItem>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsScene>
+#include <QApplication>
 #include "yiyou.h"
+#include "xiaohuohou.h"
+
+
+
 #include "partner.h"
 #include "cards.h"
 class Map :public QGraphicsItem

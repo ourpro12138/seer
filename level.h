@@ -42,9 +42,13 @@ public:
    void returnLevel();
    int levelMode;
 
+   QTimer *gametime;
+
+
     void GameStart();
     void paintEvent(QPaintEvent *);
-
+signals:
+    void gamestart();
 private:
     Ui::Level *ui;
 signals:
