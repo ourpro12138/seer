@@ -3,24 +3,24 @@
 Enemy::Enemy()
 {
     speedFactor=100;
-    setStatus=1;  nowStatus=1;
+    setStatus=1;nowStatus=1;
     
 }
 Enemy::~Enemy()
 {
-
+    delete movie;
 }
 
 QRectF Enemy::boundingRect() const
 {
-    return QRectF(180,0,150,150);
+    return QRectF(0,0,176,104);
 }
 
 void Enemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
-    painter->drawRect(boundingRect());
+    painter->drawImage(boundingRect(),movie->currentImage());
 
 }
 void Enemy::advance(int phase)
