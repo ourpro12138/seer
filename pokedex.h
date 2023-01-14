@@ -99,6 +99,22 @@ private slots:
 
     void on_pushButtonyika_clicked();
 
+    void on_pushButtonguruking_clicked();
+
+    void on_pushButtonxinke_clicked();
+
+    void on_pushButtonxinnasi_clicked();
+
+    void on_pushButtonagong_clicked();
+
+    void on_pushButtonbobo_clicked();
+
+    void on_pushButtonaoligong_clicked();
+
+    void on_pushButtontaida_clicked();
+
+    void on_pushButtontailesi_clicked();
+
 signals:
     void back();
 private:
