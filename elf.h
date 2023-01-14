@@ -5,7 +5,7 @@
 #define WATER 2
 #define FIRE 3
 #define ODINARY 4
-
+#include <QGraphicsScene>
 #include <QGraphicsItem>
 #include<QPointF>
 #include <QMovie>
