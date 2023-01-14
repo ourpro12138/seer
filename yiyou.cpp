@@ -2,11 +2,13 @@
 #include<QPointF>
 Yiyou::Yiyou(int i,int j)
 {
+
   hp=300;bulletCounter=0;bulletCreateTime=40;
   name="Yiyou";
-  atkmovie=new QMovie(":/partner/resource/partner/stand_yiyou.gif");
+  atkmovie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_yiyou.gif");
   atkmovie->start();
-  setPos(i*230+170,j*152+121);
+  setPos(154+234*j-47,290-133+154*i);
+
 }
 Yiyou::~Yiyou()
 {
@@ -30,4 +32,12 @@ void Yiyou::advance(int phase)
     }
     if(hp<=0)
         delete this;
+}
+void Yiyou::skill()
+{
+
+}
+void Yiyou::evolution()
+{
+
 }

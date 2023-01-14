@@ -29,6 +29,8 @@ startscene::startscene(QWidget *parent) :
     label->setParent(this);
     label->move(1090,790);
 
+
+
     QLabel * label2=new QLabel();
     QMovie * movie2=new QMovie(":/background/resource/background/2.gif");
     label2->setMovie(movie2);

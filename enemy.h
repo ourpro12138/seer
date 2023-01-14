@@ -5,8 +5,6 @@
 #include<QPainter>
 #include<QRectF>
 #include<QMovie>
-
-
 #include<QDebug>
 
 
