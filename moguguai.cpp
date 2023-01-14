@@ -7,7 +7,7 @@ MoGuGuai::MoGuGuai(int i)
     hp=350;atk=25;speed=0.40;
     name="MoGuGuai";
 //    if(qrand()%2)
-    movie=new  QMovie(":/enemy/resource/enemy/enemy_6.gif");
+    movie=new  QMovie(":/enemy/resource/enemy/moguguai.gif");
     movie->start();
     x=1566;
     this->i=i;

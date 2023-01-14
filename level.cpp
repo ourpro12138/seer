@@ -394,7 +394,7 @@ void Level::initlevel()
 
     Enemy *mo = new MoGuGuai(3);
 
-    scene->addItem(mo);
+   scene->addItem(mo);
 
 view->show();
 

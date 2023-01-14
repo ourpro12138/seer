@@ -13,7 +13,7 @@ Enemy::~Enemy()
 
 QRectF Enemy::boundingRect() const
 {
-    return QRectF(0,0,176,104);
+    return QRectF(0,0,184,200);
 }
 
 void Enemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
