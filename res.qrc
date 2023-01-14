@@ -286,5 +286,28 @@
         <file>resource/partner/pokedex_head/normal/stand_tailesi.gif</file>
         <file>resource/partner/pokedex_head/normal/stand_xinke.gif</file>
         <file>resource/partner/pokedex_head/normal/stand_xinnasi.gif</file>
+        <file>resource/partner/stand_abu.gif</file>
+        <file>resource/partner/stand_balusi.gif</file>
+        <file>resource/partner/stand_beier.gif</file>
+        <file>resource/partner/stand_bubucao.gif</file>
+        <file>resource/partner/stand_guodongya.gif</file>
+        <file>resource/partner/stand_liehuohou.gif</file>
+        <file>resource/partner/stand_mohuaxianzi.gif</file>
+        <file>resource/partner/stand_xianrenqiu.gif</file>
+        <file>resource/partner/stand_xiaodouya.gif</file>
+        <file>resource/partner/stand_yidingsi.gif</file>
+        <file>resource/partner/stand_yiyi.gif</file>
+        <file>resource/partner/stand_youlian.gif</file>
+        <file>resource/partner/stand_balagui.gif</file>
+        <file>resource/partner/stand_baobeili.gif</file>
+        <file>resource/partner/stand_bolangya.gif</file>
+        <file>resource/partner/stand_bubuhua.gif</file>
+        <file>resource/partner/stand_dingding.gif</file>
+        <file>resource/partner/stand_juxingxianrenzhang.gif</file>
+        <file>resource/partner/stand_lieyanxingxing.gif</file>
+        <file>resource/partner/stand_shuijingya.gif</file>
+        <file>resource/partner/stand_xianrenzhang.gif</file>
+        <file>resource/partner/stand_yikalaien.gif</file>
+        <file>resource/partner/stand_yuanguyulong.gif</file>
     </qresource>
 </RCC>
