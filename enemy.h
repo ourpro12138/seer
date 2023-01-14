@@ -5,6 +5,11 @@
 #include<QPainter>
 #include<QRectF>
 #include<QMovie>
+
+
+#include<QDebug>
+
+
 #include"partner.h"
 class Enemy: public Elf
 {
