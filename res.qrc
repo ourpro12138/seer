@@ -261,5 +261,29 @@
         <file>resource/partner/pokedex_head/grass/stand_yika.gif</file>
         <file>resource/partner/pokedex_head/grass/stand_yiyi.gif</file>
         <file>resource/partner/yiyou_waterbullet.png</file>
+        <file>resource/partner/pokedex_head/normal/head_agong.png</file>
+        <file>resource/partner/pokedex_head/normal/head_agong2.png</file>
+        <file>resource/partner/pokedex_head/normal/head_aoligong.png</file>
+        <file>resource/partner/pokedex_head/normal/head_aoligong2.png</file>
+        <file>resource/partner/pokedex_head/normal/head_bobo.png</file>
+        <file>resource/partner/pokedex_head/normal/head_bobo2.png</file>
+        <file>resource/partner/pokedex_head/normal/head_guruking.png</file>
+        <file>resource/partner/pokedex_head/normal/head_guruking2.png</file>
+        <file>resource/partner/pokedex_head/normal/head_taida.png</file>
+        <file>resource/partner/pokedex_head/normal/head_taida2.png</file>
+        <file>resource/partner/pokedex_head/normal/head_tailesi.png</file>
+        <file>resource/partner/pokedex_head/normal/head_tailesi2.png</file>
+        <file>resource/partner/pokedex_head/normal/head_xinke.png</file>
+        <file>resource/partner/pokedex_head/normal/head_xinke2.png</file>
+        <file>resource/partner/pokedex_head/normal/head_xinnasi.png</file>
+        <file>resource/partner/pokedex_head/normal/head_xinnasi2.png</file>
+        <file>resource/partner/pokedex_head/normal/stand_agong.gif</file>
+        <file>resource/partner/pokedex_head/normal/stand_aoligong.gif</file>
+        <file>resource/partner/pokedex_head/normal/stand_bobo.gif</file>
+        <file>resource/partner/pokedex_head/normal/stand_guruking.gif</file>
+        <file>resource/partner/pokedex_head/normal/stand_taida.gif</file>
+        <file>resource/partner/pokedex_head/normal/stand_tailesi.gif</file>
+        <file>resource/partner/pokedex_head/normal/stand_xinke.gif</file>
+        <file>resource/partner/pokedex_head/normal/stand_xinnasi.gif</file>
     </qresource>
 </RCC>
