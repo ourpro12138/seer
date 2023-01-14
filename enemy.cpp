@@ -8,12 +8,11 @@ Enemy::Enemy()
 }
 Enemy::~Enemy()
 {
-    delete movie;
 }
 
 QRectF Enemy::boundingRect() const
 {
-    return QRectF(0,0,184,200);
+    return QRectF(0,0,width,height);
 }
 
 void Enemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

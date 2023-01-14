@@ -6,7 +6,7 @@
 #include <QApplication>
 #include "yiyou.h"
 #include "xiaohuohou.h"
-
+#include "bubuzhongzi.h"
 
 
 #include "partner.h"

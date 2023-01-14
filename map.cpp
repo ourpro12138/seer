@@ -66,38 +66,39 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
            switch(preparedPtn->No)
         {
         case 1:
-
+               qDebug()<<"布布种子建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Bubuzhongzi(i,j); break;
         case 2:
-
+               break;
         case 3:
-
+               break;
         case 4:
-
+               break;
         case 5:
             qDebug()<<"伊优建立 i= "<<i<<"j = "<<j;
                  myptn[i][j] = new Yiyou(i,j); break;
         case 6:
-               qDebug()<<"小火猴建立 i = "<<i<<"j = "<<j;
-               myptn[i][j] = new Xiaohuohou(i,j);break;
+              break;
         case 7:
-
+               break;
         case 8:
-
+               break;
         case 9:
-
+               break;
         case 10:
-
+               break;
         case 11:
-
+               break;
         case 12:
-
+               break;
         case 13:
-
+               break;
         case 14:
-
+               break;
         case 15:
-
-        case 16: break;
+               break;
+        case 16:
+               break;
 
         }
                    scene()->addItem(myptn[i][j]);

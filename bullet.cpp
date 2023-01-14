@@ -26,7 +26,7 @@ void Bullet::advance(int phase)
 {
     if(!phase)
         return;
-    //updata();
+    update();
     QList <QGraphicsItem *> items=collidingItems();
     if(!items.isEmpty())
     {

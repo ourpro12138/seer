@@ -390,12 +390,14 @@ void Level::initlevel()
          else if(this->levelMode==1)
             {
                  //设置光标效果
-                 QCursor ptn(QPixmap(":/partner/resource/partner/pokedex_head/"+cb->cards[j]->attribute+"/stand_"+cb->cards[j]->name.toLower()+".gif"));
+                 QApplication::restoreOverrideCursor();
+                 QCursor ptn(QPixmap(":/partner/resource/partner/stand_"+cb->cards[j]->name.toLower()+".gif"));
                  QApplication::setOverrideCursor(ptn);
                  map->preparedPtn = cb->cards[j];
          }
     });
     }
+
 
 
     connect(this,&Level::gamestart,[=](){

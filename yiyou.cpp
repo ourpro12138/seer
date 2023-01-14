@@ -3,11 +3,11 @@
 Yiyou::Yiyou(int i,int j)
 {
 
-    this->i = i; this->j=j;
+  this->i = i; this->j=j;
   width = 95;height=133;
   hp=300;bulletCounter=0;bulletCreateTime=40;
   name="Yiyou";
-  atkmovie=new QMovie(":/partner/resource/partner/pokedex_head/water/stand_yiyou.gif");
+  atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
   setPos(154+234*j-47,290-133+154*i);
 

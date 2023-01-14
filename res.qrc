@@ -285,13 +285,11 @@
         <file>resource/partner/pokedex_head/normal/stand_tailesi.gif</file>
         <file>resource/partner/pokedex_head/normal/stand_xinke.gif</file>
         <file>resource/partner/pokedex_head/normal/stand_xinnasi.gif</file>
-        <file>resource/partner/stand_abu.gif</file>
         <file>resource/partner/stand_balusi.gif</file>
         <file>resource/partner/stand_beier.gif</file>
         <file>resource/partner/stand_bubucao.gif</file>
         <file>resource/partner/stand_guodongya.gif</file>
         <file>resource/partner/stand_liehuohou.gif</file>
-        <file>resource/partner/stand_mohuaxianzi.gif</file>
         <file>resource/partner/stand_xianrenqiu.gif</file>
         <file>resource/partner/stand_xiaodouya.gif</file>
         <file>resource/partner/stand_yidingsi.gif</file>
@@ -308,5 +306,12 @@
         <file>resource/partner/stand_xianrenzhang.gif</file>
         <file>resource/partner/stand_yikalaien.gif</file>
         <file>resource/partner/stand_yuanguyulong.gif</file>
+        <file>resource/partner/stand_dida.gif</file>
+        <file>resource/partner/stand_jier.gif</file>
+        <file>resource/partner/stand_yiyou.gif</file>
+        <file>resource/partner/stand_abu.gif</file>
+        <file>resource/partner/stand_mohuaxianzi.gif</file>
+        <file>resource/partner/cardshead/agone.png</file>
+        <file>resource/partner/cardshead/taida.png</file>
     </qresource>
 </RCC>
