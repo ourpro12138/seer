@@ -2,9 +2,12 @@
 #define ENEMY_H
 #include "elf.h"
 #include<QGraphicsItem>
+#include <QGraphicsScene>
 #include<QPainter>
 #include<QRectF>
 #include<QMovie>
+
+
 #include<QDebug>
 
 
@@ -12,17 +15,17 @@
 class Enemy: public Elf
 {
 public:
-    //enum {Type=UserType+2};
+    enum {Type=UserType+2};
 
     Enemy();
-    int atk;//攻击
-    int hp;//血
-    int attritube;//属性
+//    int atk;//攻击
+//    int hp;//血
+//    int attritube;//属性
     int i;//出现的位置
-    QString name;//名字
+//    QString name;//名字
 
     int speedFactor;//移动系数
-    qreal speed;//真正的速度
+    qreal speed;//速度系数
     int setStatus;//设立状态
     int nowStatus;//现在状态
     bool isSurvive;//是否存活
@@ -31,7 +34,7 @@ public:
 
 
     void moveMovie(QString pic);
-     QMovie *movie;//移动动画
+    QMovie *movie;//移动动画
 
 
     QRectF boundingRect() const override;

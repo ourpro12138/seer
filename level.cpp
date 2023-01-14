@@ -1,6 +1,6 @@
 #include "level.h"
 #include "ui_level.h"
-
+#include "moguguai.h"
 
 Level::Level(QWidget *parent) :
     QWidget(parent),
@@ -392,6 +392,9 @@ void Level::initlevel()
     });
     }
 
+    Enemy *mo = new MoGuGuai(3);
+
+    scene->addItem(mo);
 
 view->show();
 
