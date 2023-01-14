@@ -31,9 +31,9 @@ void Bullet::advance(int phase)
     if(!items.isEmpty())
     {
         Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
-//        enemy->hp-=ATK;
-//        if(enemy->hp>0)
-//            delete this;
+        enemy->hp-=ATK;
+        if(enemy->hp>0)
+            delete this;
     }
     setX(x()+5);
     if(x()>=1000)

@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    bubuzhongzi.cpp \
     bullet.cpp \
     cards.cpp \
     cardsblank.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
     main.cpp \
     maingame.cpp \
     map.cpp \
+    moguguai.cpp \
     partner.cpp \
     pdbackpushbutton.cpp \
     pokedex.cpp \
@@ -37,6 +39,7 @@ SOURCES += \
     yiyou.cpp
 
 HEADERS += \
+    bubuzhongzi.h \
     bullet.h \
     cards.h \
     cardsblank.h \
@@ -48,6 +51,7 @@ HEADERS += \
     level.h \
     maingame.h \
     map.h \
+    moguguai.h \
     partner.h \
     pdbackpushbutton.h \
     pokedex.h \
