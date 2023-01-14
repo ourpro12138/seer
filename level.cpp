@@ -26,12 +26,12 @@ Level::~Level()
 
 void Level::paintEvent(QPaintEvent *)
 {
-
-   QPainter painter(this);
-   QPixmap map;
-   map.load(":/map/resource/map/"+levelName+".png");
-   painter.drawPixmap(0,0,map);
-   painter.end();
+//   QPainter painter(this);
+//   QPixmap map;
+//   map.load(":/map/resource/map/"+levelName+".png");
+//   painter.drawPixmap(0,0,map);
+//   painter.end();
+    view->setBackgroundBrush(QPixmap(":/map/resource/map/"+levelName+".png"));
 }
 
 void Level::GameStart()
@@ -93,14 +93,21 @@ void Level::initlevel()
 //    view->setBackgroundBrush(QPixmap(":/map/resource/map/"+levelName+".png"));
 
 //    this->setStyleSheet("background-image:url(:/map/resource/map/"+levelName+".png)");
-    scene = new QGraphicsScene(this);
-//    map = new Map();
-
-
     this->move(-200,0);
+    scene = new QGraphicsScene(this);
+    scene->setSceneRect(9,9,1566,911);
+    map = new Map();
+
+    view = new QGraphicsView(scene,this);
+    view->setFixedSize(1586,931);
+
+    scene->addItem(map);
+
 
     cm = new cardsmenu(this);
     cb = new cardsblank(this);
+
+
     for(int i=0;i<5;i++)
     {
         cb->headButton[i] = new QPushButton(this->cb);
@@ -377,18 +384,15 @@ void Level::initlevel()
         }
          else if(this->levelMode==1)
             {
-
-             connect(cb->headButton[j],&QPushButton::clicked,this,[=](){
                  //设置光标效果
                  QCursor ptn(QPixmap(":/partner/resource/partner/pokedex_head/"+cb->cards[j]->attribute+"/stand_"+cb->cards[j]->name.toLower()+".gif"));
                  QApplication::setOverrideCursor(ptn);
                  map->preparedPtn = cb->cards[j];
-             });
          }
     });
     }
 
 
-//view->show();
+view->show();
 
 }

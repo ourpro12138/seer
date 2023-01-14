@@ -6,10 +6,6 @@
 #include<QRectF>
 #include<QMovie>
 
-class Enemy: public Elf
-{
-public:
-
 #include<QDebug>
 #include"partner.h"
 #include<QMouseEvent>
@@ -46,7 +42,6 @@ public:
 
 
 
-    int benefit;
 
     int benefit; //击破后得到的收益
 

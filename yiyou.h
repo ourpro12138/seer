@@ -13,6 +13,8 @@ public:
     ~Yiyou();
     void advance(int phase);
 
+    void skill();
+    void evolution();
 private:
     Bullet *bullet;
     int bulletCounter,bulletCreateTime;
