@@ -70,6 +70,7 @@
         <file>resource/background/xvanzhong_grass.png</file>
         <file>resource/background/xvanzhong_normal.png</file>
         <file>resource/background/shuxing_fire.png</file>
+        <file>resource/background/OIP-C (1).jpg</file>
     </qresource>
     <qresource prefix="/enemy">
         <file>resource/enemy/1-GRASS 2-WATER 3-FIRE.txt</file>
@@ -82,7 +83,6 @@
         <file>resource/enemy/enemy_4attack.gif</file>
         <file>resource/enemy/enemy_5.gif</file>
         <file>resource/enemy/enemy_5attack.gif</file>
-        <file>resource/enemy/enemy_6.gif</file>
         <file>resource/enemy/enemy_6attack.gif</file>
         <file>resource/enemy/enemy_7.gif</file>
         <file>resource/enemy/enemy_7attack.gif</file>
@@ -91,6 +91,7 @@
         <file>resource/enemy/enemy_9.gif</file>
         <file>resource/enemy/enemy_9attack.gif</file>
         <file>resource/enemy/enemy_attack.gif</file>
+        <file>resource/enemy/moguguai.gif</file>
     </qresource>
     <qresource prefix="/map">
         <file>resource/map/alpha.png</file>
@@ -284,5 +285,28 @@
         <file>resource/partner/pokedex_head/normal/stand_tailesi.gif</file>
         <file>resource/partner/pokedex_head/normal/stand_xinke.gif</file>
         <file>resource/partner/pokedex_head/normal/stand_xinnasi.gif</file>
+        <file>resource/partner/stand_abu.gif</file>
+        <file>resource/partner/stand_balusi.gif</file>
+        <file>resource/partner/stand_beier.gif</file>
+        <file>resource/partner/stand_bubucao.gif</file>
+        <file>resource/partner/stand_guodongya.gif</file>
+        <file>resource/partner/stand_liehuohou.gif</file>
+        <file>resource/partner/stand_mohuaxianzi.gif</file>
+        <file>resource/partner/stand_xianrenqiu.gif</file>
+        <file>resource/partner/stand_xiaodouya.gif</file>
+        <file>resource/partner/stand_yidingsi.gif</file>
+        <file>resource/partner/stand_yiyi.gif</file>
+        <file>resource/partner/stand_youlian.gif</file>
+        <file>resource/partner/stand_balagui.gif</file>
+        <file>resource/partner/stand_baobeili.gif</file>
+        <file>resource/partner/stand_bolangya.gif</file>
+        <file>resource/partner/stand_bubuhua.gif</file>
+        <file>resource/partner/stand_dingding.gif</file>
+        <file>resource/partner/stand_juxingxianrenzhang.gif</file>
+        <file>resource/partner/stand_lieyanxingxing.gif</file>
+        <file>resource/partner/stand_shuijingya.gif</file>
+        <file>resource/partner/stand_xianrenzhang.gif</file>
+        <file>resource/partner/stand_yikalaien.gif</file>
+        <file>resource/partner/stand_yuanguyulong.gif</file>
     </qresource>
 </RCC>

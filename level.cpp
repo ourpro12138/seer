@@ -398,7 +398,6 @@ void Level::initlevel()
     }
 
 
-
     connect(this,&Level::gamestart,[=](){
         view->show();
         gametime->start(10);
