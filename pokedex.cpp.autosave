@@ -1121,10 +1121,6 @@ void pokedex::on_pushButtonyika_clicked()
 
 
 
-
-
-
-
 //普通系精灵触发展示按钮
 void pokedex::on_pushButtonguru_clicked()
 {
@@ -1217,3 +1213,10 @@ void pokedex::on_pushButtontailesi_clicked()
     ui->label->move(730,460);
     ui->pushButtontailesi->setDown(true);
 }
+
+
+
+
+
+
+
