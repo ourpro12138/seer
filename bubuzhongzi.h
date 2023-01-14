@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "map.h"
 #include "elf.h"
+#include "enemy.h"
 #include "partner.h"
 
 class Bubuzhongzi : public partner
@@ -15,10 +16,10 @@ public:
     QRectF boundingRect() const;
     //void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void advance(int phase);
+    void treatment(int i,int j);
 
 private:
-   int prepareTime,counter;
-   bool atkStatus;
+   int treatCounter,treatCreateTime;
 
 
 signals:
