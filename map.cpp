@@ -87,6 +87,8 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
         case 8:
                break;
         case 9:
+               qDebug()<<"小火猴建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Xiaohuohou(i,j); break;
                break;
         case 10:
                break;
