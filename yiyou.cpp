@@ -28,13 +28,21 @@ void Yiyou::advance(int phase)
         ++bulletCounter;
     if(bulletCounter==bulletCreateTime)
     {
-        bullet=new Bullet(i*230+170,j*152+121);
-        scene()->addItem(bullet);
         bulletCounter=0;
+
+            qDebug()<<"水单";
+        bullet=new Bullet(i,j);
+        scene()->addItem(bullet);
+
     }
     if(hp<=0)
         delete this;
 }
+//bool Yiyou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+//{
+//     Q_UNUSED(mode);
+//    return other->type() == Enemy::Type && qFuzzyCompare(other->y(), y())&&qAbs(other->x()-x())<800;
+//}
 void Yiyou::skill()
 {
 
@@ -43,3 +51,4 @@ void Yiyou::evolution()
 {
 
 }
+

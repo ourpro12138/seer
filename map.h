@@ -8,7 +8,7 @@
 #include "xiaohuohou.h"
 
 
-
+#include <QDebug>
 #include "partner.h"
 #include "cards.h"
 class Map :public QGraphicsItem

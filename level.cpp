@@ -404,6 +404,7 @@ void Level::initlevel()
         connect(gametime,&QTimer::timeout,scene,&QGraphicsScene::advance);
 
     });
-
+    MoGuGuai *mo=new MoGuGuai(3);
+    scene->addItem(mo);
 
 }
