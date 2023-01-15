@@ -2,6 +2,10 @@
 #include "ui_level.h"
 #include "moguguai.h"
 
+
+
+
+
 Level::Level(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Level)
@@ -15,6 +19,7 @@ Level::Level(QWidget *parent) :
     this->setFixedSize(1566,911);
     this->hide();
     initlevel();
+
 }
 
 Level::~Level()
@@ -390,7 +395,8 @@ void Level::initlevel()
          else if(this->levelMode==1)
             {
                  //设置光标效果
-                 QCursor ptn(QPixmap(":/partner/resource/partner/pokedex_head/"+cb->cards[j]->attribute+"/stand_"+cb->cards[j]->name.toLower()+".gif"));
+                 QApplication::restoreOverrideCursor();
+                 QCursor ptn(QPixmap(":/partner/resource/partner/stand_"+cb->cards[j]->name.toLower()+".gif"));
                  QApplication::setOverrideCursor(ptn);
                  map->preparedPtn = cb->cards[j];
          }
@@ -399,12 +405,21 @@ void Level::initlevel()
 
 
     connect(this,&Level::gamestart,[=](){
+
+
         view->show();
         gametime->start(10);
         connect(gametime,&QTimer::timeout,scene,&QGraphicsScene::advance);
 
     });
+
     MoGuGuai *mo=new MoGuGuai(3);
     scene->addItem(mo);
+
+
+    MoGuGuai *mo=new MoGuGuai(2);
+    scene->addItem(mo);
+
+
 
 }

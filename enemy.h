@@ -28,9 +28,9 @@ public:
     qreal speed;//速度系数
     int setStatus;//设立状态
     int nowStatus;//现在状态
-    bool isSurvive;//是否存活
+    //bool isSurvive;//是否存活
 
-    partner *partner;
+    Partner *partner;
 
 
     void moveMovie(QString pic);

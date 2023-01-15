@@ -6,7 +6,7 @@
 #include "map.h"
 #include "bullet.h"
 
-class Yiyou : public partner
+class Yiyou : public Partner
 {
 public:
     Yiyou(int i,int j);

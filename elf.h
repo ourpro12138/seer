@@ -42,6 +42,8 @@ public:
     //enemy-移动速度 partner-攻击速度
     qreal speed;
 
+    int width;
+    int height;
 
 
     ~Elf();

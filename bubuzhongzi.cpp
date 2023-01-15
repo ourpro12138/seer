@@ -2,11 +2,13 @@
 
 Bubuzhongzi::Bubuzhongzi(int i,int j)
 {
+    this->i = i; this->j = j;
     hp=500,atk=50,treatCounter=0;treatCreateTime=60;
+    this->width = 91;this->height=141;
     name="bubuzhongzi";
-    atkmovie=new QMovie(":/partner/resource/partner/stand_bubuzhongzi.gif");
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
-    setPos(i*230+170,j*152+121);
+      setPos(154+234*j-47,290-133+154*i);
 }
 Bubuzhongzi::~Bubuzhongzi()
 {
@@ -14,10 +16,10 @@ Bubuzhongzi::~Bubuzhongzi()
     if(atkmovie)
         delete atkmovie;
 }
-QRectF Bubuzhongzi::boundingRect() const
-{
-     return QRectF(180, 0, 100, 70);
-}
+//QRectF Bubuzhongzi::boundingRect() const
+//{
+//     return QRectF(180, 0, 100, 70);
+//}
 
 
 void Bubuzhongzi::advance(int phase)
@@ -42,4 +44,11 @@ void Bubuzhongzi::treatment(int i,int j)
         }
     }
 }
+void Bubuzhongzi::skill()
+{
 
+}
+void Bubuzhongzi::evolution()
+{
+
+}

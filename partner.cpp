@@ -2,11 +2,11 @@
 
 
 
-partner::partner()
+Partner::Partner()
 {
 
 }
-partner::~partner()
+Partner::~Partner()
 {
 
 }
@@ -15,24 +15,24 @@ partner::~partner()
 
 //void partner::evolution()
 //{}
-void partner::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void Partner::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
     painter->drawImage(boundingRect(),atkmovie->currentImage());
 }
-QRectF partner::boundingRect() const
+QRectF Partner::boundingRect() const
 {
     return QRectF(0,0,width,height);
 }
-void partner::advance(int phase)
+void Partner::advance(int phase)
 {
     if(!phase)
         return;
     update();
 
 }
-int partner::type() const
+int Partner::type() const
 {
 return Type;
 }

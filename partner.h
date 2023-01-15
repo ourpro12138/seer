@@ -2,10 +2,10 @@
 #define PARTNER_H
 #include "elf.h"
 #include <QPainter>
-class partner :public Elf
+class Partner :public Elf
 {
 public:
-    partner();
+    Partner();
 
     virtual void skill()=0;
 
@@ -14,12 +14,10 @@ public:
     QRectF boundingRect() const;
     void advance(int phase);
     int type() const;
-    ~partner();
+    ~Partner();
     int i;
     int j;
 
-    int width;
-    int height;
 
 };
 

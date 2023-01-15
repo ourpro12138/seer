@@ -7,17 +7,19 @@
 #include "enemy.h"
 #include "partner.h"
 
-class Bubuzhongzi : public partner
+class Bubuzhongzi : public Partner
 {
 public:
     Bubuzhongzi(int i,int j);
      ~Bubuzhongzi();
 
-    QRectF boundingRect() const;
+//    QRectF boundingRect() const;
     //void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void advance(int phase);
     void treatment(int i,int j);
 
+    void skill();
+    void evolution();
 private:
    int treatCounter,treatCreateTime;
 

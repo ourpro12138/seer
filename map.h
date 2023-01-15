@@ -6,7 +6,7 @@
 #include <QApplication>
 #include "yiyou.h"
 #include "xiaohuohou.h"
-
+#include "bubuzhongzi.h"
 
 #include <QDebug>
 #include "partner.h"
@@ -16,7 +16,7 @@ class Map :public QGraphicsItem
 public:
     Map();
 
-    static partner *myptn[4][5];//四行五列
+    static Partner *myptn[4][5];//四行五列
     Cards *preparedPtn;
 
 

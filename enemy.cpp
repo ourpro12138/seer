@@ -8,12 +8,11 @@ Enemy::Enemy()
 }
 Enemy::~Enemy()
 {
-    delete movie;
 }
 
 QRectF Enemy::boundingRect() const
 {
-    return QRectF(0,0,184,200);
+    return QRectF(0,0,width,height);
 }
 
 void Enemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
@@ -35,7 +34,7 @@ void Enemy::advance(int phase)
 bool Enemy::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
-    return other->type()==partner::Type && other->x()-x<80 && other->x()-x>15
+    return other->type()==Partner::Type && other->x()-x<80 && other->x()-x>15
             && other->y()-y()>0 && other->y()-y()<100;
 
 }

@@ -5,13 +5,13 @@
 #include "partner.h"
 #include "map.h"
 
-class Xiaohuohou : public partner
+class Xiaohuohou : public Partner
 {
 public:
    Xiaohuohou(int i,int j);
    ~Xiaohuohou();
 
-   QRectF boundingRect() const;
+//   QRectF boundingRect() const;
 //   void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
    bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
    void advance(int phase);
