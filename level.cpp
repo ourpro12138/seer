@@ -417,9 +417,5 @@ void Level::initlevel()
     scene->addItem(mo);
 
 
-    MoGuGuai *mo=new MoGuGuai(2);
-    scene->addItem(mo);
-
-
 
 }

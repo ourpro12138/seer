@@ -1,4 +1,5 @@
 #include "bullet.h"
+#include <QTimer>
 
 Bullet::Bullet(int i,int j)
 {
@@ -23,10 +24,10 @@ void Bullet::paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWid
     painter->drawImage(boundingRect(),QImage(":/partner/resource/partner/yiyou_waterbullet.png"));
 }
 
-bool Bullet::collideWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode)const
+bool Bullet::collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode) const
 {
+    qDebug()<<"碰撞调用";
     Q_UNUSED(mode);
-
     return other->type() ==Enemy::Type && x()-other->x()>50&&x()-other->x()<90
             &&y()-other->y()>0&&y()-other->y()<100;
 }
@@ -36,11 +37,10 @@ void Bullet::advance(int phase)
     if(!phase)
         return;
 
-
-
-
     update();
     QList <QGraphicsItem *> items=collidingItems();
+
+
     if(!items.isEmpty())
     {
 
@@ -49,12 +49,19 @@ void Bullet::advance(int phase)
         enemy=new Enemy;
         enemy->hp -= ATK;
 
+
+        setX(x()+49);
         if(enemy->hp>0)
-            delete this;
+       {
+//            qDebug()<<"敌人在吗";
+           delete this;
+        }
     }
-    setX(x()+5);
+//    qDebug()<<"x:"<<x();
     if(x()>=1300)
+
         delete this;
+
 }
 
 int  Bullet::type()const

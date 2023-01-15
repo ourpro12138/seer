@@ -19,8 +19,6 @@ private:
     Bullet *bullet;
     int bulletCounter,bulletCreateTime;
 
-signals:
-
 
 };
 

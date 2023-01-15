@@ -17,7 +17,7 @@ public:
    ~Bullet();
    QRectF boundingRect()const;
    void advance(int phase);
-   bool collideWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode)const;
+   bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode)const;
    int type() const;
    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
 private:

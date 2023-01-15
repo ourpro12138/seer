@@ -29,11 +29,8 @@ void Yiyou::advance(int phase)
     if(bulletCounter==bulletCreateTime)
     {
         bulletCounter=0;
-
-            qDebug()<<"水单";
         bullet=new Bullet(i,j);
         scene()->addItem(bullet);
-
     }
     if(hp<=0)
         delete this;

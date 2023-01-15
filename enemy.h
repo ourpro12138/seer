@@ -12,6 +12,7 @@
 
 
 #include"partner.h"
+
 class Enemy: public Elf
 {
 public:

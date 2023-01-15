@@ -54,7 +54,7 @@ void MoGuGuai::advance(int phase)
      }
 
     setX(x-speed*speedFactor/100);
-    qDebug()<<"moving"<<x;
+//    qDebug()<<"moving"<<x;
         x--;
 
 
