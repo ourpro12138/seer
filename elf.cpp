@@ -18,5 +18,7 @@ void  Elf::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 void  Elf::advance(int phase)
 {}
 bool  Elf::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
-{}
+{
+
+}
 

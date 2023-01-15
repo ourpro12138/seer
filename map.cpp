@@ -35,6 +35,9 @@ QRectF Map::boundingRect() const
 }
 void Map::advance(int phase)
 {
+    if(!phase)
+        return;
+    update();
 
 }
 
@@ -103,6 +106,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
                break;
 
         }
+            //myptn[i][j]->setZValue(j);
                    scene()->addItem(myptn[i][j]);
                    QApplication::restoreOverrideCursor();
                    preparedPtn =NULL;
@@ -117,5 +121,5 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
 }
 void Map::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
-
+    //Q_UNUSED(event);
 }

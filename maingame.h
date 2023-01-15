@@ -6,6 +6,7 @@
 #include "startscene.h"
 #include "chooselevelscene.h"
 #include <QDebug>
+#include <QGraphicsScene>
 #include "pokedex.h"
 #include "choosescene.h"
 #include "level.h"
@@ -22,6 +23,7 @@ class maingame : public QWidget
 public:
     maingame(QWidget *parent = nullptr);
     ~maingame();
+    void check();
     void loginGet();
 
     void chooseLevel();

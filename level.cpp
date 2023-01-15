@@ -413,8 +413,13 @@ void Level::initlevel()
 
     });
 
+    MoGuGuai *mo=new MoGuGuai(3);
+    scene->addItem(mo);
+
+
     MoGuGuai *mo=new MoGuGuai(2);
     scene->addItem(mo);
+
 
 
 }

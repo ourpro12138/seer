@@ -24,8 +24,6 @@ private:
    int posX,posY;
    int ATK;
 
-signals:
-
 };
 
 #endif // BULLET_H

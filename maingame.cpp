@@ -30,11 +30,11 @@ maingame::maingame(QWidget *parent)
         level[i]->hide();
     }
 
-
     sc->hide();
     pd->hide();
 //    cm->hide();
     choose->hide();
+
 
     connect(ss,&startscene::login,this,&maingame::loginGet);
     connect(sc,&ChooseLevelScene::chooseLevel,this,&maingame::chooseLevel);
@@ -55,6 +55,7 @@ maingame::~maingame()
 {
     delete ui;
     delete choose;
+    //delete scene;
 }
 void maingame::loginGet()
 {
@@ -160,3 +161,5 @@ void maingame::levelUpdate()
         }
     }
 }
+
+
