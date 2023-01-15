@@ -2,15 +2,17 @@
 #include<QGraphicsScene>
 #include<QGraphicsView>
 #include"partner.h"
+#include<QDebug>
+
 MoGuGuai::MoGuGuai(int i)
 {
     this->width = 184;this->height=200;
-    hp=350;atk=25;speed=0.40;
+    hp=350;atk=30;speed=0.40;
     name="MoGuGuai";
-//    if(qrand()%2)
+    //if(qrand()%2)
     movie=new  QMovie(":/enemy/resource/enemy/moguguai.gif");
     movie->start();
-    x=1566;
+    x=1300;
     this->i=i;
     this->setPos(1300,i*200);
 }
@@ -32,21 +34,29 @@ void MoGuGuai::advance(int phase)
      if(hp<=0)
      {
          nowStatus=0;  //死亡
+         movie->currentFrameNumber()==movie->frameCount()-1;
          delete this;
          return;
      }
 
-    if(hp!=0)
-    {
-      nowStatus=1;         //存活没碰到精灵
-      if(!items.isEmpty())
-      {
-          nowStatus=2;   //存活碰到精灵
-          partner->hp-=atk;
-          moveMovie(":/enemy/resource/enemy/enemy_6attack.gif");
-         //partner *partner=qgraphicsitem_cast<partner *>(items[0]);
+     if(hp>0)
+     {
+         nowStatus=1;
+         moveMovie(":/enemy/resource/enemy/moguguai.gif");
+         if(!items.isEmpty())
+         {
+             Partner *partner=qgraphicsitem_cast<Partner *>(items[0]);
+             partner->hp-=atk;
+             nowStatus=2;
+             moveMovie(":/enemy/resource/enemy/enemy_6attack.gif");
+         }
 
-      }
-    }
+     }
+
+    setX(x-speed*speedFactor/100);
+    qDebug()<<"moving"<<x;
+        x--;
+
+
 }
 

@@ -5,7 +5,7 @@
 #include "partner.h"
 #include "map.h"
 
-class Xiaohuohou : public partner
+class Xiaohuohou : public Partner
 {
 public:
    Xiaohuohou(int i,int j);

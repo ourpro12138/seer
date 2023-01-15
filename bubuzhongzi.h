@@ -7,7 +7,7 @@
 #include "enemy.h"
 #include "partner.h"
 
-class Bubuzhongzi : public partner
+class Bubuzhongzi : public Partner
 {
 public:
     Bubuzhongzi(int i,int j);

@@ -2,6 +2,10 @@
 #include "ui_level.h"
 #include "moguguai.h"
 
+
+
+
+
 Level::Level(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Level)
@@ -15,6 +19,7 @@ Level::Level(QWidget *parent) :
     this->setFixedSize(1566,911);
     this->hide();
     initlevel();
+
 }
 
 Level::~Level()
@@ -399,13 +404,17 @@ void Level::initlevel()
     }
 
 
-
     connect(this,&Level::gamestart,[=](){
+
+
         view->show();
         gametime->start(10);
         connect(gametime,&QTimer::timeout,scene,&QGraphicsScene::advance);
 
     });
+
+    MoGuGuai *mo=new MoGuGuai(2);
+    scene->addItem(mo);
 
 
 }

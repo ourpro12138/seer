@@ -16,7 +16,7 @@ class Map :public QGraphicsItem
 public:
     Map();
 
-    static partner *myptn[4][5];//四行五列
+    static Partner *myptn[4][5];//四行五列
     Cards *preparedPtn;
 
 
