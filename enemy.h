@@ -6,11 +6,7 @@
 #include<QPainter>
 #include<QRectF>
 #include<QMovie>
-
-
 #include<QDebug>
-
-
 #include"partner.h"
 class Enemy: public Elf
 {
@@ -30,7 +26,7 @@ public:
     int nowStatus;//现在状态
     //bool isSurvive;//是否存活
 
-    Partner *partner;
+
 
 
     void moveMovie(QString pic);
@@ -49,6 +45,8 @@ public:
     int benefit; //击破后得到的收益
 
     ~Enemy();
+private:
+        Partner *partner;
 };
 
 #endif // ENEMY_H
