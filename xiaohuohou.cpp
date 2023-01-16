@@ -10,7 +10,7 @@ Xiaohuohou::Xiaohuohou(int i,int j)
     this->i = i; this->j = j;
     this->width = 130;this->height=160;
 
-    hp=100,atk=130,prepareTime=150,atkcounter=150;
+    hp=100,atk=20,prepareTime=150,atkcounter=150;
     standTime=64; standcounter=0;
     name="XiaoHuoHou";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");

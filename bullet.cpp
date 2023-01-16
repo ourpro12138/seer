@@ -3,7 +3,6 @@
 
 Bullet::Bullet(int i,int j)
 {
-    ATK=20;
     posX=80+234*j-47;
     posY=350-133+154*i;
     setPos(posX,posY);
