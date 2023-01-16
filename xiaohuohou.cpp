@@ -1,13 +1,16 @@
 #include "xiaohuohou.h"
 #include "enemy.h"
+#include <QDebug>
+#include <QMovie>
+#include <QLabel>
 
 
 Xiaohuohou::Xiaohuohou(int i,int j)
 {
     this->i = i; this->j = j;
     this->width = 97;this->height=110;
-    hp=10000,atk=100000,prepareTime=50,counter=0;
-    name="xiaohuohou";
+    hp=100,atk=100,prepareTime=50,counter=0;
+    name="XiaoHuoHou";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(154+234*j-47,290-133+154*i);
@@ -25,33 +28,38 @@ Xiaohuohou::~Xiaohuohou()
 ////     return QRectF(180, 0, 100, 70);
 //}
 
+bool Xiaohuohou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+{
+    Q_UNUSED(mode);
+    return other->type()==Enemy::Type && other->x()-x()>-75 && other->x()-x()<-14
+            && other->y()-y()>-95 && other->y()-y()<0;
+}
 
 void Xiaohuohou::advance(int phase)
 {
     if(!phase)
         return;
     update();
+
     QList <QGraphicsItem *> items = collidingItems();
 
     if(hp<=0)
     {
-        nowStatus=0;  //死亡
-        atkmovie->currentFrameNumber()==atkmovie->frameCount()-1;
         delete this;
         return;
     }
 
     if(hp>0)
     {
-        nowStatus=1;
-        QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
         if(!items.isEmpty())
         {
-            Enemy *enemy=qgraphicsitem_cast<Enemy *>(items[0]);
-            enemy->hp-=atk;
-            nowStatus=2;
-            QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+            qDebug()<<"xxx";
+            Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
+            enemy->hp -= atk;
+            atkmovie = new QMovie(":/partner/resource/partner/attack_9.gif");
+            atkmovie->start();
         }
+
 
     }
 }

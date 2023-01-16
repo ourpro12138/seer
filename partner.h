@@ -15,7 +15,6 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
     void advance(int phase);
-    bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode) const override;
     int type() const;
     ~Partner();
     int i;

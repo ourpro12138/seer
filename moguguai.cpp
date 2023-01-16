@@ -45,6 +45,7 @@ void MoGuGuai::advance(int phase)
          moveMovie(":/enemy/resource/enemy/moguguai.gif");
          if(!items.isEmpty())
          {
+             qDebug()<<"lll";
              Partner *partner=qgraphicsitem_cast<Partner *>(items[0]);
              partner->hp-=atk;
              nowStatus=2;
