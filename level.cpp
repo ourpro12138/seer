@@ -1,6 +1,7 @@
 #include "level.h"
 #include "ui_level.h"
 #include "moguguai.h"
+#include"gangyasha.h"
 
 
 
@@ -416,6 +417,8 @@ void Level::initlevel()
     MoGuGuai *mo=new MoGuGuai(3);
     scene->addItem(mo);
 
+    GangYaSha *gang=new GangYaSha(2);
+    scene->addItem(gang);
 
 
 }
