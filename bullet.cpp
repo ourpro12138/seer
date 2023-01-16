@@ -43,7 +43,7 @@ void Bullet::advance(int phase)
 
     if(!items.isEmpty())
     {
-
+    qDebug()<<"ppp";
         Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
 
         //enemy=new Enemy;

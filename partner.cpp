@@ -34,12 +34,7 @@ void Partner::advance(int phase)
     update();
 
 }
-bool Partner::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
-{
-    Q_UNUSED(mode);
-    return other->type()==Enemy::Type && other->x()-x()<80 && other->x()-x()>15
-            && other->y()-y()>0 && other->y()-y()<100;
-}
+
 int Partner::type() const
 {
 return Type;

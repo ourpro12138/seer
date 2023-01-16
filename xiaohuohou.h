@@ -15,7 +15,7 @@ public:
 //   void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 //   bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
    void advance(int phase);
-
+   bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode)const;
    void skill();
    void evolution();
 

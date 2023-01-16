@@ -313,5 +313,7 @@
         <file>resource/partner/stand_mohuaxianzi.gif</file>
         <file>resource/partner/cardshead/agone.png</file>
         <file>resource/partner/cardshead/taida.png</file>
+        <file>resource/partner/Boom.gif</file>
+        <file>resource/partner/attack_9.gif</file>
     </qresource>
 </RCC>
