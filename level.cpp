@@ -29,9 +29,9 @@ Level::~Level()
     delete this->cb;
     delete this->cm;
     delete this->Back;
-//    delete this->scene;
-//    delete this->view;
-//    delete this->map;
+    delete this->map;
+    delete this->view;
+    delete this->scene;
 }
 
 void Level::paintEvent(QPaintEvent *)
@@ -73,8 +73,8 @@ void Level::GameStart()
 kls::kls()
 {
     levelName = "kls";
-    MoGuGuai *mo=new MoGuGuai(3);
-    scene->addItem(mo);
+//    MoGuGuai *mo=new MoGuGuai(3);
+//    scene->addItem(mo);
 }
 
 hek::hek()

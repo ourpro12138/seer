@@ -22,20 +22,20 @@ Yiyou::~Yiyou()
 }
 void Yiyou::advance(int phase)
 {
-    if(!phase)
-        return;
-    update();
-    if(bulletCounter<bulletCreateTime)
-        ++bulletCounter;
-    if(bulletCounter==bulletCreateTime)
-    {
-        bulletCounter=0;
-        bullet=new Bullet(i,j);
-        bullet->ATK=this->atk;
-        scene()->addItem(bullet);
-    }
-    if(hp<=0)
-        delete this;
+//    if(!phase)
+//        return;
+//    update();
+//    if(bulletCounter<bulletCreateTime)
+//        ++bulletCounter;
+//    if(bulletCounter==bulletCreateTime)
+//    {
+//        bulletCounter=0;
+//        bullet=new Bullet(i,j);
+//        bullet->ATK=this->atk;
+//        scene()->addItem(bullet);
+//    }
+//    if(hp<=0)
+//        delete this;
 }
 //bool Yiyou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 //{

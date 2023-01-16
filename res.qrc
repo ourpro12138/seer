@@ -315,5 +315,6 @@
         <file>resource/partner/cardshead/taida.png</file>
         <file>resource/partner/Boom.gif</file>
         <file>resource/partner/attack_9.gif</file>
+        <file>resource/partner/attack_1.gif</file>
     </qresource>
 </RCC>
