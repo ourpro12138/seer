@@ -417,8 +417,8 @@ void Level::initlevel()
     });
 
 
-    GangYaSha *gang=new GangYaSha(2);
-    scene->addItem(gang);
+//    GangYaSha *gang=new GangYaSha(2);
+//    scene->addItem(gang);
 
 
 }
