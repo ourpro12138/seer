@@ -3,7 +3,7 @@
 Bubuzhongzi::Bubuzhongzi(int i,int j)
 {
     this->i = i; this->j = j;
-    hp=500,atk=50,treatCounter=0;treatCreateTime=60;
+    hp=500,atk=50;
     this->width = 91;this->height=141;
     name="bubuzhongzi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");

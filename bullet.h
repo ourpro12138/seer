@@ -20,9 +20,9 @@ public:
    bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode)const;
    int type() const;
    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
+   int ATK;
 private:
    int posX,posY;
-   int ATK;
 
 };
 

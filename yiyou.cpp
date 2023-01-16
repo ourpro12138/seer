@@ -6,6 +6,7 @@ Yiyou::Yiyou(int i,int j)
   this->i = i; this->j=j;
   width = 95;height=133;
   hp=300;bulletCounter=0;bulletCreateTime=100;
+  this->atk = 50;
   name="Yiyou";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
@@ -33,6 +34,7 @@ void Yiyou::advance(int phase)
     {
         bulletCounter=0;
         bullet=new Bullet(i,j);
+        bullet->ATK=this->atk;
         scene()->addItem(bullet);
     }
     }
