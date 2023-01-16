@@ -9,8 +9,13 @@ Xiaohuohou::Xiaohuohou(int i,int j)
 {
     this->i = i; this->j = j;
     this->width = 97;this->height=110;
+
     hp=100,atk=100,prepareTime=50,counter=0;
     name="XiaoHuoHou";
+
+    hp=1000,atk=0,prepareTime=50,counter=0;
+    name="xiaohuohou";
+
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(154+234*j-47,290-133+154*i);

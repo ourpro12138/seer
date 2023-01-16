@@ -25,6 +25,7 @@ SOURCES += \
     choosescene.cpp \
     elf.cpp \
     enemy.cpp \
+    gangyasha.cpp \
     level.cpp \
     main.cpp \
     maingame.cpp \
@@ -48,6 +49,7 @@ HEADERS += \
     choosescene.h \
     elf.h \
     enemy.h \
+    gangyasha.h \
     level.h \
     maingame.h \
     map.h \
