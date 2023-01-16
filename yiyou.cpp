@@ -24,6 +24,9 @@ void Yiyou::advance(int phase)
     if(!phase)
         return;
     update();
+    QList <QGraphicsItem *> items = collidingItems();
+    if(!items.isEmpty())
+    {
     if(bulletCounter<bulletCreateTime)
         ++bulletCounter;
     if(bulletCounter==bulletCreateTime)
@@ -32,14 +35,17 @@ void Yiyou::advance(int phase)
         bullet=new Bullet(i,j);
         scene()->addItem(bullet);
     }
+    }
     if(hp<=0)
         delete this;
 }
-//bool Yiyou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
-//{
-//     Q_UNUSED(mode);
-//    return other->type() == Enemy::Type && qFuzzyCompare(other->y(), y())&&qAbs(other->x()-x())<800;
-//}
+bool Yiyou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+{
+     Q_UNUSED(mode);
+    qDebug()<<other->y()<<y();
+
+    return other->type() == Enemy::Type && qAbs(other->y()-y())>-50&&qAbs(other->y()-y())<100&&qAbs(other->x()-x())>50;
+}
 void Yiyou::skill()
 {
 

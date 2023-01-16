@@ -33,10 +33,6 @@ Xiaohuohou::~Xiaohuohou()
 bool Xiaohuohou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
-    if(other->type()==Enemy::Type)
-    {
-        qDebug()<<other->x()-x()<<"  "<<other->y()-y();
-    }
     return other->type()==Enemy::Type && other->x()-x()>145 && other->x()-x()<180
             && other->y()-y()>-20 && other->y()-y()<20;
 }
