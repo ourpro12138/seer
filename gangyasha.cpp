@@ -56,5 +56,9 @@ void GangYaSha::advance(int phase)
          }
 
      }
+
+    setX(posX-speed*speedFactor/100);
+//    qDebug()<<"moving"<<x;
+        posX--;
 }
 
