@@ -12,9 +12,9 @@ MoGuGuai::MoGuGuai(int i)
     //if(qrand()%2)
     movie=new  QMovie(":/enemy/resource/enemy/moguguai.gif");
     movie->start();
-    x=1300;
+    posX=1300;
     this->i=i;
-    this->setPos(1300,i*200);
+    this->setPos(1300,i*160-30);
 }
 
 MoGuGuai::~MoGuGuai()
@@ -38,24 +38,25 @@ void MoGuGuai::advance(int phase)
          delete this;
          return;
      }
-
      if(hp>0)
      {
          nowStatus=1;
          moveMovie(":/enemy/resource/enemy/moguguai.gif");
          if(!items.isEmpty())
          {
+             qDebug()<<"碰撞";
              Partner *partner=qgraphicsitem_cast<Partner *>(items[0]);
              partner->hp-=atk;
              nowStatus=2;
              moveMovie(":/enemy/resource/enemy/enemy_6attack.gif");
          }
+         else
+         {
+             setX(posX-speed*speedFactor/100);
+                 posX--;
+         }
 
      }
-
-    setX(x-speed*speedFactor/100);
-//    qDebug()<<"moving"<<x;
-        x--;
 
 
 }
