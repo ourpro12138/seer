@@ -10,12 +10,9 @@ Xiaohuohou::Xiaohuohou(int i,int j)
     this->i = i; this->j = j;
     this->width = 130;this->height=160;
 
-    hp=100,atk=100,prepareTime=50,counter=0;
+    hp=100,atk=130,prepareTime=150,atkcounter=150;
+    standTime=64; standcounter=0;
     name="XiaoHuoHou";
-
-    hp=1000,atk=0,prepareTime=50,counter=0;
-    name="xiaohuohou";
-
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(154+234*j-47-10,290-133+154*i-30);
@@ -41,7 +38,7 @@ bool Xiaohuohou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionM
         qDebug()<<other->x()-x()<<"  "<<other->y()-y();
     }
     return other->type()==Enemy::Type && other->x()-x()>145 && other->x()-x()<180
-            && other->y()-y()>-20 && other->y()-y()<0;
+            && other->y()-y()>-20 && other->y()-y()<20;
 }
 
 void Xiaohuohou::advance(int phase)
@@ -49,7 +46,6 @@ void Xiaohuohou::advance(int phase)
     if(!phase)
         return;
     update();
-
     QList <QGraphicsItem *> items = collidingItems();
 
     if(hp<=0)
@@ -62,14 +58,34 @@ void Xiaohuohou::advance(int phase)
     {
         if(!items.isEmpty())
         {
-            qDebug()<<"xxx";
+            qDebug()<<"advance调用";
             Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
-            enemy->hp -= atk;
+         if(atkcounter<prepareTime)
+         {
+          atkcounter++;
+          if(atkcounter==150)
+              enemy->hp-=atk;
+         }
+         if(atkcounter==prepareTime)
+         {
+            atkcounter=0;
             atkmovie = new QMovie(":/partner/resource/partner/attack_9.gif");
             atkmovie->start();
+         }
         }
-
-
+        else
+        {
+            if(standcounter<standTime)
+            {
+             standcounter++;
+            }
+            if(standcounter==standTime)
+            {
+               standcounter=0;
+               atkmovie = new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+               atkmovie->start();
+            }
+        }
     }
 }
 

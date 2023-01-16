@@ -33,7 +33,6 @@ public:
     //攻击动画
     QMovie *atkmovie;
 
-
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void advance(int phase);
@@ -47,6 +46,8 @@ public:
 
 
     ~Elf();
+   int prepareTime,atkcounter,standTime,standcounter;
+   bool atkStatus;
 };
 
 #endif // ELF_H

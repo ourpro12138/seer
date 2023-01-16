@@ -19,9 +19,6 @@ public:
    void skill();
    void evolution();
 
-private:
-   int prepareTime,counter;
-   bool atkStatus;
    
 
 
