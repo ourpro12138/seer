@@ -11,7 +11,7 @@ GangYaSha::GangYaSha(int i)
     //if(qrand()%2)
     movie=new  QMovie(":/enemy/resource/enemy/gangyasha.gif");
     movie->start();
-    x=1300;
+    posX=1300;
     this->i=i;
     this->setPos(1300,i*200);
 }
@@ -52,7 +52,7 @@ void GangYaSha::advance(int phase)
 
      }
 
-    setX(x-speed*speedFactor/100);
+    setX(posX-speed*speedFactor/100);
 //    qDebug()<<"moving"<<x;
-        x--;
+        posX--;
 }
