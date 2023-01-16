@@ -26,10 +26,10 @@ void Bullet::paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWid
 
 bool Bullet::collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode) const
 {
-    qDebug()<<"碰撞调用";
     Q_UNUSED(mode);
-    return other->type() ==Enemy::Type && x()-other->x()>50&&x()-other->x()<90
-            &&y()-other->y()>0&&y()-other->y()<100;
+    if(other->type()==Enemy::Type)
+//    qDebug()<<other->x()-posX<<"  ";
+    return other->type() ==Enemy::Type&&other->x()-posX<260&&other->x()-posX>180;
 }
 
 void Bullet::advance(int phase)
@@ -46,20 +46,16 @@ void Bullet::advance(int phase)
     qDebug()<<"ppp";
         Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
 
-        enemy=new Enemy;
+        //enemy=new Enemy;
         enemy->hp -= ATK;
-
-
-        setX(x()+49);
         if(enemy->hp>0)
        {
-//            qDebug()<<"敌人在吗";
            delete this;
         }
     }
-//    qDebug()<<"x:"<<x();
-    if(x()>=1300)
-
+    setX(posX+2);
+    posX+=2;
+    if(posX>=1300)
         delete this;
 
 }
