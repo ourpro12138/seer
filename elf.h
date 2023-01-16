@@ -47,7 +47,7 @@ public:
 
     ~Elf();
    int prepareTime,atkcounter,standTime,standcounter;
-   int coolTime;
+   int coolTime，coolcounter;
    bool atkStatus;
 };
 
