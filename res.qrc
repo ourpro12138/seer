@@ -92,6 +92,12 @@
         <file>resource/enemy/enemy_9attack.gif</file>
         <file>resource/enemy/enemy_attack.gif</file>
         <file>resource/enemy/moguguai.gif</file>
+        <file>resource/enemy/beilami.gif</file>
+        <file>resource/enemy/beilami_attack.gif</file>
+        <file>resource/enemy/taqiduoke.gif</file>
+        <file>resource/enemy/taqiduoke_attack.gif</file>
+        <file>resource/enemy/zuoluo.gif</file>
+        <file>resource/enemy/zuoluo_attack.gif</file>
     </qresource>
     <qresource prefix="/map">
         <file>resource/map/alpha.png</file>
