@@ -7,6 +7,7 @@
 #include "yiyou.h"
 #include "xiaohuohou.h"
 #include "bubuzhongzi.h"
+#include "elf.h"
 #include "dugulu.h"
 #include "yiyi.h"
 #include "dida.h"
@@ -41,5 +42,7 @@ public:
 
     ~Map();
 };
+
+
 
 #endif // MAP_H

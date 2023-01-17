@@ -1,6 +1,5 @@
 #include "moguguai.h"
-#include<QGraphicsScene>
-#include<QGraphicsView>
+#include<QGraphicsItem>
 #include"partner.h"
 #include<QDebug>
 
@@ -16,7 +15,13 @@ MoGuGuai::MoGuGuai(int i)
     atkmovie->start();
     posX=1300;
     this->i=i;
-    this->setPos(1300,i*160-30);
+    this->setPos(1300,i*160-30);}
+bool MoGuGuai::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+{
+    return other->type()==Partner::Type && posX-other->x()<131 && posX-other->x()>129
+            && other->y()-y()>-60 && other->y()-y()<60;
+
+
 }
 
 MoGuGuai::~MoGuGuai()
@@ -64,7 +69,6 @@ void MoGuGuai::advance(int phase)
              atkmovie = new QMovie(":/enemy/resource/enemy/moguguai_attack.gif");
              atkmovie->start();
           }
-
 
          }
          else

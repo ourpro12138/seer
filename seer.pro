@@ -53,6 +53,8 @@ SOURCES += \
     xinke.cpp \
     yiyi.cpp \
     yiyou.cpp
+    yiyou.cpp \
+    zuoluo.cpp
 
 HEADERS += \
     agong.h \
@@ -91,6 +93,9 @@ HEADERS += \
     xinke.h \
     yiyi.h \
     yiyou.h
+    yiyou.h \
+    zuoluo.h \
+
 FORMS += \
     cardsblank.ui \
     cardsmenu.ui \

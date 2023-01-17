@@ -5,7 +5,7 @@ Yiyou::Yiyou(int i,int j)
 
   this->i = i; this->j=j;
   width = 95;height=133;
-  hp=300;atkcounter=0;prepareTime=100;
+  hp=300;atkcounter=100;prepareTime=100;
   this->atk = 50;
   name="Yiyou";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");

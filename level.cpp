@@ -2,7 +2,7 @@
 #include "ui_level.h"
 #include "moguguai.h"
 #include"gangyasha.h"
-
+#include"zuoluo.h"
 
 
 
@@ -14,6 +14,8 @@ Level::Level(QWidget *parent) :
     this->setStyleSheet("QPushButton{background-color:transparent}");
 
     gametime = new QTimer(this);
+    wavetime = new QTimer(this);
+    diamondtimer = new QTimer(this);
     levelMode=0;//选卡阶段
     ui->setupUi(this);
     isLocked =0;
@@ -64,6 +66,8 @@ void Level::GameStart()
             Back->show();
             connect(Back,&pdbackPushButton::backpress,this,&Level::back);
             levelMode=1;//游戏正式开始
+            diamondtimer->start(1000);
+            wavetime->start(10000);
             emit gamestart();
             delete timer;
         }
@@ -73,17 +77,69 @@ void Level::GameStart()
 kls::kls()
 {
     levelName = "kls";
-    MoGuGuai *mo=new MoGuGuai(4);
-    scene->addItem(mo);
-    Beilami *bei=new Beilami(2);
-     scene->addItem(bei);
-     Taqiduoke *ta=new Taqiduoke(3);
-      scene->addItem(ta);
-//    GangYaSha *gang=new GangYaSha(2);
-//    scene->addItem(gang);
+    Wave = 1;
+    totalWave=2;
+    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo;
+    creattimer = new QTimer(this);
+    gang = new GangYaSha(2);
+    gang2 = new GangYaSha(3);
+    gang3 = new GangYaSha(1);
+    gang4 = new GangYaSha(2);
+    gang5 = new GangYaSha(0);
+    mo = new MoGuGuai(2);
+    creattimer->start(2000);
+    connect(wavetime,&QTimer::timeout,[=](){
 
-//    MoGuGuai *mo=new MoGuGuai(3);
-//    scene->addItem(mo);
+        if(Wave==1)
+        {
+            levelMode =2;
+            wavetime->stop();
+        }
+        else if(Wave==2)
+        {
+            levelMode=3;
+            delete wavetime;
+        }
+
+    });
+    static int enemy_count=0;
+       connect(creattimer,&QTimer::timeout,[=]()
+       {
+           if(levelMode==2)
+           {
+               switch(enemy_count)
+           {
+           case 0:
+              {scene->addItem(gang);break;}
+           case 1:
+              {scene->addItem(gang2);break;}
+           case 2:
+             { scene->addItem(gang3);break;}
+           case 3:
+             { scene->addItem(gang4);break;}
+           case 4:
+             { scene->addItem(gang5);break;}
+           case 5:
+             { scene->addItem(mo);break;}
+           default:
+           {
+               if(!gang&&!gang2&&!gang3&&!gang4&&!gang5&&!mo)
+               {
+                   Wave=2;
+                   enemy_count=0;
+                   wavetime->start(10000);
+                   break;
+               }
+           }
+           }
+                 enemy_count++;
+           }
+           else if(levelMode==3)
+           {
+               qDebug()<<"第二波来咯";
+           }
+       });
+
 
 }
 
@@ -405,7 +461,7 @@ void Level::initlevel()
             }
          }
         }
-         else if(this->levelMode==1)
+         else if(this->levelMode!=0)
             {
                  //设置光标效果
                  QApplication::restoreOverrideCursor();
@@ -421,12 +477,13 @@ void Level::initlevel()
 
 
         view->show();
-        gametime->start(20);
+        gametime->start(10);
         connect(gametime,&QTimer::timeout,scene,&QGraphicsScene::advance);
+        connect(gametime,&QTimer::timeout,[=](){  cb->diamond_view->setText(QString::number(Cards::diamondTotal));});
+        connect(diamondtimer,&QTimer::timeout,[=](){
+           Cards::diamondTotal+=2;
+        });
 
     });
-
-
-
 
 }

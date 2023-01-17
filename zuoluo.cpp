@@ -1,43 +1,35 @@
-#include "gangyasha.h"
-#include"partner.h"
+#include "zuoluo.h"
 #include<QGraphicsItem>
-#include<QDebug>
-GangYaSha::GangYaSha(int i)
+ZuoLuo::ZuoLuo(int i)
 {
-    this->width =180;this->height=152;
-    hp=100;atk=30;speed=0.40;
-    name="MoGuGuai";
-    //if(qrand()%2)
-    atkmovie=new  QMovie(":/enemy/resource/enemy/gangyasha.gif");
+    this->width = 126;this->height=130;
+    hp=300;atk=40;speed=0.40;
+    atkcounter=80;prepareTime=80;
+    standTime=64;standcounter=0;
+    name="ZuoLuo";
+    atkmovie=new  QMovie(":/enemy/resource/enemy/zuoluo.gif");
     atkmovie->start();
     posX=1300;
     this->i=i;
-    this->setPos(1300,i*220);
-    atkcounter=96;prepareTime=96;
-    standcounter=232; standTime=0;
-
+    this->setPos(1300,i*160+10);
 }
-GangYaSha::~GangYaSha()
+ZuoLuo::~ZuoLuo()
 {
     if(atkmovie)
-        delete atkmovie;
+        delete  atkmovie;
 }
-
-bool GangYaSha::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+bool ZuoLuo::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
 //    if(other->type()==Partner::Type)
-//       {
-//           qDebug()<<other->x()-x();
-//      }
-    return other->type()==Partner::Type && posX-other->x()<140 && posX-other->x()>139
-            && other->y()-y()>-60 && other->y()-y()<60;
-
+//          {
+//               qDebug()<<other->x()-x();
+//          }
+    return other->type()==Partner::Type && posX-other->x()<150 && posX-other->x()>120
+            && other->y()-y()>-50 && other->y()-y()<50;
 
 }
-
-void GangYaSha::advance(int phase)
+void ZuoLuo::advance(int phase)
 {
-
     if(!phase)
         return;
     update();
@@ -49,12 +41,21 @@ void GangYaSha::advance(int phase)
          delete this;
          return;
      }
+
      if(hp>0)
      {
          if(!items.isEmpty())
          {
+
 //             qDebug()<<"advance调用";
+
+
+
+             qDebug()<<"advance调用";
+
              Partner *partner=qgraphicsitem_cast <Partner *> (items[0]);
+             qDebug()<<partner->hp;
+             qDebug()<<atkcounter;
           if(atkcounter<prepareTime)
           {
            atkcounter++;
@@ -64,7 +65,7 @@ void GangYaSha::advance(int phase)
           if(atkcounter==prepareTime)
           {
              atkcounter=0;
-             atkmovie = new QMovie(":/enemy/resource/enemy/gangyasha_attack.gif");
+             atkmovie = new QMovie(":/enemy/resource/enemy/zuoluo_attack.gif");
              atkmovie->start();
           }
          }
@@ -77,16 +78,14 @@ void GangYaSha::advance(int phase)
              if(standcounter==standTime)
              {
                 standcounter=0;
-                atkmovie = new QMovie(":/enemy/resource/enemy/gangyasha.gif");
+                atkmovie = new QMovie(":/enemy/resource/enemy/zuoluo.gif");
                 atkmovie->start();
-
              }
              else
              {
-                 setX(posX-speed*speedFactor/100);
+                 setX(posX-speed*speedFactor);
                      posX--;
              }
-         }
+}
      }
 }
-

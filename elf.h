@@ -25,7 +25,7 @@ public:
     //名字
     QString name;
     //攻击力
-    int atk;
+    qreal atk;
     //血量
     int hp;
     //行，列
@@ -43,11 +43,11 @@ public:
     int width;
     int height;
 
+    qreal Damage(Elf *in,Elf *out);
 
     ~Elf();
    int prepareTime,atkcounter,standTime,standcounter;
    int coolTime,coolcounter;
    bool atkStatus;
 };
-
 #endif // ELF_H
