@@ -20,7 +20,7 @@ void Bullet::paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWid
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
-    painter->drawImage(boundingRect(),QImage(":/partner/resource/partner/yiyou_waterbullet.png"));
+    painter->drawImage(boundingRect(),QImage(":/partner/resource/partner/"+name+"_waterbullet.png"));
 }
 
 bool Bullet::collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode) const

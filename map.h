@@ -11,6 +11,7 @@
 #include <QDebug>
 #include "partner.h"
 #include "cards.h"
+#include "xianrenqiu.h"
 class Map :public QGraphicsItem
 {
 public:

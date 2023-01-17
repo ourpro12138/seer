@@ -73,8 +73,7 @@ void Level::GameStart()
 kls::kls()
 {
     levelName = "kls";
-
-    MoGuGuai *mo=new MoGuGuai(4);
+    MoGuGuai *mo=new MoGuGuai(3);
     scene->addItem(mo);
     Beilami *bei=new Beilami(2);
      scene->addItem(bei);
