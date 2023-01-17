@@ -426,5 +426,11 @@ void Level::initlevel()
 
 
 
+   Beilami *bei=new Beilami(2);
+    scene->addItem(bei);
+    MoGuGuai *mo=new MoGuGuai(3);
+    scene->addItem(mo);
+
+
 
 }
