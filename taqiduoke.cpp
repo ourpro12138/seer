@@ -11,6 +11,7 @@ Taqiduoke::Taqiduoke(int i)
     atkmovie=new  QMovie(":/enemy/resource/enemy/taqiduoke.gif");
     atkmovie->start();
     posX=1300;
+    posY=i*200-100;
     this->i=i;
     this->setPos(1300,i*200-100);
 }
@@ -85,5 +86,5 @@ void Taqiduoke::advance(int phase)
 bool Taqiduoke::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
-    return other->type()==Partner::Type && posX-other->x()<150&&posX-other->x()>80;
+    return other->type()==Partner::Type && posX-other->x()<150&&posX-other->x()>80&&posY-other->y()>-100&&posY-other->y()<100;
 }
