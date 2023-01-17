@@ -316,5 +316,7 @@
         <file>resource/partner/Boom.gif</file>
         <file>resource/partner/attack_9.gif</file>
         <file>resource/partner/attack_1.gif</file>
+        <file>resource/partner/stand_dugulu.gif</file>
+        <file>resource/partner/attack_dugulu.gif</file>
     </qresource>
 </RCC>

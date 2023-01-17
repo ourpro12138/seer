@@ -23,6 +23,7 @@ SOURCES += \
     cardsmenu.cpp \
     chooselevelscene.cpp \
     choosescene.cpp \
+    dugulu.cpp \
     elf.cpp \
     enemy.cpp \
     gangyasha.cpp \
@@ -47,6 +48,7 @@ HEADERS += \
     cardsmenu.h \
     chooselevelscene.h \
     choosescene.h \
+    dugulu.h \
     elf.h \
     enemy.h \
     gangyasha.h \
