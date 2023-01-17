@@ -8,11 +8,11 @@
 class GangYaSha : public Enemy
 {
 public:
-   GangYaSha(int i);
-   ~GangYaSha();
-    void advance(int phase);
 
-
+    GangYaSha(int i);
+    ~GangYaSha();
+     void advance(int phase);
+ bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode) const override;
 };
 
 #endif // GANGYASHA_H

@@ -90,8 +90,18 @@ void Beilami::advance(int phase)
 }
 
 
+<<<<<<< HEAD
+=======
+}
+}
+
+
+
+
+>>>>>>> 936d6f7512289f7ac397077b949642f1459080a6
 bool Beilami::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
     return other->type()==Partner::Type && posX-other->x()<150&&posX-other->x()>80&&posY-other->y()>-100&&posY-other->y()<100;
 }
+

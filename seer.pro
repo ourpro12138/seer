@@ -41,7 +41,8 @@ SOURCES += \
     taqiduoke.cpp \
     xianrenqiu.cpp \
     xiaohuohou.cpp \
-    yiyou.cpp
+    yiyou.cpp \
+    zuoluo.cpp
 
 HEADERS += \
     beilami.h \
@@ -68,7 +69,13 @@ HEADERS += \
     taqiduoke.h \
     xianrenqiu.h \
     xiaohuohou.h \
+
+    yiyou.h \
+    zuoluo.h
+
+
     yiyou.h
+
 FORMS += \
     cardsblank.ui \
     cardsmenu.ui \
