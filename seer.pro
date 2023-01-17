@@ -38,7 +38,8 @@ SOURCES += \
     startpushbutton.cpp \
     startscene.cpp \
     xiaohuohou.cpp \
-    yiyou.cpp
+    yiyou.cpp \
+    zuoluo.cpp
 
 HEADERS += \
     beilami.h \
@@ -62,7 +63,8 @@ HEADERS += \
     startpushbutton.h \
     startscene.h \
     xiaohuohou.h \
-    yiyou.h
+    yiyou.h \
+    zuoluo.h
 
 FORMS += \
     cardsblank.ui \

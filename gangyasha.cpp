@@ -1,7 +1,6 @@
 #include "gangyasha.h"
-#include<QGraphicsScene>
-#include<QGraphicsView>
 #include"partner.h"
+#include<QGraphicsItem>
 #include<QDebug>
 GangYaSha::GangYaSha(int i)
 {
@@ -22,6 +21,18 @@ GangYaSha::~GangYaSha()
 {
     if(atkmovie)
         delete atkmovie;
+}
+
+bool GangYaSha::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+{
+//    if(other->type()==Partner::Type)
+//       {
+//           qDebug()<<other->x()-x();
+//      }
+    return other->type()==Partner::Type && posX-other->x()<140 && posX-other->x()>139
+            && other->y()-y()>-60 && other->y()-y()<60;
+
+
 }
 
 void GangYaSha::advance(int phase)

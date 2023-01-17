@@ -2,7 +2,7 @@
 #include "ui_level.h"
 #include "moguguai.h"
 #include"gangyasha.h"
-
+#include"zuoluo.h"
 
 
 
@@ -76,8 +76,10 @@ kls::kls()
 
     MoGuGuai *mo=new MoGuGuai(4);
     scene->addItem(mo);
-//    GangYaSha *gang=new GangYaSha(2);
-//    scene->addItem(gang);
+    GangYaSha *gang=new GangYaSha(2);
+    scene->addItem(gang);
+    ZuoLuo *zuo=new ZuoLuo(1);
+    scene->addItem(zuo);
 
 //    MoGuGuai *mo=new MoGuGuai(3);
 //    scene->addItem(mo);

@@ -12,7 +12,7 @@ public:
     MoGuGuai(int i);
     ~MoGuGuai();
     void advance(int phase);
-
+bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode) const override;
 
 };
 

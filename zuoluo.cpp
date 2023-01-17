@@ -1,36 +1,34 @@
-#include "moguguai.h"
+#include "zuoluo.h"
 #include<QGraphicsItem>
-#include"partner.h"
-#include<QDebug>
-
-MoGuGuai::MoGuGuai(int i)
+ZuoLuo::ZuoLuo(int i)
 {
-    this->width = 184;this->height=200;
-    hp=700;atk=80;speed=0.40;
-    atkcounter=100;prepareTime=100;
-    standTime=84;standcounter=0;
-    name="MoGuGuai";
-    //if(qrand()%2)
-    atkmovie=new  QMovie(":/enemy/resource/enemy/moguguai.gif");
+    this->width = 126;this->height=130;
+    hp=300;atk=40;speed=0.40;
+    atkcounter=80;prepareTime=80;
+    standTime=64;standcounter=0;
+    name="ZuoLuo";
+    atkmovie=new  QMovie(":/enemy/resource/enemy/zuoluo.gif");
     atkmovie->start();
     posX=1300;
     this->i=i;
-    this->setPos(1300,i*160-30);}
-bool MoGuGuai::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
-{
-    return other->type()==Partner::Type && posX-other->x()<131 && posX-other->x()>129
-            && other->y()-y()>-60 && other->y()-y()<60;
-
-
+    this->setPos(1300,i*160+10);
 }
-
-MoGuGuai::~MoGuGuai()
+ZuoLuo::~ZuoLuo()
 {
     if(atkmovie)
-        delete atkmovie;
+        delete  atkmovie;
 }
-//蘑菇怪状态变化
-void MoGuGuai::advance(int phase)
+bool ZuoLuo::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+{
+//    if(other->type()==Partner::Type)
+//          {
+//               qDebug()<<other->x()-x();
+//          }
+    return other->type()==Partner::Type && posX-other->x()<150 && posX-other->x()>120
+            && other->y()-y()>-50 && other->y()-y()<50;
+
+}
+void ZuoLuo::advance(int phase)
 {
     if(!phase)
         return;
@@ -67,7 +65,7 @@ void MoGuGuai::advance(int phase)
           if(atkcounter==prepareTime)
           {
              atkcounter=0;
-             atkmovie = new QMovie(":/enemy/resource/enemy/moguguai_attack.gif");
+             atkmovie = new QMovie(":/enemy/resource/enemy/zuoluo_attack.gif");
              atkmovie->start();
           }
          }
@@ -80,17 +78,14 @@ void MoGuGuai::advance(int phase)
              if(standcounter==standTime)
              {
                 standcounter=0;
-                atkmovie = new QMovie(":/enemy/resource/enemy/moguguai.gif");
+                atkmovie = new QMovie(":/enemy/resource/enemy/zuoluo.gif");
                 atkmovie->start();
              }
              else
              {
-                 setX(posX-speed*speedFactor/100);
+                 setX(posX-speed*speedFactor);
                      posX--;
              }
-         }
-     }
-
-
 }
-
+     }
+}
