@@ -52,7 +52,6 @@ SOURCES += \
     xiaohuohou.cpp \
     xinke.cpp \
     yiyi.cpp \
-    yiyou.cpp
     yiyou.cpp \
     zuoluo.cpp
 
@@ -92,9 +91,8 @@ HEADERS += \
     xiaohuohou.h \
     xinke.h \
     yiyi.h \
-    yiyou.h
     yiyou.h \
-    zuoluo.h \
+    zuoluo.h
 
 FORMS += \
     cardsblank.ui \
@@ -104,6 +102,7 @@ FORMS += \
     maingame.ui \
     pokedex.ui \
     startscene.ui
+
 CONFIG+=resources_big
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
