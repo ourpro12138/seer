@@ -417,8 +417,10 @@ void Level::initlevel()
     });
 
 
-//    GangYaSha *gang=new GangYaSha(2);
-//    scene->addItem(gang);
+   Beilami *bei=new Beilami(2);
+    scene->addItem(bei);
+    MoGuGuai *mo=new MoGuGuai(3);
+    scene->addItem(mo);
 
 
 }
