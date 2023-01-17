@@ -1,28 +1,28 @@
-#include "yiyou.h"
+#include "huliya.h"
 #include<QPointF>
-Yiyou::Yiyou(int i,int j)
+
+Huliya::Huliya(int i,int j)
 {
 
   this->i = i; this->j=j;
-  width = 95;height=133;
+  width = 121;height=135;
   hp=300;atkcounter=0;prepareTime=100;
   this->atk = 50;
-  name="Yiyou";
+  name="Huliya";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
   setPos(154+234*j-47,290-133+154*i);
 
 }
-Yiyou::~Yiyou()
+Huliya::~Huliya()
 {
     Map::myptn[i][j]=NULL;
     if(atkmovie)
         delete atkmovie;
 
 }
-void Yiyou::advance(int phase)
+void Huliya::advance(int phase)
 {
-
     if(!phase)
         return;
     update();
@@ -34,7 +34,7 @@ void Yiyou::advance(int phase)
     if(atkcounter==prepareTime)
     {
         atkcounter=0;
-        bullet=new Bullet(i,j,43,43);
+        bullet=new Bullet(i,j,80,50);
         bullet->ATK=this->atk;
         bullet->name = this->name.toLower();
         scene()->addItem(bullet);
@@ -43,18 +43,18 @@ void Yiyou::advance(int phase)
     if(hp<=0)
         delete this;
 }
-//bool Yiyou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+//bool Huliya::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 //{
 //     Q_UNUSED(mode);
 //    qDebug()<<other->y()<<y();
 
 //    return other->type() == Enemy::Type && qAbs(other->y()-y())>-50&&qAbs(other->y()-y())<100&&qAbs(other->x()-x())>50;
 //}
-void Yiyou::skill()
+void Huliya::skill()
 {
 
 }
-void Yiyou::evolution()
+void Huliya::evolution()
 {
 
 }

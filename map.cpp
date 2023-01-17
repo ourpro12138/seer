@@ -76,37 +76,61 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
                myptn[i][j] = new Xianrenqiu(i,j);break;
                break;
         case 3:
+               qDebug()<<"小豆芽建立 i ="<<i<<"j = "<<j;
+               myptn[i][j] = new Xiaodouya(i,j);break;
+               break;
                break;
         case 4:
+               qDebug()<<"依依建立 i ="<<i<<"j = "<<j;
+               myptn[i][j] = new Yiyi(i,j);break;
                break;
         case 5:
             qDebug()<<"伊优建立 i= "<<i<<"j = "<<j;
                  myptn[i][j] = new Yiyou(i,j); break;
         case 6:
+               qDebug()<<"贝尔建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Beier(i,j); break;
               break;
         case 7:
+               qDebug()<<"果冻鸭建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Guodongya(i,j); break;
                break;
         case 8:
+               qDebug()<<"宝贝鲤建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Baobeili(i,j); break;
                break;
         case 9:
                qDebug()<<"小火猴建立 i= "<<i<<"j = "<<j;
                     myptn[i][j] = new Xiaohuohou(i,j); break;
                break;
         case 10:
+               qDebug()<<"吉尔建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Jier(i,j); break;
+               break;
                break;
         case 11:
+               qDebug()<<"胡利亚建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Huliya(i,j); break;
                break;
         case 12:
+               qDebug()<<"迪达建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Dida(i,j); break;
                break;
         case 13:
                qDebug()<<"嘟咕噜建立 i= "<<i<<"j = "<<j;
                     myptn[i][j] = new DuGuLu(i,j); break;
                break;
         case 14:
+               qDebug()<<"辛克建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Xinke(i,j); break;
                break;
         case 15:
+               qDebug()<<"阿贡建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Agong(i,j); break;
                break;
         case 16:
+               qDebug()<<"泰达建立 i= "<<i<<"j = "<<j;
+                    myptn[i][j] = new Taida(i,j); break;
                break;
 
         }

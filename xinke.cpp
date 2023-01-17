@@ -1,26 +1,26 @@
-#include "yiyou.h"
+#include "xinke.h"
 #include<QPointF>
-Yiyou::Yiyou(int i,int j)
+Xinke::Xinke(int i,int j)
 {
 
   this->i = i; this->j=j;
-  width = 95;height=133;
+  width = 149;height=135;
   hp=300;atkcounter=0;prepareTime=100;
   this->atk = 50;
-  name="Yiyou";
+  name="Xinke";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
-  setPos(154+234*j-47,290-133+154*i);
+  setPos(135+234*j-47,290-133+154*i);
 
 }
-Yiyou::~Yiyou()
+Xinke::~Xinke()
 {
     Map::myptn[i][j]=NULL;
     if(atkmovie)
         delete atkmovie;
 
 }
-void Yiyou::advance(int phase)
+void Xinke::advance(int phase)
 {
 
     if(!phase)
@@ -50,11 +50,11 @@ void Yiyou::advance(int phase)
 
 //    return other->type() == Enemy::Type && qAbs(other->y()-y())>-50&&qAbs(other->y()-y())<100&&qAbs(other->x()-x())>50;
 //}
-void Yiyou::skill()
+void Xinke::skill()
 {
 
 }
-void Yiyou::evolution()
+void Xinke::evolution()
 {
 
 }

@@ -7,7 +7,7 @@
 MoGuGuai::MoGuGuai(int i)
 {
     this->width = 184;this->height=200;
-    hp=700;atk=80;speed=0.40;
+    hp=200;atk=80;speed=0.40;
     atkcounter=100;prepareTime=100;
     standTime=84;standcounter=0;
     name="MoGuGuai";

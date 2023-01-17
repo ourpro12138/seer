@@ -1,10 +1,12 @@
 #include "bullet.h"
 #include <QTimer>
 
-Bullet::Bullet(int i,int j)
+Bullet::Bullet(int i,int j,int wei,int hei)
 {
     posX=80+234*j-47;
     posY=350-133+154*i;
+    weight=wei;
+    height=hei;
     setPos(posX,posY);
     setZValue((posY-100)/90);
 }
@@ -14,21 +16,20 @@ Bullet::~Bullet()
 }
 QRectF Bullet::boundingRect()const
 {
-    return QRectF(180,0,30,30);
+    return QRectF(180,0,weight,height);
 }
 void Bullet::paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWidget *widget)
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
-    painter->drawImage(boundingRect(),QImage(":/partner/resource/partner/"+name+"_waterbullet.png"));
+    painter->drawImage(boundingRect(),QImage(":/partner/resource/partner/"+name+"_bullet.png"));
 }
 
 bool Bullet::collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
 //    if(other->type()==Enemy::Type)
-////    qDebug()<<other->x()-posX<<"  ";
-    return other->type() ==Enemy::Type&&other->x()-posX<260&&other->x()-posX>180;
+    return other->type() ==Enemy::Type&&other->x()-posX<260&&other->x()-posX>180&&posY-other->y()>-30&&posY-other->y()<30;
 }
 
 void Bullet::advance(int phase)
@@ -47,6 +48,7 @@ void Bullet::advance(int phase)
 
         //enemy=new Enemy;
         enemy->hp -= ATK;
+        qDebug()<<enemy->hp;
         if(enemy->hp>0)
        {
            delete this;
