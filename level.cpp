@@ -75,6 +75,8 @@ kls::kls()
     levelName = "kls";
     MoGuGuai *mo=new MoGuGuai(3);
     scene->addItem(mo);
+    GangYaSha *gang=new GangYaSha(3);
+    scene->addItem(gang);
 }
 
 hek::hek()
@@ -417,8 +419,7 @@ void Level::initlevel()
     });
 
 
-//    GangYaSha *gang=new GangYaSha(2);
-//    scene->addItem(gang);
+
 
 
 }

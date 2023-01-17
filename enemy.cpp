@@ -19,7 +19,7 @@ void Enemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
-    painter->drawImage(boundingRect(),movie->currentImage());
+    painter->drawImage(boundingRect(),atkmovie->currentImage());
 
 }
 void Enemy::advance(int phase)
@@ -52,13 +52,13 @@ int Enemy::type() const
 }
 
 
-void Enemy::moveMovie(QString pic)
+void Enemy::atkMovie(QString pic)
 {
-    if(movie)
-        delete movie;
-    movie =new QMovie(pic);
-    movie->setSpeed(speedFactor);
-    movie->start();
+    if(atkmovie)
+        delete atkmovie;
+    atkmovie =new QMovie(pic);
+    atkmovie->setSpeed(speedFactor);
+    atkmovie->start();
 }
 
 

@@ -88,10 +88,10 @@
         <file>resource/enemy/enemy_8attack.gif</file>
         <file>resource/enemy/enemy_9.gif</file>
         <file>resource/enemy/enemy_9attack.gif</file>
-        <file>resource/enemy/enemy_attack.gif</file>
         <file>resource/enemy/moguguai.gif</file>
         <file>resource/enemy/moguguai_attack.gif</file>
         <file>resource/enemy/gangyasha.gif</file>
+        <file>resource/enemy/gangyasha_attack.gif</file>
     </qresource>
     <qresource prefix="/map">
         <file>resource/map/alpha.png</file>
