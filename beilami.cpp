@@ -95,7 +95,7 @@ void Beilami::advance(int phase)
              }
          }
 }
-
+}
 }
 
 bool Beilami::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const

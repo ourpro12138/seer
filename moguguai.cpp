@@ -65,20 +65,6 @@ void MoGuGuai::advance(int phase)
              atkmovie = new QMovie(":/enemy/resource/enemy/moguguai_attack.gif");
              atkmovie->start();
           }
-
-
-
-
-//             qDebug()<<"lll";
-
-//             qDebug()<<"碰撞";
-
-
-             partner->hp-=atk;
-             nowStatus=2;
-             atkMovie(":/enemy/resource/enemy/moguguai_attack.gif");
-
-
          }
          else
          {

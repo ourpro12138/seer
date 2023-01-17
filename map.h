@@ -7,7 +7,7 @@
 #include "yiyou.h"
 #include "xiaohuohou.h"
 #include "bubuzhongzi.h"
-
+#include "elf.h"
 #include <QDebug>
 #include "partner.h"
 #include "cards.h"
@@ -30,5 +30,7 @@ public:
 
     ~Map();
 };
+
+
 
 #endif // MAP_H

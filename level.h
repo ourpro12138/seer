@@ -45,7 +45,12 @@ public:
    int levelMode;
 
    QTimer *gametime;
+   QTimer *wavetime;
+   QTimer *diamondtimer;
+   QTimer *creattimer;
 
+   int Wave;
+   int totalWave;
 
     void GameStart();
     void paintEvent(QPaintEvent *);

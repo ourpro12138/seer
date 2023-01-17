@@ -64,6 +64,10 @@ void Level::GameStart()
             Back->show();
             connect(Back,&pdbackPushButton::backpress,this,&Level::back);
             levelMode=1;//游戏正式开始
+            wavetime = new QTimer(this);
+            diamondtimer = new QTimer(this);
+            diamondtimer->start(1000);
+            wavetime->start(10000);
             emit gamestart();
             delete timer;
         }
@@ -73,13 +77,79 @@ void Level::GameStart()
 kls::kls()
 {
     levelName = "kls";
-    MoGuGuai *mo=new MoGuGuai(3);
-    scene->addItem(mo);
+//    MoGuGuai *mo=new MoGuGuai(3);
+//    scene->addItem(mo);
 //    GangYaSha *gang=new GangYaSha(2);
 //    scene->addItem(gang);
 
 //    MoGuGuai *mo=new MoGuGuai(3);
 //    scene->addItem(mo);
+
+    Wave = 1;
+    totalWave=2;
+    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo;
+    creattimer = new QTimer(this);
+    gang = new GangYaSha(2);
+    gang2 = new GangYaSha(3);
+    gang3 = new GangYaSha(1);
+    gang4 = new GangYaSha(2);
+    gang5 = new GangYaSha(0);
+    mo = new MoGuGuai(2);
+    creattimer->start(2000);
+    connect(wavetime,&QTimer::timeout,[=](){
+
+        if(Wave==1)
+        {
+            levelMode =2;
+            wavetime->stop();
+        }
+        else if(Wave==2)
+        {
+            levelMode=3;
+            delete wavetime;
+        }
+
+    });
+    static int enemy_count=0;
+       connect(creattimer,&QTimer::timeout,[=]()
+       {
+           if(levelMode==2)
+           {
+               switch(enemy_count)
+           {
+           case 0:
+              {scene->addItem(gang);break;}
+           case 1:
+              {scene->addItem(gang2);break;}
+           case 2:
+             { scene->addItem(gang3);break;}
+           case 3:
+             { scene->addItem(gang4);break;}
+           case 4:
+             { scene->addItem(gang5);break;}
+           case 5:
+             { scene->addItem(mo);break;}
+           default:
+           {
+               if(!gang&&!gang2&&!gang3&&!gang4&&!gang5&&!mo)
+               {
+                   Wave=2;
+                   enemy_count=0;
+                   break;
+               }
+           }
+
+           }
+                 enemy_count++;
+           }
+           else if(levelMode==3)
+           {
+               qDebug()<<"第二波来咯";
+           }
+       });
+
+
+
 
 }
 
@@ -422,6 +492,12 @@ void Level::initlevel()
 
     });
 
+    connect(diamondtimer,&QTimer::timeout,[=](){
+
+        if(levelMode==1)
+            Cards::diamondTotal+=2;
+
+    });
 
 
 
