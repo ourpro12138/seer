@@ -43,7 +43,7 @@ SOURCES += \
     xianrenqiu.cpp \
 
     xiaohuohou.cpp \
-    yiyou.cpp
+    yiyou.cpp\
 
 HEADERS += \
     beilami.h \
