@@ -5,6 +5,7 @@
 #include "enemy.h"
 #include <QPainter>
 #include <beilami.h>
+#include "taqiduoke.h"
 #include "cardsblank.h"
 #include "cardsmenu.h"
 #include "pdbackpushbutton.h"

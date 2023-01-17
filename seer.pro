@@ -37,6 +37,7 @@ SOURCES += \
     pokedex.cpp \
     startpushbutton.cpp \
     startscene.cpp \
+    taqiduoke.cpp \
     xiaohuohou.cpp \
     yiyou.cpp
 
@@ -61,6 +62,7 @@ HEADERS += \
     pokedex.h \
     startpushbutton.h \
     startscene.h \
+    taqiduoke.h \
     xiaohuohou.h \
     yiyou.h
 

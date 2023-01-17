@@ -76,6 +76,10 @@ kls::kls()
 
     MoGuGuai *mo=new MoGuGuai(4);
     scene->addItem(mo);
+    Beilami *bei=new Beilami(2);
+     scene->addItem(bei);
+     Taqiduoke *ta=new Taqiduoke(3);
+      scene->addItem(ta);
 //    GangYaSha *gang=new GangYaSha(2);
 //    scene->addItem(gang);
 
@@ -422,12 +426,6 @@ void Level::initlevel()
         connect(gametime,&QTimer::timeout,scene,&QGraphicsScene::advance);
 
     });
-
-
-
-
-//   Beilami *bei=new Beilami(2);
-//    scene->addItem(bei);
 
 
 

@@ -10,10 +10,8 @@ Xiaohuohou::Xiaohuohou(int i,int j)
     this->i = i; this->j = j;
     this->width = 130;this->height=160;
 
-    hp=100,atk=20,
-    prepareTime=150,atkcounter=150;
-    standTime=64; standcounter=64;
-    coolTime=0;coolcounter=0;
+    hp=100,atk=20,prepareTime=150,atkcounter=150;
+    standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="XiaoHuoHou";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
@@ -39,8 +37,8 @@ bool Xiaohuohou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionM
 //    {
 //        qDebug()<<other->x()-x()<<"  "<<other->y()-y();
 //    }
-    return other->type()==Enemy::Type && other->x()-x()>120 && other->x()-x()<150
-            && other->y()-y()>-20 && other->y()-y()<30;
+    return other->type()==Enemy::Type && other->x()-x()>120 && other->x()-x()<150;
+
 }
 
 void Xiaohuohou::advance(int phase)
@@ -59,14 +57,11 @@ void Xiaohuohou::advance(int phase)
         if(!items.isEmpty())
         {
             Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
-//            qDebug()<<enemy->hp;
          if(atkcounter<prepareTime)
          {
           atkcounter++;
-          if(atkcounter==prepareTime)
-          {
+          if(atkcounter==150)
               enemy->hp-=atk;
-          }
          }
          if(atkcounter==prepareTime)
          {
