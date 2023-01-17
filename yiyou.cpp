@@ -49,6 +49,7 @@ void Yiyou::advance(int phase)
         bulletCounter=0;
         bullet=new Bullet(i,j);
         bullet->ATK=this->atk;
+        bullet->name = this->name.toLower();
         scene()->addItem(bullet);
     }
     }

@@ -260,7 +260,6 @@
         <file>resource/partner/pokedex_head/grass/stand_yidingsi.gif</file>
         <file>resource/partner/pokedex_head/grass/stand_yika.gif</file>
         <file>resource/partner/pokedex_head/grass/stand_yiyi.gif</file>
-        <file>resource/partner/yiyou_waterbullet.png</file>
         <file>resource/partner/pokedex_head/normal/head_agong.png</file>
         <file>resource/partner/pokedex_head/normal/head_agong2.png</file>
         <file>resource/partner/pokedex_head/normal/head_aoligong.png</file>
@@ -290,7 +289,6 @@
         <file>resource/partner/stand_bubucao.gif</file>
         <file>resource/partner/stand_guodongya.gif</file>
         <file>resource/partner/stand_liehuohou.gif</file>
-        <file>resource/partner/stand_xianrenqiu.gif</file>
         <file>resource/partner/stand_xiaodouya.gif</file>
         <file>resource/partner/stand_yidingsi.gif</file>
         <file>resource/partner/stand_yiyi.gif</file>
@@ -316,5 +314,8 @@
         <file>resource/partner/Boom.gif</file>
         <file>resource/partner/attack_9.gif</file>
         <file>resource/partner/attack_1.gif</file>
+        <file>resource/partner/yiyou_bullet.png</file>
+        <file>resource/partner/attack_2.gif</file>
+        <file>resource/partner/stand_xianrenqou.gif</file>
     </qresource>
 </RCC>

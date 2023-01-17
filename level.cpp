@@ -73,8 +73,8 @@ void Level::GameStart()
 kls::kls()
 {
     levelName = "kls";
-//    MoGuGuai *mo=new MoGuGuai(3);
-//    scene->addItem(mo);
+    MoGuGuai *mo=new MoGuGuai(3);
+    scene->addItem(mo);
 }
 
 hek::hek()
