@@ -17,7 +17,6 @@ public:
     void evolution();
 private:
     Bullet *bullet;
-    int bulletCounter,bulletCreateTime;
 
 
 };

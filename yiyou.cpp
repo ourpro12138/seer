@@ -5,7 +5,7 @@ Yiyou::Yiyou(int i,int j)
 
   this->i = i; this->j=j;
   width = 95;height=133;
-  hp=300;bulletCounter=0;bulletCreateTime=100;
+  hp=300;atkcounter=0;prepareTime=100;
   this->atk = 50;
   name="Yiyou";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -25,11 +25,11 @@ void Yiyou::advance(int phase)
     if(!phase)
         return;
     update();
-    if(bulletCounter<bulletCreateTime)
-        ++bulletCounter;
-    if(bulletCounter==bulletCreateTime)
+    if(atkcounter<prepareTime)
+        ++atkcounter;
+    if(atkcounter==prepareTime)
     {
-        bulletCounter=0;
+        atkcounter=0;
         bullet=new Bullet(i,j);
         bullet->ATK=this->atk;
         scene()->addItem(bullet);
@@ -42,11 +42,11 @@ void Yiyou::advance(int phase)
     QList <QGraphicsItem *> items = collidingItems();
     if(!items.isEmpty())
     {
-    if(bulletCounter<bulletCreateTime)
-        ++bulletCounter;
-    if(bulletCounter==bulletCreateTime)
+    if(atkcounter<prepareTime)
+        ++atkcounter;
+    if(atkcounter==prepareTime)
     {
-        bulletCounter=0;
+        atkcounter=0;
         bullet=new Bullet(i,j);
         bullet->ATK=this->atk;
         scene()->addItem(bullet);
