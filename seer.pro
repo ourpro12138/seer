@@ -38,14 +38,10 @@ SOURCES += \
     pokedex.cpp \
     startpushbutton.cpp \
     startscene.cpp \
-
     taqiduoke.cpp \
-
     xianrenqiu.cpp \
-
     xiaohuohou.cpp \
-    yiyou.cpp\
-
+    yiyou.cpp
 HEADERS += \
     beilami.h \
     bubuzhongzi.h \
@@ -68,14 +64,10 @@ HEADERS += \
     pokedex.h \
     startpushbutton.h \
     startscene.h \
-
     taqiduoke.h \
-
     xianrenqiu.h \
-
     xiaohuohou.h \
     yiyou.h
-
 FORMS += \
     cardsblank.ui \
     cardsmenu.ui \
