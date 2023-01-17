@@ -7,7 +7,7 @@
 #include "yiyou.h"
 #include "xiaohuohou.h"
 #include "bubuzhongzi.h"
-
+#include "dugulu.h"
 #include <QDebug>
 #include "partner.h"
 #include "cards.h"
