@@ -12,12 +12,11 @@ public:
     Yiyou(int i,int j);
     ~Yiyou();
     void advance(int phase);
- bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
+// bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
     void skill();
     void evolution();
 private:
     Bullet *bullet;
-    int bulletCounter,bulletCreateTime;
 
 
 };
