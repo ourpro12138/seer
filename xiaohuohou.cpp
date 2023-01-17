@@ -11,7 +11,7 @@ Xiaohuohou::Xiaohuohou(int i,int j)
     this->width = 130;this->height=160;
 
     hp=100,atk=20,prepareTime=150,atkcounter=150;
-    standTime=64; standcounter=0;
+    standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="XiaoHuoHou";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
@@ -33,10 +33,10 @@ Xiaohuohou::~Xiaohuohou()
 bool Xiaohuohou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
-    if(other->type()==Enemy::Type)
-    {
-        qDebug()<<other->x()-x()<<"  "<<other->y()-y();
-    }
+//    if(other->type()==Enemy::Type)
+//    {
+//        qDebug()<<other->x()-x()<<"  "<<other->y()-y();
+//    }
     return other->type()==Enemy::Type && other->x()-x()>145 && other->x()-x()<180
             && other->y()-y()>-20 && other->y()-y()<20;
 }
@@ -47,18 +47,15 @@ void Xiaohuohou::advance(int phase)
         return;
     update();
     QList <QGraphicsItem *> items = collidingItems();
-
     if(hp<=0)
     {
         delete this;
         return;
     }
-
     if(hp>0)
     {
         if(!items.isEmpty())
         {
-            qDebug()<<"advance调用";
             Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
          if(atkcounter<prepareTime)
          {

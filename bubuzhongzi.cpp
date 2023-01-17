@@ -1,10 +1,13 @@
-#include "bubuzhongzi.h"
+    #include "bubuzhongzi.h"
 
 Bubuzhongzi::Bubuzhongzi(int i,int j)
 {
     this->i = i; this->j = j;
     hp=500,atk=50;
-    this->width = 91;this->height=141;
+    this->width = 95;this->height=146;
+    standTime = 64; standcounter=64;
+    prepareTime = 150; atkcounter=150;
+    coolTime = 600; coolcounter=0;
     name="bubuzhongzi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
@@ -27,23 +30,52 @@ void Bubuzhongzi::advance(int phase)
     if(!phase)
         return;
     update();
+    if(Map::myptn[i][j+1])
+    {
+        if(coolcounter<coolTime)
+        {
+            if(standcounter<standTime)
+            {
+                standcounter++;
+            }
+            if(standcounter==standTime)
+            {
+            standcounter=0;
+//            qDebug()<<"战力开始";
+            atkmovie = new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+            atkmovie->start();
+            }
+            coolcounter++;
+        }
+        if(coolcounter==coolTime)
+        {
+            if(atkcounter<prepareTime)
+            {
+                atkcounter++;
+                if(atkcounter==prepareTime)
+                {
+                    Map::myptn[i][j+1]->hp+=atk;
+                    qDebug()<<"治疗"<<Map::myptn[i][j+1]->name;
+                    qDebug()<<atkcounter;
+                    standcounter=64;
+                    coolcounter=0;
+                    return;
+                }
+            }
+            if(atkcounter==prepareTime)
+            {
+                qDebug()<<"治疗开始";
+                qDebug()<<"atkcounter"<<atkcounter<<" coolcounter"<<coolcounter<<" standcounter"<<standcounter;
+                atkcounter=0;
+                atkmovie = new QMovie(":/partner/resource/partner/attack_1.gif");
+                atkmovie->start();
+            }
+        }
+    }
     if(hp<=0)
     delete this;
 }
 
-void Bubuzhongzi::treatment(int i,int j)
-{
-    if(Map::myptn[i][j+1]!=NULL)
-    {
-        if(treatCounter<treatCreateTime)
-            ++treatCounter;
-        if(treatCounter==treatCreateTime)
-        {
-            Map::myptn[i][j+1]->hp+=atk;
-            treatCounter=0;
-        }
-    }
-}
 void Bubuzhongzi::skill()
 {
 

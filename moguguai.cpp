@@ -45,9 +45,9 @@ void MoGuGuai::advance(int phase)
          if(!items.isEmpty())
          {
 
-             qDebug()<<"lll";
+//             qDebug()<<"lll";
 
-             qDebug()<<"碰撞";
+//             qDebug()<<"碰撞";
 
              Partner *partner=qgraphicsitem_cast<Partner *>(items[0]);
              partner->hp-=atk;
