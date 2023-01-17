@@ -3,7 +3,7 @@
 Taqiduoke::Taqiduoke(int i)
 {
     this->width = 190;this->height=140;
-    prepareTime=160,atkcounter=160;
+    prepareTime=80,atkcounter=80;
     standTime=60; standcounter=0;
     hp=700;atk=50;speed=0.40;
     name="taqiduoke";
