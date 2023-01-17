@@ -69,12 +69,8 @@ HEADERS += \
     taqiduoke.h \
     xianrenqiu.h \
     xiaohuohou.h \
-
     yiyou.h \
-    zuoluo.h
-
-
-    yiyou.h
+    zuoluo.h \
 
 FORMS += \
     cardsblank.ui \

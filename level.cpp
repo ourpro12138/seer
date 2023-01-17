@@ -77,7 +77,6 @@ void Level::GameStart()
 kls::kls()
 {
     levelName = "kls";
-<<<<<<< HEAD
     Wave = 1;
     totalWave=2;
     Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo;
@@ -141,28 +140,6 @@ kls::kls()
            }
        });
 
-
-
-=======
-    MoGuGuai *mo=new MoGuGuai(4);
-    scene->addItem(mo);
-
-    GangYaSha *gang=new GangYaSha(2);
-    scene->addItem(gang);
-    ZuoLuo *zuo=new ZuoLuo(1);
-    scene->addItem(zuo);
-
-    Beilami *bei=new Beilami(2);
-     scene->addItem(bei);
-     Taqiduoke *ta=new Taqiduoke(3);
-      scene->addItem(ta);
-//    GangYaSha *gang=new GangYaSha(2);
-//    scene->addItem(gang);
-
-
-//    MoGuGuai *mo=new MoGuGuai(3);
-//    scene->addItem(mo);
->>>>>>> 936d6f7512289f7ac397077b949642f1459080a6
 
 }
 

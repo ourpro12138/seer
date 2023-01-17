@@ -69,13 +69,7 @@ void MoGuGuai::advance(int phase)
              atkmovie = new QMovie(":/enemy/resource/enemy/moguguai_attack.gif");
              atkmovie->start();
           }
-<<<<<<< HEAD
-=======
 
-
-
-
->>>>>>> 936d6f7512289f7ac397077b949642f1459080a6
          }
          else
          {
