@@ -19,7 +19,7 @@ void Enemy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
-    painter->drawImage(boundingRect(),movie->currentImage());
+    painter->drawImage(boundingRect(),atkmovie->currentImage());
 
 }
 void Enemy::advance(int phase)
@@ -34,15 +34,21 @@ void Enemy::advance(int phase)
 bool Enemy::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
-//    if(other->type()==Partner::Type)
-//    {
+    if(other->type()==Partner::Type)
+    {
 //        qDebug()<<"检测精灵";
 //        qDebug()<<posX-other->x();
 //        qDebug()<<other->y()-y();
 
+
+    }
+    return other->type()==Partner::Type && posX-other->x()<131 && posX-other->x()>129
+            && other->y()-y()>-60 && other->y()-y()<60;
+
 //    }
-    return other->type()==Partner::Type && posX-other->x()<150 && posX-other->x()>90
-            && other->y()-y()>-20 && other->y()-y()<20;
+    return other->type()==Partner::Type && posX-other->x()<170 && posX-other->x()>90
+            && other->y()-y()>-80 && other->y()-y()<80;
+
 
 }
 
@@ -52,13 +58,13 @@ int Enemy::type() const
 }
 
 
-void Enemy::moveMovie(QString pic)
+void Enemy::atkMovie(QString pic)
 {
-    if(movie)
-        delete movie;
-    movie =new QMovie(pic);
-    movie->setSpeed(speedFactor);
-    movie->start();
+    if(atkmovie)
+        delete atkmovie;
+    atkmovie =new QMovie(pic);
+    atkmovie->setSpeed(speedFactor);
+    atkmovie->start();
 }
 
 

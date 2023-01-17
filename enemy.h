@@ -30,8 +30,8 @@ public:
 
 
 
-    void moveMovie(QString pic);
-    QMovie *movie;//移动动画
+    void atkMovie(QString pic);
+    //QMovie *movie;
 
 
     QRectF boundingRect() const override;

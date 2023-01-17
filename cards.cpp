@@ -60,7 +60,7 @@ xianrenqou::xianrenqou()
     name="XianRenQou";coolTime=227;No=2;
     zuanshiNeed=25;
     isLocked=0;
-     head.load(":/partner/resource/partner/1/16_head.png");
+    head.load(":/partner/resource/partner/1/16_head.png");
 }
 xiaodouya::xiaodouya()
 {
