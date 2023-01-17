@@ -6,10 +6,10 @@
 
 MoGuGuai::MoGuGuai(int i)
 {
-    prepareTime=150,atkcounter=150;
-    standTime=50; standcounter=0;
     this->width = 184;this->height=200;
     hp=700;atk=80;speed=0.40;
+    atkcounter=100;prepareTime=100;
+    standTime=84;standcounter=0;
     name="MoGuGuai";
     //if(qrand()%2)
     atkmovie=new  QMovie(":/enemy/resource/enemy/moguguai.gif");
@@ -24,7 +24,6 @@ MoGuGuai::~MoGuGuai()
     if(atkmovie)
         delete atkmovie;
 }
-
 //蘑菇怪状态变化
 void MoGuGuai::advance(int phase)
 {
@@ -44,13 +43,14 @@ void MoGuGuai::advance(int phase)
      {
          if(!items.isEmpty())
          {
-
-             qDebug()<<"advance调用";
+//             qDebug()<<"advance调用";
              Partner *partner=qgraphicsitem_cast <Partner *> (items[0]);
+             qDebug()<<partner->hp;
+             qDebug()<<atkcounter;
           if(atkcounter<prepareTime)
           {
            atkcounter++;
-           if(atkcounter==150)
+           if(atkcounter==prepareTime)
                partner->hp-=atk;
           }
           if(atkcounter==prepareTime)
@@ -59,17 +59,6 @@ void MoGuGuai::advance(int phase)
              atkmovie = new QMovie(":/enemy/resource/enemy/moguguai_attack.gif");
              atkmovie->start();
           }
-
-
-//             qDebug()<<"lll";
-
-//             qDebug()<<"碰撞";
-
-             Partner *partner=qgraphicsitem_cast<Partner *>(items[0]);
-             partner->hp-=atk;
-             nowStatus=2;
-             moveMovie(":/enemy/resource/enemy/moguguai_attack.gif");
-
          }
          else
          {
@@ -82,8 +71,6 @@ void MoGuGuai::advance(int phase)
                 standcounter=0;
                 atkmovie = new QMovie(":/enemy/resource/enemy/moguguai.gif");
                 atkmovie->start();
-
-
              }
              else
              {
@@ -94,12 +81,5 @@ void MoGuGuai::advance(int phase)
      }
 
 
-
-
-
-
-     }
-
-
-
+}
 

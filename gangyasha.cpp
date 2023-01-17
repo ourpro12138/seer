@@ -13,7 +13,10 @@ GangYaSha::GangYaSha(int i)
     atkmovie->start();
     posX=1300;
     this->i=i;
-    this->setPos(1300,i*200);
+    this->setPos(1300,i*220);
+    atkcounter=96;prepareTime=96;
+    standcounter=232; standTime=0;
+
 }
 GangYaSha::~GangYaSha()
 {
@@ -35,23 +38,22 @@ void GangYaSha::advance(int phase)
          delete this;
          return;
      }
-
      if(hp>0)
      {
          if(!items.isEmpty())
          {
-             qDebug()<<"advance调用";
+//             qDebug()<<"advance调用";
              Partner *partner=qgraphicsitem_cast <Partner *> (items[0]);
           if(atkcounter<prepareTime)
           {
            atkcounter++;
-           if(atkcounter==150)
+           if(atkcounter==prepareTime)
                partner->hp-=atk;
           }
           if(atkcounter==prepareTime)
           {
              atkcounter=0;
-             atkmovie = new QMovie(":/enemy/resource/enemy/enemy_attack.gif");
+             atkmovie = new QMovie(":/enemy/resource/enemy/gangyasha_attack.gif");
              atkmovie->start();
           }
          }
@@ -66,7 +68,6 @@ void GangYaSha::advance(int phase)
                 standcounter=0;
                 atkmovie = new QMovie(":/enemy/resource/enemy/gangyasha.gif");
                 atkmovie->start();
-
 
              }
              else

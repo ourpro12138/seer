@@ -74,10 +74,10 @@ kls::kls()
 {
     levelName = "kls";
 
-    MoGuGuai *mo=new MoGuGuai(3);
+    MoGuGuai *mo=new MoGuGuai(4);
     scene->addItem(mo);
-    GangYaSha *gang=new GangYaSha(3);
-    scene->addItem(gang);
+//    GangYaSha *gang=new GangYaSha(2);
+//    scene->addItem(gang);
 
 //    MoGuGuai *mo=new MoGuGuai(3);
 //    scene->addItem(mo);
@@ -418,7 +418,7 @@ void Level::initlevel()
 
 
         view->show();
-        gametime->start(10);
+        gametime->start(20);
         connect(gametime,&QTimer::timeout,scene,&QGraphicsScene::advance);
 
     });
@@ -426,10 +426,9 @@ void Level::initlevel()
 
 
 
-   Beilami *bei=new Beilami(2);
-    scene->addItem(bei);
-    MoGuGuai *mo=new MoGuGuai(3);
-    scene->addItem(mo);
+//   Beilami *bei=new Beilami(2);
+//    scene->addItem(bei);
+
 
 
 

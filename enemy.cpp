@@ -34,15 +34,15 @@ void Enemy::advance(int phase)
 bool Enemy::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
-//    if(other->type()==Partner::Type)
-//    {
+    if(other->type()==Partner::Type)
+    {
 //        qDebug()<<"检测精灵";
 //        qDebug()<<posX-other->x();
 //        qDebug()<<other->y()-y();
 
-//    }
-    return other->type()==Partner::Type && posX-other->x()<150 && posX-other->x()>90
-            && other->y()-y()>-20 && other->y()-y()<20;
+    }
+    return other->type()==Partner::Type && posX-other->x()<131 && posX-other->x()>129
+            && other->y()-y()>-60 && other->y()-y()<60;
 
 }
 

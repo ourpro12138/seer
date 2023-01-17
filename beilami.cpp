@@ -10,8 +10,8 @@ Beilami::Beilami(int i)
     hp=700;atk=0;speed=0.40;
     name="beilami";
     //if(qrand()%2)
-    movie=new  QMovie(":/enemy/resource/enemy/beilami.gif");
-    movie->start();
+    atkmovie=new  QMovie(":/enemy/resource/enemy/beilami.gif");
+    atkmovie->start();
     posX=1300;
     this->i=i;
     this->setPos(1300,i*160-30);
@@ -19,8 +19,8 @@ Beilami::Beilami(int i)
 
 Beilami::~Beilami()
 {
-    if(movie)
-        delete movie;
+    if(atkmovie)
+        delete atkmovie;
 }
 //蘑菇怪状态变化
 void Beilami::advance(int phase)
@@ -34,21 +34,21 @@ void Beilami::advance(int phase)
      if(hp<=0)
      {
          nowStatus=0;  //死亡
-         movie->currentFrameNumber()==movie->frameCount()-1;
+         atkmovie->currentFrameNumber()==atkmovie->frameCount()-1;
          delete this;
          return;
      }
      if(hp>0)
      {
          nowStatus=1;
-         moveMovie(":/enemy/resource/enemy/beilami.gif");
+         atkMovie(":/enemy/resource/enemy/beilami.gif");
          if(!items.isEmpty())
          {
 
              Partner *partner=qgraphicsitem_cast<Partner *>(items[0]);
              partner->hp-=atk;
              nowStatus=2;
-             moveMovie(":/enemy/resource/enemy/beilami_attack.gif");
+             atkMovie(":/enemy/resource/enemy/beilami_attack.gif");
          }
          else
          {
