@@ -43,7 +43,13 @@ void MoGuGuai::advance(int phase)
      {
          if(!items.isEmpty())
          {
+
 //             qDebug()<<"advance调用";
+
+
+
+             qDebug()<<"advance调用";
+
              Partner *partner=qgraphicsitem_cast <Partner *> (items[0]);
              qDebug()<<partner->hp;
              qDebug()<<atkcounter;
@@ -59,6 +65,20 @@ void MoGuGuai::advance(int phase)
              atkmovie = new QMovie(":/enemy/resource/enemy/moguguai_attack.gif");
              atkmovie->start();
           }
+
+
+
+
+//             qDebug()<<"lll";
+
+//             qDebug()<<"碰撞";
+
+
+             partner->hp-=atk;
+             nowStatus=2;
+             atkMovie(":/enemy/resource/enemy/moguguai_attack.gif");
+
+
          }
          else
          {

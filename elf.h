@@ -32,7 +32,6 @@ public:
     //int i,j;
     //攻击动画
     QMovie *atkmovie;
-
 //    QRectF boundingRect() const;
 //    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 //    void advance(int phase);

@@ -40,9 +40,15 @@ bool Enemy::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode m
 //        qDebug()<<posX-other->x();
 //        qDebug()<<other->y()-y();
 
+
     }
     return other->type()==Partner::Type && posX-other->x()<131 && posX-other->x()>129
             && other->y()-y()>-60 && other->y()-y()<60;
+
+//    }
+    return other->type()==Partner::Type && posX-other->x()<170 && posX-other->x()>90
+            && other->y()-y()>-80 && other->y()-y()<80;
+
 
 }
 
