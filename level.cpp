@@ -14,6 +14,8 @@ Level::Level(QWidget *parent) :
     this->setStyleSheet("QPushButton{background-color:transparent}");
 
     gametime = new QTimer(this);
+    wavetime = new QTimer(this);
+    diamondtimer = new QTimer(this);
     levelMode=0;//选卡阶段
     ui->setupUi(this);
     isLocked =0;
@@ -64,8 +66,6 @@ void Level::GameStart()
             Back->show();
             connect(Back,&pdbackPushButton::backpress,this,&Level::back);
             levelMode=1;//游戏正式开始
-            wavetime = new QTimer(this);
-            diamondtimer = new QTimer(this);
             diamondtimer->start(1000);
             wavetime->start(10000);
             emit gamestart();
@@ -77,14 +77,6 @@ void Level::GameStart()
 kls::kls()
 {
     levelName = "kls";
-//    MoGuGuai *mo=new MoGuGuai(3);
-//    scene->addItem(mo);
-//    GangYaSha *gang=new GangYaSha(2);
-//    scene->addItem(gang);
-
-//    MoGuGuai *mo=new MoGuGuai(3);
-//    scene->addItem(mo);
-
     Wave = 1;
     totalWave=2;
     Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo;
@@ -135,10 +127,10 @@ kls::kls()
                {
                    Wave=2;
                    enemy_count=0;
+                   wavetime->start(10000);
                    break;
                }
            }
-
            }
                  enemy_count++;
            }
@@ -471,7 +463,7 @@ void Level::initlevel()
             }
          }
         }
-         else if(this->levelMode==1)
+         else if(this->levelMode!=0)
             {
                  //设置光标效果
                  QApplication::restoreOverrideCursor();
@@ -487,24 +479,13 @@ void Level::initlevel()
 
 
         view->show();
-        gametime->start(20);
+        gametime->start(10);
         connect(gametime,&QTimer::timeout,scene,&QGraphicsScene::advance);
+        connect(gametime,&QTimer::timeout,[=](){  cb->diamond_view->setText(QString::number(Cards::diamondTotal));});
+        connect(diamondtimer,&QTimer::timeout,[=](){
+           Cards::diamondTotal+=2;
+        });
 
     });
-
-    connect(diamondtimer,&QTimer::timeout,[=](){
-
-        if(levelMode==1)
-            Cards::diamondTotal+=2;
-
-    });
-
-
-
-//   Beilami *bei=new Beilami(2);
-//    scene->addItem(bei);
-
-
-
 
 }

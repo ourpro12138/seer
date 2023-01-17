@@ -8,6 +8,7 @@
 #include "xiaohuohou.h"
 #include "bubuzhongzi.h"
 #include "elf.h"
+#include "dugulu.h"
 #include <QDebug>
 #include "partner.h"
 #include "cards.h"

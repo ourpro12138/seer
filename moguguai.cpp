@@ -51,8 +51,7 @@ void MoGuGuai::advance(int phase)
              qDebug()<<"advance调用";
 
              Partner *partner=qgraphicsitem_cast <Partner *> (items[0]);
-             qDebug()<<partner->hp;
-             qDebug()<<atkcounter;
+
           if(atkcounter<prepareTime)
           {
            atkcounter++;

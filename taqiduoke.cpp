@@ -1,31 +1,26 @@
-#include "beilami.h"
-#include<QGraphicsScene>
-#include<QGraphicsView>
-#include"partner.h"
-#include<QDebug>
+#include "taqiduoke.h"
 
-Beilami::Beilami(int i)
+Taqiduoke::Taqiduoke(int i)
 {
-    this->width = 96;this->height=140;
-    prepareTime=100,atkcounter=100;
-    standTime=84; standcounter=0;
+    this->width = 190;this->height=140;
+    prepareTime=80,atkcounter=80;
+    standTime=60; standcounter=0;
     hp=700;atk=50;speed=0.40;
-    name="beilami";
+    name="taqiduoke";
     //if(qrand()%2)
-    atkmovie=new  QMovie(":/enemy/resource/enemy/beilami.gif");
+    atkmovie=new  QMovie(":/enemy/resource/enemy/taqiduoke.gif");
     atkmovie->start();
     posX=1300;
-    posY=i*200-50;
+    posY=i*200-100;
     this->i=i;
-    this->setPos(1300,i*200-50);
+    this->setPos(1300,i*200-100);
 }
-
-Beilami::~Beilami()
+Taqiduoke::~Taqiduoke()
 {
     if(atkmovie)
         delete atkmovie;
 }
-void Beilami::advance(int phase)
+void Taqiduoke::advance(int phase)
 {
     if(!phase)
         return;
@@ -62,7 +57,7 @@ void Beilami::advance(int phase)
           if(atkcounter==prepareTime)
           {
              atkcounter=0;
-             atkmovie = new QMovie(":/enemy/resource/enemy/beilami_attack.gif");
+             atkmovie = new QMovie(":/enemy/resource/enemy/taqiduoke_attack.gif");
              atkmovie->start();
           }
 
@@ -77,7 +72,7 @@ void Beilami::advance(int phase)
              if(standcounter==standTime)
              {
                 standcounter=0;
-                atkmovie = new QMovie(":/enemy/resource/enemy/beilami.gif");
+                atkmovie = new QMovie(":/enemy/resource/enemy/taqiduoke.gif");
                 atkmovie->start();
              }
              else
@@ -88,9 +83,7 @@ void Beilami::advance(int phase)
          }
      }
 }
-
-
-bool Beilami::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+bool Taqiduoke::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
     return other->type()==Partner::Type && posX-other->x()<150&&posX-other->x()>80&&posY-other->y()>-100&&posY-other->y()<100;
