@@ -7,7 +7,7 @@
 Beilami::Beilami(int i)
 {
     this->width = 96;this->height=140;
-    prepareTime=300,atkcounter=300;
+    prepareTime=100,atkcounter=100;
     standTime=84; standcounter=0;
     hp=700;atk=50;speed=0.40;
     name="beilami";
@@ -15,6 +15,7 @@ Beilami::Beilami(int i)
     atkmovie=new  QMovie(":/enemy/resource/enemy/beilami.gif");
     atkmovie->start();
     posX=1300;
+    posY=i*200-50;
     this->i=i;
     this->setPos(1300,i*200-50);
 }
@@ -24,7 +25,6 @@ Beilami::~Beilami()
     if(atkmovie)
         delete atkmovie;
 }
-//蘑菇怪状态变化
 void Beilami::advance(int phase)
 {
     if(!phase)
@@ -45,26 +45,19 @@ void Beilami::advance(int phase)
      }
      if(hp>0)
      {
-
-         nowStatus=1;
-         atkMovie(":/enemy/resource/enemy/beilami.gif");
          if(!items.isEmpty())
          {
 
-             Partner *partner=qgraphicsitem_cast<Partner *>(items[0]);
-             partner->hp-=atk;
-             nowStatus=2;
-             atkMovie(":/enemy/resource/enemy/beilami_attack.gif");
+//
 
-         if(!items.isEmpty())
-         {
-             //qDebug()<<"advance调用";
              Partner *partner=qgraphicsitem_cast <Partner *> (items[0]);
+
           if(atkcounter<prepareTime)
           {
            atkcounter++;
-           if(atkcounter==300)
+           if(atkcounter==prepareTime)
                partner->hp-=atk;
+           qDebug()<<partner->hp;
           }
           if(atkcounter==prepareTime)
           {
@@ -72,6 +65,7 @@ void Beilami::advance(int phase)
              atkmovie = new QMovie(":/enemy/resource/enemy/beilami_attack.gif");
              atkmovie->start();
           }
+
 
          }
          else
@@ -85,8 +79,6 @@ void Beilami::advance(int phase)
                 standcounter=0;
                 atkmovie = new QMovie(":/enemy/resource/enemy/beilami.gif");
                 atkmovie->start();
-
-
              }
              else
              {
@@ -94,14 +86,19 @@ void Beilami::advance(int phase)
                      posX--;
              }
          }
+     }
 }
+
 
 }
 }
+
+
+
 
 bool Beilami::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
-    return other->type()==Partner::Type && posX-other->x()<200&&posX-other->x()>100;
+    return other->type()==Partner::Type && posX-other->x()<150&&posX-other->x()>80&&posY-other->y()>-100&&posY-other->y()<100;
 }
 

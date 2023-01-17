@@ -24,6 +24,7 @@ SOURCES += \
     cardsmenu.cpp \
     chooselevelscene.cpp \
     choosescene.cpp \
+    dugulu.cpp \
     elf.cpp \
     enemy.cpp \
     gangyasha.cpp \
@@ -37,6 +38,8 @@ SOURCES += \
     pokedex.cpp \
     startpushbutton.cpp \
     startscene.cpp \
+    taqiduoke.cpp \
+    xianrenqiu.cpp \
     xiaohuohou.cpp \
     yiyou.cpp \
     zuoluo.cpp
@@ -50,6 +53,7 @@ HEADERS += \
     cardsmenu.h \
     chooselevelscene.h \
     choosescene.h \
+    dugulu.h \
     elf.h \
     enemy.h \
     gangyasha.h \
@@ -62,9 +66,15 @@ HEADERS += \
     pokedex.h \
     startpushbutton.h \
     startscene.h \
+    taqiduoke.h \
+    xianrenqiu.h \
     xiaohuohou.h \
+
     yiyou.h \
     zuoluo.h
+
+
+    yiyou.h
 
 FORMS += \
     cardsblank.ui \

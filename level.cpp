@@ -73,13 +73,21 @@ void Level::GameStart()
 kls::kls()
 {
     levelName = "kls";
-
     MoGuGuai *mo=new MoGuGuai(4);
     scene->addItem(mo);
+
     GangYaSha *gang=new GangYaSha(2);
     scene->addItem(gang);
     ZuoLuo *zuo=new ZuoLuo(1);
     scene->addItem(zuo);
+
+    Beilami *bei=new Beilami(2);
+     scene->addItem(bei);
+     Taqiduoke *ta=new Taqiduoke(3);
+      scene->addItem(ta);
+//    GangYaSha *gang=new GangYaSha(2);
+//    scene->addItem(gang);
+
 
 //    MoGuGuai *mo=new MoGuGuai(3);
 //    scene->addItem(mo);
@@ -424,12 +432,6 @@ void Level::initlevel()
         connect(gametime,&QTimer::timeout,scene,&QGraphicsScene::advance);
 
     });
-
-
-
-
-//   Beilami *bei=new Beilami(2);
-//    scene->addItem(bei);
 
 
 

@@ -1,36 +1,26 @@
-#include "moguguai.h"
-#include<QGraphicsItem>
-#include"partner.h"
-#include<QDebug>
+#include "taqiduoke.h"
 
-MoGuGuai::MoGuGuai(int i)
+Taqiduoke::Taqiduoke(int i)
 {
-    this->width = 184;this->height=200;
-    hp=700;atk=80;speed=0.40;
-    atkcounter=100;prepareTime=100;
-    standTime=84;standcounter=0;
-    name="MoGuGuai";
+    this->width = 190;this->height=140;
+    prepareTime=80,atkcounter=80;
+    standTime=60; standcounter=0;
+    hp=700;atk=50;speed=0.40;
+    name="taqiduoke";
     //if(qrand()%2)
-    atkmovie=new  QMovie(":/enemy/resource/enemy/moguguai.gif");
+    atkmovie=new  QMovie(":/enemy/resource/enemy/taqiduoke.gif");
     atkmovie->start();
     posX=1300;
+    posY=i*200-100;
     this->i=i;
-    this->setPos(1300,i*160-30);}
-bool MoGuGuai::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
-{
-    return other->type()==Partner::Type && posX-other->x()<131 && posX-other->x()>129
-            && other->y()-y()>-60 && other->y()-y()<60;
-
-
+    this->setPos(1300,i*200-100);
 }
-
-MoGuGuai::~MoGuGuai()
+Taqiduoke::~Taqiduoke()
 {
     if(atkmovie)
         delete atkmovie;
 }
-//蘑菇怪状态变化
-void MoGuGuai::advance(int phase)
+void Taqiduoke::advance(int phase)
 {
     if(!phase)
         return;
@@ -40,20 +30,20 @@ void MoGuGuai::advance(int phase)
 
      if(hp<=0)
      {
+
+         nowStatus=0;  //死亡
+         atkmovie->currentFrameNumber()==atkmovie->frameCount()-1;
+
+
          delete this;
          return;
      }
-
      if(hp>0)
      {
          if(!items.isEmpty())
          {
 
-//             qDebug()<<"advance调用";
-
-
-
-             qDebug()<<"advance调用";
+//
 
              Partner *partner=qgraphicsitem_cast <Partner *> (items[0]);
 
@@ -62,15 +52,14 @@ void MoGuGuai::advance(int phase)
            atkcounter++;
            if(atkcounter==prepareTime)
                partner->hp-=atk;
+           qDebug()<<partner->hp;
           }
           if(atkcounter==prepareTime)
           {
              atkcounter=0;
-             atkmovie = new QMovie(":/enemy/resource/enemy/moguguai_attack.gif");
+             atkmovie = new QMovie(":/enemy/resource/enemy/taqiduoke_attack.gif");
              atkmovie->start();
           }
-
-
 
 
          }
@@ -83,7 +72,7 @@ void MoGuGuai::advance(int phase)
              if(standcounter==standTime)
              {
                 standcounter=0;
-                atkmovie = new QMovie(":/enemy/resource/enemy/moguguai.gif");
+                atkmovie = new QMovie(":/enemy/resource/enemy/taqiduoke.gif");
                 atkmovie->start();
              }
              else
@@ -93,7 +82,9 @@ void MoGuGuai::advance(int phase)
              }
          }
      }
-
-
 }
-
+bool Taqiduoke::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+{
+    Q_UNUSED(mode);
+    return other->type()==Partner::Type && posX-other->x()<150&&posX-other->x()>80&&posY-other->y()>-100&&posY-other->y()<100;
+}
