@@ -66,10 +66,10 @@ void MoGuGuai::advance(int phase)
 
 //             qDebug()<<"碰撞";
 
-             Partner *partner=qgraphicsitem_cast<Partner *>(items[0]);
+
              partner->hp-=atk;
              nowStatus=2;
-             moveMovie(":/enemy/resource/enemy/moguguai_attack.gif");
+             atkMovie(":/enemy/resource/enemy/moguguai_attack.gif");
 
          }
          else

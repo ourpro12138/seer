@@ -11,6 +11,7 @@ public:
     Beilami(int i);
     ~Beilami();
     void advance(int phase);
+    bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
 
 
 };

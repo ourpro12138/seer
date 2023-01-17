@@ -55,13 +55,13 @@ void Yiyou::advance(int phase)
     if(hp<=0)
         delete this;
 }
-bool Yiyou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
-{
-     Q_UNUSED(mode);
-    qDebug()<<other->y()<<y();
+//bool Yiyou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
+//{
+//     Q_UNUSED(mode);
+//    qDebug()<<other->y()<<y();
 
-    return other->type() == Enemy::Type && qAbs(other->y()-y())>-50&&qAbs(other->y()-y())<100&&qAbs(other->x()-x())>50;
-}
+//    return other->type() == Enemy::Type && qAbs(other->y()-y())>-50&&qAbs(other->y()-y())<100&&qAbs(other->x()-x())>50;
+//}
 void Yiyou::skill()
 {
 
