@@ -111,11 +111,13 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
                break;
         case 11:
                qDebug()<<"胡利亚建立 i= "<<i<<"j = "<<j;
-                    myptn[i][j] = new Huliya(i,j); break;
+                    //myptn[i][j] = new Huliya(i,j); break;
+                    myptn[i][j] = new Liaosi(i,j); break;
                break;
         case 12:
                qDebug()<<"迪达建立 i= "<<i<<"j = "<<j;
                     myptn[i][j] = new Dida(i,j); break;
+                    //myptn[i][j] = new Dierke(i,j); break;
                break;
         case 13:
                qDebug()<<"嘟咕噜建立 i= "<<i<<"j = "<<j;
