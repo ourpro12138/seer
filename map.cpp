@@ -86,7 +86,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
                break;
         case 5:
             qDebug()<<"伊优建立 i= "<<i<<"j = "<<j;
-                 myptn[i][j] = new YouLiAn(i,j); break;
+                 myptn[i][j] = new BaLuSi(i,j); break;
         case 6:
                qDebug()<<"贝尔建立 i= "<<i<<"j = "<<j;
                     myptn[i][j] = new Beier(i,j); break;
@@ -101,7 +101,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
                break;
         case 9:
                qDebug()<<"小火猴建立 i= "<<i<<"j = "<<j;
-                    myptn[i][j] = new Xiaohuohou(i,j); break;
+                    myptn[i][j] = new LieHuoHou(i,j); break;
                break;
         case 10:
                qDebug()<<"吉尔建立 i= "<<i<<"j = "<<j;

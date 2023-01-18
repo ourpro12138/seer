@@ -347,5 +347,7 @@
         <file>resource/partner/linuo_bullet.png</file>
         <file>resource/partner/luojilasi_bullet.png</file>
         <file>resource/partner/stand_luojilasi.gif</file>
+        <file>resource/partner/balusi_bullet.png</file>
+        <file>resource/partner/attack_25.gif</file>
     </qresource>
 </RCC>
