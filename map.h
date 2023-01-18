@@ -24,6 +24,7 @@
 #include "partner.h"
 #include "cards.h"
 #include "xianrenqiu.h"
+//#include"bubucao.h"
 class Map :public QGraphicsItem
 {
 public:

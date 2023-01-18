@@ -2,7 +2,7 @@
 #define PARTNER_H
 #include "elf.h"
 #include <QPainter>
-
+//#include<QMouseEvent>
 class Enemy;
 class Partner :public Elf
 {

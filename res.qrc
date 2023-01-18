@@ -341,5 +341,6 @@
         <file>resource/partner/stand_taida.gif</file>
         <file>resource/partner/xinke_bullet.png</file>
         <file>resource/partner/stand_xinke.gif</file>
+        <file>resource/partner/youlian_bullet.png</file>
     </qresource>
 </RCC>
