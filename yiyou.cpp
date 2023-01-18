@@ -6,9 +6,12 @@ Yiyou::Yiyou(int i,int j)
   this->i = i; this->j=j;
   width = 95;height=133;
   hp=300;atkcounter=100;prepareTime=100;
-  this->atk = 50;
   No=5;
+  this->atk = 20;
   name="Yiyou";
+  this->skillname = "高压水枪";
+  this->price_ev=100;
+  this->price_skill=100;
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
   setPos(154+234*j-47,290-133+154*i);
@@ -57,6 +60,7 @@ void Yiyou::skill()
 }
 void Yiyou::evolution()
 {
+
 
 }
 YouLiAn::YouLiAn(int i,int j):Yiyou(i,j)

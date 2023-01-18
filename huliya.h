@@ -20,5 +20,11 @@ private:
 
 
 };
+class Liaosi : public Huliya
+{
+public:
+   Liaosi(int i,int j);
+   ~Liaosi();
+};
 
 #endif // HULIYA_H

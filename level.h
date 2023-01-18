@@ -14,8 +14,8 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QCursor>
-
-
+#include "partner.h"
+#include <QBitmap>
 namespace Ui {
 class Level;
 }
@@ -55,6 +55,7 @@ public:
 
     void GameStart();
     void paintEvent(QPaintEvent *);
+
 signals:
     void gamestart();
 private:

@@ -24,19 +24,18 @@
    </property>
    <property name="font">
     <font>
-     <family>Arial</family>
-     <pointsize>18</pointsize>
-     <weight>9</weight>
-     <italic>true</italic>
+     <family>Arial Black</family>
+     <pointsize>8</pointsize>
+     <weight>10</weight>
+     <italic>false</italic>
      <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);
-font: 75 italic 18pt &quot;Arial&quot;;</string>
+    <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
    </property>
    <property name="text">
-    <string>50</string>
+    <string>高压水枪</string>
    </property>
   </widget>
  </widget>

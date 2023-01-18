@@ -49,11 +49,6 @@ void MoGuGuai::advance(int phase)
          if(!items.isEmpty())
          {
 
-//             qDebug()<<"advance调用";
-
-
-
-             qDebug()<<"advance调用";
 
              Partner *partner=qgraphicsitem_cast <Partner *> (items[0]);
 

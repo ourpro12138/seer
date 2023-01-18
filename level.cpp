@@ -5,14 +5,11 @@
 #include"zuoluo.h"
 
 
-
-
 Level::Level(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Level)
 {
     this->setStyleSheet("QPushButton{background-color:transparent}");
-
     gametime = new QTimer(this);
     wavetime = new QTimer(this);
     diamondtimer = new QTimer(this);
@@ -27,6 +24,7 @@ Level::Level(QWidget *parent) :
 
 Level::~Level()
 {
+    Cards::diamondTotal=50;
     delete ui;
     delete this->cb;
     delete this->cm;
@@ -172,10 +170,11 @@ void Level::initlevel()
 //    view->setBackgroundBrush(QPixmap(":/map/resource/map/"+levelName+".png"));
 
 //    this->setStyleSheet("background-image:url(:/map/resource/map/"+levelName+".png)");
+
     this->move(-200,0);
     scene = new QGraphicsScene(this);
     scene->setSceneRect(9,9,1566,911);
-    map = new Map();
+     map = new Map();
 
     view = new QGraphicsView(scene,this);
     view->setFixedSize(1586,931);
@@ -479,11 +478,12 @@ void Level::initlevel()
         view->show();
         gametime->start(10);
         connect(gametime,&QTimer::timeout,scene,&QGraphicsScene::advance);
+
         connect(gametime,&QTimer::timeout,[=](){  cb->diamond_view->setText(QString::number(Cards::diamondTotal));});
+
         connect(diamondtimer,&QTimer::timeout,[=](){
            Cards::diamondTotal+=2;
         });
 
     });
-
 }
