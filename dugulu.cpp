@@ -35,8 +35,8 @@ bool DuGuLu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode 
     {
         qDebug()<<other->x()-x()<<"  "<<other->y()-y();
     }
-    return other->type()==Enemy::Type && other->x()-x()>145 && other->x()-x()<180
-            && other->y()-y()>-80 && other->y()-y()<40;
+    return other->type()==Enemy::Type && other->x()-x()>95 && other->x()-x()<200
+            && other->y()-y()>-60 && other->y()-y()<60;
 }
 
 void DuGuLu::advance(int phase)

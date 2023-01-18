@@ -38,6 +38,7 @@ SOURCES += \
     level.cpp \
     main.cpp \
     maingame.cpp \
+    maokai.cpp \
     map.cpp \
     moguguai.cpp \
     partner.cpp \
@@ -77,6 +78,7 @@ HEADERS += \
     jier.h \
     level.h \
     maingame.h \
+    maokai.h \
     map.h \
     moguguai.h \
     partner.h \
