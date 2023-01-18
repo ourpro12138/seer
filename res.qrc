@@ -71,6 +71,10 @@
         <file>resource/background/xvanzhong_normal.png</file>
         <file>resource/background/shuxing_fire.png</file>
         <file>resource/background/OIP-C (1).jpg</file>
+        <file>resource/background/partnerButton.png</file>
+        <file>resource/background/partnerButton_clicked.png</file>
+        <file>resource/background/capsule.png</file>
+        <file>resource/background/evolution.png</file>
     </qresource>
     <qresource prefix="/enemy">
         <file>resource/enemy/1-GRASS 2-WATER 3-FIRE.txt</file>
@@ -325,6 +329,5 @@
         <file>resource/partner/yiyou_bullet.png</file>
         <file>resource/partner/attack_2.gif</file>
         <file>resource/partner/stand_xianrenqou.gif</file>
-
     </qresource>
 </RCC>

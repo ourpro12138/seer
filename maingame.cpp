@@ -10,6 +10,7 @@ maingame::maingame(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(1366,911);
 
+
     this->setWindowIcon(QIcon(":/background/resource/background/tubiao.png"));
 
     ss = new startscene(this);
@@ -134,6 +135,7 @@ void maingame::levelback()
 
         connect(choose->choosebutton[i],&QPushButton::clicked,[=]()
         {
+            Partner::parent=level[i];
             level[i]->show();
             sc->hide();
             pd->hide();

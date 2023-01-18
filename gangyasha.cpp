@@ -11,8 +11,9 @@ GangYaSha::GangYaSha(int i)
     atkmovie=new  QMovie(":/enemy/resource/enemy/gangyasha.gif");
     atkmovie->start();
     posX=1300;
+    posY=290-133+154*i-30;
     this->i=i;
-    this->setPos(1300,i*220);
+    this->setPos(1300,290-133+154*i-30);
     atkcounter=96;prepareTime=96;
     standcounter=232; standTime=0;
 
@@ -29,7 +30,7 @@ bool GangYaSha::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMo
 //       {
 //           qDebug()<<other->x()-x();
 //      }
-    return other->type()==Partner::Type && posX-other->x()<140 && posX-other->x()>139
+    return other->type()==Partner::Type && posX-other->x()<131 && posX-other->x()>129
             && other->y()-y()>-60 && other->y()-y()<60;
 
 

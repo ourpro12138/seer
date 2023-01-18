@@ -6,7 +6,6 @@ Cards::Cards()
 }
 Cards::~Cards()
 {
-diamondTotal=50;
 }
 
 void Cards::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

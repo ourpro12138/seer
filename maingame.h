@@ -10,7 +10,7 @@
 #include "pokedex.h"
 #include "choosescene.h"
 #include "level.h"
-
+#include "partner.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class maingame; }

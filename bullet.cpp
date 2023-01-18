@@ -20,14 +20,12 @@ void Bullet::paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWid
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
-    painter->drawImage(boundingRect(),QImage(":/partner/resource/partner/"+name+"_waterbullet.png"));
+    painter->drawImage(boundingRect(),QImage(":/partner/resource/partner/"+name+"_bullet.png"));
 }
 
 bool Bullet::collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode);
-//    if(other->type()==Enemy::Type)
-////    qDebug()<<other->x()-posX<<"  ";
     return other->type() ==Enemy::Type&&other->x()-posX<260&&other->x()-posX>180;
 }
 
@@ -39,13 +37,9 @@ void Bullet::advance(int phase)
     update();
     QList <QGraphicsItem *> items=collidingItems();
 
-
     if(!items.isEmpty())
     {
-//    qDebug()<<"ppp";
         Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
-
-        //enemy=new Enemy;
         enemy->hp -= ATK;
         if(enemy->hp>0)
        {
@@ -56,7 +50,6 @@ void Bullet::advance(int phase)
     posX+=2;
     if(posX>=1300)
         delete this;
-
 }
 
 int  Bullet::type()const
