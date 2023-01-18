@@ -23,18 +23,26 @@ Partner::Partner()
 
     QPixmap button;
     button.load(":/background/resource/background/partnerButton.png");
-    skillButton->setStyleSheet("background-image:url(:/background/resource/background/partnerButton.png)");
     skillButton->setMask(button.mask());skillButton->setFixedSize(button.size());
-    evolutionButton->setStyleSheet("background-image:url(:/background/resource/background/partnerButton.png)");
     evolutionButton->setMask(button.mask());evolutionButton->setFixedSize(button.size());
-    capsuleButton->setStyleSheet("background-image:url(:/background/resource/background/partnerButton.png)");
     capsuleButton->setMask(button.mask());capsuleButton->setFixedSize(button.size());
 
+    skillButton->setStyleSheet("QPushButton{background-image: url(:/background/resource/background/partnerButton.png)}"
+                               "QPushButton:hover{background-image: url(:/background/resource/background/partnerButton_clicked.png)}"
+                               "QPushButton:pressed{background-image: url(:/background/resource/background/partnerButton.png)}");
+    evolutionButton->setStyleSheet("QPushButton{background-image: url(:/background/resource/background/partnerButton.png)}"
+                                   "QPushButton:hover{background-image: url(:/background/resource/background/partnerButton_clicked.png)}"
+                                   "QPushButton:pressed{background-image: url(:/background/resource/background/partnerButton.png)}");
+    capsuleButton->setStyleSheet("QPushButton{background-image: url(:/background/resource/background/partnerButton.png)}"
+                                 "QPushButton:hover{background-image: url(:/background/resource/background/partnerButton_clicked.png)}"
+                                 "QPushButton:pressed{background-image: url(:/background/resource/background/partnerButton.png)}");
 
     connect(evolutionButton,&QPushButton::clicked,this,&Partner::evolution);
     connect(capsuleButton,&QPushButton::clicked,this,[=](){
         delete this;
     });
+
+    connect(skillButton,&QPushButton::clicked,this,&Partner::skill);
 
     qDebug()<<"partner构造函数调用";
 }

@@ -23,6 +23,8 @@ class LieHuoHou : public Xiaohuohou
 {
 public:
    LieHuoHou(int i,int j);
+   void skill();
+   void evolution();
    ~LieHuoHou();
 };
 
@@ -30,6 +32,7 @@ class Lieyanxingxing : public Xiaohuohou
 {
 public:
    Lieyanxingxing(int i,int j);
+   void skill();
    ~Lieyanxingxing();
 };
 

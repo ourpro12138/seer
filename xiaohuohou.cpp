@@ -98,7 +98,11 @@ void Xiaohuohou::skill()
 }
 void Xiaohuohou::evolution()
 {
-
+    LieHuoHou *yla = new LieHuoHou(i,j);
+    Map::myptn[i][j] = yla;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = yla;
 }
 LieHuoHou::LieHuoHou(int i,int j):Xiaohuohou(i,j)
 {
@@ -112,11 +116,27 @@ LieHuoHou::LieHuoHou(int i,int j):Xiaohuohou(i,j)
     atkmovie->start();
     setPos(154+234*j-47-10,290-133+154*i-30);
 }
+void LieHuoHou::skill()
+{
+
+}
+void LieHuoHou::evolution()
+{
+    Lieyanxingxing *yla = new Lieyanxingxing(i,j);
+    Map::myptn[i][j] = yla;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = yla;
+}
 LieHuoHou::~LieHuoHou()
 {
-    Map::myptn[i][j]=nullptr;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 
 Lieyanxingxing::Lieyanxingxing(int i,int j):Xiaohuohou(i,j)
@@ -130,9 +150,17 @@ Lieyanxingxing::Lieyanxingxing(int i,int j):Xiaohuohou(i,j)
     atkmovie->start();
     setPos(154+234*j-47-10,290-133+154*i-30);
 }
+void Lieyanxingxing::skill()
+{
+
+}
 Lieyanxingxing::~Lieyanxingxing()
 {
-    Map::myptn[i][j]=nullptr;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
