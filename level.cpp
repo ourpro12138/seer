@@ -32,6 +32,9 @@ Level::~Level()
     delete this->map;
     delete this->view;
     delete this->scene;
+//    delete Partner::skillButton;
+//    delete Partner::evolutionButton;
+//    delete Partner::capsuleButton;
 }
 
 void Level::paintEvent(QPaintEvent *)
@@ -486,4 +489,5 @@ void Level::initlevel()
         });
 
     });
+
 }

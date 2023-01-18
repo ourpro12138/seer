@@ -3,6 +3,7 @@
 Yiyou::Yiyou(int i,int j)
 {
 
+    qDebug()<<"伊优构造函数调用";
   this->i = i; this->j=j;
   width = 95;height=133;
   hp=300;atkcounter=100;prepareTime=100;
@@ -18,9 +19,14 @@ Yiyou::Yiyou(int i,int j)
 }
 Yiyou::~Yiyou()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
+    qDebug()<<"伊优析造函数调用";
 
 }
 void Yiyou::advance(int phase)
@@ -59,9 +65,14 @@ void Yiyou::skill()
 }
 void Yiyou::evolution()
 {
-
+    YouLiAn *yla = new YouLiAn(i,j);
+    Map::myptn[i][j] = yla;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = yla;
 
 }
+
 YouLiAn::YouLiAn(int i,int j):Yiyou(i,j)
 {
     this->i = i; this->j=j;
@@ -72,22 +83,39 @@ YouLiAn::YouLiAn(int i,int j):Yiyou(i,j)
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(154+234*j-50,290-133+154*i);
+    qDebug()<<"尤里安构造函数调用";
+
 
 }
 YouLiAn::~YouLiAn()
 {
-    Map::myptn[i][j]=nullptr;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
-        delete  atkmovie;
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
+    qDebug()<<"尤里安析造函数调用";
 }
 
+void YouLiAn::evolution()
+{
+    BaLuSi *yla = new BaLuSi(i,j);
+    Map::myptn[i][j] = yla;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = yla;
+}
 
+void YouLiAn::skill()
+{
 
-
+}
 BaLuSi::BaLuSi(int i,int j):Yiyou(i,j)
 {
     this->i = i; this->j=j;
-    width = 95;height=133;
+    width = 97;height=148;
     hp=350;atkcounter=100;prepareTime=100;
     this->atk = 80;
     name="BaLuSi";
@@ -96,9 +124,17 @@ BaLuSi::BaLuSi(int i,int j):Yiyou(i,j)
     setPos(154+234*j-47,290-133+154*i);
 
 }
+void BaLuSi::skill()
+{
+
+}
 BaLuSi::~BaLuSi()
 {
-    Map::myptn[i][j]=nullptr;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
-        delete  atkmovie;
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
 }

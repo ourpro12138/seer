@@ -16,7 +16,10 @@ Bubuzhongzi::~Bubuzhongzi()
 {
     Map::myptn[i][j]=nullptr;
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie=NULL;
+        delete  atkmovie;
+    }
 }
 //QRectF Bubuzhongzi::boundingRect() const
 //{
@@ -81,7 +84,11 @@ void Bubuzhongzi::skill()
 }
 void Bubuzhongzi::evolution()
 {
-
+    BuBuCao *bbc = new BuBuCao(i,j);
+    Map::myptn[i][j] = bbc;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbc;
 }
 BuBuCao::BuBuCao(int i,int j):Bubuzhongzi(i,j)
 {
@@ -95,11 +102,32 @@ BuBuCao::BuBuCao(int i,int j):Bubuzhongzi(i,j)
     atkmovie->start();
       setPos(154+234*j-47,290-133+154*i);
 }
+
+void BuBuCao::evolution()
+{
+
+    BuBuHua *bbh = new BuBuHua(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+
+    this->skillButton->setEnabled(false);
+
+}
+void BuBuCao::skill()
+{
+
+}
 BuBuCao::~BuBuCao()
 {
-    Map::myptn[i][j]=nullptr;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 BuBuHua::BuBuHua(int i,int j):Bubuzhongzi(i,j)
 {
@@ -111,12 +139,20 @@ BuBuHua::BuBuHua(int i,int j):Bubuzhongzi(i,j)
     name="BuBuHua";
     atkmovie=new QMovie(":/partner/resource/partner/stand_bubuhua.gif");
     atkmovie->start();
-      setPos(154+234*j-47,290-133+154*i);
+    setPos(154+234*j-47,290-133+154*i);
+}
+void BuBuHua::skill()
+{
+
 }
 BuBuHua::~BuBuHua()
 {
-    Map::myptn[i][j]=nullptr;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 

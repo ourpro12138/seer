@@ -70,7 +70,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
         {
         case 1:
                qDebug()<<"布布种子建立 i= "<<i<<"j = "<<j;
-                    myptn[i][j] = new Bubuzhongzi(i,j); break;
+               myptn[i][j] = new Bubuzhongzi(i,j); break;
         case 2:
                qDebug()<<"仙人球建立 i ="<<i<<"j = "<<j;
                myptn[i][j] = new Xianrenqiu(i,j);break;
@@ -112,7 +112,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
         case 11:
                qDebug()<<"胡利亚建立 i= "<<i<<"j = "<<j;
                     //myptn[i][j] = new Huliya(i,j); break;
-                    myptn[i][j] = new Liaosi(i,j); break;
+                    myptn[i][j] = new Huliya(i,j); break;
                break;
         case 12:
                qDebug()<<"迪达建立 i= "<<i<<"j = "<<j;

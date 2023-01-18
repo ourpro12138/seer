@@ -31,6 +31,8 @@ class BuBuCao : public Bubuzhongzi
 {
 public:
     BuBuCao(int i,int j);
+    void evolution();
+    void skill();
      ~BuBuCao();
 
 
@@ -39,6 +41,7 @@ class BuBuHua : public Bubuzhongzi
 {
 public:
     BuBuHua(int i,int j);
+    void skill();
      ~BuBuHua();
 
 

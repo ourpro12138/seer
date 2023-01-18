@@ -19,9 +19,13 @@ this->i = i;this->j=j;
 
 Xianrenqiu::~Xianrenqiu()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 bool Xianrenqiu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {

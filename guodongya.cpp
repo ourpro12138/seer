@@ -15,9 +15,13 @@ Guodongya::Guodongya(int i,int j)
 }
 Guodongya::~Guodongya()
 {
-    Map::myptn[i][j]=nullptr;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 //QRectF Bubuzhongzi::boundingRect() const
 //{

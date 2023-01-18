@@ -19,9 +19,13 @@ DuGuLu::DuGuLu(int i,int j)
 
 DuGuLu::~DuGuLu()
 {
-    Map::myptn[i][j]=nullptr;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 
 bool DuGuLu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const

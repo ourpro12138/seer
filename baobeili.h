@@ -17,7 +17,6 @@ public:
 // bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
     void skill();
     void evolution();
-private:
     Bullet *bullet;
 
 
