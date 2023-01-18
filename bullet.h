@@ -13,7 +13,7 @@ class Bullet : public QGraphicsItem
 {
 public:
     enum{Type=UserType+3};
-   Bullet(int i,int j);
+   Bullet(int i,int j,int wei,int hei);
    ~Bullet();
    QRectF boundingRect()const;
    void advance(int phase);
@@ -22,6 +22,7 @@ public:
    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
    int ATK;
    QString name;
+   int weight,height;
 private:
    int posX,posY;
 

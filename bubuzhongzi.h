@@ -20,12 +20,27 @@ public:
 
     void skill();
     void evolution();
-private:
+
    int treatCounter,treatCreateTime;
 
 
 signals:
 
 };
+class BuBuCao : public Bubuzhongzi
+{
+public:
+    BuBuCao(int i,int j);
+     ~BuBuCao();
 
+
+};
+class BuBuHua : public Bubuzhongzi
+{
+public:
+    BuBuHua(int i,int j);
+     ~BuBuHua();
+
+
+};
 #endif // BUBUZHONGZI_H

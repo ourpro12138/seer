@@ -4,8 +4,7 @@
 #include <QPainter>
 #include <QPushButton>
 #include <QLabel>
-
-
+//#include<QMouseEvent>
 class Enemy;
 class Partner :public Elf
 {

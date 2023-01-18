@@ -6,7 +6,7 @@
 MoGuGuai::MoGuGuai(int i)
 {
     this->width = 184;this->height=200;
-    hp=700;atk=80;speed=0.40;
+    hp=200;atk=80;speed=0.40;
     atkcounter=100;prepareTime=100;
     standTime=84;standcounter=0;
     name="MoGuGuai";
@@ -15,7 +15,7 @@ MoGuGuai::MoGuGuai(int i)
     atkmovie->start();
     posX=1300;
     this->i=i;
-    this->setPos(1300,i*160-30);}
+    this->setPos(1300,360-133+154*i-45);}
 bool MoGuGuai::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     return other->type()==Partner::Type && posX-other->x()<131 && posX-other->x()>129

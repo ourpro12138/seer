@@ -5,7 +5,7 @@
 GangYaSha::GangYaSha(int i)
 {
     this->width =180;this->height=152;
-    hp=250;atk=30;speed=0.40;
+    hp=100;atk=30;speed=0.40;
     name="MoGuGuai";
     //if(qrand()%2)
     atkmovie=new  QMovie(":/enemy/resource/enemy/gangyasha.gif");
@@ -13,7 +13,7 @@ GangYaSha::GangYaSha(int i)
     posX=1300;
     posY=290-133+154*i-30;
     this->i=i;
-    this->setPos(1300,290-133+154*i-30);
+    this->setPos(1300,360-133+154*i-45);
     atkcounter=96;prepareTime=96;
     standcounter=232; standTime=0;
 

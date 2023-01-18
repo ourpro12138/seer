@@ -75,6 +75,8 @@
         <file>resource/background/partnerButton_clicked.png</file>
         <file>resource/background/capsule.png</file>
         <file>resource/background/evolution.png</file>
+        <file>resource/partner/jier_bullet.png</file>
+        <file>resource/partner/linuo_bullet.png</file>
     </qresource>
     <qresource prefix="/enemy">
         <file>resource/enemy/1-GRASS 2-WATER 3-FIRE.txt</file>
@@ -329,5 +331,29 @@
         <file>resource/partner/yiyou_bullet.png</file>
         <file>resource/partner/attack_2.gif</file>
         <file>resource/partner/stand_xianrenqou.gif</file>
+        <file>resource/partner/yiyi_bullet.png</file>
+        <file>resource/partner/dida_bullet.png</file>
+        <file>resource/partner/baobeili_bullet.png</file>
+        <file>resource/partner/attack_xiaodouya.gif</file>
+        <file>resource/partner/attack_beier.gif</file>
+        <file>resource/partner/attack_guodongya.gif</file>
+        <file>resource/partner/stand_huliya.gif</file>
+        <file>resource/partner/huliya_bullet.png</file>
+        <file>resource/partner/stand_agone.gif</file>
+        <file>resource/partner/attack_agone.gif</file>
+        <file>resource/partner/attack_taida.gif</file>
+        <file>resource/partner/stand_taida.gif</file>
+        <file>resource/partner/xinke_bullet.png</file>
+        <file>resource/partner/stand_xinke.gif</file>
+        <file>resource/partner/youlian_bullet.png</file>
+        <file>resource/partner/stand_linuo.gif</file>
+        <file>resource/partner/jier_bullet.png</file>
+        <file>resource/partner/linuo_bullet.png</file>
+        <file>resource/partner/luojilasi_bullet.png</file>
+        <file>resource/partner/stand_luojilasi.gif</file>
+        <file>resource/partner/dierke_bullet.png</file>
+        <file>resource/partner/stand_dierke.gif</file>
+        <file>resource/partner/liaosi_bullet.png</file>
+        <file>resource/partner/stand_liaosi.gif</file>
     </qresource>
 </RCC>

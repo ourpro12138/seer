@@ -25,6 +25,7 @@ Yiyou::~Yiyou()
 }
 void Yiyou::advance(int phase)
 {
+
     if(!phase)
         return;
     update();
@@ -36,7 +37,7 @@ void Yiyou::advance(int phase)
     if(atkcounter==prepareTime)
     {
         atkcounter=0;
-        bullet=new Bullet(i,j);
+        bullet=new Bullet(i,j,43,43);
         bullet->ATK=this->atk;
         bullet->name = this->name.toLower();
         scene()->addItem(bullet);
@@ -61,4 +62,43 @@ void Yiyou::evolution()
 
 
 }
+YouLiAn::YouLiAn(int i,int j):Yiyou(i,j)
+{
+    this->i = i; this->j=j;
+    width = 95;height=133;
+    hp=350;atkcounter=100;prepareTime=100;
+    this->atk = 65;
+    name="YouLiAn";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(154+234*j-50,290-133+154*i);
 
+}
+YouLiAn::~YouLiAn()
+{
+    Map::myptn[i][j]=nullptr;
+    if(atkmovie)
+        delete  atkmovie;
+}
+
+
+
+
+BaLuSi::BaLuSi(int i,int j):Yiyou(i,j)
+{
+    this->i = i; this->j=j;
+    width = 95;height=133;
+    hp=350;atkcounter=100;prepareTime=100;
+    this->atk = 80;
+    name="BaLuSi";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_balusi.gif");
+    atkmovie->start();
+    setPos(154+234*j-47,290-133+154*i);
+
+}
+BaLuSi::~BaLuSi()
+{
+    Map::myptn[i][j]=nullptr;
+    if(atkmovie)
+        delete  atkmovie;
+}

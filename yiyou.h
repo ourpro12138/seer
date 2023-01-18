@@ -16,6 +16,18 @@ public:
     void skill();
     void evolution();
     Bullet *bullet;
+};
+class YouLiAn : public Yiyou
+{
+public:
+   YouLiAn(int i,int j);
+   ~YouLiAn();
+};
+class BaLuSi : public  Yiyou
+{
+public:
+    BaLuSi(int i,int j);
+    ~BaLuSi();
 
 };
 

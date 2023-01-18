@@ -16,6 +16,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    agong.cpp \
+    baobeili.cpp \
+    beier.cpp \
     beilami.cpp \
     bubuzhongzi.cpp \
     bullet.cpp \
@@ -24,11 +27,17 @@ SOURCES += \
     cardsmenu.cpp \
     chooselevelscene.cpp \
     choosescene.cpp \
+    dida.cpp \
     dugulu.cpp \
     elf.cpp \
     enemy.cpp \
     gangyasha.cpp \
+    guodongya.cpp \
+    huliya.cpp \
+    jier.cpp \
     level.cpp \
+    liehuohou.cpp \
+    lieyanxingxing.cpp \
     main.cpp \
     maingame.cpp \
     map.cpp \
@@ -38,13 +47,20 @@ SOURCES += \
     pokedex.cpp \
     startpushbutton.cpp \
     startscene.cpp \
+    taida.cpp \
     taqiduoke.cpp \
     xianrenqiu.cpp \
+    xiaodouya.cpp \
     xiaohuohou.cpp \
+    xinke.cpp \
+    yiyi.cpp \
     yiyou.cpp \
     zuoluo.cpp
 
 HEADERS += \
+    agong.h \
+    baobeili.h \
+    beier.h \
     beilami.h \
     bubuzhongzi.h \
     bullet.h \
@@ -53,11 +69,17 @@ HEADERS += \
     cardsmenu.h \
     chooselevelscene.h \
     choosescene.h \
+    dida.h \
     dugulu.h \
     elf.h \
     enemy.h \
     gangyasha.h \
+    guodongya.h \
+    huliya.h \
+    jier.h \
     level.h \
+    liehuohou.h \
+    lieyanxingxing.h \
     maingame.h \
     map.h \
     moguguai.h \
@@ -66,11 +88,15 @@ HEADERS += \
     pokedex.h \
     startpushbutton.h \
     startscene.h \
+    taida.h \
     taqiduoke.h \
     xianrenqiu.h \
+    xiaodouya.h \
     xiaohuohou.h \
+    xinke.h \
+    yiyi.h \
     yiyou.h \
-    zuoluo.h \
+    zuoluo.h
 
 FORMS += \
     cardsblank.ui \
@@ -80,6 +106,7 @@ FORMS += \
     maingame.ui \
     pokedex.ui \
     startscene.ui
+
 CONFIG+=resources_big
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

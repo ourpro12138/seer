@@ -9,10 +9,22 @@
 #include "bubuzhongzi.h"
 #include "elf.h"
 #include "dugulu.h"
+#include "yiyi.h"
+#include "dida.h"
 #include <QDebug>
+#include "taida.h"
+#include "xinke.h"
+#include "huliya.h"
+#include "agong.h"
+#include "jier.h"
+#include "guodongya.h"
+#include "xiaodouya.h"
+#include "beier.h"
+#include "baobeili.h"
 #include "partner.h"
 #include "cards.h"
 #include "xianrenqiu.h"
+//#include"bubucao.h"
 class Map :public QGraphicsItem
 {
 public:
