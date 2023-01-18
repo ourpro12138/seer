@@ -106,7 +106,8 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
         case 10:
                qDebug()<<"吉尔建立 i= "<<i<<"j = "<<j;
                     myptn[i][j] = new Jier(i,j); break;
-               break;
+                    //myptn[i][j] = new Linuo(i,j); break;
+                    //myptn[i][j] = new Luojilasi(i,j); break;
                break;
         case 11:
                qDebug()<<"胡利亚建立 i= "<<i<<"j = "<<j;

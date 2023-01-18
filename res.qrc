@@ -72,6 +72,7 @@
         <file>resource/background/shuxing_fire.png</file>
         <file>resource/background/OIP-C (1).jpg</file>
         <file>resource/partner/jier_bullet.png</file>
+        <file>resource/partner/linuo_bullet.png</file>
     </qresource>
     <qresource prefix="/enemy">
         <file>resource/enemy/1-GRASS 2-WATER 3-FIRE.txt</file>
@@ -332,7 +333,6 @@
         <file>resource/partner/attack_xiaodouya.gif</file>
         <file>resource/partner/attack_beier.gif</file>
         <file>resource/partner/attack_guodongya.gif</file>
-        <file>resource/partner/jier_bullet.png</file>
         <file>resource/partner/stand_huliya.gif</file>
         <file>resource/partner/huliya_bullet.png</file>
         <file>resource/partner/stand_agone.gif</file>
@@ -342,5 +342,10 @@
         <file>resource/partner/xinke_bullet.png</file>
         <file>resource/partner/stand_xinke.gif</file>
         <file>resource/partner/youlian_bullet.png</file>
+        <file>resource/partner/stand_linuo.gif</file>
+        <file>resource/partner/jier_bullet.png</file>
+        <file>resource/partner/linuo_bullet.png</file>
+        <file>resource/partner/luojilasi_bullet.png</file>
+        <file>resource/partner/stand_luojilasi.gif</file>
     </qresource>
 </RCC>

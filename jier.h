@@ -20,4 +20,21 @@ private:
 
 
 };
+class Linuo:public Jier
+{
+public:
+    Linuo(int i,int j);
+
+    ~Linuo();
+};
+
+class Luojilasi:public Jier
+{
+public:
+    Luojilasi(int i,int j);
+
+    ~Luojilasi();
+};
+
+
 #endif // JIER_H

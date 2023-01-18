@@ -29,7 +29,7 @@ bool Bullet::collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode m
 {
     Q_UNUSED(mode);
 //    if(other->type()==Enemy::Type)
-    return other->type() ==Enemy::Type&&other->x()-posX<260&&other->x()-posX>180&&posY-other->y()>-30&&posY-other->y()<30;
+    return other->type() ==Enemy::Type&&other->x()-posX<260&&other->x()-posX>180&&posY-other->y()>-50&&posY-other->y()<50;
 }
 
 void Bullet::advance(int phase)
@@ -48,7 +48,7 @@ void Bullet::advance(int phase)
 
         //enemy=new Enemy;
         enemy->hp -= ATK;
-        qDebug()<<enemy->hp;
+        //qDebug()<<enemy->hp;
         if(enemy->hp>0)
        {
            delete this;

@@ -15,7 +15,7 @@ MoGuGuai::MoGuGuai(int i)
     atkmovie->start();
     posX=1300;
     this->i=i;
-    this->setPos(1300,i*160-30);}
+    this->setPos(1300,360-133+154*i-45);}
 bool MoGuGuai::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     return other->type()==Partner::Type && posX-other->x()<131 && posX-other->x()>129
