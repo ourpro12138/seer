@@ -2,22 +2,22 @@
 #define LIEHUOHOU_H
 
 #include <QMovie>
-#include "elf.h"
-#include "partner.h"
-#include "map.h"
+//#include "elf.h"
+//#include "partner.h"
+//#include "map.h"
 
-class LieHuoHou : public Partner
-{
+//class LieHuoHou : public Partner
+//{
 
-public:
-    LieHuoHou(int i,int j);
-  ~ LieHuoHou();
+//public:
+//    LieHuoHou(int i,int j);
+//  ~ LieHuoHou();
 
-    void advance(int phase);
- bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
-    void skill();
-    void evolution();
+//    void advance(int phase);
+// bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
+//    void skill();
+//    void evolution();
 
-};
+//};
 
-#endif // LIEHUOHOU_H
+//#endif // LIEHUOHOU_H

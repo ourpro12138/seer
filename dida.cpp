@@ -34,7 +34,7 @@ void Dida::advance(int phase)
     if(atkcounter==prepareTime)
     {
         atkcounter=0;
-        bullet=new Bullet(i,j,100,100);
+        bullet=new Bullet(i,j,80,80);
         bullet->ATK=this->atk;
         bullet->name = this->name.toLower();
         scene()->addItem(bullet);
@@ -57,5 +57,24 @@ void Dida::skill()
 void Dida::evolution()
 {
 
+}
+
+Dierke::Dierke(int i,int j):Dida(i,j)
+{
+    this->i = i; this->j=j;
+    width = 135;height=138;
+    hp=500;atkcounter=0;prepareTime=100;
+    this->atk = 50;
+    name="Dierke";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(140+234*j-47,300-133+154*i);
+}
+
+Dierke::~Dierke()
+{
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+        delete atkmovie;
 }
 

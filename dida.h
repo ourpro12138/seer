@@ -20,5 +20,11 @@ private:
 
 
 };
+class Dierke:public Dida
+{
+public:
+     Dierke(int i,int j);
+    ~ Dierke();
+};
 
 #endif // DIDA_H

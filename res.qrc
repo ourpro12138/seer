@@ -71,6 +71,10 @@
         <file>resource/background/xvanzhong_normal.png</file>
         <file>resource/background/shuxing_fire.png</file>
         <file>resource/background/OIP-C (1).jpg</file>
+        <file>resource/background/partnerButton.png</file>
+        <file>resource/background/partnerButton_clicked.png</file>
+        <file>resource/background/capsule.png</file>
+        <file>resource/background/evolution.png</file>
         <file>resource/partner/jier_bullet.png</file>
         <file>resource/partner/linuo_bullet.png</file>
     </qresource>
@@ -345,5 +349,11 @@
         <file>resource/partner/linuo_bullet.png</file>
         <file>resource/partner/luojilasi_bullet.png</file>
         <file>resource/partner/stand_luojilasi.gif</file>
+        <file>resource/partner/balusi_bullet.png</file>
+        <file>resource/partner/attack_25.gif</file>
+        <file>resource/partner/dierke_bullet.png</file>
+        <file>resource/partner/stand_dierke.gif</file>
+        <file>resource/partner/liaosi_bullet.png</file>
+        <file>resource/partner/stand_liaosi.gif</file>
     </qresource>
 </RCC>
