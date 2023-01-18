@@ -59,4 +59,41 @@ void Jier::evolution()
 {
 
 }
+Linuo::Linuo(int i,int j):Jier(i,j)
+{
+    this->i = i; this->j=j;
+    width = 134;height=138;
+    hp=500;atkcounter=0;prepareTime=100;
+    this->atk = 50;
+    name="Linuo";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(140+234*j-47,300-133+154*i);
+}
+
+Linuo::~Linuo()
+{
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+        delete atkmovie;
+}
+
+Luojilasi::Luojilasi(int i,int j):Jier(i,j)
+{
+    this->i = i; this->j=j;
+    width = 114;height=140;
+    hp=500;atkcounter=0;prepareTime=100;
+    this->atk = 50;
+    name="Luojilasi";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(140+234*j-47,300-133+154*i);
+}
+
+Luojilasi::~Luojilasi()
+{
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+        delete atkmovie;
+}
 

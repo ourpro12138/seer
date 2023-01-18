@@ -12,7 +12,7 @@ GangYaSha::GangYaSha(int i)
     atkmovie->start();
     posX=1300;
     this->i=i;
-    this->setPos(1300,i*220);
+    this->setPos(1300,360-133+154*i-45);
     atkcounter=96;prepareTime=96;
     standcounter=232; standTime=0;
 
