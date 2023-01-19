@@ -3,10 +3,11 @@
 Maokai::Maokai(int i)
 {
     this->width=170; this->height=196;
-    hp=200;atk=1000;speed=0.40;
+    hp=200;atk=100;speed=0.40;
     atkcounter=200;prepareTime=200;
     standTime=84;standcounter=0;
     name="MaoKai";
+    this->attribute = GRASS;
     atkmovie=new  QMovie(":/enemy/resource/enemy/enemy_9.gif");
     atkmovie->start();
     posX=1300;
