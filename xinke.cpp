@@ -5,7 +5,7 @@ Xinke::Xinke(int i,int j)
 
   attribute = ORDINARY;
   this->i = i; this->j=j;
-  width = 149;height=135;
+  width = 149;height=135;health=300;
   hp=300;atkcounter=0;prepareTime=100;
   this->atk = 50;
   name="Xinke";
@@ -30,6 +30,8 @@ void Xinke::advance(int phase)
 
     if(!phase)
         return;
+    if(hp>health)
+        hp=health;
     update();
     QList <QGraphicsItem *> items = collidingItems();
     if(!items.isEmpty())

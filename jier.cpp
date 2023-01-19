@@ -6,7 +6,7 @@ Jier::Jier(int i,int j)
 
   attribute = FIRE;
   this->i = i; this->j=j;
-  width = 108;height=130;
+  width = 108;height=130;health=300;
   hp=300;atkcounter=0;prepareTime=300;
   this->atk = 50;
   name="Jier";
@@ -32,6 +32,8 @@ void Jier::advance(int phase)
     if(!phase)
         return;
     update();
+    if(hp>health)
+        hp=health;
     QList <QGraphicsItem *> items = collidingItems();
     if(!items.isEmpty())
     {
@@ -73,7 +75,7 @@ void Jier::evolution()
 Linuo::Linuo(int i,int j):Jier(i,j)
 {
     this->i = i; this->j=j;
-    width = 134;height=138;
+    width = 134;height=138;health=500;
     hp=500;atkcounter=0;prepareTime=200;
     this->atk = 50;
     name="Linuo";
@@ -110,7 +112,7 @@ void Luojilasi::skill()
 }
 Luojilasi::Luojilasi(int i,int j):Jier(i,j)
 {
-    this->i = i; this->j=j;
+    this->i = i; this->j=j;health=500;
     width = 114;height=140;
     hp=500;atkcounter=0;prepareTime=100;
     this->atk = 50;

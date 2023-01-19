@@ -1,16 +1,19 @@
 #include "bubuzhongzi.h"
+#include "level.h"
 Bubuzhongzi::Bubuzhongzi(int i,int j)
 {
     this->attribute = GRASS;
     this->i = i; this->j = j;
-    hp=500,atk=50;
+    hp=500,atk=50;health=300;
     this->width = 95;this->height=146;
-    standTime = 64; standcounter=64;
-    prepareTime = 150; atkcounter=150;
+    standTime = 64; standcounter=standTime;
+    prepareTime = 150; atkcounter=atkcounter;
     coolTime = 600; coolcounter=0;
     No=1;
-    name="bubuzhongzi";
+    name="bubuzhongzi";skillname ="光合作用";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
+    Skillplayer->setMovie(Skill);
     atkmovie->start();
       setPos(154+234*j-47,290-133+154*i);
 }
@@ -34,6 +37,8 @@ void Bubuzhongzi::advance(int phase)
     if(!phase)
         return;
     update();
+    if(hp>health)
+        hp=health;
     if(Map::myptn[i][j+1])
     {
         if(coolcounter<coolTime)
@@ -82,7 +87,35 @@ void Bubuzhongzi::advance(int phase)
 
 void Bubuzhongzi::skill()
 {
+    parent->gametime->stop();
+    qDebug()<<"时间暂停！";
+    skillButton->hide();
+    evolutionButton->hide();
+    capsuleButton->hide();
 
+    Skillplayer->show();
+    Skill->start();
+
+    QTimer *time = new QTimer(parent);
+    time->start(10);
+    static  int count = 0;
+    connect(time,&QTimer::timeout,[=](){
+        count++;
+        if(count ==200)
+        {
+            delete time;
+            qDebug()<<"技能释放完毕";
+            this->hp+=atk*2;
+            int temp= atk;
+            atk=200;
+            Map::myptn[i][j+1]->hp+=Damage(this,Map::myptn[i][j]);
+            atk=temp;
+            parent->gametime->start(10);
+            Skill->stop();
+            Skillplayer->hide();
+            count=0;
+        }
+    });
 }
 void Bubuzhongzi::evolution()
 {
@@ -94,14 +127,17 @@ void Bubuzhongzi::evolution()
 }
 BuBuCao::BuBuCao(int i,int j):Bubuzhongzi(i,j)
 {
-    hp=700,atk=55;
+    health=500;
+    hp=500,atk=55;
     this->width = 95;this->height=146;
-    standTime = 64; standcounter=64;
-    prepareTime = 150; atkcounter=150;
+    standTime = 64; standcounter=standcounter;
+    prepareTime = 150; atkcounter=atkcounter;
     //coolTime = 600; coolcounter=0;
     No=17;
     name="BuBuCao";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
+    Skillplayer->setMovie(Skill);
     atkmovie->start();
       setPos(154+234*j-47,290-133+154*i);
 }
@@ -120,7 +156,35 @@ void BuBuCao::evolution()
 }
 void BuBuCao::skill()
 {
+    parent->gametime->stop();
+    qDebug()<<"时间暂停！";
+    skillButton->hide();
+    evolutionButton->hide();
+    capsuleButton->hide();
 
+    Skillplayer->show();
+    Skill->start();
+
+    QTimer *time = new QTimer(parent);
+    time->start(10);
+    static  int count = 0;
+    connect(time,&QTimer::timeout,[=](){
+        count++;
+        if(count ==208)
+        {
+            delete time;
+            qDebug()<<"技能释放完毕";
+            this->hp+=atk*2;
+            int temp= atk;
+            atk=300;
+            Map::myptn[i][j+1]->hp+=Damage(this,Map::myptn[i][j]);
+            atk=temp;
+            parent->gametime->start(10);
+            Skill->stop();
+            Skillplayer->hide();
+            count=0;
+        }
+    });
 }
 BuBuCao::~BuBuCao()
 {
@@ -134,20 +198,51 @@ BuBuCao::~BuBuCao()
 }
 BuBuHua::BuBuHua(int i,int j):Bubuzhongzi(i,j)
 {
-    hp=800,atk=65;
+    health=700;
+    hp=700,atk=65;
     this->width = 95;this->height=146;
-    standTime = 64; standcounter=64;
-    prepareTime = 150; atkcounter=150;
+    standTime = 64; standcounter=standTime;
+    prepareTime = 150; atkcounter=prepareTime;
     //coolTime = 600; coolcounter=0;
     No=33;
     name="BuBuHua";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
+    Skillplayer->setMovie(Skill);
     atkmovie->start();
     setPos(154+234*j-47,290-133+154*i);
 }
 void BuBuHua::skill()
 {
+    parent->gametime->stop();
+    qDebug()<<"时间暂停！";
+    skillButton->hide();
+    evolutionButton->hide();
+    capsuleButton->hide();
 
+    Skillplayer->show();
+    Skill->start();
+
+    QTimer *time = new QTimer(parent);
+    time->start(10);
+    static  int count = 0;
+    connect(time,&QTimer::timeout,[=](){
+        count++;
+        if(count ==196)
+        {
+            delete time;
+            qDebug()<<"技能释放完毕";
+            this->hp+=atk*2;
+            int temp= atk;
+            atk=400;
+            Map::myptn[i][j+1]->hp+=Damage(this,Map::myptn[i][j]);
+            atk=temp;
+            parent->gametime->start(10);
+            Skill->stop();
+            Skillplayer->hide();
+            count=0;
+        }
+    });
 }
 BuBuHua::~BuBuHua()
 {

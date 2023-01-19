@@ -10,7 +10,7 @@ Agong::Agong(int i,int j)
     this->attribute = ORDINARY;
     this->i = i; this->j = j;
     this->width = 101;this->height=135;
-
+    health =100;
     hp=100,atk=20,prepareTime=16,atkcounter=16;
     standTime=40; standcounter=0; coolTime=0;coolcounter=0;
     name="Agone";
@@ -53,6 +53,8 @@ void Agong::advance(int phase)
         delete this;
         return;
     }
+    if(hp>health)
+        hp=health;
     if(hp>0)
     {
         if(!items.isEmpty())

@@ -8,7 +8,7 @@ Xianrenqiu::Xianrenqiu(int i,int j)
     width=90;height=130;
 
     this->hp = 300;this->atk=30;
-
+    health=300;
     prepareTime = 210; atkcounter=prepareTime;
     standTime=80; standcounter=standTime;
     coolTime = 200;coolcounter=0;
@@ -44,6 +44,8 @@ void Xianrenqiu::advance(int phase)
     if(!phase)
         return;
     update();
+    if(hp>health)
+        hp=health;
     QList <QGraphicsItem *> items = collidingItems();
     if(!items.isEmpty())
     {

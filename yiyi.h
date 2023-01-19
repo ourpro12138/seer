@@ -19,12 +19,16 @@ public:
 };
 class YiDingSi:public Yiyi
 {public:
+    void skill();
+    void evolution();
     YiDingSi(int i,int j);
     ~YiDingSi();
 };
 class YiKaLaiEn:public Yiyi
 {public:
     YiKaLaiEn(int i,int j);
+    void skill();
+    void evolution();
     ~YiKaLaiEn();
 };
 

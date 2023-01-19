@@ -11,8 +11,8 @@ Beier::Beier(int i,int j)
     this->attribute = WATER;
     this->i = i; this->j = j;
     this->width = 142;this->height=110;
-
-    hp=100,prepareTime=428,atkcounter=prepareTime;
+    health = 700;
+    hp=700,prepareTime=428,atkcounter=prepareTime;
     standTime=104; standcounter=0; coolTime=0;coolcounter=0;
     No=6;
     name="Beier";
@@ -48,6 +48,8 @@ void Beier::advance(int phase)
 {
     if(!phase)
         return;
+    if(hp>health)
+        hp=health;
     update();
     QList <QGraphicsItem *> items = collidingItems();
     if(hp<=0)
@@ -102,8 +104,8 @@ ABu::ABu(int i,int j):Beier(i,j)
 {
     this->i = i; this->j = j;
     this->width = 105;this->height=92;
-
-    hp=200,prepareTime=300,atkcounter=prepareTime;
+    health=1000;
+    hp=1000,prepareTime=300,atkcounter=prepareTime;
     standTime=42; standcounter=0; coolTime=0;coolcounter=0;
     No=22;
     name="ABu";
@@ -122,8 +124,8 @@ BaLaGui::BaLaGui(int i,int j):Beier(i,j)
 {
     this->i = i; this->j = j;
     this->width = 120;this->height=101;
-
-    hp=300,prepareTime=300,atkcounter=prepareTime;
+    health=1500;
+    hp=1500,prepareTime=300,atkcounter=prepareTime;
     standTime=68; standcounter=0; coolTime=0;coolcounter=0;
     No=38;
     name="BaLaGui";

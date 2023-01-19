@@ -361,5 +361,13 @@
         <file>resource/partner/yikalaien_bullet.png</file>
         <file>resource/partner/attack_abu.gif</file>
         <file>resource/partner/attack_balagui.gif</file>
+        <file>resource/partner/skill/youlian.gif</file>
+        <file>resource/partner/skill/balusi.gif</file>
+        <file>resource/partner/skill/bubucao.gif</file>
+        <file>resource/partner/skill/bubuhua.gif</file>
+        <file>resource/partner/skill/bubuzhongzi.gif</file>
+        <file>resource/partner/skill/liehuohou.gif</file>
+        <file>resource/partner/skill/lieyanxingxing.gif</file>
+        <file>resource/partner/skill/xiaohuohou.gif</file>
     </qresource>
 </RCC>

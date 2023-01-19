@@ -5,7 +5,7 @@ Baobeili::Baobeili(int i,int j)
 
    this->attribute = WATER;
   this->i = i; this->j=j;
-  width = 108;height=87;
+  width = 108;height=87;health=300;
   hp=300;atkcounter=0;prepareTime=100;
   this->atk = 50;
   name="Baobeili";
@@ -30,6 +30,8 @@ void Baobeili::advance(int phase)
 
     if(!phase)
         return;
+    if(hp>health)
+        hp=health;
     update();
     QList <QGraphicsItem *> items = collidingItems();
     if(!items.isEmpty())

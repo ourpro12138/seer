@@ -9,7 +9,7 @@ DuGuLu::DuGuLu(int i,int j)
 {
     this->attribute = ORDINARY;
     this->i = i; this->j = j;
-    this->width = 136;this->height=111;
+    this->width = 136;this->height=111;health=100;
     hp=100,atk=1000,prepareTime=150,atkcounter=130;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="dugulu";
@@ -44,6 +44,8 @@ void DuGuLu::advance(int phase)
 {
     if(!phase)
         return;
+    if(hp>health)
+        hp=health;
     update();
     QList <QGraphicsItem *> items = collidingItems();
     if(hp<=0)

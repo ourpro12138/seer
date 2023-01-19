@@ -5,7 +5,7 @@ Guodongya::Guodongya(int i,int j)
     this->attribute = WATER;
     this->i = i; this->j = j;
     hp=500,atk=4;
-    this->width = 118;this->height=130;
+    this->width = 118;this->height=130;health=500;
     standTime =80; standcounter=standTime;
     prepareTime = 300; atkcounter=prepareTime;
     coolTime = 600; coolcounter=coolTime;
@@ -35,6 +35,8 @@ void Guodongya::advance(int phase)
     if(!phase)
         return;
     update();
+    if(hp>health)
+        hp=health;
     if(Map::myptn[i][j+1])
     {
         if(coolcounter<coolTime)
@@ -73,7 +75,6 @@ void Guodongya::advance(int phase)
             }
             if(atkcounter==prepareTime)
             {
-                qDebug()<<"治疗开始";
                 qDebug()<<"atkcounter"<<atkcounter<<" coolcounter"<<coolcounter<<" standcounter"<<standcounter;
                 atkcounter=0;
                 atkmovie = new QMovie(":/partner/resource/partner/attack_guodongya.gif");

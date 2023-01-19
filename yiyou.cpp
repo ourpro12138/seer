@@ -7,8 +7,8 @@ Yiyou::Yiyou(int i,int j)
    attribute = WATER;
   qDebug()<<"伊优构造函数调用";
   this->i = i; this->j=j;
-  width = 95;height=133;
-  hp=300;atkcounter=prepareTime;prepareTime=300;
+  width = 95;height=133;health=200;
+  hp=200;atkcounter=prepareTime;prepareTime=300;
   No=5;
   this->atk = 20;
   name="Yiyou";
@@ -33,7 +33,6 @@ Yiyou::~Yiyou()
     }
     if(Skill)
         delete Skill;
-    qDebug()<<"伊优析造函数调用";
 
 }
 void Yiyou::advance(int phase)
@@ -41,6 +40,8 @@ void Yiyou::advance(int phase)
 
     if(!phase)
         return;
+    if(hp>health)
+        hp=health;
     update();
     if(atkcounter<prepareTime)
         ++atkcounter;
@@ -91,8 +92,6 @@ void Yiyou::skill()
             count=0;
         }
     });
-
-
 }
 void Yiyou::evolution()
 {
@@ -102,18 +101,20 @@ void Yiyou::evolution()
     delete this;
     Map::myptn[i][j] = yla;
     Map::myptn[i][j] = nullptr;
-    qDebug()<<">";
 }
 
 YouLiAn::YouLiAn(int i,int j):Yiyou(i,j)
 {
     this->i = i; this->j=j;
-    width = 95;height=133;
-    hp=350;atkcounter=100;prepareTime=100;
+    width = 95;height=133;health=350;
+    hp=350;prepareTime=300;atkcounter=prepareTime;
     this->atk = 65;
     No=21;
     name="YouLiAn";
+    skillname = "潮汐";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
+    Skillplayer->setMovie(Skill);
     atkmovie->start();
     setPos(154+234*j-50,290-133+154*i);
     qDebug()<<"尤里安构造函数调用";
@@ -139,18 +140,45 @@ void YouLiAn::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = yla;
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
 }
 
 void YouLiAn::skill()
 {
+    parent->gametime->stop();
+    qDebug()<<"时间暂停！";
+    skillButton->hide();
+    evolutionButton->hide();
+    capsuleButton->hide();
 
+    Skillplayer->show();
+    Skill->start();
+
+    QTimer *time = new QTimer(parent);
+    time->start(10);
+    static  int count = 0;
+    connect(time,&QTimer::timeout,[=](){
+        count++;
+        if(count ==200)
+        {
+            delete time;
+            qDebug()<<"技能释放完毕";
+            parent->gametime->start(10);
+            Skill->stop();
+            Skillplayer->hide();
+            this->prepareTime*=0.75;
+            this->atkcounter = prepareTime;
+            count=0;
+        }
+    });
 }
 BaLuSi::BaLuSi(int i,int j):Yiyou(i,j)
 {
     this->i = i; this->j=j;
-
+    health=500;
+    skillname = "剑舞";
     width = 150;height=156;
-    hp=400;atkcounter=100;prepareTime=100;
+    hp=500;prepareTime=200;atkcounter=prepareTime;
     this->atk = 80;
     No=37;
     name="BaLuSi";
@@ -161,7 +189,32 @@ BaLuSi::BaLuSi(int i,int j):Yiyou(i,j)
 }
 void BaLuSi::skill()
 {
+    parent->gametime->stop();
+    qDebug()<<"时间暂停！";
+    skillButton->hide();
+    evolutionButton->hide();
+    capsuleButton->hide();
 
+    Skillplayer->show();
+    Skill->start();
+
+    QTimer *time = new QTimer(parent);
+    time->start(10);
+    static  int count = 0;
+    connect(time,&QTimer::timeout,[=](){
+        count++;
+        if(count ==240)
+        {
+            delete time;
+            qDebug()<<"技能释放完毕";
+            parent->gametime->start(10);
+            Skill->stop();
+            Skillplayer->hide();
+            this->prepareTime*=0.7;
+            this->atkcounter = prepareTime;
+            count=0;
+        }
+    });
 }
 BaLuSi::~BaLuSi()
 {

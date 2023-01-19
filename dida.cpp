@@ -6,7 +6,7 @@ Dida::Dida(int i,int j)
 
    this->attribute = FIRE;
   this->i = i; this->j=j;
-  width = 154;height=114;
+  width = 154;height=114;health=300;
   hp=300;atkcounter=0;prepareTime=200;
   this->atk = 50;
   name="Dida";
@@ -29,6 +29,8 @@ void Dida::advance(int phase)
 {
     if(!phase)
         return;
+    if(hp>health)
+        hp=health;
     update();
     QList <QGraphicsItem *> items = collidingItems();
     if(!items.isEmpty())
@@ -72,6 +74,7 @@ void Dida::evolution()
 
 Dierke::Dierke(int i,int j):Dida(i,j)
 {
+    health=500;
     this->i = i; this->j=j;
     width = 135;height=138;
     hp=500;atkcounter=0;prepareTime=100;

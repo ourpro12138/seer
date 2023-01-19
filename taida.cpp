@@ -10,7 +10,7 @@ Taida::Taida(int i,int j)
     this->attribute = ORDINARY;
     this->i = i; this->j = j;
     this->width = 105;this->height=130;
-
+    health=100;
     hp=100,atk=20,prepareTime=220,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="Taida";
@@ -47,6 +47,8 @@ void Taida::advance(int phase)
     if(!phase)
         return;
     update();
+    if(hp>health)
+        hp=health;
     QList <QGraphicsItem *> items = collidingItems();
     if(hp<=0)
     {
