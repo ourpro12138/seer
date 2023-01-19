@@ -33,7 +33,9 @@ SOURCES += \
     enemy.cpp \
     gangyasha.cpp \
     guodongya.cpp \
+    heertuoke.cpp \
     huliya.cpp \
+    jianxishuiling.cpp \
     jier.cpp \
     level.cpp \
     main.cpp \
@@ -43,6 +45,7 @@ SOURCES += \
     moguguai.cpp \
     partner.cpp \
     pdbackpushbutton.cpp \
+    phoenix.cpp \
     pokedex.cpp \
     startpushbutton.cpp \
     startscene.cpp \
@@ -74,7 +77,9 @@ HEADERS += \
     enemy.h \
     gangyasha.h \
     guodongya.h \
+    heertuoke.h \
     huliya.h \
+    jianxishuiling.h \
     jier.h \
     level.h \
     lieyanxingxing.h \
@@ -84,6 +89,7 @@ HEADERS += \
     moguguai.h \
     partner.h \
     pdbackpushbutton.h \
+    phoenix.h \
     pokedex.h \
     startpushbutton.h \
     startscene.h \

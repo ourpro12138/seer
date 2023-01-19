@@ -82,14 +82,10 @@
         <file>resource/enemy/1-GRASS 2-WATER 3-FIRE.txt</file>
         <file>resource/enemy/enemy_2.gif</file>
         <file>resource/enemy/enemy_2attack.gif</file>
-        <file>resource/enemy/enemy_3.gif</file>
-        <file>resource/enemy/enemy_3attack.gif</file>
         <file>resource/enemy/enemy_4.gif</file>
         <file>resource/enemy/enemy_4attack.gif</file>
         <file>resource/enemy/enemy_5.gif</file>
         <file>resource/enemy/enemy_5attack.gif</file>
-        <file>resource/enemy/enemy_7.gif</file>
-        <file>resource/enemy/enemy_7attack.gif</file>
         <file>resource/enemy/enemy_9.gif</file>
         <file>resource/enemy/enemy_9attack.gif</file>
         <file>resource/enemy/moguguai.gif</file>
@@ -102,6 +98,12 @@
         <file>resource/enemy/taqiduoke_attack.gif</file>
         <file>resource/enemy/zuoluo.gif</file>
         <file>resource/enemy/zuoluo_attack.gif</file>
+        <file>resource/enemy/enemy_527.gif</file>
+        <file>resource/enemy/attack_enemy527.gif</file>
+        <file>resource/enemy/attack_enemy2634.gif</file>
+        <file>resource/enemy/enemy_2634.gif</file>
+        <file>resource/enemy/attack_enemy4120.gif</file>
+        <file>resource/enemy/enemy_4120.gif</file>
     </qresource>
     <qresource prefix="/map">
         <file>resource/map/alpha.png</file>

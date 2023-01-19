@@ -6,7 +6,7 @@ Xinke::Xinke(int i,int j)
   attribute = ORDINARY;
   this->i = i; this->j=j;
   width = 149;height=135;
-  hp=300;atkcounter=0;prepareTime=100;
+  hp=100;atkcounter=0;prepareTime=100;
   this->atk = 50;
   name="Xinke";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");

@@ -10,7 +10,7 @@ DuGuLu::DuGuLu(int i,int j)
     this->attribute = ORDINARY;
     this->i = i; this->j = j;
     this->width = 136;this->height=111;
-    hp=100,atk=1000,prepareTime=150,atkcounter=130;
+    hp=100,atk=10,prepareTime=150,atkcounter=130;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="dugulu";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -31,11 +31,11 @@ DuGuLu::~DuGuLu()
 
 bool DuGuLu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
-    Q_UNUSED(mode);
-    if(other->type()==Enemy::Type)
-    {
-        qDebug()<<other->x()-x()<<"  "<<other->y()-y();
-    }
+     Q_UNUSED(mode);
+//    if(other->type()==Enemy::Type)
+//    {
+//        qDebug()<<other->x()-x()<<"  "<<other->y()-y();
+//    }
     return other->type()==Enemy::Type && other->x()-x()>95 && other->x()-x()<200
             && other->y()-y()>-60 && other->y()-y()<60;
 }
@@ -64,6 +64,7 @@ void DuGuLu::advance(int phase)
          }
          if(atkcounter==prepareTime)
          {
+
             atkcounter=0;
             atkmovie = new QMovie(":/partner/resource/partner/attack_dugulu.gif");
             atkmovie->start();

@@ -12,7 +12,10 @@ Taida::Taida(int i,int j)
     this->i = i; this->j = j;
     this->width = 105;this->height=130;
 
+    hp=200,atk=20,prepareTime=220,atkcounter=220;
+
     hp=100,atk=20,prepareTime=220,atkcounter=prepareTime;
+
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="Taida";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
