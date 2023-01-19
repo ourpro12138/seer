@@ -36,6 +36,7 @@ SOURCES += \
     huliya.cpp \
     jier.cpp \
     level.cpp \
+    lieyanxingxing.cpp \
     main.cpp \
     maingame.cpp \
     maokai.cpp \
@@ -77,6 +78,7 @@ HEADERS += \
     huliya.h \
     jier.h \
     level.h \
+    lieyanxingxing.h \
     maingame.h \
     maokai.h \
     map.h \

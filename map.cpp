@@ -83,7 +83,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
                break;
         case 4:
                qDebug()<<"依依建立 i ="<<i<<"j = "<<j;
-               myptn[i][j] = new Yiyi(i,j);break;
+               myptn[i][j] = new YiKaLaiEn(i,j);break;
                break;
         case 5:
             qDebug()<<"伊优建立 i= "<<i<<"j = "<<j;

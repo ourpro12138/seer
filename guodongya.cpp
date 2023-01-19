@@ -93,3 +93,42 @@ void Guodongya::evolution()
 {
 
 }
+ ShuiJingYa::ShuiJingYa(int i,int j): Guodongya(i,j)
+{
+     this->i = i; this->j = j;
+     hp=500,atk=50;
+     this->width = 118;this->height=130;
+     standTime =80; standcounter=80;
+     prepareTime = 300; atkcounter=300;
+     coolTime = 600; coolcounter=0;
+     name="Guodongya";
+     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+     atkmovie->start();
+       setPos(154+234*j-47,290-133+154*i);
+
+}
+ ShuiJingYa::~ShuiJingYa()
+ {
+     if(atkmovie)
+         delete  atkmovie;
+ }
+
+ BoLangYa::BoLangYa(int i,int j):Guodongya(i,j)
+ {
+     this->i = i; this->j = j;
+     hp=500,atk=50;
+     this->width = 118;this->height=130;
+     standTime =80; standcounter=80;
+     prepareTime = 300; atkcounter=300;
+     coolTime = 600; coolcounter=0;
+     name="Guodongya";
+     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+     atkmovie->start();
+       setPos(154+234*j-47,290-133+154*i);
+
+ }
+ BoLangYa::~BoLangYa()
+  {
+      if(atkmovie)
+          delete  atkmovie;
+  }

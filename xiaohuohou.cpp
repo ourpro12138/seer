@@ -9,7 +9,7 @@ Xiaohuohou::Xiaohuohou(int i,int j)
 {
     this->i = i; this->j = j;
     this->No=9;
-    this->width = 130*0.8;this->height=160*0.8;
+    this->width = 130;this->height=160;
     hp=100,atk=20,prepareTime=150,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="XiaoHuoHou";
@@ -109,12 +109,12 @@ LieHuoHou::LieHuoHou(int i,int j):Xiaohuohou(i,j)
     this->i = i; this->j = j;
     this->No=25;
     this->width = 101;this->height=140;
-    hp=350,atk=50,prepareTime=150,atkcounter=LieHuoHou;
-    standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    hp=350,atk=50,prepareTime=150,atkcounter=prepareTime;
+    standTime=28; standcounter=0; coolTime=0;coolcounter=0;
     name="LieHuoHou";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
-    setPos(154+234*j-47-10,290-133+154*i-30);
+    setPos(154+234*j-47,290-133+154*i);
 }
 void LieHuoHou::skill()
 {
@@ -144,11 +144,12 @@ Lieyanxingxing::Lieyanxingxing(int i,int j):Xiaohuohou(i,j)
     this->i = i; this->j = j;
     this->width = 128;this->height=150;
     hp=550,atk=65,prepareTime=150,atkcounter=prepareTime;
-    standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    standTime=32; standcounter=0; coolTime=0;coolcounter=0;
+    No=41;
     name="Lieyanxingxing";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
-    setPos(154+234*j-47-10,290-133+154*i-30);
+    setPos(154+234*j-40,290-130+154*i);
 }
 void Lieyanxingxing::skill()
 {

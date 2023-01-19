@@ -19,9 +19,17 @@ public:
    bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode)const;
    void skill();
    void evolution();
-
-
-
+};
+class ABu:public Beier
+{public:
+    ABu(int i,int j);
+    ~ABu();
+};
+class BaLaGui:public Beier
+{
+public:
+    BaLaGui(int i,int j);
+    ~BaLaGui();
 
 };
 

@@ -8,6 +8,7 @@ Bubuzhongzi::Bubuzhongzi(int i,int j)
     standTime = 64; standcounter=64;
     prepareTime = 150; atkcounter=150;
     coolTime = 600; coolcounter=0;
+    No=1;
     name="bubuzhongzi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
@@ -70,7 +71,7 @@ void Bubuzhongzi::advance(int phase)
                 qDebug()<<"治疗开始";
                 qDebug()<<"atkcounter"<<atkcounter<<" coolcounter"<<coolcounter<<" standcounter"<<standcounter;
                 atkcounter=0;
-                atkmovie = new QMovie(":/partner/resource/partner/attack_1.gif");
+                atkmovie = new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
                 atkmovie->start();
             }
         }
@@ -98,8 +99,9 @@ BuBuCao::BuBuCao(int i,int j):Bubuzhongzi(i,j)
     standTime = 64; standcounter=64;
     prepareTime = 150; atkcounter=150;
     //coolTime = 600; coolcounter=0;
+    No=17;
     name="BuBuCao";
-    atkmovie=new QMovie(":/partner/resource/partner/stand_bubucao.gif");
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
       setPos(154+234*j-47,290-133+154*i);
 }
@@ -137,8 +139,9 @@ BuBuHua::BuBuHua(int i,int j):Bubuzhongzi(i,j)
     standTime = 64; standcounter=64;
     prepareTime = 150; atkcounter=150;
     //coolTime = 600; coolcounter=0;
+    No=33;
     name="BuBuHua";
-    atkmovie=new QMovie(":/partner/resource/partner/stand_bubuhua.gif");
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(154+234*j-47,290-133+154*i);
 }
