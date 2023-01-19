@@ -27,5 +27,19 @@ private:
 signals:
 
 };
+class BoLangYa:public Guodongya
+{
+public:
+    BoLangYa(int i,int j);
+    ~BoLangYa();
 
+};
+
+class ShuiJingYa:public Guodongya
+{
+public:
+    ShuiJingYa(int i,int j);
+    ~ShuiJingYa();
+
+};
 #endif // GUODONGYA_H

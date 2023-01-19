@@ -357,5 +357,10 @@
         <file>resource/partner/stand_dierke.gif</file>
         <file>resource/partner/liaosi_bullet.png</file>
         <file>resource/partner/stand_liaosi.gif</file>
+        <file>resource/partner/attack_41.gif</file>
+        <file>resource/partner/yidingsi_bullet.png</file>
+        <file>resource/partner/yikalaien_bullet.png</file>
+        <file>resource/partner/attack_abu.gif</file>
+        <file>resource/partner/attack_balagui.gif</file>
     </qresource>
 </RCC>

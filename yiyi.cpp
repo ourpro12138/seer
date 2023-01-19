@@ -8,6 +8,7 @@ Yiyi::Yiyi(int i,int j)
   width = 83;height=145;
   hp=300;atkcounter=0;prepareTime=200;
   this->atk = 50;
+  No=4;
   name="Yiyi";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
@@ -57,4 +58,42 @@ void Yiyi::skill()
 void Yiyi::evolution()
 {
 
+}
+
+
+YiDingSi::YiDingSi(int i,int j): Yiyi(i,j)
+{
+    this->i = i; this->j=j;
+    width = 83;height=145;
+    hp=350;atkcounter=0;prepareTime=200;
+    this->atk = 60;
+    No=20;
+    name="YiDingSi";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(154+234*j-47,290-125+154*i);
+}
+YiDingSi::~YiDingSi()
+{
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+        delete atkmovie;
+}
+
+YiKaLaiEn::YiKaLaiEn(int i,int j):Yiyi(i,j)
+{
+    this->i = i; this->j=j;
+    width = 83;height=145;
+    hp=400;atkcounter=0;prepareTime=200;
+    this->atk = 70;
+    No=36;
+    name="YiKaLaiEn";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(154+234*j-47,290-133+154*i);
+}
+YiKaLaiEn::~YiKaLaiEn()
+{
+    if(atkmovie)
+        delete  atkmovie;
 }

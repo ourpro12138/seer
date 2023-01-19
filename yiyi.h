@@ -15,9 +15,17 @@ public:
 // bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
     void skill();
     void evolution();
-private:
     Bullet *bullet;
-
-
 };
+class YiDingSi:public Yiyi
+{public:
+    YiDingSi(int i,int j);
+    ~YiDingSi();
+};
+class YiKaLaiEn:public Yiyi
+{public:
+    YiKaLaiEn(int i,int j);
+    ~YiKaLaiEn();
+};
+
 #endif // YIYI_H
