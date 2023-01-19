@@ -16,9 +16,13 @@ Jier::Jier(int i,int j)
 }
 Jier::~Jier()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 
 }
 void Jier::advance(int phase)
@@ -57,7 +61,12 @@ void Jier::skill()
 }
 void Jier::evolution()
 {
-
+    Linuo *bbh = new Linuo(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+    this->skillButton->setEnabled(false);
 }
 Linuo::Linuo(int i,int j):Jier(i,j)
 {
@@ -70,14 +79,33 @@ Linuo::Linuo(int i,int j):Jier(i,j)
     atkmovie->start();
     setPos(140+234*j-47,300-133+154*i);
 }
+void Linuo::evolution()
+{
+    Luojilasi *bbh = new Luojilasi(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+    this->skillButton->setEnabled(false);
+}
+void Linuo::skill()
+{
 
+}
 Linuo::~Linuo()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
+void Luojilasi::skill()
+{
 
+}
 Luojilasi::Luojilasi(int i,int j):Jier(i,j)
 {
     this->i = i; this->j=j;
@@ -92,8 +120,12 @@ Luojilasi::Luojilasi(int i,int j):Jier(i,j)
 
 Luojilasi::~Luojilasi()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 

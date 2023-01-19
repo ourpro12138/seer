@@ -16,9 +16,13 @@ Baobeili::Baobeili(int i,int j)
 }
 Baobeili::~Baobeili()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 
 }
 void Baobeili::advance(int phase)

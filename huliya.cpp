@@ -16,9 +16,13 @@ Huliya::Huliya(int i,int j)
 }
 Huliya::~Huliya()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 
 }
 void Huliya::advance(int phase)
@@ -56,6 +60,15 @@ void Huliya::skill()
 }
 void Huliya::evolution()
 {
+    Liaosi *bbh = new Liaosi(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+    this->skillButton->setEnabled(false);
+}
+void Liaosi::skill()
+{
 
 }
 Liaosi::Liaosi(int i,int j):Huliya(i,j)
@@ -72,8 +85,12 @@ Liaosi::Liaosi(int i,int j):Huliya(i,j)
 
 Liaosi::~Liaosi()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 

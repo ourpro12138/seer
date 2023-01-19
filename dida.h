@@ -15,7 +15,6 @@ public:
 // bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const;
     void skill();
     void evolution();
-private:
     Bullet *bullet;
 
 
@@ -23,6 +22,7 @@ private:
 class Dierke:public Dida
 {
 public:
+    void skill();
      Dierke(int i,int j);
     ~ Dierke();
 };

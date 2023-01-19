@@ -4,7 +4,7 @@
 #include <QWidget>
 #include "enemy.h"
 #include <QPainter>
-#include <beilami.h>
+#include "beilami.h"
 #include "taqiduoke.h"
 #include "cardsblank.h"
 #include "cardsmenu.h"
@@ -16,6 +16,8 @@
 #include <QCursor>
 #include "partner.h"
 #include <QBitmap>
+#include "partner.h"
+
 namespace Ui {
 class Level;
 }

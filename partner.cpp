@@ -1,10 +1,11 @@
 #include "enemy.h"
 #include "partner.h"
 #include "level.h"
+#include "map.h"
 
-QPushButton *Partner::skillButton;
-QPushButton *Partner::evolutionButton;
-QPushButton *Partner::capsuleButton;
+//QPushButton *Partner::skillButton;
+//QPushButton *Partner::evolutionButton;
+//QPushButton *Partner::capsuleButton;
 QWidget *Partner::parent;
 
 
@@ -13,38 +14,43 @@ Partner::Partner()
 {
 
 
-    setStatus=1;nowStatus=1;
-
-    if(skillButton==NULL)
-    {skillButton = new QPushButton(parent);}
-    if(evolutionButton==NULL)
-    {evolutionButton = new QPushButton(parent);}
-    if(capsuleButton==NULL)
-    {capsuleButton = new QPushButton(parent);}
-
+    skillButton = new QPushButton(parent);
+    evolutionButton = new QPushButton(parent);
+    capsuleButton = new QPushButton(parent);
     skillButton->hide();
     evolutionButton->hide();
     capsuleButton->hide();
 
     QPixmap button;
     button.load(":/background/resource/background/partnerButton.png");
-    skillButton->setStyleSheet("background-image:url(:/background/resource/background/partnerButton.png)");
     skillButton->setMask(button.mask());skillButton->setFixedSize(button.size());
-    evolutionButton->setStyleSheet("background-image:url(:/background/resource/background/partnerButton.png)");
     evolutionButton->setMask(button.mask());evolutionButton->setFixedSize(button.size());
-    capsuleButton->setStyleSheet("background-image:url(:/background/resource/background/partnerButton.png)");
     capsuleButton->setMask(button.mask());capsuleButton->setFixedSize(button.size());
 
+    skillButton->setStyleSheet("QPushButton{background-image: url(:/background/resource/background/partnerButton.png)}"
+                               "QPushButton:hover{background-image: url(:/background/resource/background/partnerButton_clicked.png)}"
+                               "QPushButton:pressed{background-image: url(:/background/resource/background/partnerButton.png)}");
+    evolutionButton->setStyleSheet("QPushButton{background-image: url(:/background/resource/background/partnerButton.png)}"
+                                   "QPushButton:hover{background-image: url(:/background/resource/background/partnerButton_clicked.png)}"
+                                   "QPushButton:pressed{background-image: url(:/background/resource/background/partnerButton.png)}");
+    capsuleButton->setStyleSheet("QPushButton{background-image: url(:/background/resource/background/partnerButton.png)}"
+                                 "QPushButton:hover{background-image: url(:/background/resource/background/partnerButton_clicked.png)}"
+                                 "QPushButton:pressed{background-image: url(:/background/resource/background/partnerButton.png)}");
 
+    connect(evolutionButton,&QPushButton::clicked,this,&Partner::evolution);
+    connect(capsuleButton,&QPushButton::clicked,this,[=](){
+        delete this;
+    });
 
+    connect(skillButton,&QPushButton::clicked,this,&Partner::skill);
 
+    qDebug()<<"partner构造函数调用";
 }
 Partner::~Partner()
 {
     delete skillButton;
     delete evolutionButton;
     delete capsuleButton;
-
 }
 //void partner::skill()
 //{}
@@ -106,7 +112,8 @@ void Partner::mousePressEvent(QGraphicsSceneMouseEvent *event)
     evolutionButton->move(219+230*j,237-48+160*i);
     capsuleButton->move(186+230*j,317-48+160*i);
 if(skillButton->isHidden()&&evolutionButton->isHidden()&&capsuleButton->isHidden())
-{   skillButton->show();
+{
+    skillButton->show();
     evolutionButton->show();
     capsuleButton->show();
 }
@@ -119,4 +126,5 @@ else
 
 
 }
+
 

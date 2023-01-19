@@ -16,10 +16,13 @@ Dida::Dida(int i,int j)
 }
 Dida::~Dida()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
-
+    }
 }
 void Dida::advance(int phase)
 {
@@ -56,7 +59,13 @@ void Dida::skill()
 }
 void Dida::evolution()
 {
+    Dierke *bbh = new Dierke(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
 
+    this->skillButton->setEnabled(false);
 }
 
 Dierke::Dierke(int i,int j):Dida(i,j)
@@ -70,11 +79,18 @@ Dierke::Dierke(int i,int j):Dida(i,j)
     atkmovie->start();
     setPos(140+234*j-47,300-133+154*i);
 }
+void Dierke::skill()
+{
 
+}
 Dierke::~Dierke()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 

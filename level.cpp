@@ -1,9 +1,10 @@
 #include "level.h"
 #include "ui_level.h"
 #include "moguguai.h"
-#include"gangyasha.h"
-#include"zuoluo.h"
-
+#include "gangyasha.h"
+#include "zuoluo.h"
+#include "taqiduoke.h"
+#include "maokai.h"
 
 Level::Level(QWidget *parent) :
     QWidget(parent),
@@ -19,7 +20,6 @@ Level::Level(QWidget *parent) :
     this->setFixedSize(1566,911);
     this->hide();
     initlevel();
-
 }
 
 Level::~Level()
@@ -32,6 +32,9 @@ Level::~Level()
     delete this->map;
     delete this->view;
     delete this->scene;
+//    delete Partner::skillButton;
+//    delete Partner::evolutionButton;
+//    delete Partner::capsuleButton;
 }
 
 void Level::paintEvent(QPaintEvent *)
@@ -77,14 +80,30 @@ kls::kls()
     levelName = "kls";
     Wave = 1;
     totalWave=2;
-    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo;
+    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*taqi,*taqi1,*taqi2,*taqi3,*taqi4,*zl,*zl1,*zl2,*zl3,*zl4,*mk;
+
     creattimer = new QTimer(this);
     gang = new GangYaSha(2);
     gang2 = new GangYaSha(3);
     gang3 = new GangYaSha(1);
     gang4 = new GangYaSha(2);
     gang5 = new GangYaSha(0);
+
     mo = new MoGuGuai(2);
+
+    taqi = new Taqiduoke(1);
+    taqi1 = new Taqiduoke(2);
+    taqi2 = new Taqiduoke(3);
+    taqi3 = new Taqiduoke(4);
+
+    zl = new ZuoLuo(1);
+    zl1 = new ZuoLuo(2);
+    zl2 = new ZuoLuo(3);
+    zl3 = new ZuoLuo(4);
+
+
+    mk = new Maokai(3);
+
     creattimer->start(2000);
     connect(wavetime,&QTimer::timeout,[=](){
 
@@ -108,7 +127,7 @@ kls::kls()
                switch(enemy_count)
            {
            case 0:
-              {scene->addItem(gang);break;}
+              {scene->addItem(mk);break;}
            case 1:
               {scene->addItem(gang2);break;}
            case 2:
@@ -119,7 +138,9 @@ kls::kls()
              { scene->addItem(gang5);break;}
            case 5:
              { scene->addItem(mo);break;}
-           default:
+           case 6:
+             { scene->addItem(taqi3);break;}
+               default:
            {
                if(!gang&&!gang2&&!gang3&&!gang4&&!gang5&&!mo)
                {
@@ -134,7 +155,36 @@ kls::kls()
            }
            else if(levelMode==3)
            {
-               qDebug()<<"第二波来咯";
+                qDebug()<<"第二波来咯";
+               {
+                   switch(enemy_count)
+               {
+               case 0:
+                  {scene->addItem(taqi);break;}
+               case 1:
+                  {scene->addItem(taqi2);break;}
+               case 2:
+                 { scene->addItem(zl2);break;}
+               case 3:
+                 { scene->addItem(zl1);break;}
+               case 4:
+                 { scene->addItem(zl3);break;}
+               case 5:
+                 { scene->addItem(mo);break;}
+               default:
+               {
+                   if(!taqi&&!taqi2&&!zl1&&!zl2&&!zl3&&!mo)
+                   {
+                       //Mission completion
+
+
+
+                       break;
+                   }
+               }
+               }
+                     enemy_count++;
+               }
            }
        });
 
@@ -486,4 +536,5 @@ void Level::initlevel()
         });
 
     });
+
 }

@@ -24,7 +24,8 @@ class Linuo:public Jier
 {
 public:
     Linuo(int i,int j);
-
+void skill();
+void evolution();
     ~Linuo();
 };
 
@@ -32,7 +33,7 @@ class Luojilasi:public Jier
 {
 public:
     Luojilasi(int i,int j);
-
+void skill();
     ~Luojilasi();
 };
 

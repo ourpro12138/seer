@@ -4,10 +4,11 @@
 #include <QPainter>
 #include <QPushButton>
 #include <QLabel>
-//#include<QMouseEvent>
+#include <QObject>
 class Enemy;
-class Partner :public Elf
+class Partner :public QObject,public Elf
 {
+     Q_OBJECT
 public:
     Partner();
 
@@ -31,14 +32,13 @@ public:
     int price_skill;
     QString skillname;
 
-    static QPushButton *skillButton;
-    static QPushButton *evolutionButton;
-    static QPushButton *capsuleButton;
+    QPushButton *skillButton;
+    QPushButton *evolutionButton;
+    QPushButton *capsuleButton;
 
     static QWidget *parent;
 
 private:
     Enemy *enemy;
 };
-
 #endif // PARTNER_H

@@ -17,9 +17,13 @@ Yiyi::Yiyi(int i,int j)
 }
 Yiyi::~Yiyi()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 
 }
 void Yiyi::advance(int phase)

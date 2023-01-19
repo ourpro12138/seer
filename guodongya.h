@@ -20,8 +20,6 @@ public:
 
     void skill();
     void evolution();
-private:
-   int treatCounter,treatCreateTime;
 
 
 signals:

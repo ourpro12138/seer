@@ -39,6 +39,7 @@ SOURCES += \
     lieyanxingxing.cpp \
     main.cpp \
     maingame.cpp \
+    maokai.cpp \
     map.cpp \
     moguguai.cpp \
     partner.cpp \
@@ -79,6 +80,7 @@ HEADERS += \
     level.h \
     lieyanxingxing.h \
     maingame.h \
+    maokai.h \
     map.h \
     moguguai.h \
     partner.h \

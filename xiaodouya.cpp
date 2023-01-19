@@ -21,9 +21,13 @@ Xiaodouya::Xiaodouya(int i,int j)
 
 Xiaodouya::~Xiaodouya()
 {
-    Map::myptn[i][j]=nullptr;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 
 
