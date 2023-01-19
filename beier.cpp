@@ -115,8 +115,13 @@ ABu::ABu(int i,int j):Beier(i,j)
 }
 ABu::~ABu()
 {
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 void ABu::skill()
 {
@@ -142,8 +147,13 @@ BaLaGui::BaLaGui(int i,int j):Beier(i,j)
 }
 BaLaGui::~BaLaGui()
 {
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 void BaLaGui::skill()
 {

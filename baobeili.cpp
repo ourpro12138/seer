@@ -42,6 +42,7 @@ void Baobeili::advance(int phase)
         atkcounter=0;
         bullet=new Bullet(i,j,80,80);
         bullet->ATK=this->atk;
+        bullet->attribute=WATER;
         bullet->name = this->name.toLower();
         scene()->addItem(bullet);
     }
@@ -78,9 +79,13 @@ YuanGuYuLong::YuanGuYuLong(int i,int j):Baobeili(i,j)
 }
 YuanGuYuLong::~YuanGuYuLong()
 {
-     Map::myptn[i][j]=NULL;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 void YuanGuYuLong::skill()
 {

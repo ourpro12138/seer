@@ -98,6 +98,11 @@ YiKaLaiEn::YiKaLaiEn(int i,int j):Yiyi(i,j)
 }
 YiKaLaiEn::~YiKaLaiEn()
 {
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
-        delete  atkmovie;
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
 }

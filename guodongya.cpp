@@ -109,8 +109,13 @@ void Guodongya::evolution()
 }
  ShuiJingYa::~ShuiJingYa()
  {
+     if(Map::myptn[i][j])
+     Map::myptn[i][j]=NULL;
      if(atkmovie)
-         delete  atkmovie;
+     {
+         atkmovie =NULL;
+         delete atkmovie;
+     }
  }
 
  BoLangYa::BoLangYa(int i,int j):Guodongya(i,j)
@@ -129,6 +134,11 @@ void Guodongya::evolution()
  }
  BoLangYa::~BoLangYa()
   {
-      if(atkmovie)
-          delete  atkmovie;
+     if(Map::myptn[i][j])
+     Map::myptn[i][j]=NULL;
+     if(atkmovie)
+     {
+         atkmovie =NULL;
+         delete atkmovie;
+     }
   }

@@ -7,6 +7,7 @@
 
 Taida::Taida(int i,int j)
 {
+    attribute=ORDINARY;
     this->attribute = ORDINARY;
     this->i = i; this->j = j;
     this->width = 105;this->height=130;
@@ -70,7 +71,7 @@ void Taida::advance(int phase)
          if(atkcounter==prepareTime)
          {
             atkcounter=0;
-            atkmovie = new QMovie(":/partner/resource/partner/attack_taida.gif");
+            atkmovie = new QMovie(":/partner/resource/partner/attack_"+name.toLower()+".gif");
             atkmovie->start();
          }
         }
@@ -96,6 +97,34 @@ void Taida::skill()
 
 }
 void Taida::evolution()
+{
+
+}
+TaiLeSi::TaiLeSi(int i,int j):Taida(i,j)
+{
+    attribute=ORDINARY;
+    this->attribute = ORDINARY;
+    this->i = i; this->j = j;
+    this->width = 130;this->height=145;
+
+    hp=100,atk=20,prepareTime=200,atkcounter=prepareTime;
+    standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    name="TaiLeSi";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(160+234*j-47-20,320-133+154*i-25);
+}
+TaiLeSi::~TaiLeSi()
+{
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
+}
+void TaiLeSi::skill()
 {
 
 }
