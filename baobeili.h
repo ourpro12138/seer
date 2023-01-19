@@ -1,7 +1,6 @@
 #ifndef BAOBEILI_H
 #define BAOBEILI_H
 
-#include <QWidget>
 
 #include "elf.h"
 #include "partner.h"
@@ -18,6 +17,22 @@ public:
     void skill();
     void evolution();
     Bullet *bullet;
+};
+class YuanGuYuLong:public Baobeili
+{
+public:
+    YuanGuYuLong(int i,int j);
+    ~YuanGuYuLong();
+    void skill();
+    void evolution();
+
+};
+class YuLongWang:public Baobeili
+{
+public:
+    YuLongWang(int i,int j);
+    ~YuLongWang();
+    void skill();
 
 
 };

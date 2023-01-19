@@ -360,5 +360,6 @@
         <file>resource/partner/yikalaien_bullet.png</file>
         <file>resource/partner/attack_abu.gif</file>
         <file>resource/partner/attack_balagui.gif</file>
+        <file>resource/partner/yuanguyulong_bullet.png</file>
     </qresource>
 </RCC>

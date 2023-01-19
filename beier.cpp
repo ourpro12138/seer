@@ -8,6 +8,8 @@
 
 Beier::Beier(int i,int j)
 {
+    attribute=WATER;
+
     this->i = i; this->j = j;
     this->width = 142;this->height=110;
 
@@ -116,6 +118,14 @@ ABu::~ABu()
     if(atkmovie)
         delete atkmovie;
 }
+void ABu::skill()
+{
+
+}
+void ABu::evolution()
+{
+
+}
 
 BaLaGui::BaLaGui(int i,int j):Beier(i,j)
 {
@@ -134,4 +144,8 @@ BaLaGui::~BaLaGui()
 {
     if(atkmovie)
         delete atkmovie;
+}
+void BaLaGui::skill()
+{
+
 }
