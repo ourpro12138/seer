@@ -362,5 +362,7 @@
         <file>resource/partner/attack_abu.gif</file>
         <file>resource/partner/attack_balagui.gif</file>
         <file>resource/partner/yuanguyulong_bullet.png</file>
+        <file>resource/partner/attack_tailesi.gif</file>
+        <file>resource/partner/stand_tailesi.gif</file>
     </qresource>
 </RCC>

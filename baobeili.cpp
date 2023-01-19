@@ -42,6 +42,7 @@ void Baobeili::advance(int phase)
         atkcounter=0;
         bullet=new Bullet(i,j,80,80);
         bullet->ATK=this->atk;
+        bullet->attribute=WATER;
         bullet->name = this->name.toLower();
         scene()->addItem(bullet);
     }
