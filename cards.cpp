@@ -100,7 +100,7 @@ guodongya::guodongya()
     attribute = "water";
     name="GuoDongYa";coolTime=227;No=7;
     zuanshiNeed=25;
-    isLocked=1;
+    isLocked=0;
      head.load(":/partner/resource/partner/2/74_head.png");
 }
 baobeili::baobeili()

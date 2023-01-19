@@ -5,6 +5,11 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QObject>
+#include <QBitmap>
+#include <QMovie>
+#include <QTimer>
+
+class Level;
 class Enemy;
 class Partner :public QObject,public Elf
 {
@@ -28,6 +33,7 @@ public:
 
     int price;
 
+
     int price_ev;
     int price_skill;
     QString skillname;
@@ -36,7 +42,10 @@ public:
     QPushButton *evolutionButton;
     QPushButton *capsuleButton;
 
-    static QWidget *parent;
+    QMovie *Skill;
+    QLabel *Skillplayer;
+
+    static Level *parent;
 
 private:
     Enemy *enemy;

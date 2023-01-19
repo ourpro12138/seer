@@ -2,12 +2,13 @@
 
 Guodongya::Guodongya(int i,int j)
 {
+    this->attribute = WATER;
     this->i = i; this->j = j;
-    hp=500,atk=50;
+    hp=500,atk=4;
     this->width = 118;this->height=130;
-    standTime =80; standcounter=80;
-    prepareTime = 300; atkcounter=300;
-    coolTime = 600; coolcounter=0;
+    standTime =80; standcounter=standTime;
+    prepareTime = 300; atkcounter=prepareTime;
+    coolTime = 600; coolcounter=coolTime;
     name="Guodongya";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
@@ -58,10 +59,14 @@ void Guodongya::advance(int phase)
                 atkcounter++;
                 if(atkcounter==prepareTime)
                 {
-                    Map::myptn[i][j+1]->hp+=atk;
-                    qDebug()<<"治疗"<<Map::myptn[i][j+1]->name;
+                    if(Map::myptn[i][j+1]->prepareTime-Damage(this,Map::myptn[i][j+1])>0)
+                    {
+                        Map::myptn[i][j+1]->prepareTime-=Damage(this,Map::myptn[i][j+1]);
+                        Map::myptn[i][j+1]->atkcounter=Map::myptn[i][j+1]->prepareTime;
+                    }
+
                     qDebug()<<atkcounter;
-                    standcounter=64;
+                    standcounter=standTime;
                     coolcounter=0;
                     return;
                 }
@@ -88,3 +93,42 @@ void Guodongya::evolution()
 {
 
 }
+ ShuiJingYa::ShuiJingYa(int i,int j): Guodongya(i,j)
+{
+     this->i = i; this->j = j;
+     hp=500,atk=50;
+     this->width = 118;this->height=130;
+     standTime =80; standcounter=80;
+     prepareTime = 300; atkcounter=300;
+     coolTime = 600; coolcounter=0;
+     name="Guodongya";
+     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+     atkmovie->start();
+       setPos(154+234*j-47,290-133+154*i);
+
+}
+ ShuiJingYa::~ShuiJingYa()
+ {
+     if(atkmovie)
+         delete  atkmovie;
+ }
+
+ BoLangYa::BoLangYa(int i,int j):Guodongya(i,j)
+ {
+     this->i = i; this->j = j;
+     hp=500,atk=50;
+     this->width = 118;this->height=130;
+     standTime =80; standcounter=80;
+     prepareTime = 300; atkcounter=300;
+     coolTime = 600; coolcounter=0;
+     name="Guodongya";
+     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+     atkmovie->start();
+       setPos(154+234*j-47,290-133+154*i);
+
+ }
+ BoLangYa::~BoLangYa()
+  {
+      if(atkmovie)
+          delete  atkmovie;
+  }

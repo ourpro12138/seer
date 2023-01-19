@@ -10,7 +10,7 @@ Xiaohuohou::Xiaohuohou(int i,int j)
     this->i = i; this->j = j;
     this->No=9;
     this->width = 130;this->height=160;
-    hp=100,atk=20,prepareTime=150,atkcounter=150;
+    hp=100,atk=20,prepareTime=150,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="XiaoHuoHou";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -65,8 +65,8 @@ void Xiaohuohou::advance(int phase)
          if(atkcounter<prepareTime)
          {
           atkcounter++;
-          if(atkcounter==150)
-              enemy->hp-=atk;
+          if(atkcounter==prepareTime)
+              enemy->hp-=Damage(this,enemy);
          }
          if(atkcounter==prepareTime)
          {
@@ -108,13 +108,13 @@ LieHuoHou::LieHuoHou(int i,int j):Xiaohuohou(i,j)
 {
     this->i = i; this->j = j;
     this->No=25;
-    this->width = 130;this->height=160;
-    hp=350,atk=50,prepareTime=150,atkcounter=150;
-    standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    this->width = 101;this->height=140;
+    hp=350,atk=50,prepareTime=150,atkcounter=prepareTime;
+    standTime=28; standcounter=0; coolTime=0;coolcounter=0;
     name="LieHuoHou";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
-    setPos(154+234*j-47-10,290-133+154*i-30);
+    setPos(154+234*j-47,290-133+154*i);
 }
 void LieHuoHou::skill()
 {
@@ -143,12 +143,13 @@ Lieyanxingxing::Lieyanxingxing(int i,int j):Xiaohuohou(i,j)
 {
     this->i = i; this->j = j;
     this->width = 128;this->height=150;
-    hp=550,atk=65,prepareTime=150,atkcounter=150;
-    standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    hp=550,atk=65,prepareTime=150,atkcounter=prepareTime;
+    standTime=32; standcounter=0; coolTime=0;coolcounter=0;
+    No=41;
     name="Lieyanxingxing";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
-    setPos(154+234*j-47-10,290-133+154*i-30);
+    setPos(154+234*j-40,290-130+154*i);
 }
 void Lieyanxingxing::skill()
 {

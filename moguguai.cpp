@@ -5,6 +5,7 @@
 
 MoGuGuai::MoGuGuai(int i)
 {
+    this->attribute = GRASS;
     this->width = 184;this->height=200;
     hp=200;atk=80;speed=0.40;
     atkcounter=100;prepareTime=100;
@@ -56,7 +57,7 @@ void MoGuGuai::advance(int phase)
           {
            atkcounter++;
            if(atkcounter==prepareTime)
-               partner->hp-=atk;
+               partner->hp-=Damage(this,partner);
           }
           if(atkcounter==prepareTime)
           {

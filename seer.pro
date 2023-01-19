@@ -82,6 +82,7 @@ HEADERS += \
     jianxishuiling.h \
     jier.h \
     level.h \
+    lieyanxingxing.h \
     maingame.h \
     maokai.h \
     map.h \

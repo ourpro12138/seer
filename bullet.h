@@ -21,6 +21,7 @@ public:
    int type() const;
    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
    int ATK;
+   int attribute;
    QString name;
    int weight,height;
 private:

@@ -19,6 +19,7 @@ Map::~Map()
         for(int j=0;j<5;j++)
         {
            delete myptn[i][j];
+            myptn[i][j]=NULL;
         }
     }
     preparedPtn = NULL;
@@ -82,7 +83,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
                break;
         case 4:
                qDebug()<<"依依建立 i ="<<i<<"j = "<<j;
-               myptn[i][j] = new Yiyi(i,j);break;
+               myptn[i][j] = new YiKaLaiEn(i,j);break;
                break;
         case 5:
             qDebug()<<"伊优建立 i= "<<i<<"j = "<<j;
@@ -97,7 +98,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
                break;
         case 8:
                qDebug()<<"宝贝鲤建立 i= "<<i<<"j = "<<j;
-                    myptn[i][j] = new Baobeili(i,j); break;
+                    myptn[i][j] = new YuanGuYuLong(i,j); break;
                break;
         case 9:
                qDebug()<<"小火猴建立 i= "<<i<<"j = "<<j;

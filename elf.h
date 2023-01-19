@@ -4,12 +4,12 @@
 #define GRASS 1
 #define WATER 2
 #define FIRE 3
-#define ODINARY 4
+#define ORDINARY 4
 #include <QGraphicsScene>
 #include <QGraphicsItem>
 #include<QPointF>
 #include <QMovie>
-
+class Bullet;
 class Elf : public QGraphicsItem
 {
 public:
@@ -43,11 +43,13 @@ public:
     int width;
     int height;
 
-    qreal Damage(Elf *in,Elf *out);
 
     ~Elf();
    int prepareTime,atkcounter,standTime,standcounter;
    int coolTime,coolcounter;
    bool atkStatus;
 };
+qreal Damage(Elf *in,Elf *out);
+qreal Damage(Bullet *in,Elf *out);
+
 #endif // ELF_H

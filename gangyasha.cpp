@@ -4,9 +4,10 @@
 #include<QDebug>
 GangYaSha::GangYaSha(int i)
 {
+    this->attribute = WATER;
     this->width =180;this->height=152;
     hp=100;atk=30;speed=0.40;
-    name="MoGuGuai";
+    name="GangYaSha";
     //if(qrand()%2)
     atkmovie=new  QMovie(":/enemy/resource/enemy/gangyasha.gif");
     atkmovie->start();
@@ -60,7 +61,7 @@ void GangYaSha::advance(int phase)
           {
            atkcounter++;
            if(atkcounter==prepareTime)
-               partner->hp-=atk;
+               partner->hp-=Damage(this,partner);
           }
           if(atkcounter==prepareTime)
           {

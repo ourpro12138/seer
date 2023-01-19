@@ -43,7 +43,7 @@ void Bullet::advance(int phase)
     if(!items.isEmpty())
     {
         Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
-        enemy->hp -= ATK;
+        enemy->hp -=Damage(this,enemy);
         //qDebug()<<enemy->hp;
         if(enemy->hp>0)
        {
