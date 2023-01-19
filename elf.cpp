@@ -62,7 +62,7 @@ qreal Damage(Elf *in,Elf *out)
         case WATER:
             return in->atk*2;}
     }
-    case ODINARY:
+    case ORDINARY:
         return in->atk;
     }
 }
@@ -106,7 +106,7 @@ qreal Damage(Bullet *in,Elf *out)
         case WATER:
             return in->ATK*2;}
     }
-    case ODINARY:
+    case ORDINARY:
         return in->ATK;
     }
 }

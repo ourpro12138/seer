@@ -36,7 +36,6 @@ SOURCES += \
     huliya.cpp \
     jier.cpp \
     level.cpp \
-    lieyanxingxing.cpp \
     main.cpp \
     maingame.cpp \
     maokai.cpp \
