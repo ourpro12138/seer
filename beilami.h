@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include "enemy.h"
-
+#include"map.h"
 class Beilami : public Enemy
 {
 public:

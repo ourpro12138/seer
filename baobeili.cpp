@@ -79,9 +79,13 @@ YuanGuYuLong::YuanGuYuLong(int i,int j):Baobeili(i,j)
 }
 YuanGuYuLong::~YuanGuYuLong()
 {
-     Map::myptn[i][j]=NULL;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 void YuanGuYuLong::skill()
 {

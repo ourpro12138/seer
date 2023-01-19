@@ -24,7 +24,10 @@ Beilami::Beilami(int i)
 Beilami::~Beilami()
 {
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 void Beilami::advance(int phase)
 {

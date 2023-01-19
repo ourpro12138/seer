@@ -113,9 +113,13 @@ TaiLeSi::TaiLeSi(int i,int j):Taida(i,j)
 }
 TaiLeSi::~TaiLeSi()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete  atkmovie;
+    }
 }
 void TaiLeSi::skill()
 {
