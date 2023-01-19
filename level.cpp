@@ -8,6 +8,10 @@
 #include "heertuoke.h"
 #include "phoenix.h"
 #include "jianxishuiling.h"
+#include "nisike.h"
+#include "xikela.h"
+#include "xingjila.h"
+#include "sailatu.h"
 
 Level::Level(QWidget *parent) :
     QWidget(parent),
@@ -83,7 +87,7 @@ kls::kls()
     levelName = "kls";
     Wave = 1;
     totalWave=2;
-    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*taqi,*taqi1,*taqi2,*taqi3,*taqi4,*zl,*zl1,*zl2,*zl3,*zl4,*mk,*hr,*ph,*js;
+    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*taqi,*taqi1,*taqi2,*taqi3,*taqi4,*zl,*zl1,*zl2,*zl3,*zl4,*mk,*hr,*ph,*js,*nk,*xk,*xjl,*slt;
 
     creattimer = new QTimer(this);
     gang = new GangYaSha(2);
@@ -113,6 +117,15 @@ kls::kls()
 
     js = new Jianxishuiling(3);
 
+    nk = new Nisike(3);
+
+    xk = new Xikela(3);
+
+    xjl = new Xingjila(3);
+
+    slt = new Sailatu(3);
+
+
     creattimer->start(2000);
     connect(wavetime,&QTimer::timeout,[=](){
 
@@ -136,7 +149,7 @@ kls::kls()
                switch(enemy_count)
            {
            case 0:
-              {scene->addItem(js);break;}
+              {scene->addItem(slt);break;}
 //           case 1:
 //              {scene->addItem(hr);break;}
 //           case 2:

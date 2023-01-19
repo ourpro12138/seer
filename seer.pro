@@ -43,10 +43,12 @@ SOURCES += \
     maokai.cpp \
     map.cpp \
     moguguai.cpp \
+    nisike.cpp \
     partner.cpp \
     pdbackpushbutton.cpp \
     phoenix.cpp \
     pokedex.cpp \
+    sailatu.cpp \
     startpushbutton.cpp \
     startscene.cpp \
     taida.cpp \
@@ -54,6 +56,8 @@ SOURCES += \
     xianrenqiu.cpp \
     xiaodouya.cpp \
     xiaohuohou.cpp \
+    xikela.cpp \
+    xingjila.cpp \
     xinke.cpp \
     yiyi.cpp \
     yiyou.cpp \
@@ -87,10 +91,12 @@ HEADERS += \
     maokai.h \
     map.h \
     moguguai.h \
+    nisike.h \
     partner.h \
     pdbackpushbutton.h \
     phoenix.h \
     pokedex.h \
+    sailatu.h \
     startpushbutton.h \
     startscene.h \
     taida.h \
@@ -98,6 +104,8 @@ HEADERS += \
     xianrenqiu.h \
     xiaodouya.h \
     xiaohuohou.h \
+    xikela.h \
+    xingjila.h \
     xinke.h \
     yiyi.h \
     yiyou.h \

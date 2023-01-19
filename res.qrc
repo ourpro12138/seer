@@ -80,8 +80,6 @@
     </qresource>
     <qresource prefix="/enemy">
         <file>resource/enemy/1-GRASS 2-WATER 3-FIRE.txt</file>
-        <file>resource/enemy/enemy_2.gif</file>
-        <file>resource/enemy/enemy_2attack.gif</file>
         <file>resource/enemy/enemy_4.gif</file>
         <file>resource/enemy/enemy_4attack.gif</file>
         <file>resource/enemy/enemy_5.gif</file>
@@ -104,6 +102,16 @@
         <file>resource/enemy/enemy_2634.gif</file>
         <file>resource/enemy/attack_enemy4120.gif</file>
         <file>resource/enemy/enemy_4120.gif</file>
+        <file>resource/enemy/attack_enemy900.gif</file>
+        <file>resource/enemy/enemy_900.gif</file>
+        <file>resource/enemy/attack_enemy96.gif</file>
+        <file>resource/enemy/enemy_96.gif</file>
+        <file>resource/enemy/attack_enemy1047.gif</file>
+        <file>resource/enemy/enemy_1047.gif</file>
+        <file>resource/enemy/attack_enemy207.gif</file>
+        <file>resource/enemy/enemy_207.gif</file>
+        <file>resource/enemy/attack_enemy327.gif</file>
+        <file>resource/enemy/enemy_327.gif</file>
     </qresource>
     <qresource prefix="/map">
         <file>resource/map/alpha.png</file>
