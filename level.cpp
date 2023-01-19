@@ -5,6 +5,9 @@
 #include "zuoluo.h"
 #include "taqiduoke.h"
 #include "maokai.h"
+#include "heertuoke.h"
+#include "phoenix.h"
+#include "jianxishuiling.h"
 
 Level::Level(QWidget *parent) :
     QWidget(parent),
@@ -80,7 +83,7 @@ kls::kls()
     levelName = "kls";
     Wave = 1;
     totalWave=2;
-    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*taqi,*taqi1,*taqi2,*taqi3,*taqi4,*zl,*zl1,*zl2,*zl3,*zl4,*mk;
+    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*taqi,*taqi1,*taqi2,*taqi3,*taqi4,*zl,*zl1,*zl2,*zl3,*zl4,*mk,*hr,*ph,*js;
 
     creattimer = new QTimer(this);
     gang = new GangYaSha(2);
@@ -103,6 +106,12 @@ kls::kls()
 
 
     mk = new Maokai(3);
+
+    hr = new Heertoke(2);
+
+    ph = new Phoenix(3);
+
+    js = new Jianxishuiling(3);
 
     creattimer->start(2000);
     connect(wavetime,&QTimer::timeout,[=](){
@@ -127,19 +136,19 @@ kls::kls()
                switch(enemy_count)
            {
            case 0:
-              {scene->addItem(mk);break;}
-           case 1:
-              {scene->addItem(gang2);break;}
-           case 2:
-             { scene->addItem(gang3);break;}
-           case 3:
-             { scene->addItem(gang4);break;}
-           case 4:
-             { scene->addItem(gang5);break;}
-           case 5:
-             { scene->addItem(mo);break;}
-           case 6:
-             { scene->addItem(taqi3);break;}
+              {scene->addItem(js);break;}
+//           case 1:
+//              {scene->addItem(hr);break;}
+//           case 2:
+//             { scene->addItem(js);break;}
+//           case 3:
+//             { scene->addItem(gang4);break;}
+//           case 4:
+//             { scene->addItem(gang5);break;}
+//           case 5:
+//             { scene->addItem(mo);break;}
+//           case 6:
+//             { scene->addItem(taqi3);break;}
                default:
            {
                if(!gang&&!gang2&&!gang3&&!gang4&&!gang5&&!mo)

@@ -8,6 +8,8 @@
 
 Beier::Beier(int i,int j)
 {
+    attribute=WATER;
+
     this->attribute = WATER;
     this->i = i; this->j = j;
     this->width = 142;this->height=110;
@@ -116,8 +118,21 @@ ABu::ABu(int i,int j):Beier(i,j)
 }
 ABu::~ABu()
 {
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
+}
+void ABu::skill()
+{
+
+}
+void ABu::evolution()
+{
+
 }
 
 BaLaGui::BaLaGui(int i,int j):Beier(i,j)
@@ -135,6 +150,15 @@ BaLaGui::BaLaGui(int i,int j):Beier(i,j)
 }
 BaLaGui::~BaLaGui()
 {
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
+}
+void BaLaGui::skill()
+{
+
 }

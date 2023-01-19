@@ -98,3 +98,35 @@ void Agong::evolution()
 {
 
 }
+
+BoBoGong::BoBoGong(int i,int j):Agong(i,j)
+{
+    this->attribute = ORDINARY;
+    this->i = i; this->j = j;
+    this->width = 101;this->height=135;
+
+    hp=100,atk=20,prepareTime=16,atkcounter=16;
+    standTime=40; standcounter=0; coolTime=0;coolcounter=0;
+    name="Agone";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(156+234*j-47-10,350-133+154*i-30);
+}
+BoBoGong::~BoBoGong()
+{
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
+}
+void BoBoGong::skill()
+{
+
+}
+void BoBoGong::evolution()
+{
+
+}

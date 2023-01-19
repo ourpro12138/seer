@@ -19,8 +19,13 @@ public:
    bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode)const;
    void skill();
    void evolution();
-
-
+};
+class TaiLeSi:public Taida
+{
+public:
+    TaiLeSi(int i,int j);
+    ~TaiLeSi();
+    void skill();
 
 
 };

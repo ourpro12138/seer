@@ -2,6 +2,7 @@
 #include<QPointF>
 Baobeili::Baobeili(int i,int j)
 {
+    attribute=WATER;
 
    this->attribute = WATER;
   this->i = i; this->j=j;
@@ -43,6 +44,7 @@ void Baobeili::advance(int phase)
         atkcounter=0;
         bullet=new Bullet(i,j,80,80);
         bullet->ATK=this->atk;
+        bullet->attribute=WATER;
         bullet->name = this->name.toLower();
         scene()->addItem(bullet);
     }
@@ -65,3 +67,34 @@ void Baobeili::evolution()
 {
 
 }
+YuanGuYuLong::YuanGuYuLong(int i,int j):Baobeili(i,j)
+{
+    attribute=WATER;
+    this->i = i; this->j=j;
+    width = 185;height=170;
+    hp=300;atkcounter=0;prepareTime=90;
+    this->atk = 60;
+    name="YuanGuYuLong";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(154+234*j-60-10-10-15,320-133-30-5+154*i);
+}
+YuanGuYuLong::~YuanGuYuLong()
+{
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
+}
+void YuanGuYuLong::skill()
+{
+
+}
+void YuanGuYuLong::evolution()
+{
+
+}
+
