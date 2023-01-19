@@ -14,9 +14,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QCursor>
-#include "partner.h"
 #include <QBitmap>
-#include "partner.h"
 
 namespace Ui {
 class Level;

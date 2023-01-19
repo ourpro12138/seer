@@ -7,6 +7,7 @@
 
 Agong::Agong(int i,int j)
 {
+    this->attribute = ORDINARY;
     this->i = i; this->j = j;
     this->width = 101;this->height=135;
 

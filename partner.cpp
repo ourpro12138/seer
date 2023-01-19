@@ -1,17 +1,18 @@
 #include "enemy.h"
 #include "partner.h"
-#include "level.h"
 #include "map.h"
+#include "level.h"
 
 //QPushButton *Partner::skillButton;
 //QPushButton *Partner::evolutionButton;
 //QPushButton *Partner::capsuleButton;
-QWidget *Partner::parent;
+Level *Partner::parent;
 
 
 
 Partner::Partner()
 {
+
 
 
     skillButton = new QPushButton(parent);
@@ -45,6 +46,10 @@ Partner::Partner()
     connect(skillButton,&QPushButton::clicked,this,&Partner::skill);
 
     qDebug()<<"partner构造函数调用";
+
+    Skillplayer = new QLabel(parent);
+    Skillplayer->setFixedSize(1366,911);
+    Skillplayer->hide();
 }
 Partner::~Partner()
 {
@@ -123,8 +128,4 @@ else
         evolutionButton->hide();
         capsuleButton->hide();
 }
-
-
 }
-
-

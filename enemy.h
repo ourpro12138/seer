@@ -8,6 +8,7 @@
 #include<QMovie>
 #include<QDebug>
 #include"partner.h"
+class Partner;
 
 class Enemy: public Elf
 {

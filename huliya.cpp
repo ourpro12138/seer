@@ -4,9 +4,10 @@
 Huliya::Huliya(int i,int j)
 {
 
+   attribute = FIRE;
   this->i = i; this->j=j;
   width = 121;height=135;
-  hp=300;atkcounter=0;prepareTime=100;
+  hp=300;atkcounter=0;prepareTime=200;
   this->atk = 50;
   name="Huliya";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -40,6 +41,7 @@ void Huliya::advance(int phase)
         atkcounter=0;
         bullet=new Bullet(i,j,80,50);
         bullet->ATK=this->atk;
+        bullet->attribute = this->attribute;
         bullet->name = this->name.toLower();
         scene()->addItem(bullet);
     }
@@ -75,7 +77,7 @@ Liaosi::Liaosi(int i,int j):Huliya(i,j)
 {
     this->i = i; this->j=j;
     width = 116;height=140;
-    hp=500;atkcounter=0;prepareTime=100;
+    hp=500;atkcounter=0;prepareTime=150;
     this->atk = 50;
     name="Liaosi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");

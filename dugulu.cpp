@@ -7,6 +7,7 @@
 
 DuGuLu::DuGuLu(int i,int j)
 {
+    this->attribute = ORDINARY;
     this->i = i; this->j = j;
     this->width = 136;this->height=111;
     hp=100,atk=1000,prepareTime=150,atkcounter=130;
@@ -59,7 +60,7 @@ void DuGuLu::advance(int phase)
          {
           atkcounter++;
           if(atkcounter==150)
-              enemy->hp-=atk;
+              enemy->hp-=Damage(this,enemy);
          }
          if(atkcounter==prepareTime)
          {
