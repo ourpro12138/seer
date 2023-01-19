@@ -3,6 +3,7 @@
 Xinke::Xinke(int i,int j)
 {
 
+  attribute = ORDINARY;
   this->i = i; this->j=j;
   width = 149;height=135;
   hp=300;atkcounter=0;prepareTime=100;
@@ -40,6 +41,7 @@ void Xinke::advance(int phase)
         atkcounter=0;
         bullet=new Bullet(i,j,43,43);
         bullet->ATK=this->atk;
+        bullet->attribute=this->attribute;
         bullet->name = this->name.toLower();
         scene()->addItem(bullet);
     }

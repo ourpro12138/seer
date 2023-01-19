@@ -2,6 +2,7 @@
 
 Maokai::Maokai(int i)
 {
+    this->attribute = GRASS;
     this->width=170; this->height=196;
     hp=200;atk=1000;speed=0.40;
     atkcounter=200;prepareTime=200;
@@ -52,7 +53,7 @@ void Maokai::advance(int phase)
           {
            atkcounter++;
            if(atkcounter==prepareTime)
-               partner->hp-=atk;
+               partner->hp-=Damage(this,partner);
           }
           if(atkcounter==prepareTime)
           {

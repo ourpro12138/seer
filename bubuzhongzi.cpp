@@ -1,6 +1,7 @@
 #include "bubuzhongzi.h"
 Bubuzhongzi::Bubuzhongzi(int i,int j)
 {
+    this->attribute = GRASS;
     this->i = i; this->j = j;
     hp=500,atk=50;
     this->width = 95;this->height=146;
@@ -57,7 +58,7 @@ void Bubuzhongzi::advance(int phase)
                 atkcounter++;
                 if(atkcounter==prepareTime)
                 {
-                    Map::myptn[i][j+1]->hp+=atk;
+                    Map::myptn[i][j+1]->hp+=Damage(this,Map::myptn[i][j]);
                     qDebug()<<"治疗"<<Map::myptn[i][j+1]->name;
                     qDebug()<<atkcounter;
                     standcounter=64;

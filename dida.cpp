@@ -4,6 +4,7 @@
 Dida::Dida(int i,int j)
 {
 
+   this->attribute = FIRE;
   this->i = i; this->j=j;
   width = 154;height=114;
   hp=300;atkcounter=0;prepareTime=200;
@@ -39,6 +40,7 @@ void Dida::advance(int phase)
         atkcounter=0;
         bullet=new Bullet(i,j,80,80);
         bullet->ATK=this->atk;
+        bullet->attribute = this->attribute;
         bullet->name = this->name.toLower();
         scene()->addItem(bullet);
     }

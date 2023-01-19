@@ -3,7 +3,7 @@
 #include<QPointF>
 Yiyi::Yiyi(int i,int j)
 {
-
+    attribute = GRASS;
   this->i = i; this->j=j;
   width = 83;height=145;
   hp=300;atkcounter=0;prepareTime=200;

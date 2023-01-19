@@ -10,9 +10,9 @@ Beier::Beier(int i,int j)
 {
     attribute=WATER;
 
+    this->attribute = WATER;
     this->i = i; this->j = j;
     this->width = 142;this->height=110;
-
     hp=100,prepareTime=428,atkcounter=prepareTime;
     standTime=104; standcounter=0; coolTime=0;coolcounter=0;
     No=6;

@@ -4,9 +4,10 @@
 Jier::Jier(int i,int j)
 {
 
+  attribute = FIRE;
   this->i = i; this->j=j;
   width = 108;height=130;
-  hp=300;atkcounter=0;prepareTime=100;
+  hp=300;atkcounter=0;prepareTime=300;
   this->atk = 50;
   name="Jier";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -41,6 +42,7 @@ void Jier::advance(int phase)
         atkcounter=0;
         bullet=new Bullet(i,j,100,100);
         bullet->ATK=this->atk;
+        bullet->attribute = this->attribute;
         bullet->name = this->name.toLower();
         scene()->addItem(bullet);
     }
@@ -72,7 +74,7 @@ Linuo::Linuo(int i,int j):Jier(i,j)
 {
     this->i = i; this->j=j;
     width = 134;height=138;
-    hp=500;atkcounter=0;prepareTime=100;
+    hp=500;atkcounter=0;prepareTime=200;
     this->atk = 50;
     name="Linuo";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");

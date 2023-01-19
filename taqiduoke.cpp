@@ -2,8 +2,9 @@
 
 Taqiduoke::Taqiduoke(int i)
 {
+    this->attribute = GRASS;
     this->width = 190;this->height=140;
-    prepareTime=80,atkcounter=80;
+    prepareTime=80,atkcounter=prepareTime;
     standTime=60; standcounter=0;
     hp=100;atk=50;speed=0.40;
     name="taqiduoke";
@@ -50,7 +51,7 @@ void Taqiduoke::advance(int phase)
           {
            atkcounter++;
            if(atkcounter==prepareTime)
-               partner->hp-=atk;
+               partner->hp-=Damage(this,partner);
            qDebug()<<partner->hp;
           }
           if(atkcounter==prepareTime)

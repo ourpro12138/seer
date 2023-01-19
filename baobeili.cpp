@@ -1,10 +1,10 @@
 #include "baobeili.h"
-
 #include<QPointF>
 Baobeili::Baobeili(int i,int j)
 {
     attribute=WATER;
 
+   this->attribute = WATER;
   this->i = i; this->j=j;
   width = 108;height=87;
   hp=300;atkcounter=0;prepareTime=100;

@@ -6,6 +6,7 @@
 
 Beilami::Beilami(int i)
 {
+    this->attribute = FIRE;
     this->width = 96;this->height=140;
     prepareTime=100,atkcounter=100;
     standTime=84; standcounter=0;

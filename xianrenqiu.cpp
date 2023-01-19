@@ -2,13 +2,15 @@
 #include "map.h"
 Xianrenqiu::Xianrenqiu(int i,int j)
 {
-this->i = i;this->j=j;
+
+    this->attribute = GRASS;
+   this->i = i;this->j=j;
     width=90;height=130;
 
     this->hp = 300;this->atk=30;
 
-    prepareTime = 210; atkcounter=210;
-    standTime=80; standcounter=80;
+    prepareTime = 210; atkcounter=prepareTime;
+    standTime=80; standcounter=standTime;
     coolTime = 200;coolcounter=0;
 
     name="Xianrenqou";
@@ -72,8 +74,8 @@ void Xianrenqiu::advance(int phase)
                     else if(this->hp<=300&&this->hp+this->atk>=300)
                         this->hp=300;
                     qDebug()<<"仙人球治疗自己"<<this->atk;
-                    enemy->hp-=this->atk;
-                    standcounter=80;
+                    enemy->hp-=Damage(this,enemy);
+                    standcounter=prepareTime;
                     coolcounter=0;
                     return;
                 }

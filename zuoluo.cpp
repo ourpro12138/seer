@@ -2,6 +2,7 @@
 #include<QGraphicsItem>
 ZuoLuo::ZuoLuo(int i)
 {
+    attribute = WATER;
     this->width = 126;this->height=130;
     hp=300;atk=40;speed=0.40;
     atkcounter=80;prepareTime=80;
@@ -60,7 +61,7 @@ void ZuoLuo::advance(int phase)
           {
            atkcounter++;
            if(atkcounter==prepareTime)
-               partner->hp-=atk;
+               partner->hp-=Damage(this,partner);
           }
           if(atkcounter==prepareTime)
           {

@@ -8,10 +8,11 @@
 
 Xiaodouya::Xiaodouya(int i,int j)
 {
+    this->attribute = GRASS;
     this->i = i; this->j = j;
     this->width = 121;this->height=140;
 
-    hp=100,atk=20,prepareTime=96,atkcounter=96;
+    hp=100,atk=20,prepareTime=96,atkcounter=prepareTime;
     standTime=40; standcounter=0; coolTime=0;coolcounter=0;
     name="Xiaodouya";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -61,8 +62,8 @@ void Xiaodouya::advance(int phase)
          if(atkcounter<prepareTime)
          {
           atkcounter++;
-          if(atkcounter==96)
-              enemy->hp-=atk;
+          if(atkcounter==prepareTime)
+              enemy->hp-=Damage(this,enemy);
          }
          if(atkcounter==prepareTime)
          {
