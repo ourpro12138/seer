@@ -112,6 +112,10 @@
         <file>resource/enemy/enemy_207.gif</file>
         <file>resource/enemy/attack_enemy327.gif</file>
         <file>resource/enemy/enemy_327.gif</file>
+        <file>resource/enemy/attack_enemy384.gif</file>
+        <file>resource/enemy/enemy_384.gif</file>
+        <file>resource/enemy/attack_enemy253.gif</file>
+        <file>resource/enemy/enemy_253.gif</file>
     </qresource>
     <qresource prefix="/map">
         <file>resource/map/alpha.png</file>
