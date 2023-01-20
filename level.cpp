@@ -132,13 +132,13 @@ kls::kls()
     dll = new Dululu(3);
 
 
-    creattimer->start(2000);
     connect(wavetime,&QTimer::timeout,[=](){
 
         if(Wave==1)
         {
             levelMode =2;
             wavetime->stop();
+            creattimer->start(2000);
         }
         else if(Wave==2)
         {
@@ -170,7 +170,7 @@ kls::kls()
 //             { scene->addItem(taqi3);break;}
                default:
            {
-               if(!gang&&!gang2&&!gang3&&!gang4&&!gang5&&!mo)
+               if(!dll)
                {
                    Wave=2;
                    enemy_count=0;

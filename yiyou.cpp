@@ -8,7 +8,7 @@ Yiyou::Yiyou(int i,int j)
   qDebug()<<"伊优构造函数调用";
   this->i = i; this->j=j;
   width = 95;height=133;health=200;
-  hp=200;atkcounter=prepareTime;prepareTime=300;
+  hp=200;prepareTime=300;atkcounter=prepareTime;
   No=5;
   this->atk = 20;
   name="Yiyou";
