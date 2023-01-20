@@ -4,7 +4,7 @@ Maokai::Maokai(int i)
 {
     this->attribute = GRASS;
     this->width=170; this->height=196;
-    hp=200;atk=100;speed=0.40;
+    hp=1000;atk=300;speed=0.40;
     atkcounter=200;prepareTime=200;
     standTime=84;standcounter=0;
     name="MaoKai";

@@ -14,6 +14,8 @@
 #include "sailatu.h"
 #include "boge.h"
 #include "dululu.h"
+#include "xianrenqiu.h"
+#include "beier.h"
 
 Level::Level(QWidget *parent) :
     QWidget(parent),
@@ -77,7 +79,7 @@ void Level::GameStart()
             connect(Back,&pdbackPushButton::backpress,this,&Level::back);
             levelMode=1;//游戏正式开始
             diamondtimer->start(1000);
-            wavetime->start(1000);
+            wavetime->start(10000);
             emit gamestart();
             delete timer;
         }
@@ -89,7 +91,8 @@ kls::kls()
     levelName = "kls";
     Wave = 1;
     totalWave=2;
-    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo;
+    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*taqi,*taqi1,*taqi2,*taqi3,*taqi4,*zl,*zl1,*zl2,*zl3,*zl4,*mk,*hr,*ph,*js,*nk,*xk,*xjl,*slt,*bg,*dll,*bm,*bm2,*bm3;
+
     creattimer = new QTimer(this);
     gang = new GangYaSha(2);
     gang2 = new GangYaSha(3);
@@ -99,15 +102,52 @@ kls::kls()
 
     mo = new MoGuGuai(2);
 
+    taqi = new Taqiduoke(1);
+    taqi1 = new Taqiduoke(2);
+    taqi2 = new Taqiduoke(3);
+    taqi3 = new Taqiduoke(4);
+
+    zl = new ZuoLuo(1);
+    zl1 = new ZuoLuo(2);
+    zl2 = new ZuoLuo(3);
+    zl3 = new ZuoLuo(4);
+
+
+    mk = new Maokai(3);
+
+    hr = new Heertoke(2);
+
+    ph = new Phoenix(3);
+
+    js = new Jianxishuiling(3);
+
+    nk = new Nisike(3);
+
+    xk = new Xikela(3);
+
+    xjl = new Xingjila(3);
+
+    slt = new Sailatu(3);
+
+    bg = new Boge(3);
+
+    dll = new Dululu(3);
+
+    bm = new Beilami(2);
+
+    bm2 = new Beilami(3);
+
+    bm3 = new Beilami(4);
+
+
 
     connect(wavetime,&QTimer::timeout,[=](){
 
-        qDebug()<<"Wave = "<<Wave;
         if(Wave==1)
         {
             levelMode =2;
-            wavetime->stop();
             creattimer->start(2000);
+            wavetime->stop();
         }
         else if(Wave==2)
         {
@@ -117,7 +157,7 @@ kls::kls()
         }
 
     });
-       static int enemy_count=0;
+    static int enemy_count=0;
        connect(creattimer,&QTimer::timeout,[=]()
        {
            if(levelMode==2)
@@ -127,27 +167,29 @@ kls::kls()
            case 0:
               {scene->addItem(gang);break;}
            case 1:
-              {scene->addItem(gang2);break;}
+              {scene->addItem(mo);break;}
            case 2:
-             { scene->addItem(gang3);break;}
+             { scene->addItem(gang2);break;}
            case 3:
              { scene->addItem(gang4);break;}
            case 4:
-             { scene->addItem(gang5);break;}
+             { scene->addItem(zl);break;}
            case 5:
              { scene->addItem(mo);break;}
+           case 6:
+             { scene->addItem(gang4);break;}
+            case 7:
+             { scene->addItem(gang3);break;}
+            case 8:
+             { scene->addItem(mk);break;}
                default:
-           {
-                   qDebug()<<"嗯嗯";
-               if(gang->nowStatus==0&gang2->nowStatus==1&&gang3->nowStatus==0&&gang4->nowStatus==0&&gang5->nowStatus==0&&mo->nowStatus==0)
+             {
+               if(hr->nowStatus==0/*&&js->nowStatus==0&&gang4->nowStatus==0&&gang5->nowStatus==0&&mo->nowStatus==0*/)
                {
-                   qDebug()<<"死亡";
+                   qDebug("two");
                    Wave=2;
-                   qDebug()<<Wave;
-                   enemy_count=0;
-                   wavetime->start(1000);
-                   creattimer->stop();
                    enemy_count=-1;
+                   wavetime->start(10000);
                    break;
                }
            }
@@ -157,21 +199,39 @@ kls::kls()
            else if(levelMode==3)
            {
                 qDebug()<<"第二波来咯";
-//                   switch(enemy_count)
-//               {
-//               default:
-//               {
-//                   if(1)
-//                   {
-//                       //Mission completion
+               {
+                   switch(enemy_count)
+               {
+               case 0:
+                  {scene->addItem(bm);break;}
+               case 1:
+                  {scene->addItem(taqi2);break;}
+               case 2:
+                 { scene->addItem(zl2);break;}
+               case 3:
+                 { scene->addItem(bm2);break;}
+               case 4:
+                 { scene->addItem(zl3);break;}
+               case 5:
+                 { scene->addItem(mo);break;}
+               case 6:
+                 { scene->addItem(gang3);break;}
+               case 7:
+                 { scene->addItem(ph);break;}
+               default:
+               {
+                   if(bm->nowStatus==0&&taqi2->nowStatus==0&&zl2->nowStatus==0&&bm2->nowStatus==0&&zl3->nowStatus==0&&mo->nowStatus==0&&gang->nowStatus==0&&ph->nowStatus==0)
+                   {
+                       //Mission completion
 
 
 
-//                       break;
-//                   }
-//               }
-//                     enemy_count++;
-//               }
+                       break;
+                   }
+               }
+               }
+                     enemy_count++;
+               }
            }
        });
 
@@ -271,11 +331,11 @@ void Level::initlevel()
             {
                 if(cb->cards[i]->name=="none")
                 {
-              cb->cards[i] = new xianrenqiu();
+            cb->cards[i] = new xianrenqiu();
               cb->cardsPaint(i);
 //            scene->addItem(cb->cards[count]);
-              cm->count++;
-              break;
+            cm->count++;
+            break;
                 }      }
     });
     connect(cm,&cardsmenu::xdy,this,[=](){
