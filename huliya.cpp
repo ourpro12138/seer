@@ -6,7 +6,7 @@ Huliya::Huliya(int i,int j)
 
    attribute = FIRE;
   this->i = i; this->j=j;
-  width = 121;height=135;
+  width = 121;height=135;health=300;
   hp=300;atkcounter=0;prepareTime=200;
   this->atk = 50;
   name="Huliya";
@@ -24,6 +24,8 @@ Huliya::~Huliya()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 
 }
 void Huliya::advance(int phase)
@@ -32,6 +34,8 @@ void Huliya::advance(int phase)
         return;
     update();
     QList <QGraphicsItem *> items = collidingItems();
+    if(hp>health)
+        hp=health;
     if(!items.isEmpty())
     {
     if(atkcounter<prepareTime)
@@ -76,7 +80,7 @@ void Liaosi::skill()
 Liaosi::Liaosi(int i,int j):Huliya(i,j)
 {
     this->i = i; this->j=j;
-    width = 116;height=140;
+    width = 116;height=140;health=500;
     hp=500;atkcounter=0;prepareTime=150;
     this->atk = 50;
     name="Liaosi";

@@ -9,8 +9,8 @@ DuGuLu::DuGuLu(int i,int j)
 {
     this->attribute = ORDINARY;
     this->i = i; this->j = j;
-    this->width = 136;this->height=111;
-    hp=100,atk=10,prepareTime=150,atkcounter=130;
+    this->width = 136;this->height=111;health=100;
+    hp=100,atk=1000,prepareTime=150,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="dugulu";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -27,6 +27,8 @@ DuGuLu::~DuGuLu()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 }
 
 bool DuGuLu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
@@ -44,6 +46,8 @@ void DuGuLu::advance(int phase)
 {
     if(!phase)
         return;
+    if(hp>health)
+        hp=health;
     update();
     QList <QGraphicsItem *> items = collidingItems();
     if(hp<=0)

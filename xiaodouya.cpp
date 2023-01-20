@@ -11,7 +11,8 @@ Xiaodouya::Xiaodouya(int i,int j)
     this->attribute = GRASS;
     this->i = i; this->j = j;
     this->width = 111;this->height=130;
-
+    this->width = 121;this->height=140;
+    health=100;
     hp=100,atk=20,prepareTime=96,atkcounter=prepareTime;
     standTime=40; standcounter=0; coolTime=0;coolcounter=0;
     name="Xiaodouya";
@@ -29,6 +30,8 @@ Xiaodouya::~Xiaodouya()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 }
 
 
@@ -48,6 +51,8 @@ void Xiaodouya::advance(int phase)
     if(!phase)
         return;
     update();
+    if(hp>health)
+        hp=health;
     QList <QGraphicsItem *> items = collidingItems();
     if(hp<=0)
     {

@@ -8,6 +8,12 @@
 #include "heertuoke.h"
 #include "phoenix.h"
 #include "jianxishuiling.h"
+#include "nisike.h"
+#include "xikela.h"
+#include "xingjila.h"
+#include "sailatu.h"
+#include "boge.h"
+#include "dululu.h"
 
 Level::Level(QWidget *parent) :
     QWidget(parent),
@@ -83,7 +89,7 @@ kls::kls()
     levelName = "kls";
     Wave = 1;
     totalWave=2;
-    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*taqi,*taqi1,*taqi2,*taqi3,*taqi4,*zl,*zl1,*zl2,*zl3,*zl4,*mk,*hr,*ph,*js;
+    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*taqi,*taqi1,*taqi2,*taqi3,*taqi4,*zl,*zl1,*zl2,*zl3,*zl4,*mk,*hr,*ph,*js,*nk,*xk,*xjl,*slt,*bg,*dll;
 
     creattimer = new QTimer(this);
     gang = new GangYaSha(2);
@@ -113,13 +119,26 @@ kls::kls()
 
     js = new Jianxishuiling(3);
 
-    creattimer->start(2000);
+    nk = new Nisike(3);
+
+    xk = new Xikela(3);
+
+    xjl = new Xingjila(3);
+
+    slt = new Sailatu(3);
+
+    bg = new Boge(3);
+
+    dll = new Dululu(3);
+
+
     connect(wavetime,&QTimer::timeout,[=](){
 
         if(Wave==1)
         {
             levelMode =2;
             wavetime->stop();
+            creattimer->start(2000);
         }
         else if(Wave==2)
         {
@@ -136,7 +155,7 @@ kls::kls()
                switch(enemy_count)
            {
            case 0:
-              {scene->addItem(js);break;}
+              {scene->addItem(dll);break;}
 //           case 1:
 //              {scene->addItem(hr);break;}
 //           case 2:
@@ -151,7 +170,7 @@ kls::kls()
 //             { scene->addItem(taqi3);break;}
                default:
            {
-               if(!gang&&!gang2&&!gang3&&!gang4&&!gang5&&!mo)
+               if(!dll)
                {
                    Wave=2;
                    enemy_count=0;

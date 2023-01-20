@@ -20,6 +20,7 @@ SOURCES += \
     baobeili.cpp \
     beier.cpp \
     beilami.cpp \
+    boge.cpp \
     bubuzhongzi.cpp \
     bullet.cpp \
     cards.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
     choosescene.cpp \
     dida.cpp \
     dugulu.cpp \
+    dululu.cpp \
     elf.cpp \
     enemy.cpp \
     gangyasha.cpp \
@@ -43,10 +45,12 @@ SOURCES += \
     maokai.cpp \
     map.cpp \
     moguguai.cpp \
+    nisike.cpp \
     partner.cpp \
     pdbackpushbutton.cpp \
     phoenix.cpp \
     pokedex.cpp \
+    sailatu.cpp \
     startpushbutton.cpp \
     startscene.cpp \
     taida.cpp \
@@ -54,6 +58,8 @@ SOURCES += \
     xianrenqiu.cpp \
     xiaodouya.cpp \
     xiaohuohou.cpp \
+    xikela.cpp \
+    xingjila.cpp \
     xinke.cpp \
     yiyi.cpp \
     yiyou.cpp \
@@ -64,6 +70,7 @@ HEADERS += \
     baobeili.h \
     beier.h \
     beilami.h \
+    boge.h \
     bubuzhongzi.h \
     bullet.h \
     cards.h \
@@ -73,6 +80,7 @@ HEADERS += \
     choosescene.h \
     dida.h \
     dugulu.h \
+    dululu.h \
     elf.h \
     enemy.h \
     gangyasha.h \
@@ -87,10 +95,12 @@ HEADERS += \
     maokai.h \
     map.h \
     moguguai.h \
+    nisike.h \
     partner.h \
     pdbackpushbutton.h \
     phoenix.h \
     pokedex.h \
+    sailatu.h \
     startpushbutton.h \
     startscene.h \
     taida.h \
@@ -98,6 +108,8 @@ HEADERS += \
     xianrenqiu.h \
     xiaodouya.h \
     xiaohuohou.h \
+    xikela.h \
+    xingjila.h \
     xinke.h \
     yiyi.h \
     yiyou.h \

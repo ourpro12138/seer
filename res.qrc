@@ -80,8 +80,6 @@
     </qresource>
     <qresource prefix="/enemy">
         <file>resource/enemy/1-GRASS 2-WATER 3-FIRE.txt</file>
-        <file>resource/enemy/enemy_2.gif</file>
-        <file>resource/enemy/enemy_2attack.gif</file>
         <file>resource/enemy/enemy_4.gif</file>
         <file>resource/enemy/enemy_4attack.gif</file>
         <file>resource/enemy/enemy_5.gif</file>
@@ -104,6 +102,20 @@
         <file>resource/enemy/enemy_2634.gif</file>
         <file>resource/enemy/attack_enemy4120.gif</file>
         <file>resource/enemy/enemy_4120.gif</file>
+        <file>resource/enemy/attack_enemy900.gif</file>
+        <file>resource/enemy/enemy_900.gif</file>
+        <file>resource/enemy/attack_enemy96.gif</file>
+        <file>resource/enemy/enemy_96.gif</file>
+        <file>resource/enemy/attack_enemy1047.gif</file>
+        <file>resource/enemy/enemy_1047.gif</file>
+        <file>resource/enemy/attack_enemy207.gif</file>
+        <file>resource/enemy/enemy_207.gif</file>
+        <file>resource/enemy/attack_enemy327.gif</file>
+        <file>resource/enemy/enemy_327.gif</file>
+        <file>resource/enemy/attack_enemy384.gif</file>
+        <file>resource/enemy/enemy_384.gif</file>
+        <file>resource/enemy/attack_enemy253.gif</file>
+        <file>resource/enemy/enemy_253.gif</file>
     </qresource>
     <qresource prefix="/map">
         <file>resource/map/alpha.png</file>
@@ -358,6 +370,14 @@
         <file>resource/partner/yikalaien_bullet.png</file>
         <file>resource/partner/attack_abu.gif</file>
         <file>resource/partner/attack_balagui.gif</file>
+        <file>resource/partner/skill/youlian.gif</file>
+        <file>resource/partner/skill/balusi.gif</file>
+        <file>resource/partner/skill/bubucao.gif</file>
+        <file>resource/partner/skill/bubuhua.gif</file>
+        <file>resource/partner/skill/bubuzhongzi.gif</file>
+        <file>resource/partner/skill/liehuohou.gif</file>
+        <file>resource/partner/skill/lieyanxingxing.gif</file>
+        <file>resource/partner/skill/xiaohuohou.gif</file>
         <file>resource/partner/yuanguyulong_bullet.png</file>
         <file>resource/partner/attack_tailesi.gif</file>
         <file>resource/partner/stand_tailesi.gif</file>
@@ -375,5 +395,24 @@
         <file>resource/partner/stand_juxingxianrenzhang.gif</file>
         <file>resource/partner/attack_shuijingya.gif</file>
         <file>resource/partner/attack_bolangya.gif</file>
+        <file>resource/partner/skill/xinke.gif</file>
+        <file>resource/partner/skill/xinnasi.gif</file>
+        <file>resource/partner/xinnasi_bullet.png</file>
+        <file>resource/partner/xinkef_bullet.png</file>
+        <file>resource/partner/xinkeg_bullet.png</file>
+        <file>resource/partner/xinkew_bullet.png</file>
+        <file>resource/partner/xinnasif_bullet.png</file>
+        <file>resource/partner/xinnasig_bullet.png</file>
+        <file>resource/partner/xinnasiw_bullet.png</file>
+        <file>resource/partner/stand_xinnasi.gif</file>
+        <file>resource/partner/skill/bolangya.gif</file>
+        <file>resource/partner/skill/dida.gif</file>
+        <file>resource/partner/skill/dierke.gif</file>
+        <file>resource/partner/skill/guodongya.gif</file>
+        <file>resource/partner/skill/shuijingya.gif</file>
+        <file>resource/partner/skill/taida.gif</file>
+        <file>resource/partner/skill/tailesi.gif</file>
+        <file>resource/partner/stand_linuo (2).gif</file>
+        <file>resource/partner/stand_xianrenqiu.gif</file>
     </qresource>
 </RCC>

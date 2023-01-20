@@ -28,6 +28,7 @@ public:
     qreal atk;
     //血量
     int hp;
+    int health;
     //行，列
     //int i,j;
     //攻击动画

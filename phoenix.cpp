@@ -5,6 +5,7 @@
 
 Phoenix::Phoenix(int i)
 {
+    this->attribute=FIRE;
     this->width = 200;this->height=196;
     hp=200;atk=50;speed=0.40;
     atkcounter=100;prepareTime=100;

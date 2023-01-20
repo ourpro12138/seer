@@ -8,7 +8,7 @@ Xianrenqiu::Xianrenqiu(int i,int j)
     width=90;height=130;
     No=2;
     this->hp = 300;this->atk=30;
-
+    health=300;
     prepareTime = 210; atkcounter=prepareTime;
     standTime=80; standcounter=standTime;
     coolTime = 200;coolcounter=0;
@@ -28,6 +28,8 @@ Xianrenqiu::~Xianrenqiu()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 }
 bool Xianrenqiu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
@@ -44,6 +46,8 @@ void Xianrenqiu::advance(int phase)
     if(!phase)
         return;
     update();
+    if(hp>health)
+        hp=health;
     QList <QGraphicsItem *> items = collidingItems();
     if(!items.isEmpty())
     {

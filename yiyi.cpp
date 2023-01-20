@@ -5,7 +5,7 @@ Yiyi::Yiyi(int i,int j)
 {
     attribute = GRASS;
   this->i = i; this->j=j;
-  width = 83;height=145;
+  width = 83;height=145;health=300;
   hp=300;atkcounter=0;prepareTime=200;
   this->atk = 50;
   No=4;
@@ -24,6 +24,8 @@ Yiyi::~Yiyi()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 
 }
 void Yiyi::advance(int phase)
@@ -31,6 +33,8 @@ void Yiyi::advance(int phase)
     if(!phase)
         return;
     update();
+    if(hp>health)
+        hp=health;
     QList <QGraphicsItem *> items = collidingItems();
     if(!items.isEmpty())
     {
@@ -61,14 +65,19 @@ void Yiyi::skill()
 }
 void Yiyi::evolution()
 {
-
+    YiDingSi *yla = new YiDingSi(i,j);
+    Map::myptn[i][j] = yla;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = yla;
+    Map::myptn[i][j] = nullptr;
 }
 
 
 YiDingSi::YiDingSi(int i,int j): Yiyi(i,j)
 {
     this->i = i; this->j=j;
-    width = 83;height=145;
+    width = 83;height=145;health=350;
     hp=350;atkcounter=0;prepareTime=200;
     this->atk = 60;
     No=20;
@@ -77,17 +86,35 @@ YiDingSi::YiDingSi(int i,int j): Yiyi(i,j)
     atkmovie->start();
     setPos(154+234*j-47,290-125+154*i);
 }
+void YiDingSi::skill()
+{
+
+}
+void YiDingSi::evolution()
+{
+    YiKaLaiEn *yla = new YiKaLaiEn(i,j);
+    Map::myptn[i][j] = yla;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = yla;
+    Map::myptn[i][j] = nullptr;
+    Map::myptn[i][j]->skillButton->setEnabled(false);
+}
 YiDingSi::~YiDingSi()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 
 YiKaLaiEn::YiKaLaiEn(int i,int j):Yiyi(i,j)
 {
     this->i = i; this->j=j;
-    width = 83;height=145;
+    width = 83;height=145;health=400;
     hp=400;atkcounter=0;prepareTime=200;
     this->atk = 70;
     No=36;
@@ -95,6 +122,10 @@ YiKaLaiEn::YiKaLaiEn(int i,int j):Yiyi(i,j)
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(154+234*j-47,290-133+154*i);
+}
+void YiKaLaiEn::skill()
+{
+
 }
 YiKaLaiEn::~YiKaLaiEn()
 {
