@@ -77,7 +77,7 @@ void Level::GameStart()
             connect(Back,&pdbackPushButton::backpress,this,&Level::back);
             levelMode=1;//游戏正式开始
             diamondtimer->start(1000);
-            wavetime->start(10000);
+            wavetime->start(1000);
             emit gamestart();
             delete timer;
         }
@@ -89,8 +89,7 @@ kls::kls()
     levelName = "kls";
     Wave = 1;
     totalWave=2;
-    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*taqi,*taqi1,*taqi2,*taqi3,*taqi4,*zl,*zl1,*zl2,*zl3,*zl4,*mk,*hr,*ph,*js,*nk,*xk,*xjl,*slt,*bg,*dll;
-
+    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo;
     creattimer = new QTimer(this);
     gang = new GangYaSha(2);
     gang2 = new GangYaSha(3);
@@ -100,40 +99,10 @@ kls::kls()
 
     mo = new MoGuGuai(2);
 
-    taqi = new Taqiduoke(1);
-    taqi1 = new Taqiduoke(2);
-    taqi2 = new Taqiduoke(3);
-    taqi3 = new Taqiduoke(4);
-
-    zl = new ZuoLuo(1);
-    zl1 = new ZuoLuo(2);
-    zl2 = new ZuoLuo(3);
-    zl3 = new ZuoLuo(4);
-
-
-    mk = new Maokai(3);
-
-    hr = new Heertoke(2);
-
-    ph = new Phoenix(3);
-
-    js = new Jianxishuiling(3);
-
-    nk = new Nisike(3);
-
-    xk = new Xikela(3);
-
-    xjl = new Xingjila(3);
-
-    slt = new Sailatu(3);
-
-    bg = new Boge(3);
-
-    dll = new Dululu(3);
-
 
     connect(wavetime,&QTimer::timeout,[=](){
 
+        qDebug()<<"Wave = "<<Wave;
         if(Wave==1)
         {
             levelMode =2;
@@ -143,11 +112,12 @@ kls::kls()
         else if(Wave==2)
         {
             levelMode=3;
+            creattimer->start(2000);
             delete wavetime;
         }
 
     });
-    static int enemy_count=0;
+       static int enemy_count=0;
        connect(creattimer,&QTimer::timeout,[=]()
        {
            if(levelMode==2)
@@ -155,26 +125,29 @@ kls::kls()
                switch(enemy_count)
            {
            case 0:
-              {scene->addItem(dll);break;}
-//           case 1:
-//              {scene->addItem(hr);break;}
-//           case 2:
-//             { scene->addItem(js);break;}
-//           case 3:
-//             { scene->addItem(gang4);break;}
-//           case 4:
-//             { scene->addItem(gang5);break;}
-//           case 5:
-//             { scene->addItem(mo);break;}
-//           case 6:
-//             { scene->addItem(taqi3);break;}
+              {scene->addItem(gang);break;}
+           case 1:
+              {scene->addItem(gang2);break;}
+           case 2:
+             { scene->addItem(gang3);break;}
+           case 3:
+             { scene->addItem(gang4);break;}
+           case 4:
+             { scene->addItem(gang5);break;}
+           case 5:
+             { scene->addItem(mo);break;}
                default:
            {
-               if(!dll)
+                   qDebug()<<"嗯嗯";
+               if(gang->nowStatus==0&gang2->nowStatus==1&&gang3->nowStatus==0&&gang4->nowStatus==0&&gang5->nowStatus==0&&mo->nowStatus==0)
                {
+                   qDebug()<<"死亡";
                    Wave=2;
+                   qDebug()<<Wave;
                    enemy_count=0;
-                   wavetime->start(10000);
+                   wavetime->start(1000);
+                   creattimer->stop();
+                   enemy_count=-1;
                    break;
                }
            }
@@ -184,35 +157,21 @@ kls::kls()
            else if(levelMode==3)
            {
                 qDebug()<<"第二波来咯";
-               {
-                   switch(enemy_count)
-               {
-               case 0:
-                  {scene->addItem(taqi);break;}
-               case 1:
-                  {scene->addItem(taqi2);break;}
-               case 2:
-                 { scene->addItem(zl2);break;}
-               case 3:
-                 { scene->addItem(zl1);break;}
-               case 4:
-                 { scene->addItem(zl3);break;}
-               case 5:
-                 { scene->addItem(mo);break;}
-               default:
-               {
-                   if(!taqi&&!taqi2&&!zl1&&!zl2&&!zl3&&!mo)
-                   {
-                       //Mission completion
+//                   switch(enemy_count)
+//               {
+//               default:
+//               {
+//                   if(1)
+//                   {
+//                       //Mission completion
 
 
 
-                       break;
-                   }
-               }
-               }
-                     enemy_count++;
-               }
+//                       break;
+//                   }
+//               }
+//                     enemy_count++;
+//               }
            }
        });
 

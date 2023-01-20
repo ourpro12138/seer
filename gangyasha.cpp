@@ -22,7 +22,9 @@ GangYaSha::GangYaSha(int i)
 GangYaSha::~GangYaSha()
 {
     if(atkmovie)
-        delete atkmovie;
+    {delete atkmovie;
+    atkmovie=NULL;
+    }
 }
 
 bool GangYaSha::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
@@ -48,6 +50,7 @@ void GangYaSha::advance(int phase)
 
      if(hp<=0)
      {
+         this->nowStatus=0;
          delete this;
          return;
      }

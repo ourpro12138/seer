@@ -28,7 +28,9 @@ bool MoGuGuai::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMod
 MoGuGuai::~MoGuGuai()
 {
     if(atkmovie)
-        delete atkmovie;
+    {delete atkmovie;
+    atkmovie=NULL;
+    }
 }
 //蘑菇怪状态变化
 void MoGuGuai::advance(int phase)
