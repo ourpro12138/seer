@@ -8,7 +8,7 @@ Guodongya::Guodongya(int i,int j)
     this->width = 108;this->height=120;
     hp=300,atk=4;
     this->No=7;skillname="水之波动";
-    this->width = 118;this->height=130;health=500;e
+    this->width = 118;this->height=130;health=500;
     standTime =80; standcounter=standTime;
     prepareTime = 240; atkcounter=prepareTime;
     coolTime = 600; coolcounter=coolTime;
@@ -19,6 +19,9 @@ Guodongya::Guodongya(int i,int j)
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     Skillplayer->setMovie(Skill);
       setPos(154+234*j-47,290-133+154*i);
+      this->price=50;
+      this->price_ev=80;
+      this->price_skill=80;
 }
 Guodongya::~Guodongya()
 {
@@ -236,7 +239,8 @@ void Guodongya::evolution()
      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
      Skillplayer->setMovie(Skill);
        setPos(154+234*j-47,290-133+154*i);
-
+       this->price_skill=150;
+}
 
  BoLangYa::BoLangYa(int i,int j):Guodongya(i,j)
  {
@@ -262,6 +266,8 @@ void Guodongya::evolution()
      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
      Skillplayer->setMovie(Skill);
        setPos(154+234*j-47,290-133+154*i);
+       this->price_ev=100;
+       this->price_skill=90;
 
  }
  BoLangYa::~BoLangYa()
@@ -274,27 +280,8 @@ void Guodongya::evolution()
          delete atkmovie;
      }
   }
- void BoLangYa::skill()
- {
 
- }
- void BoLangYa::evolution()
- {
 
- }
-
- ShuiJingYa::ShuiJingYa(int i,int j): Guodongya(i,j)
-{
-     this->i = i; this->j = j;
-     hp=500,atk=50;
-     this->width = 118;this->height=130;
-     standTime =80; standcounter=80;
-     prepareTime = 300; atkcounter=prepareTime;
-     coolTime = 600; coolcounter=0;
-     name="ShuiJingYa";
-     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
-     atkmovie->start();
-       setPos(154+234*j-50,290-133+154*i);
 
 }
  ShuiJingYa::~ShuiJingYa()
@@ -306,10 +293,6 @@ void Guodongya::evolution()
          atkmovie =NULL;
          delete atkmovie;
      }
- }
- void ShuiJingYa::skill()
- {
-
  }
 void BoLangYa::evolution()
 {

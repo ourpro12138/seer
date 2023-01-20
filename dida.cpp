@@ -15,6 +15,9 @@ Dida::Dida(int i,int j)
   Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
   Skillplayer->setMovie(Skill);
   setPos(154+234*j-47,320-133+154*i);
+  this->price=50;
+  this->price_ev=400;
+  this->price_skill=100;
 
 }
 Dida::~Dida()

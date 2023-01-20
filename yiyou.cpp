@@ -13,6 +13,7 @@ Yiyou::Yiyou(int i,int j)
   this->atk = 20;
   name="Yiyou";
   this->skillname = "玩水";
+  this->price=50;
   this->price_ev=100;
   this->price_skill=100;
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -29,11 +30,14 @@ Yiyou::~Yiyou()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie =NULL;
     }
     if(Skill)
+    {
         delete Skill;
+        Skill=NULL;
+    }
 
 }
 void Yiyou::advance(int phase)
@@ -112,6 +116,8 @@ YouLiAn::YouLiAn(int i,int j):Yiyou(i,j)
     No=21;
     name="YouLiAn";
     skillname = "潮汐";
+    this->price_ev=200;
+    this->price_skill=150;
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     Skillplayer->setMovie(Skill);
@@ -181,6 +187,7 @@ BaLuSi::BaLuSi(int i,int j):Yiyou(i,j)
     hp=500;prepareTime=200;atkcounter=prepareTime;
     this->atk = 80;
     No=37;
+    this->price_skill=200;
     name="BaLuSi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();

@@ -16,6 +16,9 @@ DuGuLu::DuGuLu(int i,int j)
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(154+234*j-47-10,290-133+154*i+30);
+    this->price=100;
+    this->price_ev=0;
+    this->price_skill=0;
 }
 
 DuGuLu::~DuGuLu()

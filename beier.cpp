@@ -21,6 +21,9 @@ Beier::Beier(int i,int j)
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(148+234*j-47-10,360-133+154*i-30);
+    this->price=50;
+    this->price_ev=200;
+    this->price_skill=0;
 }
 
 Beier::~Beier()
@@ -108,7 +111,7 @@ ABu::ABu(int i,int j):Beier(i,j)
 {
     this->i = i; this->j = j;
     this->width = 105;this->height=92;
-    health=1000;
+    health=1500;
     hp=1000,prepareTime=300,atkcounter=prepareTime;
     standTime=42; standcounter=0; coolTime=0;coolcounter=0;
     No=22;
@@ -116,6 +119,8 @@ ABu::ABu(int i,int j):Beier(i,j)
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(148+234*j-35,360-133+154*i-30);
+    this->price_ev=200;
+    this->price_skill=0;
 
 }
 ABu::~ABu()
@@ -141,7 +146,7 @@ BaLaGui::BaLaGui(int i,int j):Beier(i,j)
 {
     this->i = i; this->j = j;
     this->width = 120;this->height=101;
-    health=1500;
+    health=2500;
     hp=1500,prepareTime=300,atkcounter=prepareTime;
     standTime=68; standcounter=0; coolTime=0;coolcounter=0;
     No=38;

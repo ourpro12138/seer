@@ -8,12 +8,14 @@ Huliya::Huliya(int i,int j)
   this->i = i; this->j=j;
   width = 121;height=135;health=300;
   hp=300;atkcounter=0;prepareTime=200;
-  this->atk = 50;
+  this->atk = 75;
   name="Huliya";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
   setPos(154+234*j-47,290-133+154*i);
-
+  this->price=100;
+  this->price_ev=300;
+  this->price_skill=0;
 }
 Huliya::~Huliya()
 {
@@ -82,11 +84,12 @@ Liaosi::Liaosi(int i,int j):Huliya(i,j)
     this->i = i; this->j=j;
     width = 116;height=140;health=500;
     hp=500;atkcounter=0;prepareTime=150;
-    this->atk = 50;
+    this->atk = 200;
     name="Liaosi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(140+234*j-47,300-133+154*i);
+    this->price_skill=0;
 }
 
 Liaosi::~Liaosi()

@@ -12,6 +12,9 @@ Xiaohuohou::Xiaohuohou(int i,int j)
     this->width = 130;this->height=160;health=500;
     hp=500,atk=20,prepareTime=150,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    this->price=50;
+    this->price_ev=100;
+    this->price_skill=100;
     name="XiaoHuoHou"; skillname="音速拳";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -107,7 +110,8 @@ void Xiaohuohou::skill()
 
     Skillplayer->show();
     Skill->start();
-
+    this->price_ev=200;
+    this->price_skill=150;
     QTimer *time = new QTimer(parent);
     time->start(10);
     static  int count = 0;
@@ -145,6 +149,8 @@ LieHuoHou::LieHuoHou(int i,int j):Xiaohuohou(i,j)
     hp=650,atk=50,prepareTime=150,atkcounter=prepareTime;
     standTime=28; standcounter=0; coolTime=0;coolcounter=0;
     name="LieHuoHou";this->skillname="火焰车";
+    this->price_ev=200;
+    this->price_skill=150;
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
@@ -210,6 +216,7 @@ Lieyanxingxing::Lieyanxingxing(int i,int j):Xiaohuohou(i,j)
     hp=800,atk=65,prepareTime=150,atkcounter=prepareTime;
     standTime=32; standcounter=0; coolTime=0;coolcounter=0;
     No=41;
+    this->price_skill=200;
     name="Lieyanxingxing";skillname="烈焰冲撞";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();

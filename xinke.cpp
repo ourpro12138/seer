@@ -10,6 +10,9 @@ Xinke::Xinke(int i,int j)
   hp=300;prepareTime=100;atkcounter=prepareTime;
   this->atk = 70;
   name="Xinke";skillname="星之光";
+  this->price=50;
+  this->price_ev=250;
+  this->price_skill=10;
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
   Skillplayer->setMovie(Skill);
@@ -70,7 +73,7 @@ void Xinke::skill()
 
     Skillplayer->show();
     Skill->start();
-
+    this->price_skill=10;
     QTimer *time = new QTimer(parent);
     time->start(10);
     static  int count = 0;
