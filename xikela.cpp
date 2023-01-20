@@ -27,7 +27,10 @@ bool Xikela::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode 
 Xikela::~Xikela()
 {
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 
 void Xikela::advance(int phase)
@@ -41,6 +44,7 @@ void Xikela::advance(int phase)
      if(hp<=0)
      {
          delete this;
+         nowStatus=0;  //死亡
          return;
      }
 

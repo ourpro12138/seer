@@ -143,6 +143,7 @@ kls::kls()
         else if(Wave==2)
         {
             levelMode=3;
+            creattimer->start(2000);
             delete wavetime;
         }
 
@@ -155,7 +156,8 @@ kls::kls()
                switch(enemy_count)
            {
            case 0:
-              {scene->addItem(dll);break;}
+              {
+                   scene->addItem(dll);break;}
 //           case 1:
 //              {scene->addItem(hr);break;}
 //           case 2:
@@ -170,11 +172,12 @@ kls::kls()
 //             { scene->addItem(taqi3);break;}
                default:
            {
-               if(!dll)
+               if(dll->nowStatus==0)
                {
                    Wave=2;
-                   enemy_count=0;
-                   wavetime->start(10000);
+                   enemy_count=-1;
+                   wavetime->start(1000);
+                   creattimer->stop();
                    break;
                }
            }
@@ -184,35 +187,46 @@ kls::kls()
            else if(levelMode==3)
            {
                 qDebug()<<"第二波来咯";
-               {
-                   switch(enemy_count)
-               {
-               case 0:
-                  {scene->addItem(taqi);break;}
-               case 1:
-                  {scene->addItem(taqi2);break;}
-               case 2:
-                 { scene->addItem(zl2);break;}
-               case 3:
-                 { scene->addItem(zl1);break;}
-               case 4:
-                 { scene->addItem(zl3);break;}
-               case 5:
-                 { scene->addItem(mo);break;}
-               default:
-               {
-                   if(!taqi&&!taqi2&&!zl1&&!zl2&&!zl3&&!mo)
-                   {
-                       //Mission completion
+                gametime->stop();
+                delete creattimer;
+                creattimer=NULL;
+                scene->addPixmap(QPixmap(":/map/resource/map/shengli.png"))->setPos(350,300);
+                scene->advance();
+                QPushButton *victory = new QPushButton();
+                victory->setParent(this);
+                victory->setFixedSize(693-568,641-589);
+                victory->move(568,589);
+                victory->show();
+                connect(victory,&QPushButton::clicked,this,&Level::back);
+//               {
+//                   switch(enemy_count)
+//               {
+//               case 0:
+//                  {scene->addItem(taqi);break;}
+//               case 1:
+//                  {scene->addItem(taqi2);break;}
+//               case 2:
+//                 { scene->addItem(zl2);break;}
+//               case 3:
+//                 { scene->addItem(zl1);break;}
+//               case 4:
+//                 { scene->addItem(zl3);break;}
+//               case 5:
+//                 { scene->addItem(mo);break;}
+//               default:
+//               {
+//                   if(!taqi&&!taqi2&&!zl1&&!zl2&&!zl3&&!mo)
+//                   {
+//                       //Mission completion
 
 
 
-                       break;
-                   }
-               }
-               }
-                     enemy_count++;
-               }
+//                       break;
+//                   }
+//               }
+//               }
+//                     enemy_count++;
+//               }
            }
        });
 

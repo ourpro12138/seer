@@ -26,7 +26,10 @@ bool Boge::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mo
 Boge::~Boge()
 {
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 
 void Boge::advance(int phase)
