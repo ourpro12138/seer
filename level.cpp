@@ -104,11 +104,13 @@ kls::kls()
     mo2 = new MoGuGuai(3);
     mo3 = new MoGuGuai(1);
 
-
-    zl = new ZuoLuo(1);
-    zl1 = new ZuoLuo(2);
     zl2 = new ZuoLuo(3);
     zl3 = new ZuoLuo(4);
+
+    taqi2 = new Taqiduoke(3);
+
+    bm = new Beilami(3);
+    bm2 = new Beilami(2);
 
 
     mk = new Maokai(3);
