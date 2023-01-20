@@ -10,7 +10,7 @@ cardsmenu::cardsmenu(QWidget *parent) :
     this->setFixedSize(1366,911);
     this->setStyleSheet("background-color:transparent");
 
-    Cards *P_all[16] = {new bubuzhongzi,new xianrenqou,new xiaodouya,new yiyi,new yiyou,new beier,new guodongya,new baobeili,new xiaohuohou,
+    Cards *P_all[16] = {new bubuzhongzi,new xianrenqiu,new xiaodouya,new yiyi,new yiyou,new beier,new guodongya,new baobeili,new xiaohuohou,
                         new jier, new huliya,new dida, new dugulu, new xinke,new agong ,new taida};
 
 

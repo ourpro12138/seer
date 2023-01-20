@@ -48,10 +48,10 @@ class bubuzhongzi:public Cards
   public:
     bubuzhongzi();
 };
-class xianrenqou:public Cards
+class xianrenqiu:public Cards
 {
 public:
-    xianrenqou();
+    xianrenqiu();
 };
 class xiaodouya:public Cards
 {

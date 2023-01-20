@@ -13,6 +13,7 @@ Taida::Taida(int i,int j)
     health=300;skillname="精准计算";
     hp=300,atk=70,prepareTime=220,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    No=16;
     name="Taida";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
@@ -139,6 +140,7 @@ TaiLeSi::TaiLeSi(int i,int j):Taida(i,j)
     health=600;skillname="泰勒斯猜想";
     hp=health,atk=200,prepareTime=200,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    No=32;
     name="TaiLeSi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();

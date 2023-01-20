@@ -19,10 +19,21 @@ public:
    bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode)const;
    void skill();
    void evolution();
-
-
-
-
+};
+class DingDing:public Xiaodouya
+{
+public:
+    DingDing(int i,int j);
+    ~DingDing();
+    void skill();
+    void evolution();
+};
+class MoHuaXianZi:public Xiaodouya
+{
+public:
+    MoHuaXianZi(int i,int j);
+    ~MoHuaXianZi();
+    void skill();
 };
 
 #endif // XIAODOUYA_H

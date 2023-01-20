@@ -4,15 +4,18 @@ Guodongya::Guodongya(int i,int j)
 {
     this->attribute = WATER;
     this->i = i; this->j = j;
+    hp=500,atk=4;
+    this->width = 108;this->height=120;
     hp=300,atk=4;
     this->No=7;skillname="水之波动";
-    this->width = 118;this->height=130;health=500;
+    this->width = 118;this->height=130;health=500;e
     standTime =80; standcounter=standTime;
-    prepareTime = 300; atkcounter=prepareTime;
+    prepareTime = 240; atkcounter=prepareTime;
     coolTime = 600; coolcounter=coolTime;
     name="Guodongya";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+      setPos(154+234*j-60,290-125+154*i);
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     Skillplayer->setMovie(Skill);
       setPos(154+234*j-47,290-133+154*i);
@@ -79,7 +82,7 @@ void Guodongya::advance(int phase)
             {
                 qDebug()<<"atkcounter"<<atkcounter<<" coolcounter"<<coolcounter<<" standcounter"<<standcounter;
                 atkcounter=0;
-                atkmovie = new QMovie(":/partner/resource/partner/attack_guodongya.gif");
+                atkmovie = new QMovie(":/partner/resource/partner/attack_"+name.toLower()+".gif");
                 atkmovie->start();
             }
         }
@@ -234,21 +237,19 @@ void Guodongya::evolution()
      Skillplayer->setMovie(Skill);
        setPos(154+234*j-47,290-133+154*i);
 
-}
- ShuiJingYa::~ShuiJingYa()
- {
-     if(Map::myptn[i][j])
-     Map::myptn[i][j]=NULL;
-     if(atkmovie)
-     {
-         atkmovie =NULL;
-         delete atkmovie;
-     }
- }
 
  BoLangYa::BoLangYa(int i,int j):Guodongya(i,j)
  {
      this->i = i; this->j = j;
+     hp=500,atk=50;
+     this->width = 108;this->height=120;
+     standTime =80; standcounter=80;
+     prepareTime = 260; atkcounter=prepareTime;
+     coolTime = 600; coolcounter=0;
+     name="BoLangYa";
+     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+     atkmovie->start();
+       setPos(154+234*j-50,290-120+154*i);
      this->No=23;skillname="海啸";
      name = "bolangya";
      health=400,atk=6;hp=health;
@@ -273,6 +274,43 @@ void Guodongya::evolution()
          delete atkmovie;
      }
   }
+ void BoLangYa::skill()
+ {
+
+ }
+ void BoLangYa::evolution()
+ {
+
+ }
+
+ ShuiJingYa::ShuiJingYa(int i,int j): Guodongya(i,j)
+{
+     this->i = i; this->j = j;
+     hp=500,atk=50;
+     this->width = 118;this->height=130;
+     standTime =80; standcounter=80;
+     prepareTime = 300; atkcounter=prepareTime;
+     coolTime = 600; coolcounter=0;
+     name="ShuiJingYa";
+     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+     atkmovie->start();
+       setPos(154+234*j-50,290-133+154*i);
+
+}
+ ShuiJingYa::~ShuiJingYa()
+ {
+     if(Map::myptn[i][j])
+     Map::myptn[i][j]=NULL;
+     if(atkmovie)
+     {
+         atkmovie =NULL;
+         delete atkmovie;
+     }
+ }
+ void ShuiJingYa::skill()
+ {
+
+ }
 void BoLangYa::evolution()
 {
     ShuiJingYa *yla = new ShuiJingYa(i,j);

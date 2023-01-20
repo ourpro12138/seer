@@ -10,6 +10,7 @@ Xiaodouya::Xiaodouya(int i,int j)
 {
     this->attribute = GRASS;
     this->i = i; this->j = j;
+    this->width = 111;this->height=130;
     this->width = 121;this->height=140;
     health=100;
     hp=100,atk=20,prepareTime=96,atkcounter=prepareTime;
@@ -72,7 +73,7 @@ void Xiaodouya::advance(int phase)
          if(atkcounter==prepareTime)
          {
             atkcounter=0;
-            atkmovie = new QMovie(":/partner/resource/partner/attack_xiaodouya.gif");
+            atkmovie = new QMovie(":/partner/resource/partner/attack_"+name.toLower()+".gif");
             atkmovie->start();
          }
         }
@@ -102,3 +103,61 @@ void Xiaodouya::evolution()
 
 }
 
+DingDing::DingDing(int i,int j):Xiaodouya(i,j)
+{
+    this->attribute = GRASS;
+    this->i = i; this->j = j;
+    this->width = 85;this->height=140;
+
+    hp=100,atk=20,prepareTime=220,atkcounter=prepareTime;
+    standTime=42; standcounter=0; coolTime=0;coolcounter=0;
+    name="DingDing";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(140+234*j-25,320-133+154*i-40);
+}
+DingDing::~DingDing()
+{
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
+}
+void DingDing::skill()
+{
+
+}
+void DingDing::evolution()
+{
+
+}
+MoHuaXianZi::MoHuaXianZi(int i,int j):Xiaodouya(i,j)
+{
+    this->attribute = GRASS;
+    this->i = i; this->j = j;
+    this->width = 110;this->height=115;
+
+    hp=100,atk=20,prepareTime=220,atkcounter=prepareTime;
+    standTime=42; standcounter=0; coolTime=0;coolcounter=0;
+    name="MoHuaXianZi";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(140+234*j-30,320-133+154*i-10);
+}
+MoHuaXianZi::~MoHuaXianZi()
+{
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
+}
+void MoHuaXianZi::skill()
+{
+
+}
