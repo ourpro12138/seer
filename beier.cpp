@@ -19,6 +19,7 @@ Beier::Beier(int i,int j)
     No=6;
     name="Beier";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     atkmovie->start();
     setPos(148+234*j-47-10,360-133+154*i-30);
     this->price=50;
@@ -108,7 +109,12 @@ void Beier::skill()
 }
 void Beier::evolution()
 {
-
+    ABu *bbh = new ABu(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+    Cards::diamondTotal-=price_ev;
 }
 ABu::ABu(int i,int j):Beier(i,j)
 {
@@ -120,6 +126,7 @@ ABu::ABu(int i,int j):Beier(i,j)
     No=22;
     name="ABu";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     atkmovie->start();
     setPos(148+234*j-35,360-133+154*i-30);
     this->price_ev=200;
@@ -147,7 +154,13 @@ void ABu::skill()
 }
 void ABu::evolution()
 {
-
+    BaLaGui *bbh = new BaLaGui(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 
 BaLaGui::BaLaGui(int i,int j):Beier(i,j)
@@ -160,6 +173,7 @@ BaLaGui::BaLaGui(int i,int j):Beier(i,j)
     No=38;
     name="BaLaGui";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     atkmovie->start();
     setPos(148+234*j-35,360-140+154*i);
 }

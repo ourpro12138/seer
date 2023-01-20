@@ -105,7 +105,12 @@ void Agong::skill()
 }
 void Agong::evolution()
 {
-
+    BoBoGong *bbh = new BoBoGong(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+    Cards::diamondTotal-=price_ev;
 }
 
 BoBoGong::BoBoGong(int i,int j):Agong(i,j)
@@ -145,7 +150,13 @@ void BoBoGong::skill()
 }
 void BoBoGong::evolution()
 {
-
+    AoLiGong *bbh = new AoLiGong(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 
 AoLiGong::AoLiGong(int i,int j):Agong(i,j)

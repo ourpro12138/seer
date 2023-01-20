@@ -124,6 +124,8 @@ void Taida::skill()
             Skill->stop();
             Skillplayer->hide();
             this->atk*=1.2;
+
+            Cards::diamondTotal-=price_skill;
             count=0;
         }
     });
@@ -136,6 +138,7 @@ void Taida::evolution()
     delete this;
     Map::myptn[i][j] = yla;
     Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 TaiLeSi::TaiLeSi(int i,int j):Taida(i,j)
 {
@@ -195,6 +198,7 @@ void TaiLeSi::skill()
             this->atk*=1.4;
             this->prepareTime-=40;
             this->atkcounter=prepareTime;
+            Cards::diamondTotal-=price_skill;
             count=0;
         }
     });

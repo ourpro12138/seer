@@ -11,6 +11,7 @@
 #include "choosescene.h"
 #include "level.h"
 #include "partner.h"
+#include <QFile>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class maingame; }
@@ -36,6 +37,12 @@ public:
     void returnchooselevel();
 
     void levelback();
+
+    void savecards();
+
+    void savelevel();
+
+    void cardsUpdate();
 
 private:
     Ui::maingame *ui;

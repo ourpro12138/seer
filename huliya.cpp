@@ -29,7 +29,6 @@ Huliya::~Huliya()
     if(Skill)
     {
         delete Skill;
-    Skill=NULL;
     }
 
 }
@@ -76,7 +75,8 @@ void Huliya::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = bbh;
-    this->skillButton->setEnabled(false);
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 void Liaosi::skill()
 {
@@ -107,7 +107,7 @@ Liaosi::~Liaosi()
     if(Skill)
     {
         delete Skill;
-    Skill=NULL;
+
     }
 }
 

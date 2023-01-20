@@ -129,6 +129,7 @@ void Guodongya::skill()
              Map::myptn[i][j+1]->atkcounter=Map::myptn[i][j+1]->prepareTime;
             }
             count=0;
+            Cards::diamondTotal-=price_skill;
         }
     });
 }
@@ -167,6 +168,7 @@ void BoLangYa::skill()
              Map::myptn[i+1][j]->prepareTime-=this->atk*5;
              Map::myptn[i+1][j]->atkcounter=Map::myptn[i+1][j]->prepareTime;
             }
+            Cards::diamondTotal-=price_skill;
             count=0;
         }
     });
@@ -217,7 +219,10 @@ void ShuiJingYa::skill()
                  if(Map::myptn[i-1][j]->prepareTime-this->atk*5>0)
              Map::myptn[i-1][j]->prepareTime-=this->atk*5;
              Map::myptn[i-1][j]->atkcounter=Map::myptn[i+1][j]->prepareTime;
-            }}
+            }
+
+            Cards::diamondTotal-=price_skill;
+            }
             count=0;
         }
     });
@@ -229,6 +234,7 @@ void Guodongya::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = yla;
+    Cards::diamondTotal-=price_ev;
 }
  ShuiJingYa::ShuiJingYa(int i,int j): Guodongya(i,j)
 {
@@ -314,5 +320,6 @@ void BoLangYa::evolution()
     delete this;
     Map::myptn[i][j] = yla;
     Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 

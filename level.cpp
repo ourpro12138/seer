@@ -138,8 +138,7 @@ kls::kls()
              { scene->addItem(mo);break;}
                default:
            {
-                   qDebug()<<"嗯嗯";
-               if(gang->nowStatus==0&gang2->nowStatus==1&&gang3->nowStatus==0&&gang4->nowStatus==0&&gang5->nowStatus==0&&mo->nowStatus==0)
+               if(gang->nowStatus==0&&gang2->nowStatus==0&&gang3->nowStatus==0&&gang4->nowStatus==0&&gang5->nowStatus==0&&mo->nowStatus==0)
                {
                    qDebug()<<"死亡";
                    Wave=2;
@@ -499,11 +498,11 @@ void Level::initlevel()
         }
          else if(this->levelMode!=0)
             {
-                 //设置光标效果
-                 QApplication::restoreOverrideCursor();
+                 if(Cards::diamondTotal>=cb->cards[j]->price)
+                 {QApplication::restoreOverrideCursor();
                  QCursor ptn(QPixmap(":/partner/resource/partner/stand_"+cb->cards[j]->name.toLower()+".gif"));
                  QApplication::setOverrideCursor(ptn);
-                 map->preparedPtn = cb->cards[j];
+                 map->preparedPtn = cb->cards[j];}
          }
     });
     }

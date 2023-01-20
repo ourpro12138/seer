@@ -28,6 +28,7 @@ public:
 
     QString attribute;
 
+    int price;
     Cards();
     ~Cards();
 
