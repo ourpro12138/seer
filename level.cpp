@@ -94,38 +94,29 @@ kls::kls()
     Enemy *taqi,*taqi1,*taqi3,*taqi4,*zl4,*hr,*ph,*js,*nk,*xk,*xjl,*slt,*bg,*dll;
     Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*mo2,*mo3,*zl,*zl1,*zl2,*zl3,*mk,*taqi2,*bm,*bm2;
 
-    creattimer = new QTimer(this);
-    gang = new GangYaSha(2);
-    gang2 = new GangYaSha(3);
-    gang3 = new GangYaSha(1);
-    gang4 = new GangYaSha(2);
-    gang5 = new GangYaSha(0);
+        creattimer = new QTimer(this);
+        gang = new GangYaSha(2);
+        gang2 = new GangYaSha(3);
+        gang3 = new GangYaSha(1);
+        gang4 = new GangYaSha(2);
+        gang5 = new GangYaSha(0);
 
-    mo = new MoGuGuai(2);
-    mo2 = new MoGuGuai(3);
-    mo3 = new MoGuGuai(1);
+        mo = new MoGuGuai(2);
+        mo2 = new MoGuGuai(3);
+        mo3 = new MoGuGuai(1);
 
-    zl2 = new ZuoLuo(3);
-    zl3 = new ZuoLuo(4);
+        zl2 = new ZuoLuo(3);
+        zl3 = new ZuoLuo(4);
 
-    taqi2 = new Taqiduoke(3);
+        taqi2 = new Taqiduoke(3);
 
-    bm = new Beilami(3);
-    bm2 = new Beilami(2);
-
-
-    mk = new Maokai(3);
+        bm = new Beilami(3);
+        bm2 = new Beilami(2);
 
 
-    taqi = new Taqiduoke(1);
-    taqi1 = new Taqiduoke(2);
-    taqi2 = new Taqiduoke(3);
-    taqi3 = new Taqiduoke(4);
+        mk = new Maokai(3);
 
-    zl = new ZuoLuo(1);
-    zl1 = new ZuoLuo(2);
-    zl2 = new ZuoLuo(3);
-    zl3 = new ZuoLuo(4);
+
 
 
     mk = new Maokai(3);
@@ -212,33 +203,39 @@ kls::kls()
                  enemy_count++;
            }
            else if(levelMode==3)
-           {
+     {
+
                    switch(enemy_count)
                {
                case 0:
-                  {scene->addItem(bm);break;}
+                  {scene->addItem(mo2);break;}
                case 1:
-                  {scene->addItem(gang2);break;}
+                  {scene->addItem(mo);break;}
                case 2:
-                 { scene->addItem(zl2);break;}
+                 { scene->addItem(gang2);break;}
                case 3:
-                 { scene->addItem(bm2);break;}
+                 { scene->addItem(gang5);break;}
                case 4:
-                 { scene->addItem(zl3);break;}
+                 { scene->addItem(mo3);break;}
                case 5:
                  { scene->addItem(mo);break;}
                case 6:
-                 { scene->addItem(gang3);break;}
-               case 7:
-                 { scene->addItem(taqi2);break;}
-               default:
-               {
-                   if(bm->nowStatus==0&&gang2->nowStatus==0&&zl2->nowStatus==0&&bm2->nowStatus==0&&zl3->nowStatus==0&&mo->nowStatus==0&&gang3->nowStatus==0&&taqi2->nowStatus==0)
+                 { scene->addItem(gang4);break;}
+                case 7:
+                 { scene->addItem(mo);break;}
+                case 8:
+                 { scene->addItem(mk);break;}
+                   default:
+                 {
+                   if(mo2->nowStatus==0&&mo->nowStatus==0&&gang2->nowStatus==0&&gang4->nowStatus==0&mo3->nowStatus==0&&mo->nowStatus==0&&gang4->nowStatus==0&&mo->nowStatus==0&&mk->nowStatus==0)
                    {
+
                        Wave=3;
                        enemy_count=0;
                        wavetime->start(10000);
                        creattimer->stop();
+
+
                        break;
                    }
                }
@@ -261,9 +258,8 @@ kls::kls()
                connect(victory,&QPushButton::clicked,this,&Level::back);
            }
 
-       });
 
-
+           });
 }
 
 hek::hek()
@@ -1316,11 +1312,11 @@ void Level::initlevel()
         }
          else if(this->levelMode!=0)
             {
-                 //设置光标效果
-                 QApplication::restoreOverrideCursor();
+                 if(Cards::diamondTotal>=cb->cards[j]->price)
+                 {QApplication::restoreOverrideCursor();
                  QCursor ptn(QPixmap(":/partner/resource/partner/stand_"+cb->cards[j]->name.toLower()+".gif"));
                  QApplication::setOverrideCursor(ptn);
-                 map->preparedPtn = cb->cards[j];
+                 map->preparedPtn = cb->cards[j];}
          }
     });
     }

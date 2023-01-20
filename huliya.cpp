@@ -25,7 +25,10 @@ Huliya::~Huliya()
         delete atkmovie;
     }
     if(Skill)
+    {
         delete Skill;
+        Skill = NULL;
+    }
 
 }
 void Huliya::advance(int phase)
@@ -71,7 +74,8 @@ void Huliya::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = bbh;
-    this->skillButton->setEnabled(false);
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 void Liaosi::skill()
 {
@@ -95,8 +99,13 @@ Liaosi::~Liaosi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+        Skill=NULL;
     }
 }
 

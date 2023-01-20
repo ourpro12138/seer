@@ -46,7 +46,6 @@ void MoGuGuai::advance(int phase)
      {
          this->nowStatus=0;
          delete this;
-         nowStatus=0;  //死亡
          return;
      }
 

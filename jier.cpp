@@ -12,6 +12,7 @@ Jier::Jier(int i,int j)
   name="Jier";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
   setPos(145+234*j-47,300-133+154*i);
 
 }
@@ -72,7 +73,7 @@ void Jier::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = bbh;
-    this->skillButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 Linuo::Linuo(int i,int j):Jier(i,j)
 {
@@ -83,6 +84,7 @@ Linuo::Linuo(int i,int j):Jier(i,j)
     name="Linuo";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(140+234*j-47,300-133+154*i);
 }
 void Linuo::evolution()
@@ -93,6 +95,7 @@ void Linuo::evolution()
     delete this;
     Map::myptn[i][j] = bbh;
     this->skillButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 void Linuo::skill()
 {
@@ -121,6 +124,7 @@ Luojilasi::Luojilasi(int i,int j):Jier(i,j)
     name="Luojilasi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(140+234*j-47,300-133+154*i);
 }
 

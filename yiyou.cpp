@@ -90,6 +90,7 @@ void Yiyou::skill()
             Skillplayer->hide();
             this->prepareTime*=0.8;
             this->atkcounter = prepareTime;
+                        Cards::diamondTotal-=price_skill;
             count=0;
         }
     });
@@ -101,6 +102,7 @@ void Yiyou::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = yla;
+                Cards::diamondTotal-=price_ev;
 }
 
 YouLiAn::YouLiAn(int i,int j):Yiyou(i,j)
@@ -141,6 +143,7 @@ void YouLiAn::evolution()
     delete this;
     Map::myptn[i][j] = yla;
     Map::myptn[i][j]->evolutionButton->setEnabled(false);
+                Cards::diamondTotal-=price_ev;
 }
 
 void YouLiAn::skill()
@@ -168,6 +171,7 @@ void YouLiAn::skill()
             Skillplayer->hide();
             this->prepareTime*=0.75;
             this->atkcounter = prepareTime;
+            Cards::diamondTotal-=price_skill;
             count=0;
         }
     });

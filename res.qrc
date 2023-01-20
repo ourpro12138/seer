@@ -416,4 +416,8 @@
         <file>resource/partner/stand_linuo (2).gif</file>
         <file>resource/partner/stand_xianrenqiu.gif</file>
     </qresource>
+    <qresource prefix="/data">
+        <file>resource/card.txt</file>
+        <file>resource/level.txt</file>
+    </qresource>
 </RCC>

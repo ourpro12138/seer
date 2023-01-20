@@ -12,6 +12,8 @@ Xiaohuohou::Xiaohuohou(int i,int j)
     this->width = 130;this->height=160;health=500;
     hp=500,atk=20,prepareTime=150,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    this->price_ev=100;
+    this->price_skill=100;
     name="XiaoHuoHou"; skillname="音速拳";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -125,6 +127,7 @@ void Xiaohuohou::skill()
             parent->gametime->start(10);
             Skill->stop();
             Skillplayer->hide();
+            Cards::diamondTotal-=price_skill;
             count=0;
         }
     });
@@ -136,6 +139,7 @@ void Xiaohuohou::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = yla;
+    Cards::diamondTotal-=price_ev;
 }
 LieHuoHou::LieHuoHou(int i,int j):Xiaohuohou(i,j)
 {
@@ -178,6 +182,7 @@ void LieHuoHou::skill()
             parent->gametime->start(10);
             Skill->stop();
             Skillplayer->hide();
+                        Cards::diamondTotal-=price_skill;
             count=0;
         }
     });
@@ -190,6 +195,7 @@ void LieHuoHou::evolution()
     delete this;
     Map::myptn[i][j] = yla;
     Map::myptn[i][j]->evolutionButton->setEnabled(false);
+                Cards::diamondTotal-=price_ev;
 }
 LieHuoHou::~LieHuoHou()
 {

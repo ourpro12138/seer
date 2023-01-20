@@ -15,6 +15,8 @@ Dida::Dida(int i,int j)
   Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
   Skillplayer->setMovie(Skill);
   setPos(154+234*j-47,320-133+154*i);
+  this->price_ev=400;
+  this->price_skill=100;
 
 }
 Dida::~Dida()
@@ -85,6 +87,7 @@ void Dida::skill()
             Skill->stop();
             Skillplayer->hide();
             this->atk*=1.2;
+            Cards::diamondTotal-=price_skill;
             count=0;
         }
     });
@@ -97,6 +100,7 @@ void Dida::evolution()
     delete this;
     Map::myptn[i][j] = bbh;
     Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 
 Dierke::Dierke(int i,int j):Dida(i,j)

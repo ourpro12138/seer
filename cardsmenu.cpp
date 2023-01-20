@@ -1,6 +1,7 @@
 #include "cardsmenu.h"
 #include "ui_cardsmenu.h"
 #include <QDebug>
+Cards *cardsmenu::P_all[16];
 
 cardsmenu::cardsmenu(QWidget *parent) :
     QWidget(parent),
@@ -10,8 +11,14 @@ cardsmenu::cardsmenu(QWidget *parent) :
     this->setFixedSize(1366,911);
     this->setStyleSheet("background-color:transparent");
 
-    Cards *P_all[16] = {new bubuzhongzi,new xianrenqiu,new xiaodouya,new yiyi,new yiyou,new beier,new guodongya,new baobeili,new xiaohuohou,
-                        new jier, new huliya,new dida, new dugulu, new xinke,new agong ,new taida};
+//    Cards *P_all[16] = {new bubuzhongzi,new xianrenqiu,new xiaodouya,new yiyi,new yiyou,new beier,new guodongya,new baobeili,new xiaohuohou,
+//                        new jier, new huliya,new dida, new dugulu, new xinke,new agong ,new taida};
+
+    P_all[0] = new bubuzhongzi;P_all[3] = new yiyi;P_all[6] = new guodongya;P_all[9] = new jier;P_all[12] = new dugulu;P_all[15] = new taida;
+    P_all[1] = new xianrenqiu;P_all[4] = new yiyou;P_all[7] = new baobeili;P_all[10] = new huliya;P_all[13] = new xinke;
+    P_all[2] = new xiaodouya;P_all[5] = new beier;P_all[8] = new xiaohuohou;P_all[11] = new dida;P_all[14] = new agong;
+
+
 
 
     for(int i=0;i<16;i++)
@@ -190,6 +197,11 @@ cardsmenu::cardsmenu(QWidget *parent) :
 cardsmenu::~cardsmenu()
 {
     delete ui;
+    for(int i=0;i<16;i++)
+    {
+        delete  P_all[i];
+        P_all[i]=NULL;
+    }
 }
 void cardsmenu::paintEvent(QPaintEvent *)
 {

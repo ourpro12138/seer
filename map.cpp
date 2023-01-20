@@ -44,7 +44,7 @@ void Map::advance(int phase)
 
 void Map::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
+    qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
     if(preparedPtn&&event->button()==Qt::LeftButton)
     {
         qDebug()<<preparedPtn->No;
@@ -83,7 +83,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
                break;
         case 4:
                qDebug()<<"依依建立 i ="<<i<<"j = "<<j;
-               myptn[i][j] = new YiKaLaiEn(i,j);break;
+               myptn[i][j] = new Yiyi(i,j);break;
                break;
         case 5:
             qDebug()<<"伊优建立 i= "<<i<<"j = "<<j;
@@ -94,11 +94,11 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
               break;
         case 7:
                qDebug()<<"果冻鸭建立 i= "<<i<<"j = "<<j;
-                    myptn[i][j] = new ShuiJingYa(i,j); break;
+                    myptn[i][j] = new Guodongya(i,j); break;
                break;
         case 8:
                qDebug()<<"宝贝鲤建立 i= "<<i<<"j = "<<j;
-                    myptn[i][j] = new YuanGuYuLong(i,j); break;
+                    myptn[i][j] = new Baobeili(i,j); break;
                break;
         case 9:
                qDebug()<<"小火猴建立 i= "<<i<<"j = "<<j;
@@ -140,6 +140,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
         }
             //myptn[i][j]->setZValue(j);
                    scene()->addItem(myptn[i][j]);
+                   Cards::diamondTotal-=preparedPtn->price;
                    QApplication::restoreOverrideCursor();
                    preparedPtn =NULL;
        }

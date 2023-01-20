@@ -12,6 +12,7 @@ Baobeili::Baobeili(int i,int j)
   No=8;
   name="Baobeili";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
   atkmovie->start();
   setPos(154+234*j-47,320-133+154*i);
 
@@ -26,8 +27,10 @@ Baobeili::~Baobeili()
         delete atkmovie;
     }
     if(Skill)
+    {
         delete Skill;
-
+        Skill=NULL;
+    }
 }
 void Baobeili::advance(int phase)
 {
@@ -68,7 +71,13 @@ void Baobeili::skill()
 }
 void Baobeili::evolution()
 {
-
+    YuanGuYuLong *bbh = new YuanGuYuLong(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+    Cards::diamondTotal-=price_ev;
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
 }
 YuanGuYuLong::YuanGuYuLong(int i,int j):Baobeili(i,j)
 {
@@ -79,6 +88,8 @@ YuanGuYuLong::YuanGuYuLong(int i,int j):Baobeili(i,j)
     this->atk = 60;
     No=24;
     name="YuanGuYuLong";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     atkmovie=new QMovie(":/partner/0/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(154+234*j-60-10-10-25,320-133-30-5+154*i);

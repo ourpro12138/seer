@@ -45,10 +45,7 @@ void Bullet::advance(int phase)
         Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
         enemy->hp -=Damage(this,enemy);
         //qDebug()<<enemy->hp;
-        if(enemy->hp>0)
-       {
            delete this;
-        }
     }
     setX(posX+2);
     posX+=2;
