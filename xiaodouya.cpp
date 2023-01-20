@@ -115,6 +115,8 @@ DingDing::DingDing(int i,int j):Xiaodouya(i,j)
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(140+234*j-25,320-133+154*i-40);
+    this->price_ev=200;
+    this->price_skill=0;
 }
 DingDing::~DingDing()
 {

@@ -42,6 +42,7 @@ void Dululu::advance(int phase)
 
      if(hp<=0)
      {
+         this->nowStatus=0;
          delete this;
          nowStatus=0;  //死亡
          return;

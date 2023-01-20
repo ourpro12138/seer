@@ -14,6 +14,8 @@
 #include "sailatu.h"
 #include "boge.h"
 #include "dululu.h"
+#include "xianrenqiu.h"
+#include "beier.h"
 
 Level::Level(QWidget *parent) :
     QWidget(parent),
@@ -90,6 +92,7 @@ kls::kls()
     Wave = 1;
     totalWave=2;
     Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*taqi,*taqi1,*taqi2,*taqi3,*taqi4,*zl,*zl1,*zl2,*zl3,*zl4,*mk,*hr,*ph,*js,*nk,*xk,*xjl,*slt,*bg,*dll;
+    Enemy *gang,*gang2,*gang3,*gang4,*gang5,*mo,*mo2,*mo3,*zl,*zl1,*zl2,*zl3,*mk,*taqi2,*bm,*bm2;
 
     creattimer = new QTimer(this);
     gang = new GangYaSha(2);
@@ -99,6 +102,20 @@ kls::kls()
     gang5 = new GangYaSha(0);
 
     mo = new MoGuGuai(2);
+    mo2 = new MoGuGuai(3);
+    mo3 = new MoGuGuai(1);
+
+    zl2 = new ZuoLuo(3);
+    zl3 = new ZuoLuo(4);
+
+    taqi2 = new Taqiduoke(3);
+
+    bm = new Beilami(3);
+    bm2 = new Beilami(2);
+
+
+    mk = new Maokai(3);
+
 
     taqi = new Taqiduoke(1);
     taqi1 = new Taqiduoke(2);
@@ -137,8 +154,8 @@ kls::kls()
         if(Wave==1)
         {
             levelMode =2;
-            wavetime->stop();
             creattimer->start(2000);
+            wavetime->stop();
         }
         else if(Wave==2)
         {
@@ -177,6 +194,31 @@ kls::kls()
                    Wave=2;
                    enemy_count=-1;
                    wavetime->start(1000);
+              {scene->addItem(mo2);break;}
+           case 1:
+              {scene->addItem(mo);break;}
+           case 2:
+             { scene->addItem(gang2);break;}
+           case 3:
+             { scene->addItem(gang5);break;}
+           case 4:
+             { scene->addItem(mo3);break;}
+           case 5:
+             { scene->addItem(mo);break;}
+           case 6:
+             { scene->addItem(gang4);break;}
+            case 7:
+             { scene->addItem(mo);break;}
+            case 8:
+             { scene->addItem(mk);break;}
+               default:
+             {
+               if(mo2->nowStatus==0&&mo->nowStatus==0&&gang2->nowStatus==0&&gang4->nowStatus==0&mo3->nowStatus==0&&mo->nowStatus==0&&gang4->nowStatus==0&&mo->nowStatus==0&&mk->nowStatus==0)
+               {
+                   qDebug("two");
+                   Wave=2;
+                   enemy_count=0;
+                   wavetime->start(10000);
                    creattimer->stop();
                    break;
                }
@@ -227,6 +269,39 @@ kls::kls()
 //               }
 //                     enemy_count++;
 //               }
+               {
+                   switch(enemy_count)
+               {
+               case 0:
+                  {scene->addItem(bm);break;}
+               case 1:
+                  {scene->addItem(gang2);break;}
+               case 2:
+                 { scene->addItem(zl2);break;}
+               case 3:
+                 { scene->addItem(bm2);break;}
+               case 4:
+                 { scene->addItem(zl3);break;}
+               case 5:
+                 { scene->addItem(mo);break;}
+               case 6:
+                 { scene->addItem(gang3);break;}
+               case 7:
+                 { scene->addItem(taqi2);break;}
+               default:
+               {
+                   if(bm->nowStatus==0&&gang2->nowStatus==0&&zl2->nowStatus==0&&bm2->nowStatus==0&&zl3->nowStatus==0&&mo->nowStatus==0&&gang3->nowStatus==0&&taqi2->nowStatus==0)
+                   {
+                       //Mission completion
+
+
+
+                       break;
+                   }
+               }
+               }
+                     enemy_count++;
+               }
            }
        });
 
@@ -236,22 +311,647 @@ kls::kls()
 hek::hek()
 {
 levelName = "hek";
+Wave = 1;
+totalWave=2;
+Enemy *bm,*bm1,*bm2,*mo,*mo1,*gang,*gang2,*ph,*hr,*xk,*xk1;
+
+bm = new Beilami(3);
+bm1 = new Beilami(0);
+bm2 = new Beilami(2);
+
+mo = new MoGuGuai(4);
+mo1 = new MoGuGuai(2);
+
+gang = new GangYaSha(1);
+gang2 = new GangYaSha(3);
+
+xk = new Xikela(2);
+xk1 = new Xikela(1);
+
+hr = new Heertoke(4);
+
+
+
+creattimer = new QTimer(this);
+
+
+
+
+connect(wavetime,&QTimer::timeout,[=](){
+
+    if(Wave==1)
+    {
+        levelMode =2;
+        creattimer->start(2000);
+        wavetime->stop();
+    }
+    else if(Wave==2)
+    {
+        levelMode=3;
+        creattimer->start(2000);
+        delete wavetime;
+    }
+
+});
+static int enemy_count=0;
+   connect(creattimer,&QTimer::timeout,[=]()
+   {
+       if(levelMode==2)
+       {
+           switch(enemy_count)
+       {
+       case 0:
+          {scene->addItem(bm);break;}
+       case 1:
+          {scene->addItem(bm2);break;}
+       case 2:
+         { scene->addItem(xk1);break;}
+       case 3:
+         { scene->addItem(gang);break;}
+       case 4:
+         { scene->addItem(mo);break;}
+       case 5:
+         { scene->addItem(mo1);break;}
+       case 6:
+         { scene->addItem(gang2);break;}
+        case 7:
+         { scene->addItem(xk);break;}
+        case 8:
+         { scene->addItem(hr);break;}
+           default:
+         {
+           if(bm->nowStatus==0&&bm2->nowStatus==0&&bm1->nowStatus==0&&gang->nowStatus==0&&mo->nowStatus==0&&mo1->nowStatus==0&&gang2->nowStatus==0&&bm2->nowStatus==0&&hr->nowStatus==0)
+           {
+               qDebug("two");
+               Wave=2;
+               enemy_count=0;
+               wavetime->start(10000);
+               creattimer->stop();
+               enemy_count=-1;
+               break;
+           }
+       }
+       }
+             enemy_count++;
+       }
+       else if(levelMode==3)
+       {
+            qDebug()<<"第二波来咯";
+           {
+               switch(enemy_count)
+           {
+           case 0:
+              {scene->addItem(bm2);break;}
+           case 1:
+              {scene->addItem(mo);break;}
+           case 2:
+             { scene->addItem(xk);break;}
+           case 3:
+             { scene->addItem(gang);break;}
+           case 4:
+             { scene->addItem(mo1);break;}
+           case 5:
+             { scene->addItem(bm);break;}
+           case 6:
+             { scene->addItem(xk1);break;}
+           case 7:
+             { scene->addItem(hr);break;}
+           case 8:
+             { scene->addItem(hr);break;}
+           default:
+           {
+               if(bm2->nowStatus==0&&mo->nowStatus==0&&bm1->nowStatus==0&&gang->nowStatus==0&&mo1->nowStatus==0&&bm->nowStatus==0&&gang2->nowStatus==0&&hr->nowStatus==0&&hr->nowStatus==0)
+               {
+                   //Mission completion
+
+
+
+                   break;
+               }
+           }
+           }
+                 enemy_count++;
+           }
+       }
+   });
+
+
 }
 hs::hs()
 {
 levelName = "hs";
+Wave = 1;
+totalWave=2;
+Enemy *bm,*bm1,*nis,*slt,*mk,*taqi,*xk,*hr,*hr1,*ph;
+
+bm = new Beilami(3);
+bm1 = new Beilami(0);
+
+ph = new Phoenix(2);
+
+hr = new Heertoke(4);
+hr1 = new Heertoke(1);
+
+nis = new Nisike(2);
+
+slt = new Sailatu(1);
+
+mk = new Maokai(2);
+
+xk = new Xikela(4);
+
+
+
+creattimer = new QTimer(this);
+
+
+
+
+connect(wavetime,&QTimer::timeout,[=](){
+
+    if(Wave==1)
+    {
+        levelMode =2;
+        creattimer->start(2000);
+        wavetime->stop();
+    }
+    else if(Wave==2)
+    {
+        levelMode=3;
+        creattimer->start(2000);
+        delete wavetime;
+    }
+
+});
+static int enemy_count=0;
+   connect(creattimer,&QTimer::timeout,[=]()
+   {
+       if(levelMode==2)
+       {
+           switch(enemy_count)
+       {
+       case 0:
+          {scene->addItem(bm);break;}
+       case 1:
+          {scene->addItem(slt);break;}
+       case 2:
+         { scene->addItem(xk);break;}
+       case 3:
+         { scene->addItem(bm1);break;}
+       case 4:
+         { scene->addItem(nis);break;}
+       case 5:
+         { scene->addItem(bm1);break;}
+       case 6:
+         { scene->addItem(slt);break;}
+        case 7:
+         { scene->addItem(hr);break;}
+        case 8:
+         { scene->addItem(hr1);break;}
+           default:
+         {
+           if(bm->nowStatus==0&&slt->nowStatus==0&&xk->nowStatus==0&&bm1->nowStatus==0&&nis->nowStatus==0&&bm1->nowStatus==0&&hr->nowStatus==0&&hr1->nowStatus==0)
+           {
+               qDebug("two");
+               Wave=2;
+               enemy_count=0;
+               wavetime->start(10000);
+               creattimer->stop();
+               enemy_count=-1;
+               break;
+           }
+       }
+       }
+             enemy_count++;
+       }
+       else if(levelMode==3)
+       {
+            qDebug()<<"第二波来咯";
+           {
+               switch(enemy_count)
+           {
+           case 0:
+              {scene->addItem(bm);break;}
+           case 1:
+              {scene->addItem(xk);break;}
+           case 2:
+             { scene->addItem(xk);break;}
+           case 3:
+             { scene->addItem(slt);break;}
+           case 4:
+             { scene->addItem(bm1);break;}
+           case 5:
+             { scene->addItem(nis);break;}
+           case 6:
+             { scene->addItem(hr);break;}
+           case 7:
+             { scene->addItem(ph);break;}
+           case 8:
+             { scene->addItem(ph);break;}
+           default:
+           {
+               if(bm->nowStatus==0&&xk->nowStatus==0&&xk->nowStatus==0&&slt->nowStatus==0&&bm1->nowStatus==0&&nis->nowStatus==0&&hr->nowStatus==0&&ph->nowStatus==0&&ph->nowStatus==0)
+               {
+                   //Mission completion
+
+
+
+                   break;
+               }
+           }
+           }
+                 enemy_count++;
+           }
+       }
+   });
+
+
+
 }
 alpha::alpha()
 {
 levelName = "alpha";
+Wave = 1;
+totalWave=2;
+Enemy *nis,*slt,*xjl,*dll,*mk,*xk,*bm,*bg,*hr;
+
+nis = new Nisike(2);
+
+slt = new Sailatu(3);
+
+xjl = new Xingjila(3);
+
+dll = new Dululu(2);
+
+mk = new Maokai(1);
+
+xk = new Xikela(2);
+
+bm = new Beilami(4);
+
+bg = new Boge(3);
+
+hr = new Heertoke(2);
+
+
+
+
+
+creattimer = new QTimer(this);
+
+
+
+
+connect(wavetime,&QTimer::timeout,[=](){
+
+    if(Wave==1)
+    {
+        levelMode =2;
+        creattimer->start(2000);
+        wavetime->stop();
+    }
+    else if(Wave==2)
+    {
+        levelMode=3;
+        creattimer->start(2000);
+        delete wavetime;
+    }
+
+});
+static int enemy_count=0;
+   connect(creattimer,&QTimer::timeout,[=]()
+   {
+       if(levelMode==2)
+       {
+           switch(enemy_count)
+       {
+       case 0:
+          {scene->addItem(bm);break;}
+       case 1:
+          {scene->addItem(xjl);break;}
+       case 2:
+         { scene->addItem(dll);break;}
+       case 3:
+         { scene->addItem(mk);break;}
+       case 4:
+         { scene->addItem(slt);break;}
+       case 5:
+         { scene->addItem(xk);break;}
+       case 6:
+         { scene->addItem(dll);break;}
+        case 7:
+         { scene->addItem(hr);break;}
+        case 8:
+         { scene->addItem(bg);break;}
+           default:
+         {
+           if(bm->nowStatus==0&&xjl->nowStatus==0&&dll->nowStatus==0&&mk->nowStatus==0&&hr->nowStatus==0&&xk->nowStatus==0&&dll->nowStatus==0&&hr->nowStatus==0&&bg->nowStatus==0)
+           {
+               qDebug("two");
+               Wave=2;
+               enemy_count=0;
+               wavetime->start(10000);
+               creattimer->stop();
+               enemy_count=-1;
+               break;
+           }
+       }
+       }
+             enemy_count++;
+       }
+       else if(levelMode==3)
+       {
+            qDebug()<<"第二波来咯";
+           {
+               switch(enemy_count)
+           {
+           case 0:
+              {scene->addItem(xjl);break;}
+           case 1:
+              {scene->addItem(mk);break;}
+           case 2:
+             { scene->addItem(xk);break;}
+           case 3:
+             { scene->addItem(dll);break;}
+           case 4:
+             { scene->addItem(xjl);break;}
+           case 5:
+             { scene->addItem(nis);break;}
+           case 6:
+             { scene->addItem(slt);break;}
+           case 7:
+             { scene->addItem(bg);break;}
+           case 8:
+             { scene->addItem(bg);break;}
+           default:
+           {
+               if(xjl->nowStatus==0&&mk->nowStatus==0&&xk->nowStatus==0&&dll->nowStatus==0&&xjl->nowStatus==0&&slt->nowStatus==0&&bg->nowStatus==0&&bg->nowStatus==0)
+               {
+                   //Mission completion
+
+
+
+                   break;
+               }
+           }
+           }
+                 enemy_count++;
+           }
+       }
+   });
+
+
 }
 hm::hm()
 {
 levelName = "hm";
+Wave = 1;
+totalWave=2;
+Enemy *ph,*hr,*xjl,*js,*bg,*xk,*slt;
+
+xjl = new Xingjila(3);
+
+js = new Jianxishuiling(0);
+
+bg = new Boge(1);
+
+xk = new Xikela(3);
+
+slt = new Sailatu(0);
+
+ph = new Phoenix(2);
+
+hr = new Heertoke(4);
+
+
+
+creattimer = new QTimer(this);
+
+
+
+
+connect(wavetime,&QTimer::timeout,[=](){
+
+    if(Wave==1)
+    {
+        levelMode =2;
+        creattimer->start(2000);
+        wavetime->stop();
+    }
+    else if(Wave==2)
+    {
+        levelMode=3;
+        creattimer->start(2000);
+        delete wavetime;
+    }
+
+});
+static int enemy_count=0;
+   connect(creattimer,&QTimer::timeout,[=]()
+   {
+       if(levelMode==2)
+       {
+           switch(enemy_count)
+       {
+       case 0:
+          {scene->addItem(slt);break;}
+       case 1:
+          {scene->addItem(xk);break;}
+       case 2:
+         { scene->addItem(slt);break;}
+       case 3:
+         { scene->addItem(xjl);break;}
+       case 4:
+         { scene->addItem(hr);break;}
+       case 5:
+         { scene->addItem(ph);break;}
+       case 6:
+         { scene->addItem(bg);break;}
+        case 7:
+         { scene->addItem(ph);break;}
+        case 8:
+         { scene->addItem(js);break;}
+           default:
+         {
+           if(slt->nowStatus==0&&xk->nowStatus==0&&slt->nowStatus==0&&xjl->nowStatus==0&&hr->nowStatus==0&&ph->nowStatus==0&&bg->nowStatus==0&&ph->nowStatus==0&&js->nowStatus==0)
+           {
+               qDebug("two");
+               Wave=2;
+               enemy_count=0;
+               wavetime->start(10000);
+               creattimer->stop();
+               enemy_count=-1;
+               break;
+           }
+       }
+       }
+             enemy_count++;
+       }
+       else if(levelMode==3)
+       {
+            qDebug()<<"第二波来咯";
+           {
+               switch(enemy_count)
+           {
+           case 0:
+              {scene->addItem(xk);break;}
+           case 1:
+              {scene->addItem(slt);break;}
+           case 2:
+             { scene->addItem(bg);break;}
+           case 3:
+             { scene->addItem(xjl);break;}
+           case 4:
+             { scene->addItem(bg);break;}
+           case 5:
+             { scene->addItem(ph);break;}
+           case 6:
+             { scene->addItem(hr);break;}
+           case 7:
+             { scene->addItem(js);break;}
+           case 8:
+             { scene->addItem(js);break;}
+           default:
+           {
+               if(xk->nowStatus==0&&slt->nowStatus==0&&bg->nowStatus==0&&xjl->nowStatus==0&&bg->nowStatus==0&&ph->nowStatus==0&&hr->nowStatus==0&&js->nowStatus==0&&js->nowStatus==0)
+               {
+                   //Mission completion
+
+
+
+                   break;
+               }
+           }
+           }
+                 enemy_count++;
+           }
+       }
+   });
+
+
 }
 final::final()
 {
 levelName = "final";
+Wave = 1;
+totalWave=2;
+Enemy *ph,*hr,*js,*bg,*dll;
+
+js = new Jianxishuiling(3);
+
+ph = new Phoenix(2);
+
+hr = new Heertoke(4);
+
+bg = new Boge(0);
+
+dll = new Dululu(1);
+
+
+creattimer = new QTimer(this);
+
+
+
+
+connect(wavetime,&QTimer::timeout,[=](){
+
+    if(Wave==1)
+    {
+        levelMode =2;
+        creattimer->start(2000);
+        wavetime->stop();
+    }
+    else if(Wave==2)
+    {
+        levelMode=3;
+        creattimer->start(2000);
+        delete wavetime;
+    }
+
+});
+static int enemy_count=0;
+   connect(creattimer,&QTimer::timeout,[=]()
+   {
+       if(levelMode==2)
+       {
+           switch(enemy_count)
+       {
+       case 0:
+          {scene->addItem(dll);break;}
+       case 1:
+          {scene->addItem(hr);break;}
+       case 2:
+         { scene->addItem(ph);break;}
+       case 3:
+         { scene->addItem(js);break;}
+       case 4:
+         { scene->addItem(bg);break;}
+       case 5:
+         { scene->addItem(ph);break;}
+       case 6:
+         { scene->addItem(hr);break;}
+        case 7:
+         { scene->addItem(js);break;}
+        case 8:
+         { scene->addItem(dll);break;}
+           default:
+         {
+           if(dll->nowStatus==0&&hr->nowStatus==0&&hr->nowStatus==0&&ph->nowStatus==0&&js->nowStatus==0&&bg->nowStatus==0&&bg->nowStatus==0&&hr->nowStatus==0&&js->nowStatus==0)
+           {
+               qDebug("two");
+               Wave=2;
+               enemy_count=0;
+               wavetime->start(10000);
+               creattimer->stop();
+               enemy_count=-1;
+               break;
+           }
+       }
+       }
+             enemy_count++;
+       }
+       else if(levelMode==3)
+       {
+            qDebug()<<"第二波来咯";
+           {
+               switch(enemy_count)
+           {
+           case 0:
+              {scene->addItem(bg);break;}
+           case 1:
+              {scene->addItem(ph);break;}
+           case 2:
+             { scene->addItem(hr);break;}
+           case 3:
+             { scene->addItem(js);break;}
+           case 4:
+             { scene->addItem(bg);break;}
+           case 5:
+             { scene->addItem(dll);break;}
+           case 6:
+             { scene->addItem(hr);break;}
+           case 7:
+             { scene->addItem(js);break;}
+            case 8:
+             { scene->addItem(js);break;}
+           default:
+           {
+               if(bg->nowStatus==0&&ph->nowStatus==0&&hr->nowStatus==0&&js->nowStatus==0&&bg->nowStatus==0&&dll->nowStatus==0&&hr->nowStatus==0&&js->nowStatus==0&&js->nowStatus==0)
+               {
+                   //Mission completion
+
+
+
+                   break;
+               }
+           }
+           }
+                 enemy_count++;
+           }
+       }
+   });
+
+
 }
 void Level::initlevel()
 {
@@ -326,11 +1026,11 @@ void Level::initlevel()
             {
                 if(cb->cards[i]->name=="none")
                 {
-              cb->cards[i] = new xianrenqiu();
+            cb->cards[i] = new xianrenqiu();
               cb->cardsPaint(i);
 //            scene->addItem(cb->cards[count]);
-              cm->count++;
-              break;
+            cm->count++;
+            break;
                 }      }
     });
     connect(cm,&cardsmenu::xdy,this,[=](){

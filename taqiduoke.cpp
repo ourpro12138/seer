@@ -6,7 +6,7 @@ Taqiduoke::Taqiduoke(int i)
     this->width = 190;this->height=140;
     prepareTime=80,atkcounter=prepareTime;
     standTime=60; standcounter=0;
-    hp=100;atk=50;speed=0.40;
+    hp=1000;atk=350;speed=0.40;
     name="taqiduoke";
     atkmovie=new  QMovie(":/enemy/resource/enemy/taqiduoke.gif");
     atkmovie->start();
@@ -34,7 +34,7 @@ void Taqiduoke::advance(int phase)
      if(hp<=0)
      {
 
-         nowStatus=0;  //死亡
+         this->nowStatus=0; //死亡
          atkmovie->currentFrameNumber()==atkmovie->frameCount()-1;
 
 
