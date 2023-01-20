@@ -22,9 +22,6 @@ Beier::Beier(int i,int j)
       Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     atkmovie->start();
     setPos(148+234*j-47-10,360-133+154*i-30);
-    this->price=50;
-    this->price_ev=200;
-    this->price_skill=0;
 }
 
 Beier::~Beier()
@@ -33,14 +30,11 @@ Beier::~Beier()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
     if(Skill)
-    {
         delete Skill;
-    Skill=NULL;
-    }
 }
 
 
@@ -120,7 +114,7 @@ ABu::ABu(int i,int j):Beier(i,j)
 {
     this->i = i; this->j = j;
     this->width = 105;this->height=92;
-    health=1500;
+    health=1000;
     hp=1000,prepareTime=300,atkcounter=prepareTime;
     standTime=42; standcounter=0; coolTime=0;coolcounter=0;
     No=22;
@@ -129,8 +123,6 @@ ABu::ABu(int i,int j):Beier(i,j)
       Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     atkmovie->start();
     setPos(148+234*j-35,360-133+154*i-30);
-    this->price_ev=200;
-    this->price_skill=0;
 
 }
 ABu::~ABu()
@@ -139,13 +131,8 @@ ABu::~ABu()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
+        atkmovie =NULL;
+        delete  atkmovie;
     }
 }
 void ABu::skill()
@@ -167,7 +154,7 @@ BaLaGui::BaLaGui(int i,int j):Beier(i,j)
 {
     this->i = i; this->j = j;
     this->width = 120;this->height=101;
-    health=2500;
+    health=1500;
     hp=1500,prepareTime=300,atkcounter=prepareTime;
     standTime=68; standcounter=0; coolTime=0;coolcounter=0;
     No=38;
@@ -183,13 +170,8 @@ BaLaGui::~BaLaGui()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
+        atkmovie =NULL;
+        delete  atkmovie;
     }
 }
 void BaLaGui::skill()

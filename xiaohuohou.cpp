@@ -29,14 +29,11 @@ Xiaohuohou::~Xiaohuohou()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
     if(Skill)
-    {
         delete Skill;
-    Skill=NULL;
-    }
 }
 
 
@@ -112,8 +109,7 @@ void Xiaohuohou::skill()
 
     Skillplayer->show();
     Skill->start();
-    this->price_ev=200;
-    this->price_skill=150;
+
     QTimer *time = new QTimer(parent);
     time->start(10);
     static  int count = 0;
@@ -153,8 +149,6 @@ LieHuoHou::LieHuoHou(int i,int j):Xiaohuohou(i,j)
     hp=650,atk=50,prepareTime=150,atkcounter=prepareTime;
     standTime=28; standcounter=0; coolTime=0;coolcounter=0;
     name="LieHuoHou";this->skillname="火焰车";
-    this->price_ev=200;
-    this->price_skill=150;
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
@@ -209,13 +203,8 @@ LieHuoHou::~LieHuoHou()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 
@@ -227,7 +216,6 @@ Lieyanxingxing::Lieyanxingxing(int i,int j):Xiaohuohou(i,j)
     hp=800,atk=65,prepareTime=150,atkcounter=prepareTime;
     standTime=32; standcounter=0; coolTime=0;coolcounter=0;
     No=41;
-    this->price_skill=200;
     name="Lieyanxingxing";skillname="烈焰冲撞";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
@@ -272,12 +260,7 @@ Lieyanxingxing::~Lieyanxingxing()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }

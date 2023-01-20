@@ -124,6 +124,7 @@
         <file>resource/map/hm.png</file>
         <file>resource/map/hs.png</file>
         <file>resource/map/kls.png</file>
+        <file>resource/map/shengli.png</file>
     </qresource>
     <qresource prefix="/music">
         <file>resource/music/Boss_sound.mp3</file>

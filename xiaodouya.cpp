@@ -20,9 +20,6 @@ Xiaodouya::Xiaodouya(int i,int j)
     atkmovie->start();
       Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(140+234*j-47-10,320-133+154*i-30);
-    this->price=50;
-    this->price_ev=100;
-    this->price_skill=0;
 }
 
 Xiaodouya::~Xiaodouya()
@@ -31,14 +28,11 @@ Xiaodouya::~Xiaodouya()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
     if(Skill)
-    {
         delete Skill;
-    Skill=NULL;
-    }
 }
 
 
@@ -137,13 +131,8 @@ DingDing::~DingDing()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 void DingDing::skill()
@@ -172,7 +161,6 @@ MoHuaXianZi::MoHuaXianZi(int i,int j):Xiaodouya(i,j)
     atkmovie->start();
       Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(140+234*j-30,320-133+154*i-10);
-    this->price_skill=0;
 }
 MoHuaXianZi::~MoHuaXianZi()
 {
@@ -180,13 +168,8 @@ MoHuaXianZi::~MoHuaXianZi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 void MoHuaXianZi::skill()

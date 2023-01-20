@@ -19,9 +19,6 @@ Guodongya::Guodongya(int i,int j)
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     Skillplayer->setMovie(Skill);
       setPos(154+234*j-47,290-133+154*i);
-      this->price=50;
-      this->price_ev=80;
-      this->price_skill=80;
 }
 Guodongya::~Guodongya()
 {
@@ -29,13 +26,8 @@ Guodongya::~Guodongya()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 //QRectF Bubuzhongzi::boundingRect() const
@@ -250,8 +242,7 @@ void Guodongya::evolution()
      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
      Skillplayer->setMovie(Skill);
        setPos(154+234*j-47,290-133+154*i);
-       this->price_skill=150;
-}
+ }
 
 
  BoLangYa::BoLangYa(int i,int j):Guodongya(i,j)
@@ -278,8 +269,6 @@ void Guodongya::evolution()
      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
      Skillplayer->setMovie(Skill);
        setPos(154+234*j-47,290-133+154*i);
-       this->price_ev=100;
-       this->price_skill=90;
 
  }
  BoLangYa::~BoLangYa()
@@ -288,28 +277,19 @@ void Guodongya::evolution()
      Map::myptn[i][j]=NULL;
      if(atkmovie)
      {
+         atkmovie =NULL;
          delete atkmovie;
-         atkmovie=NULL;
-     }
-     if(Skill)
-     {
-         delete Skill;
-     Skill=NULL;
      }
   }
+
  ShuiJingYa::~ShuiJingYa()
  {
      if(Map::myptn[i][j])
      Map::myptn[i][j]=NULL;
      if(atkmovie)
      {
+         atkmovie =NULL;
          delete atkmovie;
-         atkmovie=NULL;
-     }
-     if(Skill)
-     {
-         delete Skill;
-     Skill=NULL;
      }
  }
 void BoLangYa::evolution()
@@ -322,4 +302,3 @@ void BoLangYa::evolution()
     Map::myptn[i][j]->evolutionButton->setEnabled(false);
     Cards::diamondTotal-=price_ev;
 }
-

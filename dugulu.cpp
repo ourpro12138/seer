@@ -27,14 +27,11 @@ DuGuLu::~DuGuLu()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
     if(Skill)
-    {
         delete Skill;
-    Skill=NULL;
-    }
 }
 
 bool DuGuLu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const

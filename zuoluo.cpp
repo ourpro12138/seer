@@ -17,7 +17,10 @@ ZuoLuo::ZuoLuo(int i)
 ZuoLuo::~ZuoLuo()
 {
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete  atkmovie;
+    }
 }
 bool ZuoLuo::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
@@ -39,7 +42,9 @@ void ZuoLuo::advance(int phase)
 
      if(hp<=0)
      {
+         this->nowStatus=0;
          delete this;
+         nowStatus=0;  //死亡
          return;
      }
 

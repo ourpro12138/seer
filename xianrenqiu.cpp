@@ -18,9 +18,6 @@ Xianrenqiu::Xianrenqiu(int i,int j)
     atkmovie->start();
       Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(154+234*j-47,290-133+154*i);
-    this->price=100;
-    this->price_ev=150;
-    this->price_skill=0;
 }
 
 Xianrenqiu::~Xianrenqiu()
@@ -29,14 +26,11 @@ Xianrenqiu::~Xianrenqiu()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
     if(Skill)
-    {
         delete Skill;
-    Skill=NULL;
-    }
 }
 bool Xianrenqiu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
@@ -147,9 +141,6 @@ XianRenZhang::XianRenZhang(int i,int j):Xianrenqiu(i,j)
     atkmovie->start();
       Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(154+234*j-47-20,290-133+154*i);
-
-    this->price_ev=200;
-    this->price_skill=0;
 }
 XianRenZhang::~XianRenZhang()
 {
@@ -157,13 +148,8 @@ XianRenZhang::~XianRenZhang()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 void XianRenZhang::skill()
@@ -197,22 +183,16 @@ JuXingXianRenZhang::JuXingXianRenZhang(int i,int j):Xianrenqiu(i,j)
     atkmovie->start();
       Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(154+234*j-55-10,290-100+154*i);
-    this->price_skill=0;
 }
 JuXingXianRenZhang::~JuXingXianRenZhang()
 {
     if(Map::myptn[i][j])
-            Map::myptn[i][j]=NULL;
-            if(atkmovie)
-            {
-                delete atkmovie;
-                atkmovie=NULL;
-            }
-            if(Skill)
-            {
-                delete Skill;
-            Skill=NULL;
-            }
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
 }
 void JuXingXianRenZhang::skill()
 {

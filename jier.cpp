@@ -14,9 +14,6 @@ Jier::Jier(int i,int j)
   atkmovie->start();
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
   setPos(145+234*j-47,300-133+154*i);
-  this->price=50;
-  this->price_ev=100;
-  this->price_skill=0;
 
 }
 Jier::~Jier()
@@ -25,14 +22,11 @@ Jier::~Jier()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
     if(Skill)
-    {
         delete Skill;
-    Skill=NULL;
-    }
 
 }
 void Jier::advance(int phase)
@@ -92,9 +86,6 @@ Linuo::Linuo(int i,int j):Jier(i,j)
     atkmovie->start();
       Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(140+234*j-47,300-133+154*i);
-    this->price=50;
-    this->price_ev=200;
-    this->price_skill=0;
 }
 void Linuo::evolution()
 {
@@ -116,13 +107,8 @@ Linuo::~Linuo()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 void Luojilasi::skill()
@@ -140,22 +126,16 @@ Luojilasi::Luojilasi(int i,int j):Jier(i,j)
     atkmovie->start();
       Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(140+234*j-47,300-133+154*i);
-    this->price_skill=0;
 }
 
 Luojilasi::~Luojilasi()
 {
     if(Map::myptn[i][j])
-            Map::myptn[i][j]=NULL;
-            if(atkmovie)
-            {
-                delete atkmovie;
-                atkmovie=NULL;
-            }
-            if(Skill)
-            {
-                delete Skill;
-            Skill=NULL;
-            }
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
 }
 

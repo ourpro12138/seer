@@ -1,11 +1,14 @@
 #include "maingame.h"
 #include "ui_maingame.h"
-#include <QFileDialog>
-
 maingame::maingame(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::maingame)
 {
+//    QFileDialog *fileDialog=new QFileDialog;
+//    fileDialog->setWindowTitle("赛尔号");
+//    fileDialog->setAttribute(Qt::WA_DeleteOnClose);
+//    fileDialog->show();
+
 
 
     ui->setupUi(this);
@@ -201,8 +204,7 @@ void maingame::savelevel()
     QString path = "D:/seer/level.txt";
     QFile file(path);
     file.open(QIODevice::WriteOnly|QIODevice::Text);
-
-   QTextStream out(&file);
+     QTextStream out(&file);
    for(int i=0;i<Level_num;i++)
    {
    out<<QString::number(level[i]->isLocked)<<"\n";
@@ -244,3 +246,4 @@ void maingame::cardsUpdate()
         count++;
     }
 }
+

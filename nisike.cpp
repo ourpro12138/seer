@@ -27,7 +27,10 @@ bool Nisike::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode 
 Nisike::~Nisike()
 {
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 
 void Nisike::advance(int phase)
@@ -40,7 +43,9 @@ void Nisike::advance(int phase)
 
      if(hp<=0)
      {
+         this->nowStatus=0;
          delete this;
+         nowStatus=0;  //死亡
          return;
      }
 

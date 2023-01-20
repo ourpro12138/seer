@@ -20,18 +20,16 @@ Xinke::Xinke(int i,int j)
 
 }
 Xinke::~Xinke()
-{if(Map::myptn[i][j])
-        Map::myptn[i][j]=NULL;
-        if(atkmovie)
-        {
-            delete atkmovie;
-            atkmovie=NULL;
-        }
-        if(Skill)
-        {
-            delete Skill;
-        Skill=NULL;
-        }
+{
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
+    if(Skill)
+        delete Skill;
 
 }
 void Xinke::advance(int phase)
@@ -73,7 +71,7 @@ void Xinke::skill()
 
     Skillplayer->show();
     Skill->start();
-    this->price_skill=10;
+
     QTimer *time = new QTimer(parent);
     time->start(10);
     static  int count = 0;
@@ -96,7 +94,7 @@ void Xinke::skill()
             case 2:
                 this->bullet->attribute=GRASS;atb=3;this->name="xinkeg";break;
             case 3:
-                this->bullet->attribute=ORDINARY;atb=0;this->name="xinke";break;
+                this->bullet->attribute=ORDINARY;atb=4;this->name="xinke";break;
             }
                         Cards::diamondTotal-=price_skill;
             count=0;
@@ -133,13 +131,8 @@ Xinnasi::~Xinnasi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 void Xinnasi::skill()

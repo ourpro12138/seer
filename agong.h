@@ -33,8 +33,7 @@ class AoLiGong:public Agong
 public:
     AoLiGong(int i,int j);
     ~AoLiGong();
-    void skill();
-
+    void skill();   
 };
 
 #endif // AGONG_H
