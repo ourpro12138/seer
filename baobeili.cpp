@@ -9,6 +9,7 @@ Baobeili::Baobeili(int i,int j)
   width = 108;height=87;
   hp=300;atkcounter=0;prepareTime=100;
   this->atk = 50;
+  No=8;
   name="Baobeili";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
@@ -72,6 +73,7 @@ YuanGuYuLong::YuanGuYuLong(int i,int j):Baobeili(i,j)
     width = 185;height=170;
     hp=300;atkcounter=0;prepareTime=90;
     this->atk = 60;
+    No=24;
     name="YuanGuYuLong";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();

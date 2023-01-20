@@ -293,11 +293,11 @@ void Level::initlevel()
             {
                 if(cb->cards[i]->name=="none")
                 {
-            cb->cards[i] = new xianrenqou();
+              cb->cards[i] = new xianrenqiu();
               cb->cardsPaint(i);
 //            scene->addItem(cb->cards[count]);
-            cm->count++;
-            break;
+              cm->count++;
+              break;
                 }      }
     });
     connect(cm,&cardsmenu::xdy,this,[=](){

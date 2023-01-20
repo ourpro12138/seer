@@ -13,5 +13,23 @@ public:
     void skill();
     void evolution();
 };
+class XianRenZhang:public Xianrenqiu
+{
+public:
+    XianRenZhang(int i,int j);
+    ~XianRenZhang();
+    void skill();
+    void evolution();
+
+};
+class JuXingXianRenZhang:public Xianrenqiu
+{
+public:
+    JuXingXianRenZhang(int i,int j);
+    ~JuXingXianRenZhang();
+    void skill();
+
+
+};
 
 #endif // XIANRENQIU_H

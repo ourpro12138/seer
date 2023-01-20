@@ -179,7 +179,6 @@
         <file>resource/partner/cardshead/guodongya.png</file>
         <file>resource/partner/cardshead/huliya.png</file>
         <file>resource/partner/cardshead/jier.png</file>
-        <file>resource/partner/cardshead/xianrenqou.png</file>
         <file>resource/partner/cardshead/xiaodouya.png</file>
         <file>resource/partner/cardshead/xinke.png</file>
         <file>resource/partner/cardshead/yiyi.png</file>
@@ -310,10 +309,8 @@
         <file>resource/partner/stand_bolangya.gif</file>
         <file>resource/partner/stand_bubuhua.gif</file>
         <file>resource/partner/stand_dingding.gif</file>
-        <file>resource/partner/stand_juxingxianrenzhang.gif</file>
         <file>resource/partner/stand_lieyanxingxing.gif</file>
         <file>resource/partner/stand_shuijingya.gif</file>
-        <file>resource/partner/stand_xianrenzhang.gif</file>
         <file>resource/partner/stand_yikalaien.gif</file>
         <file>resource/partner/stand_yuanguyulong.gif</file>
         <file>resource/partner/stand_dida.gif</file>
@@ -329,8 +326,6 @@
         <file>resource/partner/stand_dugulu.gif</file>
         <file>resource/partner/attack_dugulu.gif</file>
         <file>resource/partner/yiyou_bullet.png</file>
-        <file>resource/partner/attack_2.gif</file>
-        <file>resource/partner/stand_xianrenqou.gif</file>
         <file>resource/partner/yiyi_bullet.png</file>
         <file>resource/partner/dida_bullet.png</file>
         <file>resource/partner/baobeili_bullet.png</file>
@@ -366,5 +361,19 @@
         <file>resource/partner/yuanguyulong_bullet.png</file>
         <file>resource/partner/attack_tailesi.gif</file>
         <file>resource/partner/stand_tailesi.gif</file>
+        <file>resource/partner/attack_bobogong.gif</file>
+        <file>resource/partner/stand_bobogong.gif</file>
+        <file>resource/partner/attack_aoligong.gif</file>
+        <file>resource/partner/stand_aoligong.gif</file>
+        <file>resource/partner/attack_dingding.gif</file>
+        <file>resource/partner/attack_mohuaxianzi.gif</file>
+        <file>resource/partner/attack_xianrenqiu.gif</file>
+        <file>resource/partner/stand_xianrenqiu.gif</file>
+        <file>resource/partner/cardshead/xianrenqiu.png</file>
+        <file>resource/partner/stand_xianrenzhang.gif</file>
+        <file>resource/partner/attack_xianrenzhang.gif</file>
+        <file>resource/partner/stand_juxingxianrenzhang.gif</file>
+        <file>resource/partner/attack_shuijingya.gif</file>
+        <file>resource/partner/attack_bolangya.gif</file>
     </qresource>
 </RCC>

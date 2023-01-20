@@ -30,6 +30,9 @@ class BoLangYa:public Guodongya
 public:
     BoLangYa(int i,int j);
     ~BoLangYa();
+    void skill();
+    void evolution();
+
 
 };
 
@@ -38,6 +41,7 @@ class ShuiJingYa:public Guodongya
 public:
     ShuiJingYa(int i,int j);
     ~ShuiJingYa();
+    void skill();
 
 };
 #endif // GUODONGYA_H

@@ -19,10 +19,22 @@ public:
    bool collidesWithItem(const QGraphicsItem *other,Qt::ItemSelectionMode mode)const;
    void skill();
    void evolution();
+};
+class BoBoGong:public Agong
+{
+public:
+    BoBoGong(int i,int j);
+    ~BoBoGong();
+    void skill();
+    void evolution();
 
-
-
-
+};
+class AoLiGong:public Agong
+{
+public:
+    AoLiGong(int i,int j);
+    ~AoLiGong();
+    void skill();
 };
 
 #endif // AGONG_H

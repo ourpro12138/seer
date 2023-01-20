@@ -74,11 +74,11 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
                myptn[i][j] = new Bubuzhongzi(i,j); break;
         case 2:
                qDebug()<<"仙人球建立 i ="<<i<<"j = "<<j;
-               myptn[i][j] = new Xianrenqiu(i,j);break;
+               myptn[i][j] = new JuXingXianRenZhang(i,j);break;
                break;
         case 3:
                qDebug()<<"小豆芽建立 i ="<<i<<"j = "<<j;
-               myptn[i][j] = new Xiaodouya(i,j);break;
+               myptn[i][j] = new MoHuaXianZi(i,j);break;
                break;
                break;
         case 4:
@@ -94,7 +94,7 @@ qDebug()<<"鼠标点击map x:"<<event->pos().x()<<"y:"<<event->pos().y();
               break;
         case 7:
                qDebug()<<"果冻鸭建立 i= "<<i<<"j = "<<j;
-                    myptn[i][j] = new Guodongya(i,j); break;
+                    myptn[i][j] = new ShuiJingYa(i,j); break;
                break;
         case 8:
                qDebug()<<"宝贝鲤建立 i= "<<i<<"j = "<<j;

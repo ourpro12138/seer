@@ -17,6 +17,7 @@ Taida::Taida(int i,int j)
     hp=100,atk=20,prepareTime=220,atkcounter=prepareTime;
 
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    No=16;
     name="Taida";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
@@ -109,6 +110,7 @@ TaiLeSi::TaiLeSi(int i,int j):Taida(i,j)
 
     hp=100,atk=20,prepareTime=200,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
+    No=32;
     name="TaiLeSi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();

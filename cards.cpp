@@ -53,10 +53,10 @@ bubuzhongzi::bubuzhongzi()
     isLocked=0;
     head.load(":/partner/resource/partner/1/1_head.png");
 }
-xianrenqou::xianrenqou()
+xianrenqiu::xianrenqiu()
 {
     attribute = "grass";
-    name="XianRenQou";coolTime=227;No=2;
+    name="XianRenQiu";coolTime=227;No=2;
     zuanshiNeed=25;
     isLocked=0;
     head.load(":/partner/resource/partner/1/16_head.png");

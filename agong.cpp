@@ -13,10 +13,11 @@ Agong::Agong(int i,int j)
 
     hp=100,atk=20,prepareTime=16,atkcounter=16;
     standTime=40; standcounter=0; coolTime=0;coolcounter=0;
+    No=15;
     name="Agone";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
-    setPos(156+234*j-47-10,350-133+154*i-30);
+    setPos(156+234*j-47,350-133+154*i-40);
 }
 
 Agong::~Agong()
@@ -67,7 +68,7 @@ void Agong::advance(int phase)
          if(atkcounter==prepareTime)
          {
             atkcounter=0;
-            atkmovie = new QMovie(":/partner/resource/partner/attack_agone.gif");
+            atkmovie = new QMovie(":/partner/resource/partner/attack_"+name.toLower()+".gif");
             atkmovie->start();
          }
         }
@@ -101,14 +102,15 @@ BoBoGong::BoBoGong(int i,int j):Agong(i,j)
 {
     this->attribute = ORDINARY;
     this->i = i; this->j = j;
-    this->width = 101;this->height=135;
+    this->width = 120;this->height=135;
 
     hp=100,atk=20,prepareTime=16,atkcounter=16;
     standTime=40; standcounter=0; coolTime=0;coolcounter=0;
-    name="Agone";
+    No=31;
+    name="BoBoGong";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
-    setPos(156+234*j-47-10,350-133+154*i-30);
+    setPos(156+234*j-47-20,350-133+154*i-55);
 }
 BoBoGong::~BoBoGong()
 {
@@ -125,6 +127,35 @@ void BoBoGong::skill()
 
 }
 void BoBoGong::evolution()
+{
+
+}
+
+AoLiGong::AoLiGong(int i,int j):Agong(i,j)
+{
+    this->attribute = ORDINARY;
+    this->i = i; this->j = j;
+    this->width = 125;this->height=145;
+
+    hp=100,atk=20,prepareTime=16,atkcounter=16;
+    standTime=40; standcounter=0; coolTime=0;coolcounter=0;
+    No=47;
+    name="AoLiGong";
+    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie->start();
+    setPos(156+234*j-47-20,350-133+154*i-60);
+}
+AoLiGong::~AoLiGong()
+{
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
+}
+void AoLiGong::skill()
 {
 
 }
