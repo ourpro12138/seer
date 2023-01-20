@@ -8,7 +8,7 @@ Guodongya::Guodongya(int i,int j)
     this->width = 108;this->height=120;
     hp=300,atk=4;
     this->No=7;skillname="水之波动";
-    this->width = 118;this->height=130;health=500;e
+    this->width = 118;this->height=130;health=500;
     standTime =80; standcounter=standTime;
     prepareTime = 240; atkcounter=prepareTime;
     coolTime = 600; coolcounter=coolTime;
@@ -26,8 +26,13 @@ Guodongya::~Guodongya()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 //QRectF Bubuzhongzi::boundingRect() const
@@ -222,20 +227,7 @@ void Guodongya::evolution()
     delete this;
     Map::myptn[i][j] = yla;
 }
- ShuiJingYa::ShuiJingYa(int i,int j): Guodongya(i,j)
-{
-     this->i = i; this->j = j;
-     hp=600,atk=8;name="shuijingya";
-     health=600;this->No=39;skillname="水神护体";
-     this->width = 120;this->height=139;
-     standTime =80; standcounter=80;
-     prepareTime = 300; atkcounter=300;
-     coolTime = 400; coolcounter=0;
-     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
-     atkmovie->start();
-     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
-     Skillplayer->setMovie(Skill);
-       setPos(154+234*j-47,290-133+154*i);
+
 
 
  BoLangYa::BoLangYa(int i,int j):Guodongya(i,j)
@@ -270,14 +262,16 @@ void Guodongya::evolution()
      Map::myptn[i][j]=NULL;
      if(atkmovie)
      {
-         atkmovie =NULL;
          delete atkmovie;
+         atkmovie=NULL;
+     }
+     if(Skill)
+     {
+         delete Skill;
+     Skill=NULL;
      }
   }
- void BoLangYa::skill()
- {
 
- }
  void BoLangYa::evolution()
  {
 
@@ -303,20 +297,14 @@ void Guodongya::evolution()
      Map::myptn[i][j]=NULL;
      if(atkmovie)
      {
-         atkmovie =NULL;
          delete atkmovie;
+         atkmovie=NULL;
+     }
+     if(Skill)
+     {
+         delete Skill;
+     Skill=NULL;
      }
  }
- void ShuiJingYa::skill()
- {
 
- }
-void BoLangYa::evolution()
-{
-    ShuiJingYa *yla = new ShuiJingYa(i,j);
-    Map::myptn[i][j] = yla;
-    scene()->addItem(Map::myptn[i][j]);
-    delete this;
-    Map::myptn[i][j] = yla;
-    Map::myptn[i][j]->evolutionButton->setEnabled(false);
-}
+

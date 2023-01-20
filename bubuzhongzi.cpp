@@ -19,14 +19,18 @@ Bubuzhongzi::Bubuzhongzi(int i,int j)
 }
 Bubuzhongzi::~Bubuzhongzi()
 {
-    Map::myptn[i][j]=nullptr;
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        delete atkmovie;
         atkmovie=NULL;
-        delete  atkmovie;
     }
     if(Skill)
+    {
         delete Skill;
+    Skill=NULL;
+    }
 }
 //QRectF Bubuzhongzi::boundingRect() const
 //{
@@ -195,8 +199,13 @@ BuBuCao::~BuBuCao()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 BuBuHua::BuBuHua(int i,int j):Bubuzhongzi(i,j)
@@ -254,8 +263,13 @@ BuBuHua::~BuBuHua()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 

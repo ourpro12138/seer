@@ -21,11 +21,14 @@ Jier::~Jier()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
     }
     if(Skill)
+    {
         delete Skill;
+    Skill=NULL;
+    }
 
 }
 void Jier::advance(int phase)
@@ -104,8 +107,13 @@ Linuo::~Linuo()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void Luojilasi::skill()
@@ -127,11 +135,16 @@ Luojilasi::Luojilasi(int i,int j):Jier(i,j)
 Luojilasi::~Luojilasi()
 {
     if(Map::myptn[i][j])
-    Map::myptn[i][j]=NULL;
-    if(atkmovie)
-    {
-        atkmovie =NULL;
-        delete atkmovie;
-    }
+            Map::myptn[i][j]=NULL;
+            if(atkmovie)
+            {
+                delete atkmovie;
+                atkmovie=NULL;
+            }
+            if(Skill)
+            {
+                delete Skill;
+            Skill=NULL;
+            }
 }
 

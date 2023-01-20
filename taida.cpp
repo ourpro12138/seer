@@ -23,16 +23,18 @@ Taida::Taida(int i,int j)
 }
 
 Taida::~Taida()
-{
-    if(Map::myptn[i][j])
-    Map::myptn[i][j]=NULL;
-    if(atkmovie)
-    {
-        atkmovie =NULL;
-        delete atkmovie;
-    }
-    if(Skill)
-        delete Skill;
+{if(Map::myptn[i][j])
+        Map::myptn[i][j]=NULL;
+        if(atkmovie)
+        {
+            delete atkmovie;
+            atkmovie=NULL;
+        }
+        if(Skill)
+        {
+            delete Skill;
+        Skill=NULL;
+        }
 }
 
 
@@ -154,8 +156,13 @@ TaiLeSi::~TaiLeSi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void TaiLeSi::skill()

@@ -25,11 +25,14 @@ Xianrenqiu::~Xianrenqiu()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
     }
     if(Skill)
+    {
         delete Skill;
+    Skill=NULL;
+    }
 }
 bool Xianrenqiu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
@@ -140,8 +143,13 @@ XianRenZhang::~XianRenZhang()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void XianRenZhang::skill()
@@ -172,12 +180,17 @@ JuXingXianRenZhang::JuXingXianRenZhang(int i,int j):Xianrenqiu(i,j)
 JuXingXianRenZhang::~JuXingXianRenZhang()
 {
     if(Map::myptn[i][j])
-    Map::myptn[i][j]=NULL;
-    if(atkmovie)
-    {
-        atkmovie =NULL;
-        delete atkmovie;
-    }
+            Map::myptn[i][j]=NULL;
+            if(atkmovie)
+            {
+                delete atkmovie;
+                atkmovie=NULL;
+            }
+            if(Skill)
+            {
+                delete Skill;
+            Skill=NULL;
+            }
 }
 void JuXingXianRenZhang::skill()
 {
