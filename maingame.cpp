@@ -1,10 +1,16 @@
 #include "maingame.h"
 #include "ui_maingame.h"
-
+#include<QColorDialog>
+#include<QFileDialog>
 maingame::maingame(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::maingame)
 {
+//    QFileDialog *fileDialog=new QFileDialog;
+//    fileDialog->setWindowTitle("赛尔号");
+//    fileDialog->setAttribute(Qt::WA_DeleteOnClose);
+//    fileDialog->show();
+
 
 
     ui->setupUi(this);
@@ -163,5 +169,6 @@ void maingame::levelUpdate()
         }
     }
 }
+
 
 

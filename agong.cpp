@@ -145,8 +145,14 @@ void BoBoGong::skill()
 }
 void BoBoGong::evolution()
 {
-
+    BoBoGong * bobo = new BoBoGong(i,j);
+    Map::myptn[i][j] = bobo;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bobo;
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
 }
+
 
 AoLiGong::AoLiGong(int i,int j):Agong(i,j)
 {
