@@ -82,9 +82,9 @@ YuanGuYuLong::YuanGuYuLong(int i,int j):Baobeili(i,j)
     this->atk = 60;
     No=24;
     name="YuanGuYuLong";
-    atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
+    atkmovie=new QMovie(":/partner/0/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
-    setPos(154+234*j-60-10-10-15,320-133-30-5+154*i);
+    setPos(154+234*j-60-10-10-25,320-133-30-5+154*i);
 }
 YuanGuYuLong::~YuanGuYuLong()
 {
