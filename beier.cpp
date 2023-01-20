@@ -32,6 +32,8 @@ Beier::~Beier()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 }
 
 

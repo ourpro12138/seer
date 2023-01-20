@@ -18,7 +18,8 @@ public:
     Bullet *bullet;
 };
 class YiDingSi:public Yiyi
-{public:
+{
+    public:
     void skill();
     void evolution();
     YiDingSi(int i,int j);
@@ -28,7 +29,6 @@ class YiKaLaiEn:public Yiyi
 {public:
     YiKaLaiEn(int i,int j);
     void skill();
-    void evolution();
     ~YiKaLaiEn();
 };
 

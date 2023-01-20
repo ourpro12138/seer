@@ -29,6 +29,8 @@ Xiaodouya::~Xiaodouya()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 }
 
 

@@ -27,6 +27,8 @@ DuGuLu::~DuGuLu()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 }
 
 bool DuGuLu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const

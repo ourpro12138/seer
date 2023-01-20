@@ -24,6 +24,8 @@ Yiyi::~Yiyi()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 
 }
 void Yiyi::advance(int phase)
@@ -100,9 +102,13 @@ void YiDingSi::evolution()
 }
 YiDingSi::~YiDingSi()
 {
+    if(Map::myptn[i][j])
     Map::myptn[i][j]=NULL;
     if(atkmovie)
+    {
+        atkmovie =NULL;
         delete atkmovie;
+    }
 }
 
 YiKaLaiEn::YiKaLaiEn(int i,int j):Yiyi(i,j)

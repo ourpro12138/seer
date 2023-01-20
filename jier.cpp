@@ -24,6 +24,8 @@ Jier::~Jier()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 
 }
 void Jier::advance(int phase)

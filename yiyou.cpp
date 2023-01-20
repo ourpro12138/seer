@@ -21,6 +21,7 @@ Yiyou::Yiyou(int i,int j)
   atkmovie->start();
   setPos(154+234*j-47,290-133+154*i);
 
+
 }
 Yiyou::~Yiyou()
 {
@@ -100,7 +101,6 @@ void Yiyou::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = yla;
-    Map::myptn[i][j] = nullptr;
 }
 
 YouLiAn::YouLiAn(int i,int j):Yiyou(i,j)
@@ -184,6 +184,8 @@ BaLuSi::BaLuSi(int i,int j):Yiyou(i,j)
     name="BaLuSi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
+    Skillplayer->setMovie(Skill);
     setPos(154+234*j-70,290-133+5+154*i);
 
 }

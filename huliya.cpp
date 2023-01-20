@@ -24,6 +24,8 @@ Huliya::~Huliya()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 
 }
 void Huliya::advance(int phase)
