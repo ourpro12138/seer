@@ -39,6 +39,7 @@ void Boge::advance(int phase)
 
      if(hp<=0)
      {
+         this->nowStatus=0;
          delete this;
          return;
      }

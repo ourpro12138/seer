@@ -7,7 +7,7 @@ Phoenix::Phoenix(int i)
 {
     this->attribute=FIRE;
     this->width = 200;this->height=196;
-    hp=200;atk=50;speed=0.40;
+    hp=2000;atk=500;speed=0.40;
     atkcounter=100;prepareTime=100;
     standTime=50;standcounter=0;
     name="Phoenix";
@@ -29,7 +29,7 @@ Phoenix::~Phoenix()
     if(atkmovie)
         delete atkmovie;
 }
-//蘑菇怪状态变化
+
 void Phoenix::advance(int phase)
 {
     if(!phase)
@@ -40,6 +40,7 @@ void Phoenix::advance(int phase)
 
      if(hp<=0)
      {
+         this->nowStatus=0;
          delete this;
          return;
      }

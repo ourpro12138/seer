@@ -40,7 +40,7 @@ void Beilami::advance(int phase)
      if(hp<=0)
      {
 
-         nowStatus=0;  //死亡
+         this->nowStatus=0;  //死亡
          atkmovie->currentFrameNumber()==atkmovie->frameCount()-1;
 
 

@@ -123,7 +123,7 @@ DingDing::DingDing(int i,int j):Xiaodouya(i,j)
     setPos(140+234*j-25,320-133+154*i-40);
     this->price_ev=200;
     this->price_skill=0;
-}5
+}
 DingDing::~DingDing()
 {
     if(Map::myptn[i][j])
