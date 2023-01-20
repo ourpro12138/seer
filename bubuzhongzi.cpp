@@ -16,6 +16,9 @@ Bubuzhongzi::Bubuzhongzi(int i,int j)
     Skillplayer->setMovie(Skill);
     atkmovie->start();
       setPos(154+234*j-47,290-133+154*i);
+      this->price=50;
+      this->price_ev=150;
+      this->price_skill=50;
 }
 Bubuzhongzi::~Bubuzhongzi()
 {
@@ -147,6 +150,9 @@ BuBuCao::BuBuCao(int i,int j):Bubuzhongzi(i,j)
     Skillplayer->setMovie(Skill);
     atkmovie->start();
       setPos(154+234*j-47,290-133+154*i);
+      this->price=100;
+      this->price_ev=200;
+      this->price_skill=100;
 }
 
 void BuBuCao::evolution()
@@ -223,6 +229,7 @@ BuBuHua::BuBuHua(int i,int j):Bubuzhongzi(i,j)
     Skillplayer->setMovie(Skill);
     atkmovie->start();
     setPos(154+234*j-47,290-133+154*i);
+    this->price_skill=150;
 }
 void BuBuHua::skill()
 {

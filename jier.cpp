@@ -13,6 +13,9 @@ Jier::Jier(int i,int j)
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
   setPos(145+234*j-47,300-133+154*i);
+  this->price=50;
+  this->price_ev=100;
+  this->price_skill=0;
 
 }
 Jier::~Jier()
@@ -87,6 +90,9 @@ Linuo::Linuo(int i,int j):Jier(i,j)
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(140+234*j-47,300-133+154*i);
+    this->price=50;
+    this->price_ev=200;
+    this->price_skill=0;
 }
 void Linuo::evolution()
 {
@@ -130,6 +136,7 @@ Luojilasi::Luojilasi(int i,int j):Jier(i,j)
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(140+234*j-47,300-133+154*i);
+    this->price_skill=0;
 }
 
 Luojilasi::~Luojilasi()
