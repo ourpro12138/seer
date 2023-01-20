@@ -20,6 +20,7 @@ SOURCES += \
     baobeili.cpp \
     beier.cpp \
     beilami.cpp \
+    boge.cpp \
     bubuzhongzi.cpp \
     bullet.cpp \
     cards.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
     choosescene.cpp \
     dida.cpp \
     dugulu.cpp \
+    dululu.cpp \
     elf.cpp \
     enemy.cpp \
     gangyasha.cpp \
@@ -68,6 +70,7 @@ HEADERS += \
     baobeili.h \
     beier.h \
     beilami.h \
+    boge.h \
     bubuzhongzi.h \
     bullet.h \
     cards.h \
@@ -77,6 +80,7 @@ HEADERS += \
     choosescene.h \
     dida.h \
     dugulu.h \
+    dululu.h \
     elf.h \
     enemy.h \
     gangyasha.h \
