@@ -29,8 +29,13 @@ Guodongya::~Guodongya()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 //QRectF Bubuzhongzi::boundingRect() const
@@ -242,6 +247,7 @@ void Guodongya::evolution()
        this->price_skill=150;
 }
 
+
  BoLangYa::BoLangYa(int i,int j):Guodongya(i,j)
  {
      this->i = i; this->j = j;
@@ -276,22 +282,28 @@ void Guodongya::evolution()
      Map::myptn[i][j]=NULL;
      if(atkmovie)
      {
-         atkmovie =NULL;
          delete atkmovie;
+         atkmovie=NULL;
+     }
+     if(Skill)
+     {
+         delete Skill;
+     Skill=NULL;
      }
   }
-
-
-
-}
  ShuiJingYa::~ShuiJingYa()
  {
      if(Map::myptn[i][j])
      Map::myptn[i][j]=NULL;
      if(atkmovie)
      {
-         atkmovie =NULL;
          delete atkmovie;
+         atkmovie=NULL;
+     }
+     if(Skill)
+     {
+         delete Skill;
+     Skill=NULL;
      }
  }
 void BoLangYa::evolution()
@@ -303,3 +315,4 @@ void BoLangYa::evolution()
     Map::myptn[i][j] = yla;
     Map::myptn[i][j]->evolutionButton->setEnabled(false);
 }
+

@@ -30,11 +30,14 @@ Xiaohuohou::~Xiaohuohou()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
     }
     if(Skill)
+    {
         delete Skill;
+    Skill=NULL;
+    }
 }
 
 
@@ -203,8 +206,13 @@ LieHuoHou::~LieHuoHou()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 
@@ -261,7 +269,12 @@ Lieyanxingxing::~Lieyanxingxing()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }

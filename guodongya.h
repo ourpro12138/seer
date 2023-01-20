@@ -33,8 +33,7 @@ public:
 
     BoLangYa(int i,int j);
     ~BoLangYa();
-    void skill();
-    void evolution();
+
 
 
 };
@@ -45,7 +44,7 @@ public:
     void skill();
     ShuiJingYa(int i,int j);
     ~ShuiJingYa();
-    void skill();
+
 
 };
 #endif // GUODONGYA_H

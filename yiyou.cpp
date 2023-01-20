@@ -133,10 +133,14 @@ YouLiAn::~YouLiAn()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
     }
-    qDebug()<<"尤里安析造函数调用";
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
+    }
 }
 
 void YouLiAn::evolution()
@@ -231,7 +235,12 @@ BaLuSi::~BaLuSi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }

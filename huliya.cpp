@@ -23,11 +23,14 @@ Huliya::~Huliya()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
     }
     if(Skill)
+    {
         delete Skill;
+    Skill=NULL;
+    }
 
 }
 void Huliya::advance(int phase)
@@ -98,8 +101,13 @@ Liaosi::~Liaosi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 

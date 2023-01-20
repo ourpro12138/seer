@@ -30,11 +30,14 @@ Xiaodouya::~Xiaodouya()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
     }
     if(Skill)
+    {
         delete Skill;
+    Skill=NULL;
+    }
 }
 
 
@@ -127,8 +130,13 @@ DingDing::~DingDing()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void DingDing::skill()
@@ -159,8 +167,13 @@ MoHuaXianZi::~MoHuaXianZi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void MoHuaXianZi::skill()

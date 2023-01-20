@@ -25,11 +25,14 @@ Baobeili::~Baobeili()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
     }
     if(Skill)
+    {
         delete Skill;
+    Skill=NULL;
+    }
 
 }
 void Baobeili::advance(int phase)
@@ -93,8 +96,13 @@ YuanGuYuLong::~YuanGuYuLong()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
-        delete  atkmovie;
+        delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void YuanGuYuLong::skill()
