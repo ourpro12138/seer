@@ -2,13 +2,12 @@
 
 Boge::Boge(int i)
 {
-    this->attribute = GRASS;
+    this->attribute = ORDINARY;
     this->width=200; this->height=196;
     hp=200;atk=100;speed=0.40;
     atkcounter=200;prepareTime=200;
     standTime=84;standcounter=0;
     name="Boge";
-    this->attribute = ORDINARY;
     atkmovie=new  QMovie(":/enemy/resource/enemy/enemy_384.gif");
     atkmovie->start();
     posX=1300;
