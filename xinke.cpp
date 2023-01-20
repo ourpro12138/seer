@@ -10,6 +10,9 @@ Xinke::Xinke(int i,int j)
   hp=300;prepareTime=100;atkcounter=prepareTime;
   this->atk = 70;
   name="Xinke";skillname="星之光";
+  this->price=50;
+  this->price_ev=250;
+  this->price_skill=10;
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
   Skillplayer->setMovie(Skill);
@@ -18,16 +21,18 @@ Xinke::Xinke(int i,int j)
 
 }
 Xinke::~Xinke()
-{
-    if(Map::myptn[i][j])
-    Map::myptn[i][j]=NULL;
-    if(atkmovie)
-    {
-        atkmovie =NULL;
-        delete atkmovie;
-    }
-    if(Skill)
-        delete Skill;
+{if(Map::myptn[i][j])
+        Map::myptn[i][j]=NULL;
+        if(atkmovie)
+        {
+            delete atkmovie;
+            atkmovie=NULL;
+        }
+        if(Skill)
+        {
+            delete Skill;
+        Skill=NULL;
+        }
 
 }
 void Xinke::advance(int phase)
@@ -70,7 +75,7 @@ void Xinke::skill()
 
     Skillplayer->show();
     Skill->start();
-
+    this->price_skill=10;
     QTimer *time = new QTimer(parent);
     time->start(10);
     static  int count = 0;
@@ -93,7 +98,7 @@ void Xinke::skill()
             case 2:
                 this->bullet->attribute=GRASS;atb=3;this->name="xinkeg";break;
             case 3:
-                this->bullet->attribute=ORDINARY;atb=4;this->name="xinke";break;
+                this->bullet->attribute=ORDINARY;atb=0;this->name="xinke";break;
             }
             count=0;
         }
@@ -128,8 +133,13 @@ Xinnasi::~Xinnasi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void Xinnasi::skill()

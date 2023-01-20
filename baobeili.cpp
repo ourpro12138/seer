@@ -14,6 +14,9 @@ Baobeili::Baobeili(int i,int j)
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
   setPos(154+234*j-47,320-133+154*i);
+  this->price=50;
+  this->price_ev=600;
+  this->price_skill=0;
 
 }
 Baobeili::~Baobeili()
@@ -22,11 +25,14 @@ Baobeili::~Baobeili()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
     }
     if(Skill)
+    {
         delete Skill;
+    Skill=NULL;
+    }
 
 }
 void Baobeili::advance(int phase)
@@ -76,12 +82,13 @@ YuanGuYuLong::YuanGuYuLong(int i,int j):Baobeili(i,j)
     this->i = i; this->j=j;
     width = 185;height=170;
     hp=300;atkcounter=0;prepareTime=90;
-    this->atk = 60;
+    this->atk = 400;
     No=24;
     name="YuanGuYuLong";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(154+234*j-60-10-10-15,320-133-30-5+154*i);
+
 }
 YuanGuYuLong::~YuanGuYuLong()
 {
@@ -89,8 +96,13 @@ YuanGuYuLong::~YuanGuYuLong()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
-        delete  atkmovie;
+        delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void YuanGuYuLong::skill()

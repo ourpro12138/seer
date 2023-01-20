@@ -20,19 +20,24 @@ Taida::Taida(int i,int j)
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     Skillplayer->setMovie(Skill);
     setPos(160+234*j-47-10,320-133+154*i-30);
+    this->price=100;
+    this->price_ev=400;
+    this->price_skill=100;
 }
 
 Taida::~Taida()
-{
-    if(Map::myptn[i][j])
-    Map::myptn[i][j]=NULL;
-    if(atkmovie)
-    {
-        atkmovie =NULL;
-        delete atkmovie;
-    }
-    if(Skill)
-        delete Skill;
+{if(Map::myptn[i][j])
+        Map::myptn[i][j]=NULL;
+        if(atkmovie)
+        {
+            delete atkmovie;
+            atkmovie=NULL;
+        }
+        if(Skill)
+        {
+            delete Skill;
+        Skill=NULL;
+        }
 }
 
 
@@ -147,6 +152,7 @@ TaiLeSi::TaiLeSi(int i,int j):Taida(i,j)
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     Skillplayer->setMovie(Skill);
     setPos(160+234*j-47-20,320-133+154*i-25);
+    this->price_skill=250;
 }
 TaiLeSi::~TaiLeSi()
 {
@@ -154,8 +160,13 @@ TaiLeSi::~TaiLeSi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void TaiLeSi::skill()

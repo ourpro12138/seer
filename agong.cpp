@@ -18,6 +18,9 @@ Agong::Agong(int i,int j)
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(156+234*j-47,350-133+154*i-40);
+    this->price=50;
+    this->price_ev=100;
+    this->price_skill=0;
 }
 
 Agong::~Agong()
@@ -26,11 +29,14 @@ Agong::~Agong()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
     }
     if(Skill)
+    {
         delete Skill;
+    Skill=NULL;
+    }
 }
 
 
@@ -115,6 +121,8 @@ BoBoGong::BoBoGong(int i,int j):Agong(i,j)
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(156+234*j-47-20,350-133+154*i-55);
+    this->price_ev=200;
+    this->price_skill=0;
 }
 BoBoGong::~BoBoGong()
 {
@@ -122,8 +130,13 @@ BoBoGong::~BoBoGong()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void BoBoGong::skill()
@@ -155,8 +168,13 @@ AoLiGong::~AoLiGong()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        atkmovie =NULL;
         delete atkmovie;
+        atkmovie=NULL;
+    }
+    if(Skill)
+    {
+        delete Skill;
+    Skill=NULL;
     }
 }
 void AoLiGong::skill()
