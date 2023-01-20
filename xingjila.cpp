@@ -5,7 +5,7 @@
 
 Xingjila::Xingjila(int i)
 {
-    this->attribute = WATER;
+    this->attribute = ORDINARY;
     this->width = 200;this->height=164;
     hp=200;atk=100;speed=0.40;
     atkcounter=150;prepareTime=150;
