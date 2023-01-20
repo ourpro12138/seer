@@ -386,5 +386,24 @@
         <file>resource/partner/yuanguyulong_bullet.png</file>
         <file>resource/partner/attack_tailesi.gif</file>
         <file>resource/partner/stand_tailesi.gif</file>
+        <file>resource/partner/skill/xinke.gif</file>
+        <file>resource/partner/skill/xinnasi.gif</file>
+        <file>resource/partner/xinnasi_bullet.png</file>
+        <file>resource/partner/xinkef_bullet.png</file>
+        <file>resource/partner/xinkeg_bullet.png</file>
+        <file>resource/partner/xinkew_bullet.png</file>
+        <file>resource/partner/xinnasif_bullet.png</file>
+        <file>resource/partner/xinnasig_bullet.png</file>
+        <file>resource/partner/xinnasiw_bullet.png</file>
+        <file>resource/partner/stand_xinnasi.gif</file>
+        <file>resource/partner/skill/bolangya.gif</file>
+        <file>resource/partner/skill/dida.gif</file>
+        <file>resource/partner/skill/dierke.gif</file>
+        <file>resource/partner/skill/guodongya.gif</file>
+        <file>resource/partner/skill/shuijingya.gif</file>
+        <file>resource/partner/skill/taida.gif</file>
+        <file>resource/partner/skill/tailesi.gif</file>
+        <file>resource/partner/stand_linuo (2).gif</file>
+        <file>resource/partner/stand_xianrenqiu.gif</file>
     </qresource>
 </RCC>

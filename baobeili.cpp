@@ -24,6 +24,8 @@ Baobeili::~Baobeili()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 
 }
 void Baobeili::advance(int phase)

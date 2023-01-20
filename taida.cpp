@@ -3,20 +3,21 @@
 #include <QDebug>
 #include <QMovie>
 #include <QLabel>
-
+#include "level.h"
 
 Taida::Taida(int i,int j)
 {
     attribute=ORDINARY;
-    this->attribute = ORDINARY;
     this->i = i; this->j = j;
     this->width = 105;this->height=130;
-    health=100;
-    hp=100,atk=20,prepareTime=220,atkcounter=prepareTime;
+    health=300;skillname="精准计算";
+    hp=300,atk=70,prepareTime=220,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="Taida";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
+    Skillplayer->setMovie(Skill);
     setPos(160+234*j-47-10,320-133+154*i-30);
 }
 
@@ -29,6 +30,8 @@ Taida::~Taida()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 }
 
 
@@ -93,24 +96,54 @@ void Taida::advance(int phase)
 
 void Taida::skill()
 {
+    parent->gametime->stop();
+    qDebug()<<"时间暂停！";
+    skillButton->hide();
+    evolutionButton->hide();
+    capsuleButton->hide();
 
+    Skillplayer->show();
+    Skill->start();
+
+    QTimer *time = new QTimer(parent);
+    time->start(10);
+    static  int count = 0;
+    connect(time,&QTimer::timeout,[=](){
+        count++;
+        if(count ==200)
+        {
+            delete time;
+            qDebug()<<"技能释放完毕";
+            parent->gametime->start(10);
+            Skill->stop();
+            Skillplayer->hide();
+            this->atk*=1.2;
+            count=0;
+        }
+    });
 }
 void Taida::evolution()
 {
-
+    TaiLeSi *yla = new TaiLeSi(i,j);
+    Map::myptn[i][j] = yla;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = yla;
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
 }
 TaiLeSi::TaiLeSi(int i,int j):Taida(i,j)
 {
-    attribute=ORDINARY;
     this->attribute = ORDINARY;
     this->i = i; this->j = j;
     this->width = 130;this->height=145;
-
-    hp=100,atk=20,prepareTime=200,atkcounter=prepareTime;
+    health=600;skillname="泰勒斯猜想";
+    hp=health,atk=200,prepareTime=200,atkcounter=prepareTime;
     standTime=64; standcounter=0; coolTime=0;coolcounter=0;
     name="TaiLeSi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
+    Skillplayer->setMovie(Skill);
     setPos(160+234*j-47-20,320-133+154*i-25);
 }
 TaiLeSi::~TaiLeSi()
@@ -120,10 +153,36 @@ TaiLeSi::~TaiLeSi()
     if(atkmovie)
     {
         atkmovie =NULL;
-        delete  atkmovie;
+        delete atkmovie;
     }
 }
 void TaiLeSi::skill()
 {
+    parent->gametime->stop();
+    qDebug()<<"时间暂停！";
+    skillButton->hide();
+    evolutionButton->hide();
+    capsuleButton->hide();
 
+    Skillplayer->show();
+    Skill->start();
+
+    QTimer *time = new QTimer(parent);
+    time->start(10);
+    static  int count = 0;
+    connect(time,&QTimer::timeout,[=](){
+        count++;
+        if(count ==200)
+        {
+            delete time;
+            qDebug()<<"技能释放完毕";
+            parent->gametime->start(10);
+            Skill->stop();
+            Skillplayer->hide();
+            this->atk*=1.4;
+            this->prepareTime-=40;
+            this->atkcounter=prepareTime;
+            count=0;
+        }
+    });
 }

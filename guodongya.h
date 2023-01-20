@@ -28,6 +28,9 @@ signals:
 class BoLangYa:public Guodongya
 {
 public:
+    void skill();
+    void evolution();
+
     BoLangYa(int i,int j);
     ~BoLangYa();
 
@@ -36,6 +39,7 @@ public:
 class ShuiJingYa:public Guodongya
 {
 public:
+    void skill();
     ShuiJingYa(int i,int j);
     ~ShuiJingYa();
 

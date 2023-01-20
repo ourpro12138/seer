@@ -16,9 +16,13 @@ public:
     void skill();
     void evolution();
     Bullet *bullet;
-
-
 };
-
+class Xinnasi:public Xinke
+{
+public:
+    Xinnasi(int i,int j);
+    ~Xinnasi();
+    void skill();
+};
 
 #endif // XINKE_H

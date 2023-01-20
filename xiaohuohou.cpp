@@ -30,6 +30,8 @@ Xiaohuohou::~Xiaohuohou()
         atkmovie =NULL;
         delete atkmovie;
     }
+    if(Skill)
+        delete Skill;
 }
 
 
@@ -44,7 +46,6 @@ bool Xiaohuohou::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionM
     return other->type()==Enemy::Type && other->x()-x()>100 && other->x()-x()<140
             && other->y()-y()>-60 && other->y()-y()<60;
 
-    return other->type()==Enemy::Type && other->x()-x()>120 && other->x()-x()<150;
 
 
 }
@@ -114,11 +115,12 @@ void Xiaohuohou::skill()
         count++;
         if(count ==200)
         {   QList <QGraphicsItem *> items = collidingItems();
-            Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
+            if(!items.isEmpty())
+            {Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
             int temp = this->atk;
             this->atk=300;
             enemy->hp-=Damage(this,enemy);
-            this->atk=temp;
+            this->atk=temp;}
             delete time;
             parent->gametime->start(10);
             Skill->stop();
@@ -145,6 +147,8 @@ LieHuoHou::LieHuoHou(int i,int j):Xiaohuohou(i,j)
     name="LieHuoHou";this->skillname="火焰车";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
+    Skillplayer->setMovie(Skill);
     setPos(154+234*j-47,290-133+154*i);
 }
 void LieHuoHou::skill()
@@ -164,11 +168,12 @@ void LieHuoHou::skill()
         count++;
         if(count ==208)
         {   QList <QGraphicsItem *> items = collidingItems();
-            Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
+            if(!items.isEmpty())
+            {Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
             int temp = this->atk;
             this->atk=500;
             enemy->hp-=Damage(this,enemy);
-            this->atk=temp;
+            this->atk=temp;}
             delete time;
             parent->gametime->start(10);
             Skill->stop();
@@ -184,6 +189,7 @@ void LieHuoHou::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = yla;
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
 }
 LieHuoHou::~LieHuoHou()
 {
@@ -207,6 +213,8 @@ Lieyanxingxing::Lieyanxingxing(int i,int j):Xiaohuohou(i,j)
     name="Lieyanxingxing";skillname="烈焰冲撞";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+    Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
+    Skillplayer->setMovie(Skill);
     setPos(154+234*j-40,290-130+154*i);
 }
 void Lieyanxingxing::skill()
@@ -226,11 +234,12 @@ void Lieyanxingxing::skill()
         count++;
         if(count ==288)
         {   QList <QGraphicsItem *> items = collidingItems();
-            Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
+            if(!items.isEmpty())
+            {Enemy *enemy=qgraphicsitem_cast <Enemy *> (items[qrand()%items.size()]);
             int temp = this->atk;
             this->atk=600;
             enemy->hp-=Damage(this,enemy);
-            this->atk=temp;
+            this->atk=temp;}
             delete time;
             parent->gametime->start(10);
             Skill->stop();

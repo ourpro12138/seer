@@ -25,6 +25,8 @@ Bubuzhongzi::~Bubuzhongzi()
         atkmovie=NULL;
         delete  atkmovie;
     }
+    if(Skill)
+        delete Skill;
 }
 //QRectF Bubuzhongzi::boundingRect() const
 //{
@@ -108,6 +110,7 @@ void Bubuzhongzi::skill()
             this->hp+=atk*2;
             int temp= atk;
             atk=200;
+            if(Map::myptn[i][j+1])
             Map::myptn[i][j+1]->hp+=Damage(this,Map::myptn[i][j]);
             atk=temp;
             parent->gametime->start(10);
@@ -150,8 +153,7 @@ void BuBuCao::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = bbh;
-
-    this->skillButton->setEnabled(false);
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
 
 }
 void BuBuCao::skill()
@@ -177,6 +179,7 @@ void BuBuCao::skill()
             this->hp+=atk*2;
             int temp= atk;
             atk=300;
+            if(Map::myptn[i][j+1])
             Map::myptn[i][j+1]->hp+=Damage(this,Map::myptn[i][j]);
             atk=temp;
             parent->gametime->start(10);
@@ -235,6 +238,7 @@ void BuBuHua::skill()
             this->hp+=atk*2;
             int temp= atk;
             atk=400;
+            if(Map::myptn[i][j+1])
             Map::myptn[i][j+1]->hp+=Damage(this,Map::myptn[i][j]);
             atk=temp;
             parent->gametime->start(10);
