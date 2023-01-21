@@ -22,8 +22,9 @@ GangYaSha::GangYaSha(int i)
 GangYaSha::~GangYaSha()
 {
     if(atkmovie)
-    {delete atkmovie;
-    atkmovie=NULL;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
     }
 }
 
@@ -50,8 +51,8 @@ void GangYaSha::advance(int phase)
 
      if(hp<=0)
      {
-         this->nowStatus=0;
          delete this;
+         nowStatus=0;  //死亡
          return;
      }
      if(hp>0)

@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>150</y>
+     <x>10</x>
+     <y>40</y>
      <width>71</width>
      <height>41</height>
     </rect>
@@ -35,7 +35,7 @@
     <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
    </property>
    <property name="text">
-    <string>高压水枪</string>
+    <string/>
    </property>
   </widget>
  </widget>

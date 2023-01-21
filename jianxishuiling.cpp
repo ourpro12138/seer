@@ -27,7 +27,10 @@ bool Jianxishuiling::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelect
 Jianxishuiling::~Jianxishuiling()
 {
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 
 void Jianxishuiling::advance(int phase)
@@ -42,6 +45,7 @@ void Jianxishuiling::advance(int phase)
      {
          this->nowStatus=0;
          delete this;
+         nowStatus=0;  //死亡
          return;
      }
 

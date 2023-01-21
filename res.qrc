@@ -124,6 +124,7 @@
         <file>resource/map/hm.png</file>
         <file>resource/map/hs.png</file>
         <file>resource/map/kls.png</file>
+        <file>resource/map/shengli.png</file>
     </qresource>
     <qresource prefix="/music">
         <file>resource/music/Boss_sound.mp3</file>
@@ -414,5 +415,9 @@
         <file>resource/partner/skill/tailesi.gif</file>
         <file>resource/partner/stand_linuo (2).gif</file>
         <file>resource/partner/stand_xianrenqiu.gif</file>
+    </qresource>
+    <qresource prefix="/data">
+        <file>resource/card.txt</file>
+        <file>resource/level.txt</file>
     </qresource>
 </RCC>

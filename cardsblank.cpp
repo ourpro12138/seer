@@ -14,12 +14,11 @@ cardsblank::cardsblank(QWidget *parent) :
     }
 
     diamond_view = new QLabel(this);
-
-    diamond_view->move(45,90);
+    diamond_view->setFixedSize(65,30);
+    diamond_view->move(40,95);
     diamond_view->setStyleSheet("color: rgb(255, 255, 255);font: 75 italic 18pt 'Arial'");
     diamond_view->setText(QString::number(Cards::diamondTotal));
     this->setFixedSize(783,153);
-
 
 
 

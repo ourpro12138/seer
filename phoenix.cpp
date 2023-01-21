@@ -27,7 +27,10 @@ bool Phoenix::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode
 Phoenix::~Phoenix()
 {
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 
 void Phoenix::advance(int phase)
@@ -42,6 +45,7 @@ void Phoenix::advance(int phase)
      {
          this->nowStatus=0;
          delete this;
+         nowStatus=0;  //死亡
          return;
      }
 

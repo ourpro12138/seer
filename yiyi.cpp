@@ -12,6 +12,9 @@ Yiyi::Yiyi(int i,int j)
   name="Yiyi";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
+  this->price_ev=100;
+  this->price_skill=0;
+  Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
   setPos(154+234*j-47,290-133+154*i);
 
 }
@@ -21,14 +24,11 @@ Yiyi::~Yiyi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
     if(Skill)
-    {
         delete Skill;
-    Skill=NULL;
-    }
 
 }
 void Yiyi::advance(int phase)
@@ -73,7 +73,7 @@ void Yiyi::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = yla;
-    Map::myptn[i][j] = nullptr;
+                Cards::diamondTotal-=price_ev;
 }
 
 
@@ -87,6 +87,9 @@ YiDingSi::YiDingSi(int i,int j): Yiyi(i,j)
     name="YiDingSi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+    this->price_ev=200;
+    this->price_skill=0;
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(154+234*j-47,290-125+154*i);
 }
 void YiDingSi::skill()
@@ -100,8 +103,8 @@ void YiDingSi::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = yla;
-    Map::myptn[i][j] = nullptr;
     Map::myptn[i][j]->skillButton->setEnabled(false);
+                Cards::diamondTotal-=price_ev;
 }
 YiDingSi::~YiDingSi()
 {
@@ -109,13 +112,8 @@ YiDingSi::~YiDingSi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 
@@ -129,6 +127,7 @@ YiKaLaiEn::YiKaLaiEn(int i,int j):Yiyi(i,j)
     name="YiKaLaiEn";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(154+234*j-47,290-133+154*i);
 }
 void YiKaLaiEn::skill()
@@ -141,12 +140,7 @@ YiKaLaiEn::~YiKaLaiEn()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }

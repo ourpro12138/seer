@@ -26,7 +26,10 @@ bool Dululu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode 
 Dululu::~Dululu()
 {
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 
 void Dululu::advance(int phase)
@@ -41,6 +44,7 @@ void Dululu::advance(int phase)
      {
          this->nowStatus=0;
          delete this;
+         nowStatus=0;  //死亡
          return;
      }
 

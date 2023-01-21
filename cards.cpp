@@ -47,6 +47,7 @@ QRectF Cards::boundingRect() const
 //1-草 2-水 3-火 4-普通
 bubuzhongzi::bubuzhongzi()
 {
+      this->price=50;
     attribute = "grass";
     name="BubuZhongzi";coolTime=227;No=1;
     zuanshiNeed=25;
@@ -55,6 +56,7 @@ bubuzhongzi::bubuzhongzi()
 }
 xianrenqiu::xianrenqiu()
 {
+      this->price=50;
     attribute = "grass";
     name="XianRenQiu";coolTime=227;No=2;
     zuanshiNeed=25;
@@ -63,6 +65,7 @@ xianrenqiu::xianrenqiu()
 }
 xiaodouya::xiaodouya()
 {
+      this->price=50;
     attribute = "grass";
     name="XiaoDouYa";coolTime=227;No=3;
     zuanshiNeed=25;
@@ -71,6 +74,7 @@ xiaodouya::xiaodouya()
 }
 yiyi::yiyi()
 {
+      this->price=50;
     attribute = "grass";
     name="YiYi";coolTime=227;No=4;
     zuanshiNeed=25;
@@ -81,6 +85,7 @@ yiyi::yiyi()
 //水系精灵
 yiyou::yiyou()
 {
+      this->price=50;
     attribute = "water";
     name="YiYou";coolTime=227;No=5;
     zuanshiNeed=25;
@@ -97,6 +102,7 @@ beier::beier()
 }
 guodongya::guodongya()
 {
+      this->price=50;
     attribute = "water";
     name="GuoDongYa";coolTime=227;No=7;
     zuanshiNeed=25;
@@ -115,6 +121,7 @@ baobeili::baobeili()
 //火系精灵
 xiaohuohou::xiaohuohou()
 {
+    this->price=50;
     attribute = "fire";
     name="XiaoHuoHou";coolTime=227;No=9;
     zuanshiNeed=25;
@@ -123,6 +130,7 @@ xiaohuohou::xiaohuohou()
 }
 jier::jier()
 {
+    this->price=50;
     attribute = "fire";
     name="JiEr";coolTime=227;No=10;
     zuanshiNeed=25;
@@ -131,6 +139,7 @@ jier::jier()
 }
 huliya::huliya()
 {
+      this->price=50;
     attribute = "fire";
     name="HuLiYa";coolTime=227;No=11;
     zuanshiNeed=25;
@@ -140,6 +149,7 @@ huliya::huliya()
 
 dida::dida()
 {
+      this->price=50;
     attribute = "fire";
     name="DiDa";coolTime=227;No=12;
     zuanshiNeed=25;
@@ -150,6 +160,7 @@ dida::dida()
 //普通系
 dugulu::dugulu()
 {
+    this->price=100;
     attribute = "normal";
     name="DuGuLu";coolTime=227;No=13;
     zuanshiNeed=25;
@@ -158,6 +169,7 @@ dugulu::dugulu()
 }
 xinke::xinke()
 {
+      this->price=50;
     attribute = "normal";
     name="XinKe";coolTime=227;No=14;
     zuanshiNeed=25;

@@ -10,7 +10,6 @@ Xinke::Xinke(int i,int j)
   hp=300;prepareTime=100;atkcounter=prepareTime;
   this->atk = 70;
   name="Xinke";skillname="星之光";
-  this->price=50;
   this->price_ev=250;
   this->price_skill=10;
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -21,18 +20,16 @@ Xinke::Xinke(int i,int j)
 
 }
 Xinke::~Xinke()
-{if(Map::myptn[i][j])
-        Map::myptn[i][j]=NULL;
-        if(atkmovie)
-        {
-            delete atkmovie;
-            atkmovie=NULL;
-        }
-        if(Skill)
-        {
-            delete Skill;
-        Skill=NULL;
-        }
+{
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
+    if(Skill)
+        delete Skill;
 
 }
 void Xinke::advance(int phase)
@@ -52,7 +49,6 @@ void Xinke::advance(int phase)
         bullet->ATK=this->atk;
         bullet->attribute=this->attribute;
         bullet->name = this->name.toLower();
-        qDebug()<<bullet->name;
         scene()->addItem(bullet);
     }
     if(hp<=0)
@@ -75,7 +71,7 @@ void Xinke::skill()
 
     Skillplayer->show();
     Skill->start();
-    this->price_skill=10;
+
     QTimer *time = new QTimer(parent);
     time->start(10);
     static  int count = 0;
@@ -98,8 +94,9 @@ void Xinke::skill()
             case 2:
                 this->bullet->attribute=GRASS;atb=3;this->name="xinkeg";break;
             case 3:
-                this->bullet->attribute=ORDINARY;atb=0;this->name="xinke";break;
+                this->bullet->attribute=ORDINARY;atb=4;this->name="xinke";break;
             }
+                        Cards::diamondTotal-=price_skill;
             count=0;
         }
     });
@@ -112,6 +109,7 @@ void Xinke::evolution()
     delete this;
     Map::myptn[i][j] = yla;
     Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 Xinnasi::Xinnasi(int i,int j):Xinke(i,j)
 {
@@ -133,13 +131,8 @@ Xinnasi::~Xinnasi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 void Xinnasi::skill()
@@ -178,6 +171,7 @@ void Xinnasi::skill()
                 this->bullet->attribute=ORDINARY;atb=0;name="xinnasi";break;
             }
             count=0;
+            Cards::diamondTotal-=price_skill;
         }
     });
 }

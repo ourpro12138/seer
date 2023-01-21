@@ -20,24 +20,19 @@ Taida::Taida(int i,int j)
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     Skillplayer->setMovie(Skill);
     setPos(160+234*j-47-10,320-133+154*i-30);
-    this->price=100;
-    this->price_ev=400;
-    this->price_skill=100;
 }
 
 Taida::~Taida()
-{if(Map::myptn[i][j])
-        Map::myptn[i][j]=NULL;
-        if(atkmovie)
-        {
-            delete atkmovie;
-            atkmovie=NULL;
-        }
-        if(Skill)
-        {
-            delete Skill;
-        Skill=NULL;
-        }
+{
+    if(Map::myptn[i][j])
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
+    if(Skill)
+        delete Skill;
 }
 
 
@@ -124,6 +119,8 @@ void Taida::skill()
             Skill->stop();
             Skillplayer->hide();
             this->atk*=1.2;
+
+            Cards::diamondTotal-=price_skill;
             count=0;
         }
     });
@@ -136,6 +133,7 @@ void Taida::evolution()
     delete this;
     Map::myptn[i][j] = yla;
     Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 TaiLeSi::TaiLeSi(int i,int j):Taida(i,j)
 {
@@ -152,7 +150,6 @@ TaiLeSi::TaiLeSi(int i,int j):Taida(i,j)
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     Skillplayer->setMovie(Skill);
     setPos(160+234*j-47-20,320-133+154*i-25);
-    this->price_skill=250;
 }
 TaiLeSi::~TaiLeSi()
 {
@@ -160,13 +157,8 @@ TaiLeSi::~TaiLeSi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 void TaiLeSi::skill()
@@ -195,6 +187,7 @@ void TaiLeSi::skill()
             this->atk*=1.4;
             this->prepareTime-=40;
             this->atkcounter=prepareTime;
+            Cards::diamondTotal-=price_skill;
             count=0;
         }
     });

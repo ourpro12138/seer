@@ -13,7 +13,6 @@ Yiyou::Yiyou(int i,int j)
   this->atk = 20;
   name="Yiyou";
   this->skillname = "玩水";
-  this->price=50;
   this->price_ev=100;
   this->price_skill=100;
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
@@ -30,14 +29,11 @@ Yiyou::~Yiyou()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
-        delete atkmovie;
         atkmovie =NULL;
+        delete atkmovie;
     }
     if(Skill)
-    {
         delete Skill;
-        Skill=NULL;
-    }
 
 }
 void Yiyou::advance(int phase)
@@ -94,6 +90,7 @@ void Yiyou::skill()
             Skillplayer->hide();
             this->prepareTime*=0.8;
             this->atkcounter = prepareTime;
+                        Cards::diamondTotal-=price_skill;
             count=0;
         }
     });
@@ -105,6 +102,7 @@ void Yiyou::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = yla;
+                Cards::diamondTotal-=price_ev;
 }
 
 YouLiAn::YouLiAn(int i,int j):Yiyou(i,j)
@@ -116,8 +114,6 @@ YouLiAn::YouLiAn(int i,int j):Yiyou(i,j)
     No=21;
     name="YouLiAn";
     skillname = "潮汐";
-    this->price_ev=200;
-    this->price_skill=150;
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     Skillplayer->setMovie(Skill);
@@ -133,14 +129,10 @@ YouLiAn::~YouLiAn()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
-    }
+    qDebug()<<"尤里安析造函数调用";
 }
 
 void YouLiAn::evolution()
@@ -151,6 +143,7 @@ void YouLiAn::evolution()
     delete this;
     Map::myptn[i][j] = yla;
     Map::myptn[i][j]->evolutionButton->setEnabled(false);
+                Cards::diamondTotal-=price_ev;
 }
 
 void YouLiAn::skill()
@@ -178,6 +171,7 @@ void YouLiAn::skill()
             Skillplayer->hide();
             this->prepareTime*=0.75;
             this->atkcounter = prepareTime;
+            Cards::diamondTotal-=price_skill;
             count=0;
         }
     });
@@ -191,7 +185,6 @@ BaLuSi::BaLuSi(int i,int j):Yiyou(i,j)
     hp=500;prepareTime=200;atkcounter=prepareTime;
     this->atk = 80;
     No=37;
-    this->price_skill=200;
     name="BaLuSi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
@@ -235,12 +228,7 @@ BaLuSi::~BaLuSi()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }

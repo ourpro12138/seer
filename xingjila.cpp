@@ -27,7 +27,10 @@ bool Xingjila::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMod
 Xingjila::~Xingjila()
 {
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 
 void Xingjila::advance(int phase)
@@ -42,6 +45,7 @@ void Xingjila::advance(int phase)
      {
          this->nowStatus=0;
          delete this;
+         nowStatus=0;  //死亡
          return;
      }
 

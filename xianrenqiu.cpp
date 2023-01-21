@@ -16,10 +16,8 @@ Xianrenqiu::Xianrenqiu(int i,int j)
     name="Xianrenqiu";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(154+234*j-47,290-133+154*i);
-    this->price=100;
-    this->price_ev=150;
-    this->price_skill=0;
 }
 
 Xianrenqiu::~Xianrenqiu()
@@ -28,14 +26,11 @@ Xianrenqiu::~Xianrenqiu()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
     if(Skill)
-    {
         delete Skill;
-    Skill=NULL;
-    }
 }
 bool Xianrenqiu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
@@ -120,7 +115,13 @@ void Xianrenqiu::skill()
 }
 void Xianrenqiu::evolution()
 {
-
+    XianRenZhang *bbh = new XianRenZhang(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 
 XianRenZhang::XianRenZhang(int i,int j):Xianrenqiu(i,j)
@@ -138,10 +139,8 @@ XianRenZhang::XianRenZhang(int i,int j):Xianrenqiu(i,j)
     name="Xianrenzhang";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(154+234*j-47-20,290-133+154*i);
-
-    this->price_ev=200;
-    this->price_skill=0;
 }
 XianRenZhang::~XianRenZhang()
 {
@@ -149,13 +148,8 @@ XianRenZhang::~XianRenZhang()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 void XianRenZhang::skill()
@@ -164,7 +158,13 @@ void XianRenZhang::skill()
 }
 void XianRenZhang::evolution()
 {
-
+    JuXingXianRenZhang *bbh = new JuXingXianRenZhang(i,j);
+    Map::myptn[i][j] = bbh;
+    scene()->addItem(Map::myptn[i][j]);
+    delete this;
+    Map::myptn[i][j] = bbh;
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 JuXingXianRenZhang::JuXingXianRenZhang(int i,int j):Xianrenqiu(i,j)
 {
@@ -181,23 +181,18 @@ JuXingXianRenZhang::JuXingXianRenZhang(int i,int j):Xianrenqiu(i,j)
     name="JuXingXianrenzhang";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(154+234*j-55-10,290-100+154*i);
-    this->price_skill=0;
 }
 JuXingXianRenZhang::~JuXingXianRenZhang()
 {
     if(Map::myptn[i][j])
-            Map::myptn[i][j]=NULL;
-            if(atkmovie)
-            {
-                delete atkmovie;
-                atkmovie=NULL;
-            }
-            if(Skill)
-            {
-                delete Skill;
-            Skill=NULL;
-            }
+    Map::myptn[i][j]=NULL;
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete atkmovie;
+    }
 }
 void JuXingXianRenZhang::skill()
 {

@@ -1,7 +1,5 @@
 #include "maingame.h"
 #include "ui_maingame.h"
-#include<QColorDialog>
-#include<QFileDialog>
 maingame::maingame(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::maingame)
@@ -53,7 +51,7 @@ maingame::maingame(QWidget *parent)
 
     //链接关卡退出与进入信号与槽的函数
     levelback();
-
+    cardsUpdate();
 
     ss->show();
 }
@@ -73,7 +71,10 @@ void maingame::loginGet()
     this->choose->hide();
     for(int i=0;i<Level_num;i++)
         this->level[i]->hide();
-    qDebug()<<"what";
+    savelevel();
+    savecards();
+    levelUpdate();
+    cardsUpdate();
 }
 
 void maingame::chooseLevel()
@@ -87,6 +88,10 @@ void maingame::chooseLevel()
     {
         this->level[i]->hide();
     }
+    savelevel();
+    savecards();
+    levelUpdate();
+    cardsUpdate();
 }
 void maingame::returnchooselevel()
 {
@@ -120,7 +125,10 @@ void maingame::pdx()
     this->choose->hide();
     for(int i=0;i<Level_num;i++)
         this->level[i]->hide();
-
+    savelevel();
+    savecards();
+    levelUpdate();
+    cardsUpdate();
 }
 
 void maingame::returnstart()
@@ -132,6 +140,10 @@ void maingame::returnstart()
     this->choose->hide();
     for(int i=0;i<Level_num;i++)
         this->level[i]->hide();
+    savelevel();
+    savecards();
+    levelUpdate();
+    cardsUpdate();
 }
 
 void maingame::levelback()
@@ -152,15 +164,32 @@ void maingame::levelback()
 
     //关卡更新，解锁关卡与每个关卡对应的按钮
     //每次回到选关的界面对关卡更新一次
+    savelevel();
+    savecards();
     levelUpdate();
+    cardsUpdate();
 
 }
 void maingame::levelUpdate()
 {
-    for(int i =1;i<Level_num;i++)
+
+    QString path = "D:/seer/level.txt";
+    QFile file(path);
+    if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
     {
-        level[i]->isLocked=0;
+        for(int i=1;i<Level_num;i++)
+            level[i]->isLocked=1;
+        level[0]->isLocked=0;
     }
+    QByteArray save;
+    int count=0;
+    while(!file.atEnd())
+    {
+        save = file.readLine();
+        level[count]->isLocked=save.toInt();
+        count++;
+    }
+
     for(int i=0;i<Level_num;i++)
     {
         if(level[i]->isLocked)
@@ -170,5 +199,51 @@ void maingame::levelUpdate()
     }
 }
 
+void maingame::savelevel()
+{
+    QString path = "D:/seer/level.txt";
+    QFile file(path);
+    file.open(QIODevice::WriteOnly|QIODevice::Text);
+     QTextStream out(&file);
+   for(int i=0;i<Level_num;i++)
+   {
+   out<<QString::number(level[i]->isLocked)<<"\n";
+   }
 
+    file.close();
+}
+void maingame::savecards()
+{
+    QString path = "D:/seer/card.txt";
+    QFile file(path);
+    file.open(QIODevice::WriteOnly|QIODevice::Text);
+
+   QTextStream out(&file);
+   for(int i=0;i<16;i++)
+   {
+   out<<QString::number(cardsmenu::P_all[i]->isLocked)<<"\n";
+   }
+
+    file.close();
+}
+void maingame::cardsUpdate()
+{
+    QString path = "D:/seer/card.txt";
+    QFile file(path);
+    if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
+    {
+        for(int i=3;i<16;i++)
+        {
+            cardsmenu::P_all[i]->isLocked=1;
+        }
+    }
+    QByteArray save;
+    int count=0;
+    while(!file.atEnd())
+    {
+        save = file.readLine();
+        cardsmenu::P_all[count]->isLocked=save.toInt();
+        count++;
+    }
+}
 

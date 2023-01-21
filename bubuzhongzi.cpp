@@ -16,24 +16,17 @@ Bubuzhongzi::Bubuzhongzi(int i,int j)
     Skillplayer->setMovie(Skill);
     atkmovie->start();
       setPos(154+234*j-47,290-133+154*i);
-      this->price=50;
-      this->price_ev=150;
-      this->price_skill=50;
 }
 Bubuzhongzi::~Bubuzhongzi()
 {
-    if(Map::myptn[i][j])
-    Map::myptn[i][j]=NULL;
+    Map::myptn[i][j]=nullptr;
     if(atkmovie)
     {
-        delete atkmovie;
         atkmovie=NULL;
+        delete  atkmovie;
     }
     if(Skill)
-    {
         delete Skill;
-    Skill=NULL;
-    }
 }
 //QRectF Bubuzhongzi::boundingRect() const
 //{
@@ -150,9 +143,6 @@ BuBuCao::BuBuCao(int i,int j):Bubuzhongzi(i,j)
     Skillplayer->setMovie(Skill);
     atkmovie->start();
       setPos(154+234*j-47,290-133+154*i);
-      this->price=100;
-      this->price_ev=200;
-      this->price_skill=100;
 }
 
 void BuBuCao::evolution()
@@ -205,13 +195,8 @@ BuBuCao::~BuBuCao()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 BuBuHua::BuBuHua(int i,int j):Bubuzhongzi(i,j)
@@ -229,7 +214,6 @@ BuBuHua::BuBuHua(int i,int j):Bubuzhongzi(i,j)
     Skillplayer->setMovie(Skill);
     atkmovie->start();
     setPos(154+234*j-47,290-133+154*i);
-    this->price_skill=150;
 }
 void BuBuHua::skill()
 {
@@ -270,13 +254,8 @@ BuBuHua::~BuBuHua()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
-    }
-    if(Skill)
-    {
-        delete Skill;
-    Skill=NULL;
     }
 }
 

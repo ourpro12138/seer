@@ -27,7 +27,10 @@ bool Maokai::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode 
 Maokai::~Maokai()
 {
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 
 void Maokai::advance(int phase)
@@ -42,6 +45,7 @@ void Maokai::advance(int phase)
      {
          this->nowStatus=0;
          delete this;
+         nowStatus=0;  //死亡
          return;
      }
 

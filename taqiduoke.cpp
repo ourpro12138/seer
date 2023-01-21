@@ -17,7 +17,11 @@ Taqiduoke::Taqiduoke(int i)
 }
 Taqiduoke::~Taqiduoke()
 {
-
+    if(atkmovie)
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 }
 void Taqiduoke::advance(int phase)
 {

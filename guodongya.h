@@ -35,7 +35,6 @@ public:
     ~BoLangYa();
 
 
-
 };
 
 class ShuiJingYa:public Guodongya
@@ -44,7 +43,6 @@ public:
     void skill();
     ShuiJingYa(int i,int j);
     ~ShuiJingYa();
-
 
 };
 #endif // GUODONGYA_H

@@ -19,6 +19,7 @@ public:
     ~cardsmenu();
 
     QPushButton *p_PB[16];
+    static Cards *P_all[16];
 
     int count=0;
     void paintEvent(QPaintEvent *);

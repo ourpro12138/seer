@@ -8,14 +8,12 @@ Huliya::Huliya(int i,int j)
   this->i = i; this->j=j;
   width = 121;height=135;health=300;
   hp=300;atkcounter=0;prepareTime=200;
-  this->atk = 75;
+  this->atk = 50;
   name="Huliya";
   atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
   atkmovie->start();
   setPos(154+234*j-47,290-133+154*i);
-  this->price=100;
-  this->price_ev=300;
-  this->price_skill=0;
+
 }
 Huliya::~Huliya()
 {
@@ -23,13 +21,13 @@ Huliya::~Huliya()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
     if(Skill)
     {
         delete Skill;
-    Skill=NULL;
+        Skill = NULL;
     }
 
 }
@@ -76,7 +74,8 @@ void Huliya::evolution()
     scene()->addItem(Map::myptn[i][j]);
     delete this;
     Map::myptn[i][j] = bbh;
-    this->skillButton->setEnabled(false);
+    Map::myptn[i][j]->evolutionButton->setEnabled(false);
+    Cards::diamondTotal-=price_ev;
 }
 void Liaosi::skill()
 {
@@ -87,12 +86,11 @@ Liaosi::Liaosi(int i,int j):Huliya(i,j)
     this->i = i; this->j=j;
     width = 116;height=140;health=500;
     hp=500;atkcounter=0;prepareTime=150;
-    this->atk = 200;
+    this->atk = 50;
     name="Liaosi";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
     setPos(140+234*j-47,300-133+154*i);
-    this->price_skill=0;
 }
 
 Liaosi::~Liaosi()
@@ -107,7 +105,7 @@ Liaosi::~Liaosi()
     if(Skill)
     {
         delete Skill;
-    Skill=NULL;
+        Skill=NULL;
     }
 }
 

@@ -15,8 +15,8 @@ DuGuLu::DuGuLu(int i,int j)
     name="dugulu";
     atkmovie=new QMovie(":/partner/resource/partner/stand_"+name.toLower()+".gif");
     atkmovie->start();
+      Skill = new QMovie(":/partner/resource/partner/skill/"+name.toLower()+".gif");
     setPos(154+234*j-47-10,290-133+154*i+30);
-    this->price=100;
     this->price_ev=0;
     this->price_skill=0;
 }
@@ -27,14 +27,11 @@ DuGuLu::~DuGuLu()
     Map::myptn[i][j]=NULL;
     if(atkmovie)
     {
+        atkmovie =NULL;
         delete atkmovie;
-        atkmovie=NULL;
     }
     if(Skill)
-    {
         delete Skill;
-    Skill=NULL;
-    }
 }
 
 bool DuGuLu::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const

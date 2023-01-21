@@ -28,7 +28,10 @@ bool Heertoke::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMod
 Heertoke::~Heertoke()
 {
     if(atkmovie)
-        delete atkmovie;
+    {
+        atkmovie =NULL;
+        delete  atkmovie;
+    }
 
 }
 
@@ -44,6 +47,7 @@ void Heertoke::advance(int phase)
      {
          this->nowStatus=0;
          delete this;
+         nowStatus=0;  //死亡
          return;
      }
 
